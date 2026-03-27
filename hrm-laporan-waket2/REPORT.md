@@ -1,46 +1,50 @@
-# Workflow Report: Dashboard Eksekutif & Laporan HRM
+# Workflow Report: Dashboard Eksekutif & Laporan SDM
 
-**Tanggal**: 2026-04-01
+**Tanggal**: 2026-04-02
 **Role**: Waket2 (Pak Deni / waket2@sttw.ac.id)
 **Modul**: HRM — Laporan SDM
 **Status**: ✅ Berhasil
 
 ## Ringkasan
 
-Dashboard eksekutif HRM yang menampilkan rekap progres penilaian kinerja SDM per jadwal, termasuk:
-- Statistik total dosen, tendik, selesai dinilai, memenuhi standar
-- Chart distribusi hasil kinerja (pie chart)
-- Progres per program studi (bar chart)
-- Rekap semua jadwal kinerja (tabel)
+Dashboard eksekutif dan laporan SDM untuk Wakil Ketua 2, termasuk:
+
+- Dashboard ringkasan kinerja (total dosen/tendik, selesai dinilai, memenuhi standar)
+- Laporan detail per dosen
+- Laporan detail per tendik
+- Export ke Excel dan PDF
 
 ## Langkah-langkah
 
-### 1. Dashboard Eksekutif HRM
+### 1. Dashboard Eksekutif
 
-Waket2 membuka halaman Laporan SDM > Dashboard Eksekutif. Terlihat:
-- Info jadwal aktif: "Semester Ganjil 2024/2025 — Pengisian sampai 15 Jan 2025"
-- Statistik cards: 6 Total Dosen, 5 Total Tendik, 3 Selesai Dinilai (27%), 3 Memenuhi Standar (27%), 0 Tidak Memenuhi
-- Pie chart "Distribusi Hasil Kinerja" (Memenuhi Standar, Tidak Memenuhi, Belum Selesai)
-- Bar chart "Progres Dosen per Program Studi" (Lainnya 1/1, D3 Teknik Mesin 1/5)
-- Tabel rekap semua jadwal: Sem Ganjil 2024/2025 (27%), Sem Genap 2023/2024 (100%), Sem Ganjil 2023/2024 (100%)
-- Tombol navigasi: Laporan Dosen, Laporan Tendik
+Waket2 membuka menu Laporan SDM > Dashboard. Terlihat statistik ringkasan: total dosen, total tendik, selesai dinilai, memenuhi standar, dan tidak memenuhi standar. Menggunakan card statistik berwarna.
 
-![Dashboard Eksekutif HRM dengan statistik dan chart](screenshots/01_laporan-index.png)
+![Dashboard Eksekutif](screenshots/01_laporan-dashboard.png)
+
+### 2. Laporan Kinerja Dosen
+
+Waket2 membuka tab Laporan Dosen. Terlihat tabel semua dosen dengan kolom nama, NIDN, status kinerja, hasil penilaian, dan aksi (lihat detail, export). Tersedia filter dan tombol export Excel/PDF.
+
+![Laporan Kinerja Dosen](screenshots/02_laporan-dosen.png)
+
+### 3. Laporan Kinerja Tendik
+
+Waket2 membuka tab Laporan Tendik. Terlihat tabel semua tendik dengan kolom nama, jabatan, status kinerja, dan hasil penilaian. Tersedia filter dan tombol export.
+
+![Laporan Kinerja Tendik](screenshots/03_laporan-tendik.png)
 
 ## Fitur yang Diuji
 
 | Fitur | Status | Keterangan |
-|-------|--------|------------|
-| Statistik ringkasan | ✅ | Total dosen, tendik, dinilai, memenuhi standar |
-| Pie chart distribusi | ✅ | Visualisasi hasil kinerja (hijau/merah/abu) |
-| Bar chart per prodi | ✅ | Progres dosen per program studi |
-| Tabel rekap jadwal | ✅ | Semua jadwal dengan progress bar |
-| Navigasi detail | ✅ | Link ke Laporan Dosen dan Laporan Tendik |
-| Menu sidebar lengkap | ✅ | Dashboard Eksekutif, Laporan Dosen, Laporan Tendik |
+| --- | --- | --- |
+| Dashboard statistik | ✅ | Ringkasan total, selesai, memenuhi standar |
+| Laporan dosen | ✅ | Tabel detail kinerja per dosen |
+| Laporan tendik | ✅ | Tabel detail kinerja per tendik |
+| Export Excel/PDF | ✅ | Download laporan dalam format Excel dan PDF |
 
 ## Catatan
 
-- Dashboard hanya tersedia untuk role waket2 dan akademik
-- Data otomatis terhitung berdasarkan penilaian asesor
-- Progress 100% berarti semua dosen/tendik sudah dinilai
-- Chart menggunakan data dari jadwal kinerja yang aktif
+- Dashboard menggunakan komponen x-stats-card untuk konsistensi UI
+- Waket2 perlu permission hrm.laporan.view
+- Export tersedia dalam format Excel dan PDF

@@ -1,34 +1,34 @@
-# Workflow Report: Presensi Check-In/Check-Out Dosen
+# Workflow Report: Data Presensi Clock In/Out Dosen
 
-**Tanggal**: 2026-04-01
-**Role**: Dosen (Budi Santoso / budi.santoso@sttw.ac.id)
+**Tanggal**: 2026-04-02
+**Role**: Dosen (Dr. Budi Santoso, M.Kom / budi.santoso@sttw.ac.id)
 **Modul**: HRM — Presensi CICO
 **Status**: ✅ Berhasil
 
 ## Ringkasan
 
-Menampilkan data presensi check-in/check-out dosen yang diimpor dari sistem absensi.
-- Data kehadiran harian ditampilkan dalam tabel
-- Data diimpor oleh admin melalui fitur Impor Presensi
+Halaman presensi Clock In/Clock Out dosen menampilkan rekapitulasi kehadiran.
+
+- Data diimport oleh admin dari mesin fingerprint
+- Menampilkan log harian clock in dan clock out
 
 ## Langkah-langkah
 
-### 1. Halaman Presensi Check-In/Check-Out
+### 1. Halaman Presensi CICO
 
-Dosen membuka halaman Presensi CICO. Data kehadiran ditampilkan dalam tabel dengan kolom tanggal, jam masuk, jam pulang, dan status. Data ini diimpor oleh admin dan bersifat read-only bagi dosen.
+Dosen membuka halaman Presensi CICO. Terlihat tabel rekapitulasi presensi harian dengan kolom tanggal, jam masuk, jam keluar, dan status kehadiran.
 
-![Data presensi CICO dosen](screenshots/01_presensi-cico-index.png)
+![Halaman Presensi CICO](screenshots/01_presensi-cico-index.png)
 
 ## Fitur yang Diuji
 
 | Fitur | Status | Keterangan |
-|-------|--------|------------|
-| Data presensi CICO | ✅ | Tabel kehadiran harian dosen |
-| Tampilan read-only | ✅ | Dosen hanya bisa melihat, tidak edit |
-| Impor oleh admin | ✅ | Data diimpor via fitur Admin HRM > Impor Presensi |
+| --- | --- | --- |
+| Rekap presensi | ✅ | Tabel log clock in/out harian |
+| Read-only | ✅ | Data dari import admin, tidak bisa diedit dosen |
 
 ## Catatan
 
-- Data presensi diimpor oleh admin dari file Excel/CSV mesin absensi
-- Dosen hanya melihat data kehadiran sendiri
-- Presensi berkontribusi ke penilaian kinerja
+- Data bersumber dari import CSV mesin fingerprint
+- Admin mengimport melalui menu Admin HRM > Import Presensi
+- Dosen hanya bisa melihat, tidak bisa mengedit

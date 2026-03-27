@@ -1,31 +1,35 @@
-# Workflow Report: Dashboard HRM Dosen
+# Workflow Report: Dashboard Kinerja Dosen
 
-**Tanggal**: 2026-04-01
-**Role**: Dosen (Budi Santoso / budi.santoso@sttw.ac.id)
+**Tanggal**: 2026-04-02
+**Role**: Dosen (Dr. Budi Santoso, M.Kom / budi.santoso@sttw.ac.id)
 **Modul**: HRM — Portal Dosen
 **Status**: ✅ Berhasil
 
 ## Ringkasan
 
-Menampilkan dashboard HRM dosen yang berisi ringkasan kinerja, navigasi ke semua fitur portal, dan informasi jadwal kinerja aktif.
+Dashboard kinerja dosen menampilkan ringkasan status pengisian kinerja pada periode aktif.
+
+- Melihat status pengisian dan progres kinerja
+- Akses cepat ke menu input kinerja (bimbingan, pengujian, dll)
+- Informasi jadwal kinerja yang sedang aktif
 
 ## Langkah-langkah
 
-### 1. Dashboard Portal Dosen
+### 1. Halaman Dashboard Kinerja Dosen
 
-Dosen membuka halaman HRM Portal. Terlihat menu sidebar dengan semua fitur kinerja (Bimbingan, Pengujian, Bahan Ajar, dll). Dashboard menampilkan ringkasan statistik dan informasi periode pengisian aktif.
+Dosen membuka menu Portal Saya > Dashboard Kinerja. Terlihat ringkasan status pengisian kinerja, progres input, dan tautan cepat ke fitur-fitur input kinerja.
 
-![Dashboard HRM Portal Dosen](screenshots/01_dashboard-overview.png)
+![Halaman Dashboard Kinerja Dosen](screenshots/01_dashboard-dosen.png)
 
 ## Fitur yang Diuji
 
 | Fitur | Status | Keterangan |
-|-------|--------|------------|
-| Dashboard portal dosen | ✅ | Menampilkan ringkasan kinerja dan navigasi fitur |
-| Menu sidebar HRM | ✅ | Semua sub-menu Portal Saya tersedia |
-| Info periode aktif | ✅ | Menampilkan jadwal kinerja yang sedang berjalan |
+| --- | --- | --- |
+| Ringkasan kinerja | ✅ | Status progres input kinerja dosen |
+| Navigasi cepat | ✅ | Tautan ke modul bimbingan, pengujian, dll |
+| Info jadwal aktif | ✅ | Menampilkan periode kinerja yang sedang berjalan |
 
 ## Catatan
 
-- Dashboard dosen menampilkan statistik berdasarkan jadwal kinerja aktif
-- Navigasi ke semua fitur kinerja tersedia melalui sidebar
+- Dashboard menampilkan data dari periode kinerja aktif
+- Hanya terlihat jika dosen sudah terdaftar di sistem HRM

@@ -1,31 +1,34 @@
-# Workflow Report: Data Pengabdian Dosen (Placeholder P3M)
+# Workflow Report: Data Pengabdian Dosen
 
-**Tanggal**: 2026-04-01
-**Role**: Dosen (Budi Santoso / budi.santoso@sttw.ac.id)
-**Modul**: HRM — Pengabdian Masyarakat
+**Tanggal**: 2026-04-02
+**Role**: Dosen (Dr. Budi Santoso, M.Kom / budi.santoso@sttw.ac.id)
+**Modul**: HRM — Pengabdian (P3M)
 **Status**: ✅ Berhasil
 
 ## Ringkasan
 
-Menampilkan halaman pengabdian masyarakat dosen. Saat ini berisi placeholder karena data akan disinkronisasi dari SIM P3M (belum terintegrasi).
+Halaman data pengabdian masyarakat dosen menampilkan daftar pengabdian yang terdaftar.
+
+- Data placeholder dari SIM P3M
+- Mencakup judul, jenis, sumber dana, dan tahun pelaksanaan
 
 ## Langkah-langkah
 
-### 1. Halaman Pengabdian Masyarakat (Placeholder)
+### 1. Halaman Data Pengabdian
 
-Dosen membuka halaman Pengabdian. Saat ini menampilkan data placeholder karena integrasi dengan SIM P3M belum tersedia. Data pengabdian masyarakat nantinya akan ditarik otomatis dari sistem P3M.
+Dosen membuka halaman Pengabdian. Terlihat daftar pengabdian masyarakat dalam tabel dengan kolom judul, jenis, sumber dana, dan tahun pelaksanaan.
 
-![Halaman pengabdian dosen (placeholder P3M)](screenshots/01_pengabdian-index.png)
+![Halaman Data Pengabdian](screenshots/01_pengabdian-index.png)
 
 ## Fitur yang Diuji
 
 | Fitur | Status | Keterangan |
-|-------|--------|------------|
-| Halaman pengabdian | ✅ | Halaman tersedia dengan layout yang sesuai |
-| Placeholder P3M | ⏳ | Menunggu integrasi SIM P3M |
-| Read-only | ✅ | Data akan di-sync dari P3M, bukan input manual |
+| --- | --- | --- |
+| Daftar pengabdian | ✅ | Tabel data pengabdian masyarakat dosen |
+| Info sumber dana | ✅ | Internal, Hibah Kemendikbud, dll |
 
 ## Catatan
 
-- Data pengabdian akan disinkronisasi dari SIM P3M saat integrasi tersedia
-- Saat ini menampilkan data placeholder/kosong
+- Data bersumber dari SIM P3M (placeholder)
+- Akan diintegrasikan dengan SIM P3M nantinya
+- Dosen tidak bisa input manual — data otomatis dari P3M

@@ -1,30 +1,34 @@
-# Workflow Report: Presensi Check-In/Check-Out Tendik
+# Workflow Report: Data Presensi Clock In/Out Tendik
 
-**Tanggal**: 2026-04-01
-**Role**: Tendik (Ahmad Syaiful / ahmad.syaiful@sttw.ac.id)
+**Tanggal**: 2026-04-02
+**Role**: Tendik (Ahmad Syaiful, S.Sos / ahmad.syaiful@sttw.ac.id)
 **Modul**: HRM — Presensi CICO
 **Status**: ✅ Berhasil
 
 ## Ringkasan
 
-Menampilkan data presensi check-in/check-out tendik yang diimpor dari sistem absensi.
+Halaman presensi Clock In/Clock Out tendik menampilkan rekapitulasi kehadiran.
+
+- Data diimport oleh admin dari mesin fingerprint
+- Menampilkan log harian clock in dan clock out
 
 ## Langkah-langkah
 
-### 1. Halaman Presensi Check-In/Check-Out
+### 1. Halaman Presensi CICO
 
-Tendik membuka halaman Presensi CICO. Data kehadiran ditampilkan dalam tabel. Data ini diimpor oleh admin dan bersifat read-only bagi tendik.
+Tendik membuka halaman Presensi CICO. Terlihat tabel rekapitulasi presensi harian dengan kolom tanggal, jam masuk, jam keluar, dan status kehadiran.
 
-![Data presensi CICO tendik](screenshots/01_presensi-cico-index.png)
+![Halaman Presensi CICO](screenshots/01_presensi-cico-index.png)
 
 ## Fitur yang Diuji
 
 | Fitur | Status | Keterangan |
-|-------|--------|------------|
-| Data presensi CICO | ✅ | Tabel kehadiran harian tendik |
-| Tampilan read-only | ✅ | Tendik hanya bisa melihat, tidak edit |
+| --- | --- | --- |
+| Rekap presensi | ✅ | Tabel log clock in/out harian |
+| Read-only | ✅ | Data dari import admin, tidak bisa diedit tendik |
 
 ## Catatan
 
-- Data presensi diimpor oleh admin dari file Excel/CSV mesin absensi
-- Tendik hanya melihat data kehadiran sendiri
+- Data bersumber dari import CSV mesin fingerprint
+- Admin mengimport melalui menu Admin HRM > Import Presensi
+- Tendik hanya bisa melihat, tidak bisa mengedit

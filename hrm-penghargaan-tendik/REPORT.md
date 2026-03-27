@@ -1,37 +1,47 @@
-# Workflow Report: Input Penghargaan Tendik
+# Workflow Report: Input Kinerja Penghargaan Tendik
 
-**Tanggal**: 2026-04-01
-**Role**: Tendik (Ahmad Syaiful / ahmad.syaiful@sttw.ac.id)
+**Tanggal**: 2026-04-02
+**Role**: Tendik (Ahmad Syaiful, S.Sos / ahmad.syaiful@sttw.ac.id)
 **Modul**: HRM — Penghargaan
 **Status**: ✅ Berhasil
 
 ## Ringkasan
 
-Workflow input penghargaan/prestasi tendik, termasuk:
-- Melihat daftar penghargaan yang sudah diinput
-- Form tambah penghargaan baru
+Workflow input data penghargaan oleh tendik, termasuk:
+
+- Melihat daftar penghargaan
+- Mengisi form tambah penghargaan baru
+- Skenario periode ditutup
 
 ## Langkah-langkah
 
 ### 1. Halaman Index Penghargaan
 
-Tendik membuka halaman Penghargaan. Terlihat daftar penghargaan yang sudah diinput.
+Tendik membuka halaman Penghargaan. Terlihat daftar penghargaan dalam tabel.
 
-![Daftar penghargaan tendik](screenshots/01_penghargaan-index.png)
+![Halaman Index Penghargaan](screenshots/01_penghargaan-index.png)
 
-### 2. Form Tambah Penghargaan
+### 2. Form Tambah Penghargaan (Periode Buka)
 
-Tendik mengklik tombol tambah. Form berisi field untuk mengisi data penghargaan.
+Tendik mengklik tombol tambah. Form berisi field: Nama Penghargaan, Tingkat, Pemberi, Tahun, dan Keterangan.
 
-![Form tambah penghargaan tendik](screenshots/02_penghargaan-create.png)
+![Form Tambah Penghargaan (Periode Buka)](screenshots/02_penghargaan-create.png)
+
+### 3. Form Tambah Penghargaan (Periode Tutup)
+
+Ketika periode pengisian ditutup, form menampilkan halaman 403 "Periode pengisian sudah tutup."
+
+![Form Tambah Penghargaan (Periode Tutup)](screenshots/02_penghargaan-create-closed.png)
 
 ## Fitur yang Diuji
 
 | Fitur | Status | Keterangan |
-|-------|--------|------------|
-| Daftar penghargaan | ✅ | Tabel data penghargaan yang sudah diinput |
-| Tambah penghargaan | ✅ | Form input penghargaan baru |
+| --- | --- | --- |
+| Daftar penghargaan | ✅ | Tabel data penghargaan tendik |
+| Tambah penghargaan | ✅ | Form input nama, tingkat, pemberi, tahun |
+| Periode tutup | ✅ | Form tidak bisa diakses saat periode ditutup |
 
 ## Catatan
 
-- Penghargaan tendik mencakup sertifikat, awards, prestasi kerja, dll
+- Penghargaan tendik pola sama dengan dosen
+- Tingkat: Institusi, Regional, Nasional, Internasional

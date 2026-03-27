@@ -1,37 +1,36 @@
-# Workflow Report: Portal Asesor — Penilaian Kinerja
+# Workflow Report: Portal Asesor Kinerja
 
-**Tanggal**: 2026-04-01
-**Role**: Waket2 (Pak Deni / waket2@sttw.ac.id)
-**Modul**: HRM — Portal Asesor
+**Tanggal**: 2026-04-02
+**Role**: Waket2 / Asesor (Pak Deni / waket2@sttw.ac.id)
+**Modul**: HRM — Penilaian Asesor
 **Status**: ✅ Berhasil
 
 ## Ringkasan
 
-Menampilkan portal asesor untuk menilai kinerja dosen dan tendik.
-- Dashboard dengan antrian penilaian per tahap asesor
-- Filter berdasarkan jadwal kinerja
+Portal asesor menampilkan daftar pegawai yang harus dinilai oleh asesor.
+
+- Melihat antrian penilaian (pegawai yang sudah mengajukan kinerja)
+- Status penilaian: menunggu, sedang dinilai, selesai
+- Akses ke detail laporan kinerja individu
 
 ## Langkah-langkah
 
-### 1. Dashboard Portal Asesor
+### 1. Dashboard Asesor
 
-Asesor membuka Portal Asesor. Terlihat header "Portal Asesor" dengan statistik Antrian Asesor 1 (0) dan Antrian Asesor 2 (0). Alert merah menunjukkan "Batas waktu penilaian: 28 Feb 2025 — Sudah lewat 392 hari". Filter Jadwal Kinerja tersedia. Bagian "Antrian Penilaian (0)" menampilkan pesan "Tidak ada laporan dalam antrian".
+Asesor membuka menu Penilaian Kinerja > Portal Asesor. Terlihat daftar pegawai yang perlu dinilai dengan status masing-masing (menunggu/sedang proses/selesai).
 
-![Portal Asesor — Dashboard penilaian kinerja](screenshots/01_asesor-dashboard.png)
+![Dashboard Asesor](screenshots/01_asesor-dashboard.png)
 
 ## Fitur yang Diuji
 
 | Fitur | Status | Keterangan |
-|-------|--------|------------|
-| Dashboard asesor | ✅ | Menampilkan antrian penilaian per tahap |
-| Statistik antrian | ✅ | Asesor 1 dan Asesor 2 terpisah |
-| Alert deadline | ✅ | Peringatan batas waktu penilaian |
-| Filter jadwal | ✅ | Dropdown filter berdasarkan jadwal kinerja |
-| Antrian penilaian | ✅ | Daftar laporan yang perlu dinilai |
+| --- | --- | --- |
+| Antrian penilaian | ✅ | Daftar pegawai yang perlu dinilai |
+| Status penilaian | ✅ | Menunggu, sedang proses, selesai |
+| Akses laporan | ✅ | Link ke detail kinerja individu |
 
 ## Catatan
 
-- Asesor harus terdaftar di tabel hrm_asesors untuk mengakses portal
-- Penilaian 2 tahap: Asesor 1 (atasan langsung) dan Asesor 2 (pimpinan)
-- Saat ini antrian kosong karena belum ada laporan yang disubmit
-- Batas waktu sudah lewat — asesor tidak bisa menilai sampai jadwal baru dibuat
+- Asesor ditunjuk oleh admin melalui menu Admin HRM > Asesor
+- Waket2 secara default memiliki akses asesor
+- Penilaian dilakukan per periode jadwal kinerja

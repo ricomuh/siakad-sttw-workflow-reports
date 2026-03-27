@@ -1,39 +1,47 @@
 # Workflow Report: Input Kinerja Tugas Tambahan Dosen
 
-**Tanggal**: 2026-04-01
-**Role**: Dosen (Budi Santoso / budi.santoso@sttw.ac.id)
+**Tanggal**: 2026-04-02
+**Role**: Dosen (Dr. Budi Santoso, M.Kom / budi.santoso@sttw.ac.id)
 **Modul**: HRM — Tugas Tambahan
 **Status**: ✅ Berhasil
 
 ## Ringkasan
 
-Workflow input tugas tambahan dosen (jabatan struktural, panitia, dll), termasuk:
-- Melihat daftar tugas tambahan yang sudah diinput
-- Form tambah tugas tambahan (ditampilkan saat periode tutup)
+Workflow input tugas tambahan oleh dosen, termasuk:
+
+- Melihat daftar tugas tambahan (panitia, koordinator, dll)
+- Mengisi form tambah tugas tambahan baru
+- Skenario periode ditutup
 
 ## Langkah-langkah
 
 ### 1. Halaman Index Tugas Tambahan
 
-Dosen membuka halaman Tugas Tambahan. Terlihat alert periode tutup dan daftar tugas tambahan yang sudah diinput dalam tabel.
+Dosen membuka halaman Tugas Tambahan. Terlihat daftar tugas dalam tabel dengan kolom nama tugas, nomor SK, tanggal mulai, dan tanggal selesai.
 
-![Daftar tugas tambahan dosen](screenshots/01_tugas-tambahan-index.png)
+![Halaman Index Tugas Tambahan](screenshots/01_tugas-tambahan-index.png)
 
-### 2. Form Tambah Tugas Tambahan (Periode Tutup)
+### 2. Form Tambah Tugas Tambahan (Periode Buka)
 
-Dosen mencoba tambah tugas tambahan. Halaman menampilkan 403 karena periode sudah tutup.
+Dosen mengklik tombol tambah. Form berisi field: Nama Tugas, Nomor SK, Tanggal Mulai, Tanggal Selesai, dan Keterangan.
 
-![Form tugas tambahan tidak tersedia — periode tutup](screenshots/02_tugas-tambahan-create.png)
+![Form Tambah Tugas Tambahan (Periode Buka)](screenshots/02_tugas-tambahan-create.png)
+
+### 3. Form Tambah Tugas Tambahan (Periode Tutup)
+
+Ketika periode pengisian ditutup, form menampilkan halaman 403 "Periode pengisian sudah tutup."
+
+![Form Tambah Tugas Tambahan (Periode Tutup)](screenshots/02_tugas-tambahan-create-closed.png)
 
 ## Fitur yang Diuji
 
 | Fitur | Status | Keterangan |
-|-------|--------|------------|
-| Daftar tugas tambahan | ✅ | Tabel data tugas yang sudah diinput |
-| Alert periode tutup | ✅ | Notifikasi visual |
-| Blokir input saat tutup | ✅ | Form mengembalikan 403 |
+| --- | --- | --- |
+| Daftar tugas tambahan | ✅ | Tabel data tugas tambahan dosen |
+| Tambah tugas | ✅ | Form input nama, SK, tanggal mulai/selesai |
+| Periode tutup | ✅ | Form tidak bisa diakses saat periode ditutup |
 
 ## Catatan
 
-- Tugas tambahan mencakup jabatan struktural, kepanitiaan, dll
-- Data ini berkontribusi ke skor kinerja dosen
+- Tugas tambahan mencakup kepanitiaan, koordinator lab, dll
+- Wajib menyertakan nomor SK sebagai bukti penugasan

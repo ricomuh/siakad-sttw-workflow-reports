@@ -1,32 +1,34 @@
-# Workflow Report: Data Penelitian Dosen (Placeholder P3M)
+# Workflow Report: Data Penelitian Dosen
 
-**Tanggal**: 2026-04-01
-**Role**: Dosen (Budi Santoso / budi.santoso@sttw.ac.id)
-**Modul**: HRM — Penelitian
+**Tanggal**: 2026-04-02
+**Role**: Dosen (Dr. Budi Santoso, M.Kom / budi.santoso@sttw.ac.id)
+**Modul**: HRM — Penelitian (P3M)
 **Status**: ✅ Berhasil
 
 ## Ringkasan
 
-Menampilkan halaman penelitian dosen. Saat ini berisi placeholder karena data akan disinkronisasi dari SIM P3M (belum terintegrasi).
+Halaman data penelitian dosen menampilkan daftar penelitian yang terdaftar.
+
+- Data placeholder dari SIM P3M
+- Mencakup judul, jenis, sumber dana, dan tahun pelaksanaan
 
 ## Langkah-langkah
 
-### 1. Halaman Penelitian (Placeholder)
+### 1. Halaman Data Penelitian
 
-Dosen membuka halaman Penelitian. Saat ini menampilkan data placeholder karena integrasi dengan SIM P3M belum tersedia. Data penelitian dosen nantinya akan ditarik otomatis dari sistem P3M.
+Dosen membuka halaman Penelitian. Terlihat daftar penelitian dalam tabel dengan kolom judul, jenis, sumber dana, dan tahun pelaksanaan.
 
-![Halaman penelitian dosen (placeholder P3M)](screenshots/01_penelitian-index.png)
+![Halaman Data Penelitian](screenshots/01_penelitian-index.png)
 
 ## Fitur yang Diuji
 
 | Fitur | Status | Keterangan |
-|-------|--------|------------|
-| Halaman penelitian | ✅ | Halaman tersedia dengan layout yang sesuai |
-| Placeholder P3M | ⏳ | Menunggu integrasi SIM P3M |
-| Read-only | ✅ | Data akan di-sync dari P3M, bukan input manual |
+| --- | --- | --- |
+| Daftar penelitian | ✅ | Tabel data penelitian dosen |
+| Info sumber dana | ✅ | Internal, Hibah Kemendikbud, dll |
 
 ## Catatan
 
-- Data penelitian akan disinkronisasi dari SIM P3M saat integrasi tersedia
-- Saat ini menampilkan data placeholder/kosong
-- Tidak ada form input manual — data bersifat read-only dari P3M
+- Data bersumber dari SIM P3M (placeholder)
+- Akan diintegrasikan dengan SIM P3M nantinya
+- Dosen tidak bisa input manual — data otomatis dari P3M

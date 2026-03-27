@@ -1,43 +1,42 @@
-# Workflow Report: Manajemen Jadwal Kinerja (Admin HRM)
+# Workflow Report: Admin Jadwal Kinerja
 
-**Tanggal**: 2026-04-01
+**Tanggal**: 2026-04-02
 **Role**: Akademik (Akademik STTW / akademik@sttw.ac.id)
-**Modul**: HRM — Admin > Jadwal Kinerja
+**Modul**: HRM — Admin Jadwal Kinerja
 **Status**: ✅ Berhasil
 
 ## Ringkasan
 
-Workflow manajemen jadwal kinerja oleh admin HRM, termasuk:
-- Melihat daftar jadwal kinerja per periode akademik
-- Membuat jadwal kinerja baru dengan batas waktu pengisian dan penilaian
+Workflow pengelolaan jadwal kinerja oleh admin akademik, termasuk:
+
+- Melihat daftar jadwal kinerja (semester, tahun, status)
+- Membuat jadwal kinerja baru dengan pengaturan periode pengisian
 
 ## Langkah-langkah
 
-### 1. Halaman Index Jadwal Kinerja
+### 1. Halaman Daftar Jadwal Kinerja
 
-Admin membuka halaman Jadwal Kinerja. Terlihat daftar jadwal per periode akademik dengan kolom: Nama, Periode Akademik, Periode Pengisian, Batas Penilaian, Status (Aktif/Non-aktif), dan Aksi (Edit/Hapus). Menu sidebar menampilkan: Dashboard Admin, Jadwal Kinerja, Manajemen Asesor, Data Dosen, Data Tendik, Impor Presensi.
+Admin membuka menu Admin HRM > Jadwal Kinerja. Terlihat tabel daftar jadwal kinerja dengan kolom nama, semester, tahun, tanggal pengisian, status aktif, dan aksi.
 
-![Daftar jadwal kinerja HRM](screenshots/01_jadwal-kinerja-index.png)
+![Halaman Daftar Jadwal Kinerja](screenshots/01_jadwal-kinerja-index.png)
 
 ### 2. Form Tambah Jadwal Kinerja
 
-Admin mengklik "+ Tambah Jadwal". Form berisi field: Nama jadwal, Periode Akademik (dropdown), Periode Pengisian (tanggal mulai-selesai), Batas Penilaian, dan Status pengisian (Dosen/Tendik toggle).
+Admin mengklik tombol tambah. Form berisi field: Nama Periode, Semester, Tahun Akademik, Tanggal Mulai Pengisian, Tanggal Selesai Pengisian, Status Aktif Dosen, dan Status Aktif Tendik.
 
-![Form tambah jadwal kinerja baru](screenshots/02_jadwal-kinerja-create.png)
+![Form Tambah Jadwal Kinerja](screenshots/02_jadwal-kinerja-create.png)
 
 ## Fitur yang Diuji
 
 | Fitur | Status | Keterangan |
-|-------|--------|------------|
-| Daftar jadwal kinerja | ✅ | Tabel dengan informasi lengkap per jadwal |
-| Status jadwal | ✅ | Badge Aktif (Dosen/Tendik) atau Non-aktif |
-| Tambah jadwal | ✅ | Form create dengan semua field yang diperlukan |
-| Edit & Hapus | ✅ | Aksi tersedia per jadwal |
-| Menu admin lengkap | ✅ | Sidebar: Dashboard, Jadwal, Asesor, Dosen, Tendik, Impor |
+| --- | --- | --- |
+| Daftar jadwal | ✅ | Tabel semua jadwal kinerja |
+| Tambah jadwal | ✅ | Form lengkap pengaturan periode |
+| Status aktif | ✅ | Toggle aktif dosen/tendik terpisah |
+| Kontrol periode | ✅ | Pengisian mulai/selesai mengontrol akses form |
 
 ## Catatan
 
-- Jadwal kinerja menentukan kapan dosen/tendik bisa mengisi data kinerja
-- Status "Aktif" berarti sedang dalam periode pengisian
-- Batas penilaian menentukan kapan asesor harus selesai menilai
-- Hanya role akademik dan waket2 yang bisa mengelola jadwal
+- Hanya satu jadwal yang boleh aktif dalam satu waktu
+- Tanggal pengisian selesai menentukan kapan form input ditutup
+- Admin perlu permission hrm.admin.manage dan hrm.jadwal.manage

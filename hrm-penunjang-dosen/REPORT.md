@@ -1,39 +1,47 @@
 # Workflow Report: Input Kinerja Penunjang Dosen
 
-**Tanggal**: 2026-04-01
-**Role**: Dosen (Budi Santoso / budi.santoso@sttw.ac.id)
+**Tanggal**: 2026-04-02
+**Role**: Dosen (Dr. Budi Santoso, M.Kom / budi.santoso@sttw.ac.id)
 **Modul**: HRM — Kegiatan Penunjang
 **Status**: ✅ Berhasil
 
 ## Ringkasan
 
-Workflow input kegiatan penunjang dosen (seminar, pelatihan, sertifikasi, dll), termasuk:
+Workflow input kinerja kegiatan penunjang oleh dosen, termasuk:
+
 - Melihat daftar kegiatan penunjang yang sudah diinput
-- Form tambah kegiatan penunjang (ditampilkan saat periode tutup)
+- Mengisi form tambah kegiatan penunjang baru
+- Skenario periode ditutup
 
 ## Langkah-langkah
 
-### 1. Halaman Index Kegiatan Penunjang
+### 1. Halaman Index Penunjang
 
-Dosen membuka halaman Kegiatan Penunjang. Terlihat alert periode tutup dan daftar kegiatan yang sudah diinput.
+Dosen membuka halaman Penunjang. Terlihat daftar kegiatan penunjang dalam tabel dengan kolom nama kegiatan, jenis, tanggal, dan peran.
 
-![Daftar kegiatan penunjang dosen](screenshots/01_penunjang-index.png)
+![Halaman Index Penunjang](screenshots/01_penunjang-index.png)
 
-### 2. Form Tambah Kegiatan Penunjang (Periode Tutup)
+### 2. Form Tambah Penunjang (Periode Buka)
 
-Dosen mencoba tambah kegiatan penunjang. Halaman menampilkan 403 karena periode sudah tutup.
+Dosen mengklik tombol tambah. Form berisi field: Nama Kegiatan, Jenis (Seminar/Workshop/dll), Tanggal, Peran, dan Keterangan.
 
-![Form penunjang tidak tersedia — periode tutup](screenshots/02_penunjang-create.png)
+![Form Tambah Penunjang (Periode Buka)](screenshots/02_penunjang-create.png)
+
+### 3. Form Tambah Penunjang (Periode Tutup)
+
+Ketika periode pengisian ditutup, form menampilkan halaman 403 "Periode pengisian sudah tutup."
+
+![Form Tambah Penunjang (Periode Tutup)](screenshots/02_penunjang-create-closed.png)
 
 ## Fitur yang Diuji
 
 | Fitur | Status | Keterangan |
-|-------|--------|------------|
-| Daftar kegiatan penunjang | ✅ | Tabel data kegiatan yang sudah diinput |
-| Alert periode tutup | ✅ | Notifikasi visual |
-| Blokir input saat tutup | ✅ | Form mengembalikan 403 |
+| --- | --- | --- |
+| Daftar penunjang | ✅ | Tabel data kegiatan penunjang |
+| Tambah penunjang | ✅ | Form input nama, jenis, tanggal, peran |
+| Periode tutup | ✅ | Form tidak bisa diakses saat periode ditutup |
 
 ## Catatan
 
-- Kegiatan penunjang mencakup seminar, pelatihan, sertifikasi, dll
-- Bukti kegiatan dapat diupload sebagai lampiran
+- Kegiatan penunjang mencakup seminar, workshop, pelatihan, dll
+- Data masuk ke penilaian kinerja dosen
