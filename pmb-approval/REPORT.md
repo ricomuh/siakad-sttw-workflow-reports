@@ -1,67 +1,37 @@
-# Workflow Report: Approval & Verifikasi PMB
+# Workflow Report: Approval PMB
 
 **Tanggal**: 2026-04-13
 **Role**: Admin Kemahasiswaan
-**Modul**: PMB — Approval (Berkas, Keuangan, TPA)
+**Modul**: PMB — Approval (Verifikasi)
 **Status**: ✅ Berhasil
 
 ## Ringkasan
 
-Workflow approval/verifikasi pendaftar melalui 3 jalur: verifikasi berkas (tahap 1), verifikasi keuangan (tahap 2 & 4), dan approval TPA (tahap 3). Termasuk aksi approve dan reject dengan feedback.
+Halaman approval PMB terdiri dari 3 tab verifikasi: Verifikasi Berkas (tahap 1), Verifikasi Keuangan (tahap 2), dan Verifikasi TPA (tahap 3). Setiap tab menampilkan daftar pendaftar yang perlu diverifikasi dengan tombol Review.
 
 ## Langkah-langkah
 
 ### 1. Verifikasi Berkas
 
-Daftar pendaftar yang menunggu verifikasi berkas:
-- Kolom: Nama, Jalur, Tahap, Status, Aksi
-- 4 pendaftar ditampilkan: 2 New (tahap 1), 1 Herregistrasi Verified (tahap 5), 1 Rejected Step 1
-- Tombol "Review" untuk membuka detail pendaftar
+Halaman verifikasi berkas menampilkan daftar pendaftar yang perlu verifikasi dokumen. Tabel memiliki kolom Nama, Jalur, Tahap, Status, dan tombol Aksi (Review). Menampilkan pendaftar dengan berbagai status (New, Herregistrasi verified, Rejected step 1/5).
 
-![Verifikasi berkas](01-approval-berkas.png)
+![Approval Berkas](screenshots/01_approval-berkas.png)
 
 ### 2. Verifikasi Keuangan
 
-Daftar pendaftar yang menunggu verifikasi pembayaran:
-- Kolom: Nama, Skema Bayar, Tahap (Biaya Pendaftaran/Herregistrasi), Status, Aksi
-- 3 pendaftar: Citra Dewi (Lunas, Biaya Pendaftaran), Eka Putri (Cicilan, Herregistrasi), Maya Anggraini (Cicilan, Biaya Pendaftaran)
-- Tombol "Check" untuk verifikasi pembayaran
+Halaman verifikasi keuangan menampilkan daftar pendaftar yang perlu verifikasi pembayaran. Pendaftar di tahap 2 dengan status Validated dan Rejected step 2 ditampilkan.
 
-![Verifikasi keuangan](02-approval-keuangan.png)
+![Approval Keuangan](screenshots/02_approval-keuangan.png)
 
-### 3. Approval TPA (Tes Potensi Akademik)
+### 3. Verifikasi TPA
 
-Daftar pendaftar yang perlu approval hasil TPA:
-- Kolom: Nama, Nilai TPA, Status Kelulusan, Aksi
-- 2 pendaftar: Dimas Prasetyo dan Kartika Sari — keduanya "Belum ada" nilai, "Belum Lulus"
-- Tombol "Override" untuk meloloskan secara manual
+Halaman verifikasi TPA menampilkan daftar pendaftar yang perlu verifikasi nilai TPA. Pendaftar di tahap 3 dengan status Payment verified dan Rejected step 3 ditampilkan.
 
-![Approval TPA](03-approval-tpa.png)
-
-### 4. Aksi: Approve Tahap 1 (Setujui)
-
-Skenario approve Rina Permatasari dari Tahap 1 → Tahap 2:
-- Klik "Setujui Tahap 1" pada detail pendaftar
-- Muncul pesan sukses: "Pendaftar berhasil diverifikasi dan lanjut ke tahap berikutnya."
-- Status berubah: Tahap 1/6 New → **Tahap 2/6 Validated**
-- Tombol berubah menjadi "Setujui Tahap 2"
-
-![Setelah approve tahap 1](04-after-approve-tahap1.png)
-
-### 5. Aksi: Tolak Pendaftar (Reject)
-
-Skenario reject Budi Santoso di Tahap 1:
-- Klik "Tolak / Revisi" pada detail pendaftar
-- Muncul pesan: "Pendaftar ditolak. Notifikasi telah dikirim."
-- Status berubah: Tahap 1/6 New → **Tahap 1/6 Rejected step 1**
-- Tombol aksi tetap tersedia untuk re-approve jika diperlukan
-
-![Setelah reject](06-after-reject.png)
+![Approval TPA](screenshots/03_approval-tpa.png)
 
 ## Catatan
 
-- Verifikasi berkas menampilkan semua pendaftar yang perlu review dokumen
-- Verifikasi keuangan menampilkan pendaftar yang menunggu konfirmasi pembayaran (pendaftaran/herregistrasi)
-- TPA override memungkinkan admin meloloskan calon tanpa ujian TPA (untuk kasus khusus)
-- Setelah approve, pendaftar otomatis naik tahap dan statusnya berubah
-- Pendaftar yang ditolak masih bisa di-approve ulang (tidak permanen)
+- Setiap tab approval menampilkan pendaftar yang relevan dengan tahap tersebut
+- Tombol "Review" mengarah ke halaman detail pendaftar untuk melakukan approval/reject
+- Status ditampilkan dengan badge berwarna sesuai kondisi
+- Pendaftar yang sudah ditolak juga muncul di tab terkait untuk kemungkinan re-review

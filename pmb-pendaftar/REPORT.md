@@ -2,70 +2,43 @@
 
 **Tanggal**: 2026-04-13
 **Role**: Admin Kemahasiswaan
-**Modul**: PMB — Daftar Pendaftar
+**Modul**: PMB — Pendaftar
 **Status**: ✅ Berhasil
 
 ## Ringkasan
 
-Halaman pengelolaan data pendaftar mahasiswa baru — menampilkan daftar semua calon mahasiswa dengan berbagai tahap dan status, serta detail biodata lengkap per pendaftar.
+Halaman daftar pendaftar PMB menampilkan semua calon mahasiswa yang mendaftar, dengan filter berdasarkan program studi, jalur, dan tahap. Detail pendaftar menampilkan biodata lengkap, data pendaftaran, dan tombol aksi approval.
 
 ## Langkah-langkah
 
-### 1. Daftar Pendaftar — Overview
+### 1. Daftar Pendaftar dengan Filter
 
-Tabel daftar pendaftar menampilkan:
-- No. Test, Nama Lengkap (+ email), Program Studi, Tahap (badge), Status (badge warna)
-- 11 pendaftar dengan berbagai status: New, Validated, Payment Verified, TPA Passed, Herregistrasi Verified, Registered, Rejected Step 1/3
+Halaman index menampilkan filter (Program Studi, Jalur, Tahap) dan tabel pendaftar dengan kolom No. Test, Nama Lengkap, Prodi, Tahap, dan Status. Status ditampilkan sebagai badge berwarna (New, Validated, Payment verified, Registered).
 
-![Daftar pendaftar](01-pendaftar-index.png)
+![Pendaftar Index dengan Filter](screenshots/01_pendaftar-index.png)
 
-### 2. Daftar Pendaftar — Lanjutan
+### 2. Tabel Pendaftar (Scroll)
 
-Scroll ke bawah menampilkan pendaftar tambahan dengan berbagai tahap.
+Tabel pendaftar menampilkan semua 17 calon mahasiswa dengan berbagai status dan tahap pendaftaran.
 
-![Daftar pendaftar lanjutan](02-pendaftar-index-bottom.png)
+![Tabel Pendaftar](screenshots/02_pendaftar-table.png)
 
-### 3. Detail Pendaftar — Tahap 1 (New)
+### 3. Detail Pendaftar — Header & Biodata
 
-Detail Rina Permatasari (PMB-2026-0001):
-- Header: Nama, No. Test, badge Tahap 1/6, status "New"
-- Pesan: "Menunggu verifikasi untuk Tahap 1."
-- Tombol aksi: **Tolak / Revisi** (merah) dan **Setujui Tahap 1** (hijau)
-- Biodata Lengkap: NIK, NISN, Nama, Tempat/Tanggal Lahir, Jenis Kelamin, Agama
-- Data Pendaftaran (sidebar): No. Pendaftaran, Program Studi, Jalur, Skema Pembayaran, Sumber Informasi
+Detail pendaftar menampilkan info header (nama, no test, tahap, status), tombol aksi (Tolak/Revisi, Setujui Tahap), dan biodata lengkap (NIK, NISN, nama, TTL, jenis kelamin) serta data pendaftaran (no pendaftaran, prodi, jalur, skema pembayaran).
 
-![Detail tahap 1](03-detail-tahap1-new.png)
+![Detail Pendaftar](screenshots/03_pendaftar-detail.png)
 
-### 4. Detail Pendaftar — Bagian Bawah
+### 4. Detail Pendaftar — Data Lengkap (Scroll)
 
-Lanjutan detail menampilkan:
-- Email Pribadi, No. HP/WhatsApp, Alamat Lengkap
-- **Data Keluarga**: Nama Ibu Kandung, No. HP Orang Tua
-- **Ukuran Atribut**: Ukuran Kaos, Ukuran Almamater
-- **Berkas Upload**: Status upload dokumen (Bukti Bayar Pendaftaran, Bukti Bayar Herregistrasi)
+Bagian bawah detail menampilkan informasi tambahan seperti alamat, dokumen yang diunggah, dan riwayat verifikasi.
 
-![Detail bagian bawah](04-detail-tahap1-bottom.png)
-
-### 5. Detail Pendaftar — Tahap 6 (Registered, Siap Konversi)
-
-Detail Gina Aulia Rahma (PMB-2026-0007):
-- Badge Tahap 6/6, status "Registered"
-- Pesan: "Menunggu verifikasi untuk Tahap 6."
-- Tombol aksi: **Finalisasi & Konversi** (hijau) — hanya muncul di tahap 6
-
-![Detail tahap 6 registered](05-detail-tahap6-registered.png)
-
-### 6. Detail Pendaftar — Ditolak (Rejected)
-
-Detail Irfan Maulana (PMB-2026-0009):
-- Badge Tahap 1/6, status "Rejected step 1" (merah)
-- Tombol aksi tetap tersedia: Tolak/Revisi dan Setujui Tahap 1 (untuk re-approve)
-
-![Detail rejected](06-detail-rejected.png)
+![Detail Pendaftar Bottom](screenshots/04_pendaftar-detail-bottom.png)
 
 ## Catatan
 
-- Setiap pendaftar memiliki detail biodata lengkap termasuk data keluarga dan ukuran atribut
-- Status badge menggunakan warna berbeda: New (kuning), Validated (biru), Registered (hijau), Rejected (merah)
-- Tombol "Finalisasi & Konversi" hanya muncul untuk pendaftar di Tahap 6 dengan status Registered
-- Pendaftar yang ditolak masih bisa di-approve ulang melalui tombol "Setujui Tahap"
+- 17 pendaftar dengan berbagai status: New, Validated, Payment verified, TPA passed, Herregistrasi verified, Registered
+- 5 pendaftar dengan status Rejected (step 1-5)
+- 1 pendaftar sudah dikonversi
+- Filter mendukung pencarian berdasarkan prodi, jalur pendaftaran, dan tahap
+- Detail menampilkan tombol "Tolak / Revisi" (merah) dan "Setujui Tahap X" (biru)

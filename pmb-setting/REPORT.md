@@ -7,37 +7,30 @@
 
 ## Ringkasan
 
-CRUD master data Setting PMB — mengelola periode pendaftaran, biaya, dan konfigurasi ujian TPA.
+Halaman Setting PMB untuk mengelola pengaturan periode pendaftaran mahasiswa baru, termasuk tahun akademik, semester, tanggal buka/tutup, dan biaya pendaftaran.
 
 ## Langkah-langkah
 
 ### 1. Daftar Setting PMB
 
-Halaman index menampilkan tabel setting dengan kolom:
-- Tahun Akademik, Semester, Periode (tanggal buka s/d tutup), Biaya, Status, Aksi (edit/hapus)
-- 2 setting tersedia: 2026/2027 Ganjil (aktif) dan 2025/2026 Ganjil (aktif)
+Halaman index menampilkan tabel setting dengan kolom Tahun Akademik, Semester, Periode, Biaya, Status, dan tombol Aksi (edit/hapus). Terdapat tombol "Tambah Setting" di header.
 
-![Setting index](01-setting-index.png)
+![Setting Index](screenshots/01_setting-index.png)
 
-### 2. Edit Setting PMB
+### 2. Form Tambah Setting
 
-Form edit menampilkan field:
-- Tahun Akademik, Semester (dropdown)
-- Tanggal Buka & Tanggal Tutup (date picker)
-- Biaya Pendaftaran & Biaya Herregistrasi (Rp)
-- Durasi Ujian (menit), Jumlah Soal, Nilai KKM
-- Pesan Selamat Datang (textarea)
+Form create untuk membuat setting PMB baru dengan field tahun akademik, semester, tanggal buka/tutup, biaya pendaftaran, biaya herregistrasi, durasi ujian, jumlah soal, dan nilai KKM.
 
-![Edit setting](02-setting-edit.png)
+![Setting Create Form](screenshots/02_setting-create-form.png)
 
-### 3. Tambah Setting Baru
+### 3. Form Edit Setting
 
-Form create dengan field yang sama seperti edit, namun kosong siap diisi.
+Form edit untuk mengubah setting yang sudah ada. Data sebelumnya terisi otomatis di form.
 
-![Create setting](03-setting-create.png)
+![Setting Edit Form](screenshots/03_setting-edit-form.png)
 
 ## Catatan
 
-- Setting bisa diaktifkan/dinonaktifkan untuk menentukan periode pendaftaran yang berlaku
-- Biaya pendaftaran dan herregistrasi terpisah
-- Konfigurasi TPA (durasi, jumlah soal, KKM) diatur per periode
+- 2 setting tersedia: 2026/2027 Ganjil dan 2025/2026 Ganjil
+- Kedua setting berstatus "Aktif"
+- Biaya pendaftaran: Rp 250.000

@@ -1,43 +1,24 @@
-# Workflow Report: Konversi Mahasiswa Baru
+# Workflow Report: Konversi Mahasiswa PMB
 
 **Tanggal**: 2026-04-13
 **Role**: Admin Kemahasiswaan
-**Modul**: PMB — Konversi
+**Modul**: PMB — Konversi Mahasiswa
 **Status**: ✅ Berhasil
 
 ## Ringkasan
 
-Proses konversi calon mahasiswa menjadi mahasiswa aktif — termasuk generate NIM otomatis, perubahan status, dan role user.
+Halaman konversi mahasiswa baru menampilkan daftar calon mahasiswa yang telah menyelesaikan seluruh tahap pendaftaran (tahap 6 - Registered) dan siap dikonversi menjadi mahasiswa aktif.
 
 ## Langkah-langkah
 
-### 1. Daftar Siap Konversi
+### 1. Daftar Calon Mahasiswa Siap Konversi
 
-Halaman menampilkan calon mahasiswa yang sudah selesai semua tahap (Tahap 6, status Registered):
-- Kolom: No. Test, Nama Lengkap, Program Studi, Jalur, Aksi
-- 2 pendaftar siap konversi:
-  - **Gina Aulia Rahma** — S1 Teknik Mesin, Reguler
-  - **Hendra Wijaya** — S1 Teknik Elektro, Prestasi
-- Tombol "Konversi" (hijau) pada setiap baris
+Halaman index menampilkan tabel calon mahasiswa yang siap dikonversi dengan kolom No Test, Nama Lengkap, Prodi, Jalur, dan tombol Aksi (Konversi). Terdapat 3 calon dari berbagai jalur (Reguler, Prestasi, Transfer).
 
-![Daftar siap konversi](01-konversi-index.png)
-
-### 2. Konfirmasi & Hasil Konversi
-
-Skenario konversi Hendra Wijaya:
-1. Klik tombol "Konversi" → muncul dialog konfirmasi: "Yakin konversi mahasiswa ini? NIM akan digenerate."
-2. Klik OK → proses konversi berjalan
-3. Muncul pesan sukses: **"Mahasiswa berhasil dikonversi dengan NIM: 26S1TE0001"**
-4. Hendra Wijaya hilang dari daftar, tersisa hanya Gina Aulia Rahma
-
-Format NIM: `{YY}{KODE_PRODI}{0001}` → `26S1TE0001`
-
-![Setelah konversi berhasil](02-konversi-after-success.png)
+![Konversi Index](screenshots/01_konversi-index.png)
 
 ## Catatan
 
-- NIM digenerate otomatis berdasarkan format: 2 digit tahun + kode prodi + 4 digit urutan
-- Konversi mengubah status mahasiswa dari "Calon" menjadi "Aktif"
-- Status pendaftaran berubah dari "registered" menjadi "converted"
-- Hanya pendaftar Tahap 6 dengan status "Registered" yang muncul di halaman konversi
-- Proses ini tidak bisa di-undo — pastikan data sudah benar sebelum konversi
+- 3 calon mahasiswa siap konversi: Gina Aulia Rahma (Reguler), Hendra Wijaya (Prestasi), Umar Faruq (Transfer)
+- Tombol "Konversi" (hijau) akan mengubah status calon menjadi mahasiswa aktif
+- Proses konversi meliputi: generate NIM, perubahan role dari mahasiswa-baru ke mahasiswa, dan update status

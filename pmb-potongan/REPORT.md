@@ -1,30 +1,35 @@
-# Workflow Report: Potongan / Diskon PMB
+# Workflow Report: Potongan PMB
 
 **Tanggal**: 2026-04-13
 **Role**: Admin Kemahasiswaan
-**Modul**: PMB — Potongan / Diskon
+**Modul**: PMB — Potongan
 **Status**: ✅ Berhasil
 
 ## Ringkasan
 
-CRUD master data potongan/diskon biaya pendaftaran — mengelola potongan berdasarkan persentase atau nominal.
+Halaman master data potongan/diskon biaya PMB untuk mengelola potongan berdasarkan jalur pendaftaran.
 
 ## Langkah-langkah
 
-### 1. Daftar Potongan / Diskon
+### 1. Daftar Potongan
 
-Halaman index menampilkan tabel dengan kolom:
-- Nama, Tipe (badge Persentase/Nominal), Nilai, Tahun Akademik, Status, Aksi
-- 4 potongan tersedia:
-  - **Potongan Alumni Keluarga**: Persentase 10% (2026/2027)
-  - **Potongan Early Bird**: Nominal Rp 500.000 (2026/2027)
-  - **Beasiswa Prestasi**: Persentase 25% (2026/2027)
-  - **Potongan Alumni**: Nominal Rp 500.000 (Semua periode)
+Halaman index menampilkan tabel potongan dengan kolom Nama, Jalur, Jumlah/Persentase, dan tombol Aksi. Terdapat tombol "Tambah Potongan" di header.
 
-![Potongan index](01-potongan-index.png)
+![Potongan Index](screenshots/01_potongan-index.png)
+
+### 2. Form Tambah Potongan
+
+Form create untuk menambah potongan baru dengan field nama, jalur pendaftaran, jenis (nominal/persentase), dan nilai potongan.
+
+![Potongan Create Form](screenshots/02_potongan-create-form.png)
+
+### 3. Form Edit Potongan
+
+Form edit untuk mengubah data potongan yang sudah ada.
+
+![Potongan Edit Form](screenshots/03_potongan-edit-form.png)
 
 ## Catatan
 
-- Tipe potongan bisa Persentase (%) atau Nominal (Rp) — ditampilkan dengan badge berwarna
-- Potongan bisa berlaku untuk tahun akademik tertentu atau semua periode
-- Semua potongan berstatus Aktif
+- Data potongan terkait dengan jalur pendaftaran
+- Mendukung potongan berbasis nominal atau persentase
