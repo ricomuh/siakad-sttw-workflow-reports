@@ -1,53 +1,54 @@
-# Workflow Report: P3M Dosen — Pengajuan Proposal
+# P3M Dosen - Proposal
 
-**Tanggal**: 2026-04-01
-**Role**: Dosen
-**Modul**: P3M (Penelitian & Pengabdian Masyarakat) — Portal Dosen
-**Status**: ✅ Berhasil
+**Role:** Dosen
 
-## Ringkasan
+## Deskripsi
 
-Dokumentasi alur pengajuan proposal penelitian/pengabdian dari sisi dosen. Dosen melihat riwayat proposal, membuat proposal baru, mengisi detail dan anggota, serta submit untuk seleksi.
+Manajemen proposal penelitian dan pengabdian oleh dosen. Dosen dapat membuat, mengedit, dan mensubmit proposal.
 
-## Langkah-langkah
+## Fitur
 
-### 1. Riwayat Proposal Penelitian
+- Index Penelitian: Daftar proposal penelitian milik dosen
+- Index Pengabdian: Daftar proposal pengabdian milik dosen
+- Create: Form buat proposal baru (judul, abstrak, bidang fokus, rumpun ilmu, anggota, RAB, dll)
+- Show: Detail proposal lengkap dengan status, penilaian, dokumen
+- Edit: Edit proposal (hanya saat status Draft/Ditolak)
+- Submit: Kirim proposal untuk seleksi
+- Upload Dokumen: Upload file pendukung proposal
 
-Dosen login dan membuka menu P3M → Penelitian. Halaman menampilkan daftar proposal dengan filter tahun dan status. Tabel menampilkan judul, batch aktivasi, status (Draft/Menunggu Seleksi/Diterima), dan tanggal pengajuan.
+## Screenshots
 
-![Daftar Proposal Dosen](screenshots/01_dosen-proposal-list.png)
+### Proposal penelitian index
 
-### 2. Detail Proposal
+![proposal penelitian index](screenshots/01_proposal-penelitian-index.png)
 
-Dosen klik "Detail" pada proposal untuk melihat informasi lengkap: judul, abstrak, skema, bidang fokus, rumpun ilmu, anggota tim (dosen & mahasiswa), serta dokumen yang dilampirkan.
+### Proposal pengabdian index
 
-![Detail Proposal](screenshots/02_dosen-proposal-detail.png)
+![proposal pengabdian index](screenshots/02_proposal-pengabdian-index.png)
 
-### 3. Detail Proposal (Lanjutan)
+### Proposal penelitian create (scrolled)
 
-Scroll ke bawah menampilkan informasi tambahan seperti daftar anggota, dokumen pendukung (proposal PDF, surat tugas, dll), dan histori status proposal.
+![proposal penelitian create (scrolled)](screenshots/03_proposal-penelitian-create-scrolled.png)
 
-![Detail Proposal Scroll](screenshots/03_dosen-proposal-detail-scroll.png)
+### Proposal penelitian create
 
-### 4. Form Ajukan Proposal Baru
+![proposal penelitian create](screenshots/03_proposal-penelitian-create.png)
 
-Dosen klik "Ajukan Proposal" untuk membuat proposal baru. Form mencakup:
-- Pilih batch aktivasi yang sedang dibuka
-- Judul penelitian
-- Abstrak
-- Bidang fokus dan rumpun ilmu
-- Anggota tim dosen (search by nama/NIP)
-- Anggota tim mahasiswa (search by nama/NIM)
-- Upload dokumen (Proposal PDF wajib)
+### Proposal penelitian show (scrolled)
 
-![Form Ajukan Proposal](screenshots/04_dosen-proposal-create.png)
+![proposal penelitian show (scrolled)](screenshots/04_proposal-penelitian-show-scrolled.png)
 
-## Catatan
+### Proposal penelitian show
 
-- Dosen hanya bisa mengajukan proposal pada aktivasi yang statusnya "Buka" dan belum melewati tanggal tutup
-- Proposal berstatus Draft bisa diedit dan dihapus; yang sudah disubmit hanya bisa dilihat
-- Submit proposal memerlukan minimal 1 dokumen Proposal PDF yang sudah diunggah
-- Proposal yang ditolak bisa disubmit ulang setelah direvisi (status Ditolak → bisa submit ulang)
-- Pencarian anggota dosen menggunakan AJAX endpoint `api.siakad.dosen.search`
-- Eligibility check: jika dosen memiliki luaran yang belum dipenuhi dari proposal sebelumnya, akan ditampilkan peringatan di halaman create
-- Status proposal: Draft → Pending (Menunggu Seleksi) → Diterima/Ditolak/Direvisi → Selesai
+![proposal penelitian show](screenshots/04_proposal-penelitian-show.png)
+
+### Proposal penelitian edit (scrolled)
+
+![proposal penelitian edit (scrolled)](screenshots/05_proposal-penelitian-edit-scrolled.png)
+
+### Proposal penelitian edit
+
+![proposal penelitian edit](screenshots/05_proposal-penelitian-edit.png)
+
+---
+*Generated: 2026-04-13*

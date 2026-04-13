@@ -1,45 +1,37 @@
-# Workflow Report: P3M Admin — Seleksi Proposal
+# P3M Admin - Seleksi Proposal
 
-**Tanggal**: 2026-04-01
-**Role**: Admin
-**Modul**: P3M (Penelitian & Pengabdian Masyarakat) — Seleksi
-**Status**: ✅ Berhasil
+**Role:** Admin
 
-## Ringkasan
+## Deskripsi
 
-Dokumentasi alur seleksi proposal P3M dari sisi admin. Admin melihat daftar proposal yang masuk, menilai (grading) berdasarkan kriteria penilaian, dan memberikan keputusan (terima/tolak/revisi).
+Proses seleksi proposal penelitian dan pengabdian. Admin dapat melihat, menilai, dan memutuskan status proposal.
 
-## Langkah-langkah
+## Fitur
 
-### 1. Daftar Seleksi Penelitian
+- Index Penelitian: Daftar proposal penelitian yang masuk untuk seleksi
+- Index Pengabdian: Daftar proposal pengabdian yang masuk untuk seleksi
+- Detail/Show: Detail proposal lengkap dengan dokumen, anggota, RAB
+- Penilaian: Form penilaian per kriteria (skor 1-5 × bobot)
+- Keputusan: Terima/Tolak proposal
+- Cetak: Cetak berita acara seleksi (PDF)
 
-Admin membuka halaman seleksi penelitian yang menampilkan semua proposal yang sudah disubmit. Tabel menampilkan judul, ketua peneliti, skema, skor total, dan status. Dapat di-sort berdasarkan skor.
+## Screenshots
 
-![Seleksi Penelitian List](screenshots/01_seleksi-penelitian-list.png)
+### Seleksi penelitian index
 
-### 2. Detail Proposal (Pending)
+![seleksi penelitian index](screenshots/01_seleksi-penelitian-index.png)
 
-Admin klik "Detail" pada proposal berstatus Pending untuk melihat informasi lengkap: abstrak, anggota tim, rumpun ilmu, bidang fokus, dan dokumen yang dilampirkan.
+### Seleksi pengabdian index
 
-![Detail Proposal Pending](screenshots/02_seleksi-detail-pending.png)
+![seleksi pengabdian index](screenshots/02_seleksi-pengabdian-index.png)
 
-### 3. Form Penilaian (Grading)
+### Seleksi penelitian show (scrolled)
 
-Di halaman detail, admin dapat menilai proposal berdasarkan kriteria yang sudah dikonfigurasi. Setiap kriteria memiliki bobot, dan admin memberikan skor 1-5. Total skor dihitung otomatis (bobot × skor).
+![seleksi penelitian show (scrolled)](screenshots/03_seleksi-penelitian-show-scrolled.png)
 
-![Form Penilaian](screenshots/03_seleksi-grading-form.png)
+### Seleksi penelitian show
 
-### 4. Tombol Keputusan
+![seleksi penelitian show](screenshots/03_seleksi-penelitian-show.png)
 
-Setelah menilai, admin dapat memberikan keputusan: Terima, Revisi, atau Tolak proposal. Masing-masing memerlukan catatan/keterangan. Proposal yang diterima otomatis membuat SPK record.
-
-![Tombol Keputusan](screenshots/04_seleksi-decision-buttons.png)
-
-## Catatan
-
-- Skor penilaian dihitung sebagai `bobot × skor` per kriteria, lalu dijumlahkan menjadi `total_skor_seleksi`
-- Admin dapat melakukan sort tabel berdasarkan skor total (tertinggi ke terendah) untuk memudahkan ranking
-- Proposal yang diterima otomatis generate record SPK (Surat Perjanjian Kerja)
-- Proposal yang ditolak/direvisi mengirim notifikasi ke dosen pengaju (fitur 32O — planned)
-- Admin dapat "unlock" proposal yang sudah dinilai untuk mengubah keputusan (fitur keamanan)
-- Filter berdasarkan status dan skema tersedia di halaman list
+---
+*Generated: 2026-04-13*
