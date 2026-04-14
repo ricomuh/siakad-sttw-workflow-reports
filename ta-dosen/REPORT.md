@@ -1,46 +1,68 @@
-# TA — Dosen (Dr. Budi Santoso, M.Kom)
+# Workflow Report: Tugas Akhir — Dosen
 
-> Direkam: 2026-03-25  
-> Role: **Dosen (budi.santoso@sttw.ac.id)**  
-> Modul: **TA**  
-> Status: ✅ Berhasil
+**Tanggal**: 2026-04-14
+**Role**: Dosen (budi.santoso@sttw.ac.id — Dr. Budi Santoso, M.Kom)
+**Modul**: SISKA — Tugas Akhir
+**Status**: ✅ Berhasil (5/5 halaman OK)
 
 ## Ringkasan
 
-Workflow Tugas Akhir dari sisi dosen pembimbing. Menampilkan daftar mahasiswa bimbingan, logbook bimbingan, jadwal sidang, dan proposal yang perlu ditinjau.
+Dokumentasi alur kerja dosen pembimbing TA. Dosen memiliki akses ke 4 menu utama: Bimbingan, Logbook Mahasiswa, Proposal Masuk, dan Sidang.
 
-## Halaman
+## Langkah-langkah
 
-| # | Halaman | URL | Status |
-|---|---------|-----|--------|
-| 01 | Bimbingan TA | `/siska/ta/dosen/bimbingan` | ✅ OK |
-| 02 | Logbook Bimbingan TA | `/siska/ta/dosen/logbooks` | ✅ OK |
-| 03 | Sidang TA | `/siska/ta/dosen/sidangs` | ✅ OK |
-| 04 | Usulan Proposal TA | `/siska/ta/dosen/proposals` | ✅ OK |
+### 1. Bimbingan — Daftar Mahasiswa Bimbingan
+**URL**: `/siska/ta/dosen/bimbingan`
+**Status**: ✅ OK
 
-## Screenshots
+Menampilkan daftar mahasiswa yang dibimbing untuk TA. Tabel: Mahasiswa, NIM, Judul, Progress, Status.
 
-### 1. Bimbingan Tugas Akhir
+![Bimbingan Index](screenshots/01_bimbingan-index.png)
 
-Daftar mahasiswa bimbingan TA.
+---
 
-![Bimbingan TA](screenshots/01_bimbingan.png)
+### 2. Logbook Mahasiswa — Daftar
+**URL**: `/siska/ta/dosen/logbooks`
+**Status**: ✅ OK
 
-### 2. Logbook Bimbingan TA
+Menampilkan daftar mahasiswa bimbingan beserta progress logbook. Tabel: Mahasiswa, NIM, Judul, Progress. Aksi "Cek Logbook" untuk melihat detail logbook tiap mahasiswa.
 
-Catatan bimbingan mahasiswa TA.
+![Logbook Index](screenshots/02_logbook-index.png)
 
-![Logbook bimbingan TA](screenshots/02_logbooks.png)
+---
 
-### 3. Sidang TA — Dosen
+### 3. Proposal Masuk
+**URL**: `/siska/ta/dosen/proposals`
+**Status**: ✅ OK
 
-Daftar jadwal sidang TA.
+Menampilkan proposal TA yang memerlukan review dosen. Dosen dapat melihat dan memberikan feedback pada proposal mahasiswa bimbingannya.
 
-![Sidang TA](screenshots/03_sidangs.png)
+![Proposals Index](screenshots/03_proposals-index.png)
 
-### 4. Usulan Proposal TA
+---
 
-Daftar proposal yang perlu ditinjau.
+### 4. Jadwal Sidang
+**URL**: `/siska/ta/dosen/sidangs`
+**Status**: ✅ OK
 
-![Usulan proposal TA](screenshots/04_proposals.png)
+Menampilkan jadwal sidang TA dimana dosen berperan sebagai pembimbing atau penguji.
 
+![Sidang Index](screenshots/04_sidang-index.png)
+
+---
+
+### 5. Logbook Detail — Cek Logbook Mahasiswa
+**URL**: `/siska/ta/dosen/logbooks/{registration}`
+**Status**: ✅ OK
+
+Detail logbook mahasiswa. Menampilkan daftar entri logbook yang dikirim mahasiswa. Dosen dapat memvalidasi dan memberikan komentar pada setiap entri.
+
+![Logbook Detail](screenshots/05_logbook-detail.png)
+
+---
+
+## Catatan
+
+- Semua halaman dosen TA berfungsi tanpa error
+- Dr. Budi Santoso memiliki 3 mahasiswa bimbingan TA
+- Dosen dapat memvalidasi logbook dan mereview proposal dari halaman masing-masing

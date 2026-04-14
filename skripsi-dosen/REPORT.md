@@ -1,46 +1,76 @@
-# Skripsi — Dosen (Dr. Budi Santoso, M.Kom)
+# Workflow Report: Skripsi — Dosen
 
-> Direkam: 2026-03-25  
-> Role: **Dosen (budi.santoso@sttw.ac.id)**  
-> Modul: **Skripsi**  
-> Status: ✅ Berhasil
+**Tanggal**: 2026-04-14
+**Role**: Dosen (budi.santoso@sttw.ac.id — Dr. Budi Santoso, M.Kom)
+**Modul**: SISKA — Skripsi
+**Status**: ✅ Berhasil (5/5 halaman OK)
 
 ## Ringkasan
 
-Workflow Skripsi dari sisi dosen pembimbing. Menampilkan daftar mahasiswa bimbingan, logbook bimbingan, jadwal sidang, dan proposal yang perlu ditinjau.
+Dokumentasi alur kerja dosen pembimbing Skripsi. Dosen memiliki akses ke 4 menu: Bimbingan, Logbook Mahasiswa, Proposal Masuk, dan Sidang.
 
-## Halaman
+## Langkah-langkah
 
-| # | Halaman | URL | Status |
-|---|---------|-----|--------|
-| 01 | Bimbingan Skripsi | `/siska/skripsi/dosen/bimbingan` | ✅ OK |
-| 02 | Logbook Bimbingan Skripsi | `/siska/skripsi/dosen/logbooks` | ✅ OK |
-| 03 | Sidang Skripsi | `/siska/skripsi/dosen/sidangs` | ✅ OK |
-| 04 | Usulan Proposal Skripsi | `/siska/skripsi/dosen/proposals` | ✅ OK |
+### 1. Bimbingan — Daftar Mahasiswa
+**URL**: `/siska/skripsi/dosen/bimbingan`
+**Status**: ✅ OK
 
-## Screenshots
+Menampilkan daftar mahasiswa skripsi yang dibimbing. Tabel: Mahasiswa, NIM, Judul, Progress, Status.
 
-### 1. Bimbingan Skripsi
+![Bimbingan Index](screenshots/01_bimbingan-index.png)
 
-Daftar mahasiswa bimbingan skripsi.
+---
 
-![Bimbingan Skripsi](screenshots/01_bimbingan.png)
+### 2. Logbook Mahasiswa — Daftar
+**URL**: `/siska/skripsi/dosen/logbooks`
+**Status**: ✅ OK
 
-### 2. Logbook Bimbingan Skripsi
+Daftar mahasiswa bimbingan beserta progress logbook. Aksi "Cek Logbook" untuk review logbook tiap mahasiswa.
 
-Catatan bimbingan mahasiswa skripsi.
+Data (4 mahasiswa):
+| Mahasiswa | NIM | Status |
+|---|---|---|
+| Amalia Zulaika | 2024881612 | Bimbingan |
+| Garan Damanik | 2022451865 | Lulus |
+| Dalimin Yuliarti | 2023701515 | Bimbingan |
+| Ahmad Rizki Nugraha | 202110001 | Bimbingan |
 
-![Logbook bimbingan Skripsi](screenshots/02_logbooks.png)
+![Logbook Index](screenshots/02_logbook-index.png)
 
-### 3. Sidang Skripsi — Dosen
+---
 
-Daftar jadwal sidang skripsi.
+### 3. Proposal Masuk
+**URL**: `/siska/skripsi/dosen/proposals`
+**Status**: ✅ OK
 
-![Sidang Skripsi](screenshots/03_sidangs.png)
+Proposal skripsi yang memerlukan review dosen. Dosen dapat memberikan feedback dan approval pada proposal mahasiswa.
 
-### 4. Usulan Proposal Skripsi
+![Proposals Index](screenshots/03_proposals-index.png)
 
-Daftar proposal yang perlu ditinjau.
+---
 
-![Usulan proposal Skripsi](screenshots/04_proposals.png)
+### 4. Jadwal Sidang
+**URL**: `/siska/skripsi/dosen/sidangs`
+**Status**: ✅ OK
 
+Jadwal sidang skripsi dimana dosen berperan sebagai pembimbing atau penguji.
+
+![Sidang Index](screenshots/04_sidang-index.png)
+
+---
+
+### 5. Logbook Detail — Cek Logbook Mahasiswa
+**URL**: `/siska/skripsi/dosen/logbooks/{registration}`
+**Status**: ✅ OK
+
+Detail logbook mahasiswa. Dosen dapat memvalidasi dan memberikan komentar pada setiap entri logbook bimbingan skripsi.
+
+![Logbook Detail](screenshots/05_logbook-detail.png)
+
+---
+
+## Catatan
+
+- Semua halaman dosen Skripsi berfungsi tanpa error
+- Dr. Budi Santoso membimbing 4 mahasiswa skripsi
+- Struktur dan fitur identik dengan modul TA dari sisi dosen

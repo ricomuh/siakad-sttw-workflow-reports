@@ -1,39 +1,167 @@
-# KKN — Dosen DPL (Dr. Budi Santoso, M.Kom)
+# Workflow Report: KKN — Dosen (DPL)
 
-> Direkam: 2026-03-25  
-> Role: **Dosen (budi.santoso@sttw.ac.id)**  
-> Modul: **KKN**  
-> Status: ✅ Berhasil
+**Tanggal**: 2026-04-14
+**Role**: Dosen (Dr. Budi Santoso, M.Kom — budi.santoso@sttw.ac.id)
+**Modul**: SISKA — KKN
+**Status**: ⚠️ Sebagian Berhasil
 
 ## Ringkasan
 
-Workflow KKN dari sisi Dosen Pembimbing Lapangan (DPL). Menampilkan logbook mahasiswa bimbingan, daftar peserta kelompok, dan form penilaian KKN.
+Dokumentasi alur kerja dosen pembimbing lapangan (DPL) dalam modul KKN. Dosen DPL memiliki akses ke 3 halaman utama melalui prefix `/siska/kkn/dpl/`: **Kelompok Bimbingan** (participants), **Logbook Mahasiswa** (logbooks + review), dan **Nilai KKN** (nilai). Halaman Monitoring, Seminar, dan Rekap Dosen mengembalikan **403 Forbidden** — kemungkinan hanya untuk role admin/kaprodi.
 
-## Halaman
+## Langkah-langkah
 
-| # | Halaman | URL | Status |
-|---|---------|-----|--------|
-| 01 | Logbook Mahasiswa KKN | `/siska/kkn/dpl/logbooks` | ✅ OK |
-| 02 | Kelompok Bimbingan KKN | `/siska/kkn/dpl/participants` | ✅ OK |
-| 03 | Input Nilai KKN | `/siska/kkn/dpl/nilai` | ✅ OK |
+### 1. Login & Dashboard
 
-## Screenshots
+- **URL**: `http://127.0.0.1:8000/dashboard`
+- **Status**: ✅ Berhasil
+- Login menggunakan state file `dosen-auth.json`, redirect otomatis ke dashboard.
 
-### 1. Logbook Mahasiswa KKN
+![Dashboard](screenshots/01-dashboard.png)
 
-Daftar logbook mahasiswa bimbingan KKN.
+---
 
-![Logbook mahasiswa KKN](screenshots/01_logbooks.png)
+### 2. Kelompok Bimbingan (DPL Participants)
 
-### 2. Kelompok Bimbingan KKN
+- **URL**: `http://127.0.0.1:8000/siska/kkn/dpl/participants`
+- **Page Title**: Kelompok Bimbingan KKN - SIAKAD STTW
+- **Status**: ✅ Berhasil
 
-Daftar peserta dalam kelompok DPL.
+Menampilkan daftar kelompok KKN yang dibimbing oleh dosen. Terdapat:
+- **Kelompok KKN 1** — Desa Gentan, Baki, Sukoharjo
+- Tabel berisi kolom: No, NIM, Nama, Status, Logbook
+- Data mahasiswa:
+  | No | NIM | Nama | Status | Logbook |
+  |----|-----|------|--------|---------|
+  | 1 | 2024881612 | Amalia Zulaika | Diterima | 6 entries |
+  | 2 | 2023701515 | Dalimin Yuliarti | Diterima | 6 entries |
+- Fitur search (textbox "Cari...") tersedia
 
-![Kelompok bimbingan KKN](screenshots/02_participants.png)
+![DPL Participants](screenshots/02-dpl-participants.png)
 
-### 3. Input Nilai KKN
+---
 
-Form penilaian mahasiswa KKN.
+### 3. Logbook Mahasiswa (DPL Logbooks)
 
-![Input nilai KKN](screenshots/03_nilai.png)
+- **URL**: `http://127.0.0.1:8000/siska/kkn/dpl/logbooks`
+- **Page Title**: Logbook Mahasiswa KKN - SIAKAD STTW
+- **Status**: ✅ Berhasil
 
+Menampilkan daftar logbook mahasiswa bimbingan untuk di-review. Fitur:
+- Filter berdasarkan DPL, Status, dan tombol "Filter"
+- Tabel berisi kolom: Tanggal, Mahasiswa, Kelompok, Aktivitas, Status, Aksi
+- Contoh data logbook:
+  | Tanggal | Mahasiswa | Kelompok | Aktivitas | Status | Aksi |
+  |---------|-----------|----------|-----------|--------|------|
+  | 13 Apr 2026 | Amalia Zulaika | Kelompok KKN 1 | Kerja bakti pembersihan lingkungan desa | Pending | Review |
+  | 13 Apr 2026 | Dalimin Yuliarti | Kelompok KKN 1 | Kerja bakti pembersihan lingkungan desa | Pending | Review |
+  | 12 Apr 2026 | Amalia Zulaika | Kelompok KKN 1 | Pendampingan pemasaran online produk lokal | Pending | Review |
+- Tombol "Review" mengarah ke halaman validasi logbook
+
+![DPL Logbooks](screenshots/03-dpl-logbooks.png)
+
+---
+
+### 4. Review Logbook (Detail Validasi)
+
+- **URL**: `http://127.0.0.1:8000/siska/kkn/dpl/logbooks/6/validate`
+- **Page Title**: Review Logbook KKN - SIAKAD STTW
+- **Status**: ✅ Berhasil
+
+Halaman detail untuk memvalidasi logbook individual. Terdiri dari:
+- **Detail Logbook**: informasi Mahasiswa, Tanggal, Aktivitas, Status
+- **Validasi Logbook**: form dengan pilihan:
+  - Radio button: **Setujui** / **Tolak**
+  - Textbox: Komentar opsional
+  - Tombol: **Simpan**
+
+![Logbook Review Detail](screenshots/08-logbook-review-detail.png)
+
+---
+
+### 5. Nilai KKN (DPL Nilai)
+
+- **URL**: `http://127.0.0.1:8000/siska/kkn/dpl/nilai`
+- **Page Title**: Nilai KKN - SIAKAD STTW
+- **Status**: ✅ Berhasil
+
+Halaman input nilai KKN per kelompok. Terdapat:
+- Heading: **Kelompok KKN 1 — Desa Gentan**
+- Filter berdasarkan DPL
+- Tabel berisi kolom: NIM, Nama, Nilai DPL, Catatan, Aksi
+- Setiap baris memiliki:
+  - **Spinbutton** untuk input nilai
+  - **Textbox** "Catatan" untuk catatan penilaian
+  - **Tombol "Simpan"** per mahasiswa
+- Data mahasiswa:
+  | NIM | Nama | Nilai DPL | Catatan |
+  |-----|------|-----------|---------|
+  | 2024881612 | Amalia Zulaika | - | - |
+  | 2023701515 | Dalimin Yuliarti | - | - |
+
+![DPL Nilai](screenshots/04-dpl-nilai.png)
+
+---
+
+### 6. Monitoring KKN
+
+- **URL**: `http://127.0.0.1:8000/siska/kkn/monitoring`
+- **Page Title**: Forbidden
+- **Status**: ❌ 403 Forbidden
+
+Halaman monitoring tidak dapat diakses oleh role dosen. Kemungkinan hanya tersedia untuk admin/kaprodi.
+
+![Monitoring Forbidden](screenshots/05-monitoring-forbidden.png)
+
+---
+
+### 7. Seminar KKN
+
+- **URL**: `http://127.0.0.1:8000/siska/kkn/seminar`
+- **Page Title**: Forbidden
+- **Status**: ❌ 403 Forbidden
+
+Halaman seminar tidak dapat diakses oleh role dosen. Kemungkinan memerlukan permission `siska.kkn.seminar.*`.
+
+![Seminar Forbidden](screenshots/06-seminar-forbidden.png)
+
+---
+
+### 8. Rekap Dosen KKN
+
+- **URL**: `http://127.0.0.1:8000/siska/kkn/rekap-dosen`
+- **Page Title**: Forbidden
+- **Status**: ❌ 403 Forbidden
+
+Halaman rekap dosen tidak dapat diakses. Kemungkinan hanya untuk admin/kaprodi.
+
+![Rekap Dosen Forbidden](screenshots/07-rekap-dosen-forbidden.png)
+
+---
+
+## Ringkasan Akses DPL
+
+| Halaman | URL | Status |
+|---------|-----|--------|
+| Dashboard | `/dashboard` | ✅ Berhasil |
+| Kelompok Bimbingan | `/siska/kkn/dpl/participants` | ✅ Berhasil |
+| Logbook Mahasiswa | `/siska/kkn/dpl/logbooks` | ✅ Berhasil |
+| Review Logbook | `/siska/kkn/dpl/logbooks/{id}/validate` | ✅ Berhasil |
+| Nilai KKN | `/siska/kkn/dpl/nilai` | ✅ Berhasil |
+| Monitoring | `/siska/kkn/monitoring` | ❌ 403 Forbidden |
+| Seminar | `/siska/kkn/seminar` | ❌ 403 Forbidden |
+| Rekap Dosen | `/siska/kkn/rekap-dosen` | ❌ 403 Forbidden |
+
+## Catatan
+
+1. **Route structure**: Rute DPL KKN berada di prefix `/siska/kkn/dpl/`, bukan `/siska/dosen/kkn/` seperti yang mungkin diharapkan. Ini konsisten dengan controller `Siska\Kkn\DplController`.
+
+2. **Forbidden pages**: Halaman Monitoring (`/siska/kkn/monitoring`), Seminar (`/siska/kkn/seminar`), dan Rekap Dosen (`/siska/kkn/rekap-dosen`) mengembalikan 403 Forbidden. Halaman-halaman ini kemungkinan dilindungi oleh permission khusus admin/kaprodi (bukan permission DPL).
+
+3. **Data tersedia**: Terdapat data test yang cukup — 2 mahasiswa (Amalia Zulaika, Dalimin Yuliarti) dengan masing-masing 6 logbook entries di Kelompok KKN 1 (Desa Gentan, Baki, Sukoharjo).
+
+4. **Logbook status**: Semua logbook yang ditampilkan berstatus "Pending" — belum ada yang di-review/validasi oleh DPL.
+
+5. **Nilai belum diinput**: Semua nilai DPL masih kosong (ditampilkan sebagai "-").
+
+6. **Tidak ada bug/error 500**: Semua halaman yang accessible berfungsi normal. Halaman forbidden menampilkan response yang benar (403) sesuai authorization.
