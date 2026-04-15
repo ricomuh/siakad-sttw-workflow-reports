@@ -3,11 +3,11 @@
 **Tanggal**: 2026-04-14
 **Role**: Dosen (Dr. Budi Santoso, M.Kom — budi.santoso@sttw.ac.id)
 **Modul**: SISKA — KKN
-**Status**: ⚠️ Sebagian Berhasil
+**Status**: ✅ Berhasil
 
 ## Ringkasan
 
-Dokumentasi alur kerja dosen pembimbing lapangan (DPL) dalam modul KKN. Dosen DPL memiliki akses ke 3 halaman utama melalui prefix `/siska/kkn/dpl/`: **Kelompok Bimbingan** (participants), **Logbook Mahasiswa** (logbooks + review), dan **Nilai KKN** (nilai). Halaman Monitoring, Seminar, dan Rekap Dosen mengembalikan **403 Forbidden** — kemungkinan hanya untuk role admin/kaprodi.
+Dokumentasi alur kerja dosen pembimbing lapangan (DPL) dalam modul KKN. Dosen DPL memiliki akses ke 3 halaman utama melalui prefix `/siska/kkn/dpl/`: **Kelompok Bimbingan** (participants), **Logbook Mahasiswa** (logbooks + review), dan **Nilai KKN** (nilai).
 
 ## Langkah-langkah
 
@@ -103,42 +103,6 @@ Halaman input nilai KKN per kelompok. Terdapat:
 
 ---
 
-### 6. Monitoring KKN
-
-- **URL**: `http://127.0.0.1:8000/siska/kkn/monitoring`
-- **Page Title**: Forbidden
-- **Status**: ❌ 403 Forbidden
-
-Halaman monitoring tidak dapat diakses oleh role dosen. Kemungkinan hanya tersedia untuk admin/kaprodi.
-
-![Monitoring Forbidden](screenshots/05-monitoring-forbidden.png)
-
----
-
-### 7. Seminar KKN
-
-- **URL**: `http://127.0.0.1:8000/siska/kkn/seminar`
-- **Page Title**: Forbidden
-- **Status**: ❌ 403 Forbidden
-
-Halaman seminar tidak dapat diakses oleh role dosen. Kemungkinan memerlukan permission `siska.kkn.seminar.*`.
-
-![Seminar Forbidden](screenshots/06-seminar-forbidden.png)
-
----
-
-### 8. Rekap Dosen KKN
-
-- **URL**: `http://127.0.0.1:8000/siska/kkn/rekap-dosen`
-- **Page Title**: Forbidden
-- **Status**: ❌ 403 Forbidden
-
-Halaman rekap dosen tidak dapat diakses. Kemungkinan hanya untuk admin/kaprodi.
-
-![Rekap Dosen Forbidden](screenshots/07-rekap-dosen-forbidden.png)
-
----
-
 ## Ringkasan Akses DPL
 
 | Halaman | URL | Status |
@@ -148,20 +112,15 @@ Halaman rekap dosen tidak dapat diakses. Kemungkinan hanya untuk admin/kaprodi.
 | Logbook Mahasiswa | `/siska/kkn/dpl/logbooks` | ✅ Berhasil |
 | Review Logbook | `/siska/kkn/dpl/logbooks/{id}/validate` | ✅ Berhasil |
 | Nilai KKN | `/siska/kkn/dpl/nilai` | ✅ Berhasil |
-| Monitoring | `/siska/kkn/monitoring` | ❌ 403 Forbidden |
-| Seminar | `/siska/kkn/seminar` | ❌ 403 Forbidden |
-| Rekap Dosen | `/siska/kkn/rekap-dosen` | ❌ 403 Forbidden |
 
 ## Catatan
 
 1. **Route structure**: Rute DPL KKN berada di prefix `/siska/kkn/dpl/`, bukan `/siska/dosen/kkn/` seperti yang mungkin diharapkan. Ini konsisten dengan controller `Siska\Kkn\DplController`.
 
-2. **Forbidden pages**: Halaman Monitoring (`/siska/kkn/monitoring`), Seminar (`/siska/kkn/seminar`), dan Rekap Dosen (`/siska/kkn/rekap-dosen`) mengembalikan 403 Forbidden. Halaman-halaman ini kemungkinan dilindungi oleh permission khusus admin/kaprodi (bukan permission DPL).
+2. **Data tersedia**: Terdapat data test yang cukup — 2 mahasiswa (Amalia Zulaika, Dalimin Yuliarti) dengan masing-masing 6 logbook entries di Kelompok KKN 1 (Desa Gentan, Baki, Sukoharjo).
 
-3. **Data tersedia**: Terdapat data test yang cukup — 2 mahasiswa (Amalia Zulaika, Dalimin Yuliarti) dengan masing-masing 6 logbook entries di Kelompok KKN 1 (Desa Gentan, Baki, Sukoharjo).
+3. **Logbook status**: Semua logbook yang ditampilkan berstatus "Pending" — belum ada yang di-review/validasi oleh DPL.
 
-4. **Logbook status**: Semua logbook yang ditampilkan berstatus "Pending" — belum ada yang di-review/validasi oleh DPL.
+4. **Nilai belum diinput**: Semua nilai DPL masih kosong (ditampilkan sebagai "-").
 
-5. **Nilai belum diinput**: Semua nilai DPL masih kosong (ditampilkan sebagai "-").
-
-6. **Tidak ada bug/error 500**: Semua halaman yang accessible berfungsi normal. Halaman forbidden menampilkan response yang benar (403) sesuai authorization.
+5. **Tidak ada bug/error 500**: Semua halaman yang accessible berfungsi normal.

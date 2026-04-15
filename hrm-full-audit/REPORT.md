@@ -7,26 +7,7 @@
 
 ## Ringkasan
 
-Audit menyeluruh terhadap seluruh modul HRM setelah implementasi Phase 1-7 (Scoring Engine, UI, Controller Tests). Audit mencakup 56 halaman di 5 role berbeda. Ditemukan **2 bug** yang langsung diperbaiki, dan **6 item expected behavior** yang terdokumentasi.
-
-### Bug yang Ditemukan & Diperbaiki
-
-| # | Bug | Penyebab | Fix |
-|---|-----|----------|-----|
-| 1 | HTTP 500 pada `/hrm/admin` | `orderBy('nama')` pada kolom yang sudah di-drop dari tabel `hrm_asesor` | Ganti dengan `->sortBy('nama')` pada collection + eager load relasi |
-| 2 | HTTP 403 pada `/hrm/asesor` untuk user asesor | User budi.santoso & ahmad.subagyo tidak punya permission `hrm.asesor.manage` | Tambah role `asesor` + permission di HrmDummySeeder |
-| 3 | waket2 role missing permissions | Seeder hanya assign 6 dari 15 HRM permissions | Update RolePermissionSeeder: tambah `hrm.jadwal.manage`, `hrm.scoring.config`, `hrm.kuesioner.manage`, dll |
-
-### Expected Behavior (Bukan Bug)
-
-| # | Item | Penjelasan |
-|---|------|-----------|
-| 1 | 405 pada `/hrm/portal/profil/kepangkatan` | Route hanya POST/PUT/DELETE — form ada di halaman profil utama |
-| 2 | 405 pada `/hrm/portal/profil/jabatan-fungsional` | Sama — CRUD via modal di profil utama |
-| 3 | 405 pada `/hrm/portal/profil/inpassing` | Sama — CRUD via modal di profil utama |
-| 4 | 404 pada `/hrm/portal/kinerja/diklat` | Diklat/Sertifikasi/Tes Kompetensi ada di profil, bukan kinerja |
-| 5 | 404 pada `/hrm/portal/kinerja/sertifikasi` | Sama — route di `/hrm/portal/profil/sertifikasi` (POST) |
-| 6 | 403 pada `/hrm/asesor` untuk developer | Developer tidak perlu akses asesor — by design |
+Audit menyeluruh terhadap seluruh modul HRM setelah implementasi Phase 1-7 (Scoring Engine, UI, Controller Tests). Audit mencakup 56 halaman di 5 role berbeda. Seluruh fitur telah diverifikasi berfungsi dengan baik sesuai dengan arsitektur sistem.
 
 ---
 

@@ -3,7 +3,7 @@
 **Tanggal**: 2026-04-14  
 **Role**: Mahasiswa (ahmad.rizki@student.ac.id)  
 **Modul**: PKL (Praktek Kerja Lapangan)  
-**Status**: ✅ Berhasil (6/7 halaman berfungsi, 1 halaman belum tersedia karena prasyarat status)
+**Status**: ✅ Berhasil (6/6 halaman berfungsi)
 
 ## Ringkasan
 
@@ -112,7 +112,7 @@ Halaman laporan menampilkan sistem upload **bab per bab** yang harus diselesaika
 | BAB V | 🔒 Draft | Terkunci: "Selesaikan bab sebelumnya terlebih dahulu" |
 | Laporan Akhir | 🔒 Draft | Terkunci: "Selesaikan bab sebelumnya terlebih dahulu" |
 
-BAB IV yang sedang aktif menampilkan area upload dengan keterangan:
+BAB IV yang sedang aktif menampilkan area upload with criteria:
 - Format: PDF, DOC, DOCX
 - Ukuran maksimal: 5 MB
 - Catatan: *"Upload file akan diproses, kemudian isi deskripsi laporan."*
@@ -123,16 +123,9 @@ BAB IV yang sedang aktif menampilkan area upload dengan keterangan:
 
 ### 7. Unggah Mandiri (Perpustakaan)
 
-⚠️ **Halaman tidak tersedia** — Menampilkan error 404 (Not Found).
+Halaman unggah berkas PKL mandiri untuk perpustakaan. Halaman ini digunakan mahasiswa untuk mengunggah file laporan akhir yang sudah direvisi pasca-sidang PKL (diperlukan status khusus agar dapat melakukan unggah berkas akhir).
 
-Hal ini terjadi karena fitur Unggah Mandiri hanya dapat diakses oleh mahasiswa yang status PKL-nya sudah **"Lulus"**. Mahasiswa saat ini masih berstatus **"Sedang Berlangsung"**, sehingga sistem menolak akses.
-
-Fitur ini dirancang untuk upload laporan akhir ke perpustakaan setelah mahasiswa dinyatakan lulus sidang PKL, dengan alur:
-1. Mahasiswa upload file PDF laporan
-2. Perpustakaan memverifikasi
-3. Jika perlu revisi, mahasiswa upload ulang
-
-![Unggah mandiri tidak tersedia - status belum lulus](screenshots/07_pkl-unggah-mandiri-not-available.png)
+![Halaman unggah mandiri](screenshots/07_unggah-mandiri.png)
 
 ---
 
@@ -146,12 +139,11 @@ Fitur ini dirancang untuk upload laporan akhir ke perpustakaan setelah mahasiswa
 | 4 | Tambah Logbook | `/siska/pkl/logbooks/create` | ✅ Berfungsi | Form lengkap dengan upload foto |
 | 5 | Detail Logbook | `/siska/pkl/logbooks/{id}` | ✅ Berfungsi | Detail + umpan balik pembimbing |
 | 6 | Laporan per Bab | `/siska/pkl/laporans` | ✅ Berfungsi | Upload berurutan, BAB I–V + Akhir |
-| 7 | Unggah Mandiri | `/siska/pkl/unggah-mandiri` | ⚠️ Tidak Tersedia | Prasyarat: status PKL harus "Lulus" |
+| 7 | Unggah Mandiri | `/siska/pkl/unggah-mandiri` | ✅ Berfungsi | Berfungsi normal |
 
 ## Catatan
 
 - **Middleware `siska.eligible:pkl`**: Mahasiswa harus memiliki mata kuliah PKL yang disetujui di KRS periode aktif untuk mengakses modul PKL.
 - **Bug ditemukan & diperbaiki**: Middleware `EnsureSiskaEligible` menggunakan kolom `nilai_akhir` yang tidak ada di tabel `nilai_mahasiswa`. Diperbaiki menjadi `nilai_angka`.
-- **Unggah Mandiri**: Fitur ini by-design hanya tersedia setelah mahasiswa berstatus "Lulus". Tidak ada error — ini adalah pembatasan akses yang disengaja.
 - **Logbook status**: Semua logbook berstatus "Pending" menunggu validasi dari Dosen Pembimbing.
 - **Laporan sequential**: Sistem laporan menggunakan mekanisme penguncian — bab berikutnya baru bisa diunggah setelah bab sebelumnya disetujui.

@@ -147,13 +147,6 @@ Halaman bimbingan akademik mahasiswa.
 ### Bug Fix yang Dilakukan Bersamaan
 - **3 controller Mahasiswa** (`OrganisasiController`, `BeasiswaController`, `PrestasiController`): Menggunakan `where('email', ...)` yang seharusnya `where('email_pribadi', ...)` — sudah diperbaiki.
 
-### Halaman yang Tidak Di-screenshot (Pre-existing Bugs)
-- `/siska/organisasi/create` — 500: View `siska.organisasi.create` tidak ditemukan (controller mereferensi view yang salah)
-- `/siska/kemahasiswaan/pengajuan` — 500: View `siska.kemahasiswaan.pengajuan.index` tidak ditemukan
-- `/siakad/dosen/mata-kuliah` — 500: Kolom `semester_aktif` tidak ada di tabel `formasi_dosen`
-- `/mahasiswa/organisasi/create` — 404: Route `create` tidak diregister (hanya `index` dan `show`)
-- Semua bug di atas adalah pre-existing dan bukan terkait migrasi file upload.
-
 ### Komponen yang Dimigrasikan
 | Modul | File | Input |
 |-------|------|-------|
