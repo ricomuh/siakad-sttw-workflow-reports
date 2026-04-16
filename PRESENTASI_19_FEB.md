@@ -2,6 +2,11 @@
 
 Dokumen ini adalah panduan navigasi untuk mempresentasikan progress pengembangan sistem SIAKAD STTW. Silakan klik tautan **[Lihat Laporan]** pada poin yang sudah selesai untuk menampilkan bukti *screenshot* (UI/UX) dan alur kerjanya.
 
+> 🔑 **INFO KREDENSIAL GLOBAL (Live Demo)**  
+> *Semua akun di bawah ini menggunakan password:* `password`  
+> - **Super Admin:** `developer@sttw.ac.id`  
+> - **Admin SIAKAD Utama:** `admin@sttw.ac.id`  
+
 ---
 
 ## 🌟 BAGIAN 1: Modul Utama (Big Features)
@@ -9,14 +14,19 @@ Dokumen ini adalah panduan navigasi untuk mempresentasikan progress pengembangan
 Sebelum masuk ke detail 29 poin rapat, presentasikan terlebih dahulu ketiga modul besar yang sudah rampung:
 
 - [x] **HRM (Human Resource Management)**
+  - *Akun Demo:* `waket2@sttw.ac.id` (Admin HRM), `budi.santoso@sttw.ac.id` (Dosen/Asesor), `rina.tendik@sttw.ac.id` (Tendik)
   - Kinerja Dosen & LKD: [Lihat Laporan](./hrm-full-audit/REPORT.md)
   - Kinerja Tendik & Penilaian: [Lihat Laporan](./hrm-dashboard-tendik/REPORT.md)
   - Penilaian Asesor: [Lihat Laporan](./hrm-asesor/REPORT.md)
+
 - [x] **SIM P3M (Penelitian & Pengabdian)**
+  - *Akun Demo:* `admin@sttw.ac.id` (Admin P3M), `budi.santoso@sttw.ac.id` (Dosen)
   - Dashboard Admin P3M: [Lihat Laporan](./p3m-admin-dashboard/REPORT.md)
   - Pengajuan Proposal (Dosen): [Lihat Laporan](./p3m-dosen-proposal/REPORT.md)
   - Validasi Laporan & Luaran: [Lihat Laporan](./p3m-admin-laporan/REPORT.md)
+
 - [x] **LPM (Lembaga Penjaminan Mutu)**
+  - *Akun Demo:* `admin-lpm@sttw.ac.id` (Admin LPM), `auditor@sttw.ac.id` (Auditor), `kaprodi@sttw.ac.id` (Kaprodi)
   - Dashboard Admin LPM & PPEPP: [Lihat Laporan](./lpm-admin-dashboard/REPORT.md)
   - Portal Publik LPM: [Lihat Laporan](./lpm-portal-home/REPORT.md)
   - Audit Mutu Internal (Auditor): [Lihat Laporan](./lpm-auditor-dashboard/REPORT.md)
@@ -28,6 +38,9 @@ Sebelum masuk ke detail 29 poin rapat, presentasikan terlebih dahulu ketiga modu
 Berikut adalah tracking penyelesaian 29 poin yang diminta:
 
 ### A. Akademik, Nilai & E-Learning
+> *Akun Demo Mahasiswa:* `ahmad.rizki@student.ac.id`  
+> *Akun Demo Admin:* `admin@sttw.ac.id`
+
 - [x] **1. Integrasi kategori penelitian atau pengabdian**  
   *Modul P3M kini sudah terbagi jelas kategori dan terintegrasi.* ➔ [Lihat Laporan P3M](./p3m-admin-dashboard/REPORT.md)
 - [ ] **2. BAP -> kesimpulan dari 1 semester mengajar**  
@@ -69,6 +82,9 @@ Berikut adalah tracking penyelesaian 29 poin yang diminta:
   *(Service sinkronisasi berjalan otomatis di background).*
 
 ### C. SISKA & Kemahasiswaan
+> *Akun Demo Admin Mhs:* `adminkemahasiswaan@sttw.ac.id`  
+> *Akun Demo Mhs (PKL/TA):* `ahmad.rizki@student.ac.id`
+
 - [x] **14. SISKA -> keterangan surat apa yang di upload**  
   *Form pengajuan surat telah diperbarui dengan deskripsi file pendukung.* ➔ [Lihat Laporan Pengajuan Surat](./file-upload-migration/REPORT.md)
 - [x] **15. Upload LPJ dan pencatatan organisasi**  
@@ -91,6 +107,8 @@ Berikut adalah tracking penyelesaian 29 poin yang diminta:
   *Mahasiswa bisa mengajukan rekognisi prestasi untuk diverifikasi BAA.* ➔ [Lihat Bukti Upload Prestasi](./file-upload-migration/REPORT.md)
 
 ### D. Penerimaan Mahasiswa Baru (PMB)
+> *Akun Demo PMB:* `adminkemahasiswaan@sttw.ac.id`
+
 - [x] **16. PMB Terpadu**  
   - Register menu disamakan ✅
   - VA digenerate setelah register ✅
