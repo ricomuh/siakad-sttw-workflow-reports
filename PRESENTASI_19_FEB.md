@@ -1,6 +1,6 @@
-# 📊 Alur Presentasi & Checklist Update Sistem (Meeting 19 Feb 2026)
+# 📊 Alur Presentasi & Checklist Update Sistem — 16 April 2026
 
-Dokumen ini adalah panduan navigasi untuk mempresentasikan progress pengembangan sistem SIAKAD STTW. Silakan klik tautan **[Lihat Laporan]** pada poin yang sudah selesai untuk menampilkan bukti *screenshot* (UI/UX) dan alur kerjanya.
+Dokumen ini adalah panduan navigasi untuk mempresentasikan progress pengembangan sistem SIAKAD STTW (Berdasarkan Meeting 19 Feb 2026). Silakan klik tautan **[Lihat Laporan]** pada poin yang sudah selesai untuk menampilkan bukti *screenshot* (UI/UX) dan alur kerjanya.
 
 > 🔑 **INFO KREDENSIAL GLOBAL (Live Demo)**  
 > *Semua akun di bawah ini menggunakan password:* `password`  
