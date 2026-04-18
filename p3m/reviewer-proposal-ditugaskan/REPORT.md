@@ -4,29 +4,34 @@
 **Role**: Reviewer  
 **Modul**: P3M > Review Proposal  
 **Fitur**: Proposal Ditugaskan Reviewer P3M  
-**Status**: ❌ Gagal
+**Status**: ✅ Berhasil
 
 ## Deskripsi Workflow
 
-Menu reviewer untuk proposal yang ditugaskan. Saat ini sidebar menampilkan item, tetapi route tujuan belum tersedia.
+Menu reviewer untuk melihat proposal yang sudah memiliki skor atau komentar seleksi bagi reviewer aktif.
 
 ## Ringkasan
 
-Semua 1 langkah pada scan ini berakhir gagal dan perlu dicek ulang.
+1 langkah berhasil, 0 langkah gagal, dan 0 temuan warning tercatat.
 
 ## Langkah-langkah
 
-Belum ada langkah sukses yang berhasil direkam untuk fitur ini.
+### 1. Proposal Ditugaskan
+
+**Deskripsi**: Halaman reviewer menampilkan daftar proposal yang ditugaskan, lengkap dengan batch, status, kriteria yang sudah dinilai, total nilai, dan komentar reviewer.
+
+**Akun**: Reviewer - Ahmad Subagyo
+
+**URL**: `http://127.0.0.1:8000/p3m/reviewer`
+
+![Proposal Ditugaskan](screenshots/03_index_with-data.png)
 
 ## Temuan & Masalah
 
-| # | Halaman | URL | Kategori | Deskripsi | Screenshot | Prioritas |
-|---|---------|-----|----------|-----------|------------|-----------|
-| 1 | Proposal Ditugaskan | `http://127.0.0.1:8000/p3m/dosen/dashboard` | `missing-feature` | Menu sidebar "Proposal Ditugaskan" tidak memiliki route tujuan yang valid. | [Lihat](screenshots/err_01_index.png) | High |
+Tidak ada temuan baru pada retest ini. Route reviewer sudah tersedia dan halaman daftar proposal reviewer tampil normal.
 
 ## Catatan
 
 - Screenshot diambil otomatis menggunakan Playwright dengan full-page capture.
-- Navigasi utama diprioritaskan melalui sidebar; jika sebuah halaman hanya bisa dicapai dari quick action atau tombol sekunder, report akan menandainya sebagai `missing-sidebar`.
-- Form pada report ini dibuka untuk verifikasi visual dan field wajib, tidak disubmit secara destruktif agar hasil scan tidak memalsukan status sukses.
-- Data yang tampil mengikuti seeder P3M yang aktif saat scan dijalankan.
+- Navigasi utama dilakukan melalui sidebar menu reviewer pada modul P3M.
+- Data yang tampil mengikuti penilaian seleksi yang memang terhubung ke reviewer aktif.

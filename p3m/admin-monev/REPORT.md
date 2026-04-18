@@ -8,7 +8,7 @@
 
 ## Deskripsi Workflow
 
-Validasi monev pelaksanaan dari sidebar serta halaman monev akhir yang hanya bisa diakses lewat URL detail.
+Navigasi halaman validasi monev dari sidebar admin P3M untuk penelitian dan pengabdian pada tahap pelaksanaan maupun tahap akhir.
 
 ## Ringkasan
 
@@ -16,73 +16,72 @@ Validasi monev pelaksanaan dari sidebar serta halaman monev akhir yang hanya bis
 
 ## Langkah-langkah
 
-### 1. Monev Penelitian
+### 1. Daftar Monev Pelaksanaan Penelitian
 
-**Deskripsi**: Halaman ini merekam tampilan utama monev penelitian sebagai bagian dari alur validasi monev p3m.
+**Deskripsi**: Halaman daftar validasi monev pelaksanaan penelitian berhasil dibuka dari sidebar dan menampilkan proposal yang siap direview.
 
 **Akun**: Administrator P3M
 
 **URL**: `http://127.0.0.1:8000/p3m/admin/validasi-monev/penelitian/pelaksanaan`
 
-![Monev Penelitian](screenshots/01_penelitian_pelaksanaan_index.png)
+![Daftar Monev Pelaksanaan Penelitian](screenshots/06_penelitian_pelaksanaan_index_sidebar.png)
 
-### 2. Detail Monev Penelitian
+### 2. Detail Monev Pelaksanaan Penelitian
 
-**Deskripsi**: Halaman ini merekam tampilan utama detail monev penelitian sebagai bagian dari alur validasi monev p3m.
+**Deskripsi**: Detail monev pelaksanaan penelitian berhasil dibuka dari aksi tabel dan menampilkan data proposal, komponen luaran, serta form verifikasi admin.
 
 **Akun**: Administrator P3M
 
 **URL**: `http://127.0.0.1:8000/p3m/admin/validasi-monev/penelitian/pelaksanaan/3`
 
-**Catatan langkah**: incomplete-data: Halaman menunjukkan data atau integrasi belum lengkap.
+![Detail Monev Pelaksanaan Penelitian](screenshots/07_penelitian_pelaksanaan_detail_table.png)
 
-![Detail Monev Penelitian](screenshots/02_penelitian_pelaksanaan_detail.png)
+### 3. Daftar Monev Akhir Penelitian
 
-### 3. Monev Pengabdian
+**Deskripsi**: Halaman validasi monev akhir penelitian berhasil dibuka dari sidebar, namun saat retest belum ada data yang perlu divalidasi.
 
-**Deskripsi**: Halaman ini merekam tampilan utama monev pengabdian sebagai bagian dari alur validasi monev p3m.
+**Akun**: Administrator P3M
+
+**URL**: `http://127.0.0.1:8000/p3m/admin/validasi-monev/penelitian/akhir`
+
+**Catatan langkah**: no-data: Halaman tampil normal tetapi tabel validasi masih kosong.
+
+![Daftar Monev Akhir Penelitian](screenshots/08_penelitian_akhir_index_sidebar.png)
+
+### 4. Daftar Monev Pelaksanaan Pengabdian
+
+**Deskripsi**: Halaman validasi monev pelaksanaan pengabdian berhasil dibuka dari sidebar, namun saat retest belum ada data yang perlu divalidasi.
 
 **Akun**: Administrator P3M
 
 **URL**: `http://127.0.0.1:8000/p3m/admin/validasi-monev/pengabdian/pelaksanaan`
 
-![Monev Pengabdian](screenshots/03_pengabdian_pelaksanaan_index.png)
+**Catatan langkah**: no-data: Halaman tampil normal tetapi tabel validasi masih kosong.
 
-### 4. Monev Akhir Pengabdian
+![Daftar Monev Pelaksanaan Pengabdian](screenshots/10_pengabdian_pelaksanaan_index_sidebar.png)
 
-**Deskripsi**: Halaman ini merekam tampilan utama monev akhir pengabdian sebagai bagian dari alur validasi monev p3m.
+### 5. Daftar Monev Akhir Pengabdian
+
+**Deskripsi**: Halaman validasi monev akhir pengabdian berhasil dibuka dari sidebar, namun saat retest belum ada data yang perlu divalidasi.
 
 **Akun**: Administrator P3M
 
 **URL**: `http://127.0.0.1:8000/p3m/admin/validasi-monev/pengabdian/akhir`
 
-**Catatan langkah**: missing-sidebar: Halaman ini dicapai lewat quick action atau tombol sekunder karena tidak ada item sidebar langsung.
+**Catatan langkah**: no-data: Halaman tampil normal tetapi tabel validasi masih kosong.
 
-![Monev Akhir Pengabdian](screenshots/04_pengabdian_akhir_index.png)
-
-### 5. Detail Monev Akhir Pengabdian
-
-**Deskripsi**: Halaman ini merekam tampilan utama detail monev akhir pengabdian sebagai bagian dari alur validasi monev p3m.
-
-**Akun**: Administrator P3M
-
-**URL**: `http://127.0.0.1:8000/p3m/admin/validasi-monev/pengabdian/akhir/5`
-
-**Catatan langkah**: missing-sidebar: Halaman ini dicapai lewat quick action atau tombol sekunder karena tidak ada item sidebar langsung.
-
-![Detail Monev Akhir Pengabdian](screenshots/05_pengabdian_akhir_detail.png)
+![Daftar Monev Akhir Pengabdian](screenshots/11_pengabdian_akhir_index_sidebar.png)
 
 ## Temuan & Masalah
 
 | # | Halaman | URL | Kategori | Deskripsi | Screenshot | Prioritas |
 |---|---------|-----|----------|-----------|------------|-----------|
-| 1 | Detail Monev Penelitian | `http://127.0.0.1:8000/p3m/admin/validasi-monev/penelitian/pelaksanaan/3` | `incomplete-data` | Halaman menunjukkan data atau integrasi belum lengkap. | [Lihat](screenshots/02_penelitian_pelaksanaan_detail.png) | Medium |
-| 2 | Monev Akhir Pengabdian | `http://127.0.0.1:8000/p3m/admin/validasi-monev/pengabdian/akhir` | `missing-sidebar` | Halaman ini dicapai lewat quick action atau tombol sekunder karena tidak ada item sidebar langsung. | [Lihat](screenshots/04_pengabdian_akhir_index.png) | Medium |
-| 3 | Detail Monev Akhir Pengabdian | `http://127.0.0.1:8000/p3m/admin/validasi-monev/pengabdian/akhir/5` | `missing-sidebar` | Halaman ini dicapai lewat quick action atau tombol sekunder karena tidak ada item sidebar langsung. | [Lihat](screenshots/05_pengabdian_akhir_detail.png) | Medium |
+| 1 | Daftar Monev Akhir Penelitian | `http://127.0.0.1:8000/p3m/admin/validasi-monev/penelitian/akhir` | `no-data` | Halaman validasi dapat diakses dari sidebar, tetapi belum ada data monev akhir penelitian yang perlu divalidasi. | [Lihat](screenshots/08_penelitian_akhir_index_sidebar.png) | Low |
+| 2 | Daftar Monev Pelaksanaan Pengabdian | `http://127.0.0.1:8000/p3m/admin/validasi-monev/pengabdian/pelaksanaan` | `no-data` | Halaman validasi dapat diakses dari sidebar, tetapi belum ada data monev pelaksanaan pengabdian yang perlu divalidasi. | [Lihat](screenshots/10_pengabdian_pelaksanaan_index_sidebar.png) | Low |
+| 3 | Daftar Monev Akhir Pengabdian | `http://127.0.0.1:8000/p3m/admin/validasi-monev/pengabdian/akhir` | `no-data` | Halaman validasi dapat diakses dari sidebar, tetapi belum ada data monev akhir pengabdian yang perlu divalidasi. | [Lihat](screenshots/11_pengabdian_akhir_index_sidebar.png) | Low |
 
 ## Catatan
 
 - Screenshot diambil otomatis menggunakan Playwright dengan full-page capture.
-- Navigasi utama diprioritaskan melalui sidebar; jika sebuah halaman hanya bisa dicapai dari quick action atau tombol sekunder, report akan menandainya sebagai `missing-sidebar`.
-- Form pada report ini dibuka untuk verifikasi visual dan field wajib, tidak disubmit secara destruktif agar hasil scan tidak memalsukan status sukses.
-- Data yang tampil mengikuti seeder P3M yang aktif saat scan dijalankan.
+- Navigasi utama dilakukan melalui sidebar admin P3M; halaman detail dicapai dari aksi tabel setelah daftar terbuka.
+- Temuan `missing-sidebar` pada scan sebelumnya sudah tidak ditemukan lagi setelah item menu monev ditambahkan ke sidebar admin.

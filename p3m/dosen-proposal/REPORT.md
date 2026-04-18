@@ -4,110 +4,75 @@
 **Role**: Dosen  
 **Modul**: P3M > Portal Dosen  
 **Fitur**: Proposal Dosen P3M  
-**Status**: ⚠️ Partial
+**Status**: ✅ Berhasil
 
 ## Deskripsi Workflow
 
-Riwayat proposal penelitian dan pengabdian, bug route pada menu sidebar proposal, serta halaman aktual proposal draft, revisi, dan diterima.
+Navigasi proposal penelitian dan pengabdian dari sidebar dosen, termasuk membuka form pengajuan dan meninjau detail proposal yang sudah lolos seleksi.
 
 ## Ringkasan
 
-8 langkah berhasil, 4 langkah gagal, dan 0 temuan warning tercatat.
+5 langkah berhasil, 0 langkah gagal, dan 0 temuan warning tercatat.
 
 ## Langkah-langkah
 
-### 1. Halaman Proposal Saya Penelitian
+### 1. Daftar Proposal Penelitian
 
-**Deskripsi**: Halaman ini merekam tampilan utama halaman proposal saya penelitian sebagai bagian dari alur proposal dosen p3m.
+**Deskripsi**: Halaman riwayat proposal penelitian dosen dengan filter tahun, filter status, tombol ajukan proposal, dan aksi detail/edit sesuai status proposal.
 
-**Akun**: Portal Dosen - Budi Santoso
+**Akun**: Portal Dosen - Dr. Budi Santoso, M.Kom
 
 **URL**: `http://127.0.0.1:8000/p3m/dosen/penelitian`
 
-![Halaman Proposal Saya Penelitian](screenshots/02_penelitian_index.png)
+![Daftar Proposal Penelitian](screenshots/13_penelitian_index_sidebar-fixed.png)
 
 ### 2. Form Ajukan Proposal Penelitian
 
-**Deskripsi**: Halaman ini merekam tampilan utama form ajukan proposal penelitian sebagai bagian dari alur proposal dosen p3m.
+**Deskripsi**: Form pengajuan proposal penelitian dibuka dari sidebar untuk memverifikasi field wajib, struktur anggota, dan target luaran tanpa melakukan submit.
 
-**Akun**: Portal Dosen - Budi Santoso
+**Akun**: Portal Dosen - Dr. Budi Santoso, M.Kom
 
 **URL**: `http://127.0.0.1:8000/p3m/dosen/penelitian/create`
 
-![Form Ajukan Proposal Penelitian](screenshots/04_penelitian_create.png)
+![Form Ajukan Proposal Penelitian](screenshots/14_penelitian_create_sidebar-fixed.png)
 
-### 3. Detail Proposal Penelitian Draft
+### 3. Detail Proposal Penelitian Diterima
 
-**Deskripsi**: Halaman ini merekam tampilan utama detail proposal penelitian draft sebagai bagian dari alur proposal dosen p3m.
+**Deskripsi**: Detail proposal penelitian yang sudah diterima menampilkan identitas proposal, tim pengusul, dokumen, dan hasil penilaian reviewer beserta ringkasan total skornya.
 
-**Akun**: Portal Dosen - Budi Santoso
-
-**URL**: `http://127.0.0.1:8000/p3m/dosen/penelitian/1`
-
-![Detail Proposal Penelitian Draft](screenshots/05_penelitian_draft_detail.png)
-
-### 4. Form Edit Proposal Penelitian Draft
-
-**Deskripsi**: Halaman ini merekam tampilan utama form edit proposal penelitian draft sebagai bagian dari alur proposal dosen p3m.
-
-**Akun**: Portal Dosen - Budi Santoso
-
-**URL**: `http://127.0.0.1:8000/p3m/dosen/penelitian/1/edit`
-
-![Form Edit Proposal Penelitian Draft](screenshots/06_penelitian_draft_edit.png)
-
-### 5. Detail Proposal Penelitian Diterima
-
-**Deskripsi**: Halaman ini merekam tampilan utama detail proposal penelitian diterima sebagai bagian dari alur proposal dosen p3m.
-
-**Akun**: Portal Dosen - Budi Santoso
+**Akun**: Portal Dosen - Dr. Budi Santoso, M.Kom
 
 **URL**: `http://127.0.0.1:8000/p3m/dosen/penelitian/3`
 
-![Detail Proposal Penelitian Diterima](screenshots/07_penelitian_diterima_detail.png)
+![Detail Proposal Penelitian Diterima](screenshots/15_penelitian_detail_diterima.png)
 
-### 6. Halaman Proposal Saya Pengabdian
+### 4. Daftar Proposal Pengabdian
 
-**Deskripsi**: Halaman ini merekam tampilan utama halaman proposal saya pengabdian sebagai bagian dari alur proposal dosen p3m.
+**Deskripsi**: Halaman riwayat proposal pengabdian dosen dengan tombol ajukan proposal dan daftar proposal yang sudah pernah disubmit.
 
-**Akun**: Portal Dosen - Siti Nurhaliza
+**Akun**: Portal Dosen - Dr. Budi Santoso, M.Kom
 
 **URL**: `http://127.0.0.1:8000/p3m/dosen/pengabdian`
 
-![Halaman Proposal Saya Pengabdian](screenshots/09_pengabdian_index.png)
+![Daftar Proposal Pengabdian](screenshots/16_pengabdian_index_sidebar-fixed.png)
 
-### 7. Form Ajukan Proposal Pengabdian
+### 5. Form Ajukan Proposal Pengabdian
 
-**Deskripsi**: Halaman ini merekam tampilan utama form ajukan proposal pengabdian sebagai bagian dari alur proposal dosen p3m.
+**Deskripsi**: Form pengajuan proposal pengabdian dibuka dari sidebar untuk memverifikasi field wajib, pilihan mitra, dan komposisi anggota tanpa melakukan submit.
 
-**Akun**: Portal Dosen - Siti Nurhaliza
+**Akun**: Portal Dosen - Dr. Budi Santoso, M.Kom
 
 **URL**: `http://127.0.0.1:8000/p3m/dosen/pengabdian/create`
 
-![Form Ajukan Proposal Pengabdian](screenshots/11_pengabdian_create.png)
-
-### 8. Detail Proposal Pengabdian Direvisi
-
-**Deskripsi**: Halaman ini merekam tampilan utama detail proposal pengabdian direvisi sebagai bagian dari alur proposal dosen p3m.
-
-**Akun**: Portal Dosen - Siti Nurhaliza
-
-**URL**: `http://127.0.0.1:8000/p3m/dosen/pengabdian/6`
-
-![Detail Proposal Pengabdian Direvisi](screenshots/12_pengabdian_revisi_detail.png)
+![Form Ajukan Proposal Pengabdian](screenshots/17_pengabdian_create_sidebar-fixed.png)
 
 ## Temuan & Masalah
 
-| # | Halaman | URL | Kategori | Deskripsi | Screenshot | Prioritas |
-|---|---------|-----|----------|-----------|------------|-----------|
-| 1 | Menu Proposal Saya Penelitian | `http://127.0.0.1:8000/p3m/dosen/dashboard` | `missing-feature` | Menu sidebar "Proposal Saya" tidak memiliki route tujuan yang valid. | [Lihat](screenshots/err_01_penelitian_sidebar_menu.png) | High |
-| 2 | Menu Ajukan Proposal Penelitian | `http://127.0.0.1:8000/p3m/dosen/dashboard` | `missing-feature` | Menu sidebar "Ajukan Proposal" tidak memiliki route tujuan yang valid. | [Lihat](screenshots/err_03_penelitian_sidebar_create.png) | High |
-| 3 | Menu Proposal Saya Pengabdian | `http://127.0.0.1:8000/p3m/dosen/dashboard` | `missing-feature` | Menu sidebar "Proposal Saya" tidak memiliki route tujuan yang valid. | [Lihat](screenshots/err_08_pengabdian_sidebar_menu.png) | High |
-| 4 | Menu Ajukan Proposal Pengabdian | `http://127.0.0.1:8000/p3m/dosen/dashboard` | `missing-feature` | Menu sidebar "Ajukan Proposal" tidak memiliki route tujuan yang valid. | [Lihat](screenshots/err_10_pengabdian_sidebar_create.png) | High |
+Tidak ada temuan baru pada retest ini. Bug route sidebar proposal penelitian/pengabdian sudah teratasi dan halaman detail proposal tampil normal.
 
 ## Catatan
 
 - Screenshot diambil otomatis menggunakan Playwright dengan full-page capture.
-- Navigasi utama diprioritaskan melalui sidebar; jika sebuah halaman hanya bisa dicapai dari quick action atau tombol sekunder, report akan menandainya sebagai `missing-sidebar`.
-- Form pada report ini dibuka untuk verifikasi visual dan field wajib, tidak disubmit secara destruktif agar hasil scan tidak memalsukan status sukses.
-- Data yang tampil mengikuti seeder P3M yang aktif saat scan dijalankan.
+- Navigasi utama dilakukan melalui sidebar; halaman detail dicapai dari aksi tabel setelah daftar proposal terbuka.
+- Form pada report ini hanya dibuka untuk verifikasi visual dan field wajib, tidak disubmit agar report tidak memalsukan status keberhasilan.
+- Data yang tampil mengikuti dummy data P3M yang aktif saat scan dijalankan.
