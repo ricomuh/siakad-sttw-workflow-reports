@@ -1,6 +1,6 @@
 # Workflow Report: Standar Prodi
 
-**Tanggal**: 2026-04-09  
+**Tanggal**: 2026-04-18  
 **Role**: Kaprodi  
 **Modul**: LPM > Kaprodi  
 **Status**: ✅ Berhasil
@@ -21,3 +21,4 @@ Tabel standar yang berlaku untuk prodi kaprodi.
 
 - Screenshot diambil secara otomatis menggunakan Playwright
 - Data yang ditampilkan adalah dummy data dari LpmDummySeeder
+

@@ -1,6 +1,6 @@
 # Workflow Report: Kebijakan SPMI
 
-**Tanggal**: 2026-04-09  
+**Tanggal**: 2026-04-18  
 **Role**: Admin LPM  
 **Modul**: LPM > Penetapan  
 **Status**: ✅ Berhasil
@@ -63,3 +63,4 @@ Setelah submit edit, redirect dengan flash message sukses.
 
 - Screenshot diambil secara otomatis menggunakan Playwright
 - Data yang ditampilkan adalah dummy data dari LpmDummySeeder
+
