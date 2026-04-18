@@ -4,7 +4,7 @@
 **Role**: Dosen  
 **Modul**: HRM > Portal Saya  
 **Fitur**: Bahan Ajar Dosen  
-**Status**: ⚠️ Partial
+**Status**: ✅ Berhasil
 
 ## Deskripsi Workflow
 
@@ -12,7 +12,7 @@ Daftar bahan ajar dan form penambahan bahan ajar.
 
 ## Ringkasan
 
-1 langkah berhasil, 1 langkah gagal, dan 1 temuan warning tercatat.
+Semua 2 langkah pada scan ini lolos tanpa error maupun warning.
 
 ## Langkah-langkah
 
@@ -24,16 +24,21 @@ Daftar bahan ajar dan form penambahan bahan ajar.
 
 **URL**: `http://127.0.0.1:8000/hrm/portal/kinerja/bahan-ajar`
 
-**Catatan langkah**: missing-sidebar: Halaman ini dicapai lewat quick action atau tombol sekunder karena tidak ada item sidebar langsung.
-
 ![Daftar Bahan Ajar](screenshots/01_index.png)
+
+### 2. Form Tambah Bahan Ajar
+
+**Deskripsi**: Form dibuka tanpa submit untuk memverifikasi field wajib, struktur input, dan tombol aksi pada bahan ajar dosen.
+
+**Akun**: Portal Dosen
+
+**URL**: `http://127.0.0.1:8000/hrm/portal/kinerja/bahan-ajar/create`
+
+![Form Tambah Bahan Ajar](screenshots/02_create.png)
 
 ## Temuan & Masalah
 
-| # | Halaman | URL | Kategori | Deskripsi | Screenshot | Prioritas |
-|---|---------|-----|----------|-----------|------------|-----------|
-| 1 | Daftar Bahan Ajar | `http://127.0.0.1:8000/hrm/portal/kinerja/bahan-ajar` | `missing-sidebar` | Halaman ini dicapai lewat quick action atau tombol sekunder karena tidak ada item sidebar langsung. | [Lihat](screenshots/01_index.png) | Medium |
-| 2 | Form Tambah Bahan Ajar | `http://127.0.0.1:8000/hrm/portal/kinerja/bahan-ajar` | `missing-feature` | Elemen aksi "/Tambah/i" tidak ditemukan pada area utama halaman. | [Lihat](screenshots/err_02_create.png) | High |
+Tidak ada temuan kritis maupun warning pada scan ini.
 
 ## Catatan
 

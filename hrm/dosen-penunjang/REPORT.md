@@ -4,7 +4,7 @@
 **Role**: Dosen  
 **Modul**: HRM > Portal Saya  
 **Fitur**: Penunjang Dosen  
-**Status**: ⚠️ Partial
+**Status**: ✅ Berhasil
 
 ## Deskripsi Workflow
 
@@ -12,7 +12,7 @@ Daftar kegiatan penunjang dan form penambahannya.
 
 ## Ringkasan
 
-1 langkah berhasil, 1 langkah gagal, dan 1 temuan warning tercatat.
+Semua 2 langkah pada scan ini lolos tanpa error maupun warning.
 
 ## Langkah-langkah
 
@@ -24,16 +24,21 @@ Daftar kegiatan penunjang dan form penambahannya.
 
 **URL**: `http://127.0.0.1:8000/hrm/portal/kinerja/penunjang`
 
-**Catatan langkah**: missing-sidebar: Halaman ini dicapai lewat quick action atau tombol sekunder karena tidak ada item sidebar langsung.
-
 ![Daftar Penunjang](screenshots/01_index.png)
+
+### 2. Form Tambah Penunjang
+
+**Deskripsi**: Form dibuka tanpa submit untuk memverifikasi field wajib, struktur input, dan tombol aksi pada penunjang dosen.
+
+**Akun**: Portal Dosen
+
+**URL**: `http://127.0.0.1:8000/hrm/portal/kinerja/penunjang/create`
+
+![Form Tambah Penunjang](screenshots/02_create.png)
 
 ## Temuan & Masalah
 
-| # | Halaman | URL | Kategori | Deskripsi | Screenshot | Prioritas |
-|---|---------|-----|----------|-----------|------------|-----------|
-| 1 | Daftar Penunjang | `http://127.0.0.1:8000/hrm/portal/kinerja/penunjang` | `missing-sidebar` | Halaman ini dicapai lewat quick action atau tombol sekunder karena tidak ada item sidebar langsung. | [Lihat](screenshots/01_index.png) | Medium |
-| 2 | Form Tambah Penunjang | `http://127.0.0.1:8000/hrm/portal/kinerja/penunjang` | `missing-feature` | Elemen aksi "/Tambah/i" tidak ditemukan pada area utama halaman. | [Lihat](screenshots/err_02_create.png) | High |
+Tidak ada temuan kritis maupun warning pada scan ini.
 
 ## Catatan
 

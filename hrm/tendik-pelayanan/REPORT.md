@@ -12,7 +12,7 @@ Daftar pelayanan dan form penambahan layanan tendik.
 
 ## Ringkasan
 
-1 langkah berhasil, 1 langkah gagal, dan 2 temuan warning tercatat.
+2 langkah berhasil, 0 langkah gagal, dan 1 temuan warning tercatat.
 
 ## Langkah-langkah
 
@@ -24,17 +24,25 @@ Daftar pelayanan dan form penambahan layanan tendik.
 
 **URL**: `http://127.0.0.1:8000/hrm/tendik/kinerja/pelayanan`
 
-**Catatan langkah**: no-data: Halaman tampil tetapi data yang ditampilkan masih kosong atau belum tersedia. missing-sidebar: Halaman ini dicapai lewat quick action atau tombol sekunder karena tidak ada item sidebar langsung.
+**Catatan langkah**: no-data: Halaman tampil tetapi data yang ditampilkan masih kosong atau belum tersedia.
 
 ![Daftar Pelayanan](screenshots/01_index.png)
+
+### 2. Form Tambah Pelayanan
+
+**Deskripsi**: Form dibuka tanpa submit untuk memverifikasi field wajib, struktur input, dan tombol aksi pada pelayanan tendik.
+
+**Akun**: Portal Tendik
+
+**URL**: `http://127.0.0.1:8000/hrm/tendik/kinerja/pelayanan/create`
+
+![Form Tambah Pelayanan](screenshots/02_create.png)
 
 ## Temuan & Masalah
 
 | # | Halaman | URL | Kategori | Deskripsi | Screenshot | Prioritas |
 |---|---------|-----|----------|-----------|------------|-----------|
 | 1 | Daftar Pelayanan | `http://127.0.0.1:8000/hrm/tendik/kinerja/pelayanan` | `no-data` | Halaman tampil tetapi data yang ditampilkan masih kosong atau belum tersedia. | [Lihat](screenshots/01_index.png) | Low |
-| 2 | Daftar Pelayanan | `http://127.0.0.1:8000/hrm/tendik/kinerja/pelayanan` | `missing-sidebar` | Halaman ini dicapai lewat quick action atau tombol sekunder karena tidak ada item sidebar langsung. | [Lihat](screenshots/01_index.png) | Medium |
-| 3 | Form Tambah Pelayanan | `http://127.0.0.1:8000/hrm/tendik/kinerja/pelayanan` | `missing-feature` | Elemen aksi "/Tambah/i" tidak ditemukan pada area utama halaman. | [Lihat](screenshots/err_02_create.png) | High |
 
 ## Catatan
 

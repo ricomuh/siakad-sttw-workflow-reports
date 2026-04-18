@@ -12,7 +12,7 @@ Halaman pengabdian dosen yang menunggu integrasi P3M.
 
 ## Ringkasan
 
-1 langkah berhasil, 0 langkah gagal, dan 3 temuan warning tercatat.
+1 langkah berhasil, 0 langkah gagal, dan 2 temuan warning tercatat.
 
 ## Langkah-langkah
 
@@ -24,7 +24,7 @@ Halaman pengabdian dosen yang menunggu integrasi P3M.
 
 **URL**: `http://127.0.0.1:8000/hrm/portal/kinerja/pengabdian`
 
-**Catatan langkah**: no-data: Halaman tampil tetapi data yang ditampilkan masih kosong atau belum tersedia. incomplete-data: Halaman menunjukkan data atau integrasi belum lengkap. missing-sidebar: Halaman ini dicapai lewat quick action atau tombol sekunder karena tidak ada item sidebar langsung.
+**Catatan langkah**: no-data: Halaman tampil tetapi data yang ditampilkan masih kosong atau belum tersedia. incomplete-data: Halaman menunjukkan data atau integrasi belum lengkap.
 
 ![Data Pengabdian](screenshots/01_index.png)
 
@@ -34,7 +34,6 @@ Halaman pengabdian dosen yang menunggu integrasi P3M.
 |---|---------|-----|----------|-----------|------------|-----------|
 | 1 | Data Pengabdian | `http://127.0.0.1:8000/hrm/portal/kinerja/pengabdian` | `no-data` | Halaman tampil tetapi data yang ditampilkan masih kosong atau belum tersedia. | [Lihat](screenshots/01_index.png) | Low |
 | 2 | Data Pengabdian | `http://127.0.0.1:8000/hrm/portal/kinerja/pengabdian` | `incomplete-data` | Halaman menunjukkan data atau integrasi belum lengkap. | [Lihat](screenshots/01_index.png) | Medium |
-| 3 | Data Pengabdian | `http://127.0.0.1:8000/hrm/portal/kinerja/pengabdian` | `missing-sidebar` | Halaman ini dicapai lewat quick action atau tombol sekunder karena tidak ada item sidebar langsung. | [Lihat](screenshots/01_index.png) | Medium |
 
 ## Catatan
 

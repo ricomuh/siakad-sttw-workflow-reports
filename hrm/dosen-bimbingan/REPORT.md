@@ -12,7 +12,7 @@ Daftar bimbingan dan form penambahan bimbingan dosen.
 
 ## Ringkasan
 
-1 langkah berhasil, 1 langkah gagal, dan 2 temuan warning tercatat.
+2 langkah berhasil, 0 langkah gagal, dan 1 temuan warning tercatat.
 
 ## Langkah-langkah
 
@@ -24,17 +24,25 @@ Daftar bimbingan dan form penambahan bimbingan dosen.
 
 **URL**: `http://127.0.0.1:8000/hrm/portal/kinerja/bimbingan`
 
-**Catatan langkah**: no-data: Halaman tampil tetapi data yang ditampilkan masih kosong atau belum tersedia. missing-sidebar: Halaman ini dicapai lewat quick action atau tombol sekunder karena tidak ada item sidebar langsung.
+**Catatan langkah**: no-data: Halaman tampil tetapi data yang ditampilkan masih kosong atau belum tersedia.
 
 ![Daftar Bimbingan](screenshots/01_index.png)
+
+### 2. Form Tambah Bimbingan
+
+**Deskripsi**: Form dibuka tanpa submit untuk memverifikasi field wajib, struktur input, dan tombol aksi pada bimbingan mahasiswa dosen.
+
+**Akun**: Portal Dosen
+
+**URL**: `http://127.0.0.1:8000/hrm/portal/kinerja/bimbingan/create`
+
+![Form Tambah Bimbingan](screenshots/02_create.png)
 
 ## Temuan & Masalah
 
 | # | Halaman | URL | Kategori | Deskripsi | Screenshot | Prioritas |
 |---|---------|-----|----------|-----------|------------|-----------|
 | 1 | Daftar Bimbingan | `http://127.0.0.1:8000/hrm/portal/kinerja/bimbingan` | `no-data` | Halaman tampil tetapi data yang ditampilkan masih kosong atau belum tersedia. | [Lihat](screenshots/01_index.png) | Low |
-| 2 | Daftar Bimbingan | `http://127.0.0.1:8000/hrm/portal/kinerja/bimbingan` | `missing-sidebar` | Halaman ini dicapai lewat quick action atau tombol sekunder karena tidak ada item sidebar langsung. | [Lihat](screenshots/01_index.png) | Medium |
-| 3 | Form Tambah Bimbingan | `http://127.0.0.1:8000/hrm/portal/kinerja/bimbingan` | `missing-feature` | Elemen aksi "/Tambah/i" tidak ditemukan pada area utama halaman. | [Lihat](screenshots/err_02_create.png) | High |
 
 ## Catatan
 

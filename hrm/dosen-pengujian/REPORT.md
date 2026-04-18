@@ -12,7 +12,7 @@ Daftar pengujian dan form penambahan pengujian.
 
 ## Ringkasan
 
-1 langkah berhasil, 1 langkah gagal, dan 2 temuan warning tercatat.
+2 langkah berhasil, 0 langkah gagal, dan 1 temuan warning tercatat.
 
 ## Langkah-langkah
 
@@ -24,17 +24,25 @@ Daftar pengujian dan form penambahan pengujian.
 
 **URL**: `http://127.0.0.1:8000/hrm/portal/kinerja/pengujian`
 
-**Catatan langkah**: no-data: Halaman tampil tetapi data yang ditampilkan masih kosong atau belum tersedia. missing-sidebar: Halaman ini dicapai lewat quick action atau tombol sekunder karena tidak ada item sidebar langsung.
+**Catatan langkah**: no-data: Halaman tampil tetapi data yang ditampilkan masih kosong atau belum tersedia.
 
 ![Daftar Pengujian](screenshots/01_index.png)
+
+### 2. Form Tambah Pengujian
+
+**Deskripsi**: Form dibuka tanpa submit untuk memverifikasi field wajib, struktur input, dan tombol aksi pada pengujian mahasiswa dosen.
+
+**Akun**: Portal Dosen
+
+**URL**: `http://127.0.0.1:8000/hrm/portal/kinerja/pengujian/create`
+
+![Form Tambah Pengujian](screenshots/02_create.png)
 
 ## Temuan & Masalah
 
 | # | Halaman | URL | Kategori | Deskripsi | Screenshot | Prioritas |
 |---|---------|-----|----------|-----------|------------|-----------|
 | 1 | Daftar Pengujian | `http://127.0.0.1:8000/hrm/portal/kinerja/pengujian` | `no-data` | Halaman tampil tetapi data yang ditampilkan masih kosong atau belum tersedia. | [Lihat](screenshots/01_index.png) | Low |
-| 2 | Daftar Pengujian | `http://127.0.0.1:8000/hrm/portal/kinerja/pengujian` | `missing-sidebar` | Halaman ini dicapai lewat quick action atau tombol sekunder karena tidak ada item sidebar langsung. | [Lihat](screenshots/01_index.png) | Medium |
-| 3 | Form Tambah Pengujian | `http://127.0.0.1:8000/hrm/portal/kinerja/pengujian` | `missing-feature` | Elemen aksi "/Tambah/i" tidak ditemukan pada area utama halaman. | [Lihat](screenshots/err_02_create.png) | High |
 
 ## Catatan
 

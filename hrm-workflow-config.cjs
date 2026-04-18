@@ -58,7 +58,7 @@ const features = [
     account: 'admin',
     steps: [
       { file: '01_index', title: 'Daftar Asesor', open: { mode: 'sidebar', path: ['HRM', 'Admin HRM', 'Manajemen Asesor'] } },
-      { file: '02_assign', title: 'Assign Asesor', open: { mode: 'click', text: /Assign Asesor/i, from: { mode: 'sidebar', path: ['HRM', 'Admin HRM', 'Dashboard Admin'] } } },
+      { file: '02_assign', title: 'Assign Asesor', open: { mode: 'sidebar', path: ['HRM', 'Admin HRM', 'Assign Asesor'] } },
     ],
   },
   {
@@ -137,7 +137,7 @@ const features = [
     summary: 'Distribusi kuesioner tendik per jadwal kinerja.',
     account: 'admin',
     steps: [
-      { file: '01_index', title: 'Distribusi Kuesioner', open: { mode: 'click', text: /Distribusi Kuesioner/i, from: { mode: 'sidebar', path: ['HRM', 'Admin HRM', 'Dashboard Admin'] } } },
+      { file: '01_index', title: 'Distribusi Kuesioner', open: { mode: 'sidebar', path: ['HRM', 'Admin HRM', 'Distribusi Kuesioner'] } },
     ],
   },
   {
@@ -260,8 +260,8 @@ const features = [
     summary: 'Daftar bimbingan dan form penambahan bimbingan dosen.',
     account: 'dosen',
     steps: [
-      { file: '01_index', title: 'Daftar Bimbingan', open: { mode: 'click', text: /^Bimbingan$/i, from: { mode: 'sidebar', path: ['HRM', 'Portal Saya', 'Dashboard Kinerja'] } } },
-      { file: '02_create', title: 'Form Tambah Bimbingan', open: { mode: 'click', text: /Tambah/i, from: { mode: 'click', text: /^Bimbingan$/i, from: { mode: 'sidebar', path: ['HRM', 'Portal Saya', 'Dashboard Kinerja'] } } } },
+      { file: '01_index', title: 'Daftar Bimbingan', open: { mode: 'sidebar', path: ['HRM', 'Portal Saya', 'Bimbingan Mahasiswa'] } },
+      { file: '02_create', title: 'Form Tambah Bimbingan', open: { mode: 'click', text: /Tambah/i, from: { mode: 'sidebar', path: ['HRM', 'Portal Saya', 'Bimbingan Mahasiswa'] } } },
     ],
   },
   {
@@ -272,8 +272,8 @@ const features = [
     summary: 'Daftar pengujian dan form penambahan pengujian.',
     account: 'dosen',
     steps: [
-      { file: '01_index', title: 'Daftar Pengujian', open: { mode: 'click', text: /^Pengujian$/i, from: { mode: 'sidebar', path: ['HRM', 'Portal Saya', 'Dashboard Kinerja'] } } },
-      { file: '02_create', title: 'Form Tambah Pengujian', open: { mode: 'click', text: /Tambah/i, from: { mode: 'click', text: /^Pengujian$/i, from: { mode: 'sidebar', path: ['HRM', 'Portal Saya', 'Dashboard Kinerja'] } } } },
+      { file: '01_index', title: 'Daftar Pengujian', open: { mode: 'sidebar', path: ['HRM', 'Portal Saya', 'Pengujian Mahasiswa'] } },
+      { file: '02_create', title: 'Form Tambah Pengujian', open: { mode: 'click', text: /Tambah/i, from: { mode: 'sidebar', path: ['HRM', 'Portal Saya', 'Pengujian Mahasiswa'] } } },
     ],
   },
   {
@@ -284,8 +284,8 @@ const features = [
     summary: 'Daftar bahan ajar dan form penambahan bahan ajar.',
     account: 'dosen',
     steps: [
-      { file: '01_index', title: 'Daftar Bahan Ajar', open: { mode: 'click', text: /^Bahan Ajar$/i, from: { mode: 'sidebar', path: ['HRM', 'Portal Saya', 'Dashboard Kinerja'] } } },
-      { file: '02_create', title: 'Form Tambah Bahan Ajar', open: { mode: 'click', text: /Tambah/i, from: { mode: 'click', text: /^Bahan Ajar$/i, from: { mode: 'sidebar', path: ['HRM', 'Portal Saya', 'Dashboard Kinerja'] } } } },
+      { file: '01_index', title: 'Daftar Bahan Ajar', open: { mode: 'sidebar', path: ['HRM', 'Portal Saya', 'Bahan Ajar'] } },
+      { file: '02_create', title: 'Form Tambah Bahan Ajar', open: { mode: 'click', text: /Tambah/i, from: { mode: 'sidebar', path: ['HRM', 'Portal Saya', 'Bahan Ajar'] } } },
     ],
   },
   {
@@ -296,8 +296,8 @@ const features = [
     summary: 'Daftar tugas tambahan dan form penambahannya.',
     account: 'dosen',
     steps: [
-      { file: '01_index', title: 'Daftar Tugas Tambahan', open: { mode: 'click', text: /^Tugas Tambahan$/i, from: { mode: 'sidebar', path: ['HRM', 'Portal Saya', 'Dashboard Kinerja'] } } },
-      { file: '02_create', title: 'Form Tambah Tugas Tambahan', open: { mode: 'click', text: /Tambah/i, from: { mode: 'click', text: /^Tugas Tambahan$/i, from: { mode: 'sidebar', path: ['HRM', 'Portal Saya', 'Dashboard Kinerja'] } } } },
+      { file: '01_index', title: 'Daftar Tugas Tambahan', open: { mode: 'sidebar', path: ['HRM', 'Portal Saya', 'Tugas Tambahan'] } },
+      { file: '02_create', title: 'Form Tambah Tugas Tambahan', open: { mode: 'click', text: /Tambah/i, from: { mode: 'sidebar', path: ['HRM', 'Portal Saya', 'Tugas Tambahan'] } } },
     ],
   },
   {
@@ -308,8 +308,8 @@ const features = [
     summary: 'Daftar kegiatan penunjang dan form penambahannya.',
     account: 'dosen',
     steps: [
-      { file: '01_index', title: 'Daftar Penunjang', open: { mode: 'click', text: /^Penunjang$/i, from: { mode: 'sidebar', path: ['HRM', 'Portal Saya', 'Dashboard Kinerja'] } } },
-      { file: '02_create', title: 'Form Tambah Penunjang', open: { mode: 'click', text: /Tambah/i, from: { mode: 'click', text: /^Penunjang$/i, from: { mode: 'sidebar', path: ['HRM', 'Portal Saya', 'Dashboard Kinerja'] } } } },
+      { file: '01_index', title: 'Daftar Penunjang', open: { mode: 'sidebar', path: ['HRM', 'Portal Saya', 'Penunjang'] } },
+      { file: '02_create', title: 'Form Tambah Penunjang', open: { mode: 'click', text: /Tambah/i, from: { mode: 'sidebar', path: ['HRM', 'Portal Saya', 'Penunjang'] } } },
     ],
   },
   {
@@ -320,8 +320,8 @@ const features = [
     summary: 'Daftar penghargaan dan form penambahannya.',
     account: 'dosen',
     steps: [
-      { file: '01_index', title: 'Daftar Penghargaan', open: { mode: 'click', text: /^Penghargaan$/i, from: { mode: 'sidebar', path: ['HRM', 'Portal Saya', 'Dashboard Kinerja'] } } },
-      { file: '02_create', title: 'Form Tambah Penghargaan', open: { mode: 'click', text: /Tambah/i, from: { mode: 'click', text: /^Penghargaan$/i, from: { mode: 'sidebar', path: ['HRM', 'Portal Saya', 'Dashboard Kinerja'] } } } },
+      { file: '01_index', title: 'Daftar Penghargaan', open: { mode: 'sidebar', path: ['HRM', 'Portal Saya', 'Penghargaan'] } },
+      { file: '02_create', title: 'Form Tambah Penghargaan', open: { mode: 'click', text: /Tambah/i, from: { mode: 'sidebar', path: ['HRM', 'Portal Saya', 'Penghargaan'] } } },
     ],
   },
   {
@@ -332,7 +332,7 @@ const features = [
     summary: 'Halaman data pengajaran dosen yang ditarik dari SIAKAD.',
     account: 'dosen',
     steps: [
-      { file: '01_index', title: 'Data Pengajaran', open: { mode: 'click', text: /^Pengajaran$/i, from: { mode: 'sidebar', path: ['HRM', 'Portal Saya', 'Dashboard Kinerja'] } } },
+      { file: '01_index', title: 'Data Pengajaran', open: { mode: 'sidebar', path: ['HRM', 'Portal Saya', 'Pengajaran'] } },
     ],
   },
   {
@@ -343,7 +343,7 @@ const features = [
     summary: 'Halaman penelitian dosen yang menunggu integrasi P3M.',
     account: 'dosen',
     steps: [
-      { file: '01_index', title: 'Data Penelitian', open: { mode: 'click', text: /^Penelitian$/i, from: { mode: 'sidebar', path: ['HRM', 'Portal Saya', 'Dashboard Kinerja'] } } },
+      { file: '01_index', title: 'Data Penelitian', open: { mode: 'sidebar', path: ['HRM', 'Portal Saya', 'Penelitian'] } },
     ],
   },
   {
@@ -354,7 +354,7 @@ const features = [
     summary: 'Halaman pengabdian dosen yang menunggu integrasi P3M.',
     account: 'dosen',
     steps: [
-      { file: '01_index', title: 'Data Pengabdian', open: { mode: 'click', text: /^Pengabdian$/i, from: { mode: 'sidebar', path: ['HRM', 'Portal Saya', 'Dashboard Kinerja'] } } },
+      { file: '01_index', title: 'Data Pengabdian', open: { mode: 'sidebar', path: ['HRM', 'Portal Saya', 'Pengabdian'] } },
     ],
   },
   {
@@ -365,7 +365,7 @@ const features = [
     summary: 'Ringkasan presensi CICO dosen.',
     account: 'dosen',
     steps: [
-      { file: '01_index', title: 'Presensi CICO', open: { mode: 'click', text: /Presensi CICO/i, from: { mode: 'sidebar', path: ['HRM', 'Portal Saya', 'Dashboard Kinerja'] } } },
+      { file: '01_index', title: 'Presensi CICO', open: { mode: 'sidebar', path: ['HRM', 'Portal Saya', 'Presensi CICO'] } },
     ],
   },
   {
@@ -376,7 +376,7 @@ const features = [
     summary: 'Ringkasan jadwal aktif, status laporan, dan menu cepat tendik.',
     account: 'tendik',
     steps: [
-      { file: '01_dashboard', title: 'Dashboard Tendik', open: { mode: 'account-home' } },
+      { file: '01_dashboard', title: 'Dashboard Tendik', open: { mode: 'sidebar', path: ['HRM', 'Portal Saya', 'Dashboard Kinerja'] } },
     ],
   },
   {
@@ -387,7 +387,7 @@ const features = [
     summary: 'Profil dan data kepegawaian tendik.',
     account: 'tendik',
     steps: [
-      { file: '01_index', title: 'Data Kepegawaian', open: { mode: 'click', text: /Data Kepegawaian/i, from: { mode: 'account-home' } } },
+      { file: '01_index', title: 'Data Kepegawaian', open: { mode: 'sidebar', path: ['HRM', 'Portal Saya', 'Data Kepegawaian'] } },
     ],
   },
   {
@@ -398,8 +398,8 @@ const features = [
     summary: 'Daftar pelayanan dan form penambahan layanan tendik.',
     account: 'tendik',
     steps: [
-      { file: '01_index', title: 'Daftar Pelayanan', open: { mode: 'click', text: /^Pelayanan$/i, from: { mode: 'account-home' } } },
-      { file: '02_create', title: 'Form Tambah Pelayanan', open: { mode: 'click', text: /Tambah/i, from: { mode: 'click', text: /^Pelayanan$/i, from: { mode: 'account-home' } } } },
+      { file: '01_index', title: 'Daftar Pelayanan', open: { mode: 'sidebar', path: ['HRM', 'Portal Saya', 'Pelayanan Tendik'] } },
+      { file: '02_create', title: 'Form Tambah Pelayanan', open: { mode: 'click', text: /Tambah/i, from: { mode: 'sidebar', path: ['HRM', 'Portal Saya', 'Pelayanan Tendik'] } } },
     ],
   },
   {
@@ -410,8 +410,8 @@ const features = [
     summary: 'Daftar tugas tambahan dan form penambahannya.',
     account: 'tendik',
     steps: [
-      { file: '01_index', title: 'Daftar Tugas Tambahan', open: { mode: 'click', text: /^Tugas Tambahan$/i, from: { mode: 'account-home' } } },
-      { file: '02_create', title: 'Form Tambah Tugas Tambahan', open: { mode: 'click', text: /Tambah/i, from: { mode: 'click', text: /^Tugas Tambahan$/i, from: { mode: 'account-home' } } } },
+      { file: '01_index', title: 'Daftar Tugas Tambahan', open: { mode: 'sidebar', path: ['HRM', 'Portal Saya', 'Tugas Tambahan'] } },
+      { file: '02_create', title: 'Form Tambah Tugas Tambahan', open: { mode: 'click', text: /Tambah/i, from: { mode: 'sidebar', path: ['HRM', 'Portal Saya', 'Tugas Tambahan'] } } },
     ],
   },
   {
@@ -422,8 +422,8 @@ const features = [
     summary: 'Daftar kegiatan penunjang dan form penambahannya.',
     account: 'tendik',
     steps: [
-      { file: '01_index', title: 'Daftar Penunjang', open: { mode: 'click', text: /^Penunjang$/i, from: { mode: 'account-home' } } },
-      { file: '02_create', title: 'Form Tambah Penunjang', open: { mode: 'click', text: /Tambah/i, from: { mode: 'click', text: /^Penunjang$/i, from: { mode: 'account-home' } } } },
+      { file: '01_index', title: 'Daftar Penunjang', open: { mode: 'sidebar', path: ['HRM', 'Portal Saya', 'Penunjang'] } },
+      { file: '02_create', title: 'Form Tambah Penunjang', open: { mode: 'click', text: /Tambah/i, from: { mode: 'sidebar', path: ['HRM', 'Portal Saya', 'Penunjang'] } } },
     ],
   },
   {
@@ -434,8 +434,8 @@ const features = [
     summary: 'Daftar penghargaan dan form penambahannya.',
     account: 'tendik',
     steps: [
-      { file: '01_index', title: 'Daftar Penghargaan', open: { mode: 'click', text: /^Penghargaan$/i, from: { mode: 'account-home' } } },
-      { file: '02_create', title: 'Form Tambah Penghargaan', open: { mode: 'click', text: /Tambah/i, from: { mode: 'click', text: /^Penghargaan$/i, from: { mode: 'account-home' } } } },
+      { file: '01_index', title: 'Daftar Penghargaan', open: { mode: 'sidebar', path: ['HRM', 'Portal Saya', 'Penghargaan'] } },
+      { file: '02_create', title: 'Form Tambah Penghargaan', open: { mode: 'click', text: /Tambah/i, from: { mode: 'sidebar', path: ['HRM', 'Portal Saya', 'Penghargaan'] } } },
     ],
   },
   {
@@ -446,7 +446,7 @@ const features = [
     summary: 'Ringkasan presensi CICO tendik.',
     account: 'tendik',
     steps: [
-      { file: '01_index', title: 'Presensi CICO', open: { mode: 'click', text: /Presensi CICO/i, from: { mode: 'account-home' } } },
+      { file: '01_index', title: 'Presensi CICO', open: { mode: 'sidebar', path: ['HRM', 'Portal Saya', 'Presensi CICO'] } },
     ],
   },
   {
@@ -461,7 +461,7 @@ const features = [
       { file: '02_laporan-sdm', title: 'Laporan SDM', open: { mode: 'sidebar', path: ['HRM', 'Laporan SDM', 'Dashboard Eksekutif'] }, account: 'admin' },
       { file: '03_asesor-dashboard', title: 'Portal Asesor', open: { mode: 'sidebar', path: ['HRM', 'Penilaian Kinerja', 'Dashboard Asesor'] }, account: 'asesor' },
       { file: '04_dosen-dashboard', title: 'Portal Dosen', open: { mode: 'sidebar', path: ['HRM', 'Portal Saya', 'Dashboard Kinerja'] }, account: 'dosen' },
-      { file: '05_tendik-dashboard', title: 'Portal Tendik', open: { mode: 'account-home' }, account: 'tendik' },
+      { file: '05_tendik-dashboard', title: 'Portal Tendik', open: { mode: 'sidebar', path: ['HRM', 'Portal Saya', 'Dashboard Kinerja'] }, account: 'tendik' },
     ],
   },
 ];

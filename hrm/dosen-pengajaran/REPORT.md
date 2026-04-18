@@ -12,7 +12,7 @@ Halaman data pengajaran dosen yang ditarik dari SIAKAD.
 
 ## Ringkasan
 
-1 langkah berhasil, 0 langkah gagal, dan 2 temuan warning tercatat.
+1 langkah berhasil, 0 langkah gagal, dan 1 temuan warning tercatat.
 
 ## Langkah-langkah
 
@@ -24,7 +24,7 @@ Halaman data pengajaran dosen yang ditarik dari SIAKAD.
 
 **URL**: `http://127.0.0.1:8000/hrm/portal/kinerja/pengajaran`
 
-**Catatan langkah**: no-data: Halaman tampil tetapi data yang ditampilkan masih kosong atau belum tersedia. missing-sidebar: Halaman ini dicapai lewat quick action atau tombol sekunder karena tidak ada item sidebar langsung.
+**Catatan langkah**: no-data: Halaman tampil tetapi data yang ditampilkan masih kosong atau belum tersedia.
 
 ![Data Pengajaran](screenshots/01_index.png)
 
@@ -33,7 +33,6 @@ Halaman data pengajaran dosen yang ditarik dari SIAKAD.
 | # | Halaman | URL | Kategori | Deskripsi | Screenshot | Prioritas |
 |---|---------|-----|----------|-----------|------------|-----------|
 | 1 | Data Pengajaran | `http://127.0.0.1:8000/hrm/portal/kinerja/pengajaran` | `no-data` | Halaman tampil tetapi data yang ditampilkan masih kosong atau belum tersedia. | [Lihat](screenshots/01_index.png) | Low |
-| 2 | Data Pengajaran | `http://127.0.0.1:8000/hrm/portal/kinerja/pengajaran` | `missing-sidebar` | Halaman ini dicapai lewat quick action atau tombol sekunder karena tidak ada item sidebar langsung. | [Lihat](screenshots/01_index.png) | Medium |
 
 ## Catatan
 

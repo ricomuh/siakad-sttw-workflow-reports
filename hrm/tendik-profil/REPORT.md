@@ -12,7 +12,7 @@ Profil dan data kepegawaian tendik.
 
 ## Ringkasan
 
-1 langkah berhasil, 0 langkah gagal, dan 2 temuan warning tercatat.
+1 langkah berhasil, 0 langkah gagal, dan 1 temuan warning tercatat.
 
 ## Langkah-langkah
 
@@ -24,7 +24,7 @@ Profil dan data kepegawaian tendik.
 
 **URL**: `http://127.0.0.1:8000/hrm/tendik/profil`
 
-**Catatan langkah**: no-data: Halaman tampil tetapi data yang ditampilkan masih kosong atau belum tersedia. missing-sidebar: Halaman ini dicapai lewat quick action atau tombol sekunder karena tidak ada item sidebar langsung.
+**Catatan langkah**: no-data: Halaman tampil tetapi data yang ditampilkan masih kosong atau belum tersedia.
 
 ![Data Kepegawaian](screenshots/01_index.png)
 
@@ -33,7 +33,6 @@ Profil dan data kepegawaian tendik.
 | # | Halaman | URL | Kategori | Deskripsi | Screenshot | Prioritas |
 |---|---------|-----|----------|-----------|------------|-----------|
 | 1 | Data Kepegawaian | `http://127.0.0.1:8000/hrm/tendik/profil` | `no-data` | Halaman tampil tetapi data yang ditampilkan masih kosong atau belum tersedia. | [Lihat](screenshots/01_index.png) | Low |
-| 2 | Data Kepegawaian | `http://127.0.0.1:8000/hrm/tendik/profil` | `missing-sidebar` | Halaman ini dicapai lewat quick action atau tombol sekunder karena tidak ada item sidebar langsung. | [Lihat](screenshots/01_index.png) | Medium |
 
 ## Catatan
 

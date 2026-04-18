@@ -12,7 +12,7 @@ Daftar tugas tambahan dan form penambahannya.
 
 ## Ringkasan
 
-1 langkah berhasil, 1 langkah gagal, dan 2 temuan warning tercatat.
+2 langkah berhasil, 0 langkah gagal, dan 1 temuan warning tercatat.
 
 ## Langkah-langkah
 
@@ -24,17 +24,25 @@ Daftar tugas tambahan dan form penambahannya.
 
 **URL**: `http://127.0.0.1:8000/hrm/portal/kinerja/tugas-tambahan`
 
-**Catatan langkah**: no-data: Halaman tampil tetapi data yang ditampilkan masih kosong atau belum tersedia. missing-sidebar: Halaman ini dicapai lewat quick action atau tombol sekunder karena tidak ada item sidebar langsung.
+**Catatan langkah**: no-data: Halaman tampil tetapi data yang ditampilkan masih kosong atau belum tersedia.
 
 ![Daftar Tugas Tambahan](screenshots/01_index.png)
+
+### 2. Form Tambah Tugas Tambahan
+
+**Deskripsi**: Form dibuka tanpa submit untuk memverifikasi field wajib, struktur input, dan tombol aksi pada tugas tambahan dosen.
+
+**Akun**: Portal Dosen
+
+**URL**: `http://127.0.0.1:8000/hrm/portal/kinerja/tugas-tambahan/create`
+
+![Form Tambah Tugas Tambahan](screenshots/02_create.png)
 
 ## Temuan & Masalah
 
 | # | Halaman | URL | Kategori | Deskripsi | Screenshot | Prioritas |
 |---|---------|-----|----------|-----------|------------|-----------|
 | 1 | Daftar Tugas Tambahan | `http://127.0.0.1:8000/hrm/portal/kinerja/tugas-tambahan` | `no-data` | Halaman tampil tetapi data yang ditampilkan masih kosong atau belum tersedia. | [Lihat](screenshots/01_index.png) | Low |
-| 2 | Daftar Tugas Tambahan | `http://127.0.0.1:8000/hrm/portal/kinerja/tugas-tambahan` | `missing-sidebar` | Halaman ini dicapai lewat quick action atau tombol sekunder karena tidak ada item sidebar langsung. | [Lihat](screenshots/01_index.png) | Medium |
-| 3 | Form Tambah Tugas Tambahan | `http://127.0.0.1:8000/hrm/portal/kinerja/tugas-tambahan` | `missing-feature` | Elemen aksi "/Tambah/i" tidak ditemukan pada area utama halaman. | [Lihat](screenshots/err_02_create.png) | High |
 
 ## Catatan
 
