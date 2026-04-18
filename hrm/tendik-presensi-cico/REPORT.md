@@ -1,34 +1,42 @@
-# Workflow Report: Data Presensi Clock In/Out Tendik
+# Workflow Report: Presensi CICO Tendik
 
-**Tanggal**: 2026-04-02
-**Role**: Tendik (Ahmad Syaiful, S.Sos / ahmad.syaiful@sttw.ac.id)
-**Modul**: HRM — Presensi CICO
-**Status**: ✅ Berhasil
+**Tanggal**: 2026-04-18  
+**Role**: Tendik  
+**Modul**: HRM  
+**Fitur**: Presensi CICO Tendik  
+**Status**: ⚠️ Partial
+
+## Deskripsi Workflow
+
+Ringkasan presensi CICO tendik.
 
 ## Ringkasan
 
-Halaman presensi Clock In/Clock Out tendik menampilkan rekapitulasi kehadiran.
-
-- Data diimport oleh admin dari mesin fingerprint
-- Menampilkan log harian clock in dan clock out
+1 langkah berhasil, 0 langkah gagal, dan 1 temuan warning tercatat.
 
 ## Langkah-langkah
 
-### 1. Halaman Presensi CICO
+### 1. Presensi CICO
 
-Tendik membuka halaman Presensi CICO. Terlihat tabel rekapitulasi presensi harian dengan kolom tanggal, jam masuk, jam keluar, dan status kehadiran.
+**Deskripsi**: Halaman ini merekam tampilan utama presensi cico sebagai bagian dari alur presensi cico tendik.
 
-![Halaman Presensi CICO](screenshots/01_presensi-cico-index.png)
+**Akun**: Portal Tendik
 
-## Fitur yang Diuji
+**URL**: `http://127.0.0.1:8000/hrm/tendik/presensi-cico`
 
-| Fitur | Status | Keterangan |
-| --- | --- | --- |
-| Rekap presensi | ✅ | Tabel log clock in/out harian |
-| Read-only | ✅ | Data dari import admin, tidak bisa diedit tendik |
+**Catatan langkah**: missing-sidebar: Halaman ini dicapai lewat quick action atau tombol sekunder karena tidak ada item sidebar langsung.
+
+![Presensi CICO](screenshots/01_index.png)
+
+## Temuan & Masalah
+
+| # | Halaman | URL | Kategori | Deskripsi | Screenshot | Prioritas |
+|---|---------|-----|----------|-----------|------------|-----------|
+| 1 | Presensi CICO | `http://127.0.0.1:8000/hrm/tendik/presensi-cico` | `missing-sidebar` | Halaman ini dicapai lewat quick action atau tombol sekunder karena tidak ada item sidebar langsung. | [Lihat](screenshots/01_index.png) | Medium |
 
 ## Catatan
 
-- Data bersumber dari import CSV mesin fingerprint
-- Admin mengimport melalui menu Admin HRM > Import Presensi
-- Tendik hanya bisa melihat, tidak bisa mengedit
+- Screenshot diambil otomatis menggunakan Playwright dengan full-page capture.
+- Navigasi utama diprioritaskan melalui sidebar; jika sebuah halaman hanya bisa dicapai dari quick action atau tombol sekunder, report akan menandainya sebagai `missing-sidebar`.
+- Form pada report ini dibuka untuk verifikasi visual dan field wajib, tidak disubmit secara destruktif agar hasil scan tidak memalsukan status sukses.
+- Data yang tampil mengikuti seeder HRM yang aktif saat scan dijalankan.

@@ -1,35 +1,38 @@
-# Workflow Report: Dashboard Kinerja Tendik
+# Workflow Report: Dashboard Portal Tendik HRM
 
-**Tanggal**: 2026-04-02
-**Role**: Tendik (Ahmad Syaiful, S.Sos / ahmad.syaiful@sttw.ac.id)
-**Modul**: HRM — Portal Tendik
+**Tanggal**: 2026-04-18  
+**Role**: Tendik  
+**Modul**: HRM  
+**Fitur**: Dashboard Portal Tendik HRM  
 **Status**: ✅ Berhasil
+
+## Deskripsi Workflow
+
+Ringkasan jadwal aktif, status laporan, dan menu cepat tendik.
 
 ## Ringkasan
 
-Dashboard kinerja tendik menampilkan ringkasan status pengisian kinerja pada periode aktif.
-
-- Melihat status pengisian dan progres kinerja
-- Akses cepat ke menu input kinerja (pelayanan, penunjang, dll)
-- Informasi jadwal kinerja yang sedang aktif
+Semua 1 langkah pada scan ini lolos tanpa error maupun warning.
 
 ## Langkah-langkah
 
-### 1. Halaman Dashboard Kinerja Tendik
+### 1. Dashboard Tendik
 
-Tendik membuka menu Portal Saya > Dashboard Kinerja. Terlihat ringkasan status pengisian kinerja dan tautan cepat ke fitur input.
+**Deskripsi**: Halaman dashboard untuk ringkasan jadwal aktif, status laporan, dan menu cepat tendik. Screenshot diambil setelah halaman selesai dimuat penuh.
 
-![Halaman Dashboard Kinerja Tendik](screenshots/01_dashboard-tendik.png)
+**Akun**: Portal Tendik
 
-## Fitur yang Diuji
+**URL**: `http://127.0.0.1:8000/hrm/tendik`
 
-| Fitur | Status | Keterangan |
-| --- | --- | --- |
-| Ringkasan kinerja | ✅ | Status progres input kinerja tendik |
-| Navigasi cepat | ✅ | Tautan ke modul pelayanan, penunjang, dll |
-| Info jadwal aktif | ✅ | Menampilkan periode kinerja yang sedang berjalan |
+![Dashboard Tendik](screenshots/01_dashboard.png)
+
+## Temuan & Masalah
+
+Tidak ada temuan kritis maupun warning pada scan ini.
 
 ## Catatan
 
-- Dashboard menampilkan data dari periode kinerja aktif
-- Tendik memiliki modul berbeda dari dosen (pelayanan vs bimbingan/pengujian)
+- Screenshot diambil otomatis menggunakan Playwright dengan full-page capture.
+- Navigasi utama diprioritaskan melalui sidebar; jika sebuah halaman hanya bisa dicapai dari quick action atau tombol sekunder, report akan menandainya sebagai `missing-sidebar`.
+- Form pada report ini dibuka untuk verifikasi visual dan field wajib, tidak disubmit secara destruktif agar hasil scan tidak memalsukan status sukses.
+- Data yang tampil mengikuti seeder HRM yang aktif saat scan dijalankan.

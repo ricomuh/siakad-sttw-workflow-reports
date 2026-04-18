@@ -1,50 +1,58 @@
-# Workflow Report: Dashboard Eksekutif & Laporan SDM
+# Workflow Report: Laporan SDM HRM
 
-**Tanggal**: 2026-04-02
-**Role**: Waket2 (Pak Deni / waket2@sttw.ac.id)
-**Modul**: HRM — Laporan SDM
+**Tanggal**: 2026-04-18  
+**Role**: Waket2 / Admin HRM  
+**Modul**: HRM > Laporan SDM  
+**Fitur**: Laporan SDM HRM  
 **Status**: ✅ Berhasil
+
+## Deskripsi Workflow
+
+Dashboard eksekutif dan daftar laporan dosen serta tendik.
 
 ## Ringkasan
 
-Dashboard eksekutif dan laporan SDM untuk Wakil Ketua 2, termasuk:
-
-- Dashboard ringkasan kinerja (total dosen/tendik, selesai dinilai, memenuhi standar)
-- Laporan detail per dosen
-- Laporan detail per tendik
-- Export ke Excel dan PDF
+Semua 3 langkah pada scan ini lolos tanpa error maupun warning.
 
 ## Langkah-langkah
 
 ### 1. Dashboard Eksekutif
 
-Waket2 membuka menu Laporan SDM > Dashboard. Terlihat statistik ringkasan: total dosen, total tendik, selesai dinilai, memenuhi standar, dan tidak memenuhi standar. Menggunakan card statistik berwarna.
+**Deskripsi**: Halaman dashboard untuk dashboard eksekutif dan daftar laporan dosen serta tendik. Screenshot diambil setelah halaman selesai dimuat penuh.
 
-![Dashboard Eksekutif](screenshots/01_laporan-dashboard.png)
+**Akun**: Waket2 / Admin HRM
 
-### 2. Laporan Kinerja Dosen
+**URL**: `http://127.0.0.1:8000/hrm/laporan`
 
-Waket2 membuka tab Laporan Dosen. Terlihat tabel semua dosen dengan kolom nama, NIDN, status kinerja, hasil penilaian, dan aksi (lihat detail, export). Tersedia filter dan tombol export Excel/PDF.
+![Dashboard Eksekutif](screenshots/01_dashboard.png)
 
-![Laporan Kinerja Dosen](screenshots/02_laporan-dosen.png)
+### 2. Laporan Dosen
 
-### 3. Laporan Kinerja Tendik
+**Deskripsi**: Halaman ini merekam tampilan utama laporan dosen sebagai bagian dari alur laporan sdm hrm.
 
-Waket2 membuka tab Laporan Tendik. Terlihat tabel semua tendik dengan kolom nama, jabatan, status kinerja, dan hasil penilaian. Tersedia filter dan tombol export.
+**Akun**: Waket2 / Admin HRM
 
-![Laporan Kinerja Tendik](screenshots/03_laporan-tendik.png)
+**URL**: `http://127.0.0.1:8000/hrm/laporan/dosen`
 
-## Fitur yang Diuji
+![Laporan Dosen](screenshots/02_dosen.png)
 
-| Fitur | Status | Keterangan |
-| --- | --- | --- |
-| Dashboard statistik | ✅ | Ringkasan total, selesai, memenuhi standar |
-| Laporan dosen | ✅ | Tabel detail kinerja per dosen |
-| Laporan tendik | ✅ | Tabel detail kinerja per tendik |
-| Export Excel/PDF | ✅ | Download laporan dalam format Excel dan PDF |
+### 3. Laporan Tendik
+
+**Deskripsi**: Halaman ini merekam tampilan utama laporan tendik sebagai bagian dari alur laporan sdm hrm.
+
+**Akun**: Waket2 / Admin HRM
+
+**URL**: `http://127.0.0.1:8000/hrm/laporan/tendik`
+
+![Laporan Tendik](screenshots/03_tendik.png)
+
+## Temuan & Masalah
+
+Tidak ada temuan kritis maupun warning pada scan ini.
 
 ## Catatan
 
-- Dashboard menggunakan komponen x-stats-card untuk konsistensi UI
-- Waket2 perlu permission hrm.laporan.view
-- Export tersedia dalam format Excel dan PDF
+- Screenshot diambil otomatis menggunakan Playwright dengan full-page capture.
+- Navigasi utama diprioritaskan melalui sidebar; jika sebuah halaman hanya bisa dicapai dari quick action atau tombol sekunder, report akan menandainya sebagai `missing-sidebar`.
+- Form pada report ini dibuka untuk verifikasi visual dan field wajib, tidak disubmit secara destruktif agar hasil scan tidak memalsukan status sukses.
+- Data yang tampil mengikuti seeder HRM yang aktif saat scan dijalankan.

@@ -1,47 +1,43 @@
-# Workflow Report: Input Kinerja Penunjang Dosen
+# Workflow Report: Penunjang Dosen
 
-**Tanggal**: 2026-04-02
-**Role**: Dosen (Dr. Budi Santoso, M.Kom / budi.santoso@sttw.ac.id)
-**Modul**: HRM — Kegiatan Penunjang
-**Status**: ✅ Berhasil
+**Tanggal**: 2026-04-18  
+**Role**: Dosen  
+**Modul**: HRM > Portal Saya  
+**Fitur**: Penunjang Dosen  
+**Status**: ⚠️ Partial
+
+## Deskripsi Workflow
+
+Daftar kegiatan penunjang dan form penambahannya.
 
 ## Ringkasan
 
-Workflow input kinerja kegiatan penunjang oleh dosen, termasuk:
-
-- Melihat daftar kegiatan penunjang yang sudah diinput
-- Mengisi form tambah kegiatan penunjang baru
-- Skenario periode ditutup
+1 langkah berhasil, 1 langkah gagal, dan 1 temuan warning tercatat.
 
 ## Langkah-langkah
 
-### 1. Halaman Index Penunjang
+### 1. Daftar Penunjang
 
-Dosen membuka halaman Penunjang. Terlihat daftar kegiatan penunjang dalam tabel dengan kolom nama kegiatan, jenis, tanggal, dan peran.
+**Deskripsi**: Halaman ini merekam tampilan utama daftar penunjang sebagai bagian dari alur penunjang dosen.
 
-![Halaman Index Penunjang](screenshots/01_penunjang-index.png)
+**Akun**: Portal Dosen
 
-### 2. Form Tambah Penunjang (Periode Buka)
+**URL**: `http://127.0.0.1:8000/hrm/portal/kinerja/penunjang`
 
-Dosen mengklik tombol tambah. Form berisi field: Nama Kegiatan, Jenis (Seminar/Workshop/dll), Tanggal, Peran, dan Keterangan.
+**Catatan langkah**: missing-sidebar: Halaman ini dicapai lewat quick action atau tombol sekunder karena tidak ada item sidebar langsung.
 
-![Form Tambah Penunjang (Periode Buka)](screenshots/02_penunjang-create.png)
+![Daftar Penunjang](screenshots/01_index.png)
 
-### 3. Form Tambah Penunjang (Periode Tutup)
+## Temuan & Masalah
 
-Ketika periode pengisian ditutup, form menampilkan halaman 403 "Periode pengisian sudah tutup."
-
-![Form Tambah Penunjang (Periode Tutup)](screenshots/02_penunjang-create-closed.png)
-
-## Fitur yang Diuji
-
-| Fitur | Status | Keterangan |
-| --- | --- | --- |
-| Daftar penunjang | ✅ | Tabel data kegiatan penunjang |
-| Tambah penunjang | ✅ | Form input nama, jenis, tanggal, peran |
-| Periode tutup | ✅ | Form tidak bisa diakses saat periode ditutup |
+| # | Halaman | URL | Kategori | Deskripsi | Screenshot | Prioritas |
+|---|---------|-----|----------|-----------|------------|-----------|
+| 1 | Daftar Penunjang | `http://127.0.0.1:8000/hrm/portal/kinerja/penunjang` | `missing-sidebar` | Halaman ini dicapai lewat quick action atau tombol sekunder karena tidak ada item sidebar langsung. | [Lihat](screenshots/01_index.png) | Medium |
+| 2 | Form Tambah Penunjang | `http://127.0.0.1:8000/hrm/portal/kinerja/penunjang` | `missing-feature` | Elemen aksi "/Tambah/i" tidak ditemukan pada area utama halaman. | [Lihat](screenshots/err_02_create.png) | High |
 
 ## Catatan
 
-- Kegiatan penunjang mencakup seminar, workshop, pelatihan, dll
-- Data masuk ke penilaian kinerja dosen
+- Screenshot diambil otomatis menggunakan Playwright dengan full-page capture.
+- Navigasi utama diprioritaskan melalui sidebar; jika sebuah halaman hanya bisa dicapai dari quick action atau tombol sekunder, report akan menandainya sebagai `missing-sidebar`.
+- Form pada report ini dibuka untuk verifikasi visual dan field wajib, tidak disubmit secara destruktif agar hasil scan tidak memalsukan status sukses.
+- Data yang tampil mengikuti seeder HRM yang aktif saat scan dijalankan.

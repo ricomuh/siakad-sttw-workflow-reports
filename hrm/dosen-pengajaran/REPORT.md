@@ -1,34 +1,43 @@
-# Workflow Report: Data Pengajaran Dosen
+# Workflow Report: Pengajaran Dosen
 
-**Tanggal**: 2026-04-02
-**Role**: Dosen (Dr. Budi Santoso, M.Kom / budi.santoso@sttw.ac.id)
-**Modul**: HRM — Pengajaran
-**Status**: ✅ Berhasil
+**Tanggal**: 2026-04-18  
+**Role**: Dosen  
+**Modul**: HRM > Portal Saya  
+**Fitur**: Pengajaran Dosen  
+**Status**: ⚠️ Partial
+
+## Deskripsi Workflow
+
+Halaman data pengajaran dosen yang ditarik dari SIAKAD.
 
 ## Ringkasan
 
-Halaman data pengajaran dosen menampilkan daftar mata kuliah yang diampu berdasarkan jadwal kuliah yang sudah diinput oleh admin.
-
-- Data bersifat read-only (tidak bisa ditambah/edit oleh dosen)
-- Bersumber dari jadwal kuliah SIAKAD
+1 langkah berhasil, 0 langkah gagal, dan 2 temuan warning tercatat.
 
 ## Langkah-langkah
 
-### 1. Halaman Data Pengajaran
+### 1. Data Pengajaran
 
-Dosen membuka halaman Pengajaran. Terlihat daftar mata kuliah yang diampu pada semester aktif beserta informasi kelas, SKS, dan jadwal.
+**Deskripsi**: Halaman ini merekam tampilan utama data pengajaran sebagai bagian dari alur pengajaran dosen.
 
-![Halaman Data Pengajaran](screenshots/01_pengajaran-index.png)
+**Akun**: Portal Dosen
 
-## Fitur yang Diuji
+**URL**: `http://127.0.0.1:8000/hrm/portal/kinerja/pengajaran`
 
-| Fitur | Status | Keterangan |
-| --- | --- | --- |
-| Daftar mata kuliah diampu | ✅ | Tabel berisi data jadwal pengajaran |
-| Read-only | ✅ | Data dari jadwal kuliah, tidak bisa diedit dosen |
+**Catatan langkah**: no-data: Halaman tampil tetapi data yang ditampilkan masih kosong atau belum tersedia. missing-sidebar: Halaman ini dicapai lewat quick action atau tombol sekunder karena tidak ada item sidebar langsung.
+
+![Data Pengajaran](screenshots/01_index.png)
+
+## Temuan & Masalah
+
+| # | Halaman | URL | Kategori | Deskripsi | Screenshot | Prioritas |
+|---|---------|-----|----------|-----------|------------|-----------|
+| 1 | Data Pengajaran | `http://127.0.0.1:8000/hrm/portal/kinerja/pengajaran` | `no-data` | Halaman tampil tetapi data yang ditampilkan masih kosong atau belum tersedia. | [Lihat](screenshots/01_index.png) | Low |
+| 2 | Data Pengajaran | `http://127.0.0.1:8000/hrm/portal/kinerja/pengajaran` | `missing-sidebar` | Halaman ini dicapai lewat quick action atau tombol sekunder karena tidak ada item sidebar langsung. | [Lihat](screenshots/01_index.png) | Medium |
 
 ## Catatan
 
-- Data bersumber dari jadwal kuliah SIAKAD
-- Dosen tidak bisa menambah/mengedit data pengajaran
-- Otomatis masuk ke perhitungan kinerja
+- Screenshot diambil otomatis menggunakan Playwright dengan full-page capture.
+- Navigasi utama diprioritaskan melalui sidebar; jika sebuah halaman hanya bisa dicapai dari quick action atau tombol sekunder, report akan menandainya sebagai `missing-sidebar`.
+- Form pada report ini dibuka untuk verifikasi visual dan field wajib, tidak disubmit secara destruktif agar hasil scan tidak memalsukan status sukses.
+- Data yang tampil mengikuti seeder HRM yang aktif saat scan dijalankan.

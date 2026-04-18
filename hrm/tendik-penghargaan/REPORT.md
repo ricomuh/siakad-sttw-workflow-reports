@@ -1,47 +1,53 @@
-# Workflow Report: Input Kinerja Penghargaan Tendik
+# Workflow Report: Penghargaan Tendik
 
-**Tanggal**: 2026-04-02
-**Role**: Tendik (Ahmad Syaiful, S.Sos / ahmad.syaiful@sttw.ac.id)
-**Modul**: HRM — Penghargaan
-**Status**: ✅ Berhasil
+**Tanggal**: 2026-04-18  
+**Role**: Tendik  
+**Modul**: HRM  
+**Fitur**: Penghargaan Tendik  
+**Status**: ⚠️ Partial
+
+## Deskripsi Workflow
+
+Daftar penghargaan dan form penambahannya.
 
 ## Ringkasan
 
-Workflow input data penghargaan oleh tendik, termasuk:
-
-- Melihat daftar penghargaan
-- Mengisi form tambah penghargaan baru
-- Skenario periode ditutup
+2 langkah berhasil, 0 langkah gagal, dan 2 temuan warning tercatat.
 
 ## Langkah-langkah
 
-### 1. Halaman Index Penghargaan
+### 1. Daftar Penghargaan
 
-Tendik membuka halaman Penghargaan. Terlihat daftar penghargaan dalam tabel.
+**Deskripsi**: Halaman ini merekam tampilan utama daftar penghargaan sebagai bagian dari alur penghargaan tendik.
 
-![Halaman Index Penghargaan](screenshots/01_penghargaan-index.png)
+**Akun**: Portal Tendik
 
-### 2. Form Tambah Penghargaan (Periode Buka)
+**URL**: `http://127.0.0.1:8000/hrm/tendik/kinerja/penghargaan`
 
-Tendik mengklik tombol tambah. Form berisi field: Nama Penghargaan, Tingkat, Pemberi, Tahun, dan Keterangan.
+**Catatan langkah**: no-data: Halaman tampil tetapi data yang ditampilkan masih kosong atau belum tersedia. missing-sidebar: Halaman ini dicapai lewat quick action atau tombol sekunder karena tidak ada item sidebar langsung.
 
-![Form Tambah Penghargaan (Periode Buka)](screenshots/02_penghargaan-create.png)
+![Daftar Penghargaan](screenshots/01_index.png)
 
-### 3. Form Tambah Penghargaan (Periode Tutup)
+### 2. Form Tambah Penghargaan
 
-Ketika periode pengisian ditutup, form menampilkan halaman 403 "Periode pengisian sudah tutup."
+**Deskripsi**: Form dibuka tanpa submit untuk memverifikasi field wajib, struktur input, dan tombol aksi pada penghargaan tendik.
 
-![Form Tambah Penghargaan (Periode Tutup)](screenshots/02_penghargaan-create-closed.png)
+**Akun**: Portal Tendik
 
-## Fitur yang Diuji
+**URL**: `http://127.0.0.1:8000/hrm/tendik/kinerja/penghargaan/create`
 
-| Fitur | Status | Keterangan |
-| --- | --- | --- |
-| Daftar penghargaan | ✅ | Tabel data penghargaan tendik |
-| Tambah penghargaan | ✅ | Form input nama, tingkat, pemberi, tahun |
-| Periode tutup | ✅ | Form tidak bisa diakses saat periode ditutup |
+![Form Tambah Penghargaan](screenshots/02_create.png)
+
+## Temuan & Masalah
+
+| # | Halaman | URL | Kategori | Deskripsi | Screenshot | Prioritas |
+|---|---------|-----|----------|-----------|------------|-----------|
+| 1 | Daftar Penghargaan | `http://127.0.0.1:8000/hrm/tendik/kinerja/penghargaan` | `no-data` | Halaman tampil tetapi data yang ditampilkan masih kosong atau belum tersedia. | [Lihat](screenshots/01_index.png) | Low |
+| 2 | Daftar Penghargaan | `http://127.0.0.1:8000/hrm/tendik/kinerja/penghargaan` | `missing-sidebar` | Halaman ini dicapai lewat quick action atau tombol sekunder karena tidak ada item sidebar langsung. | [Lihat](screenshots/01_index.png) | Medium |
 
 ## Catatan
 
-- Penghargaan tendik pola sama dengan dosen
-- Tingkat: Institusi, Regional, Nasional, Internasional
+- Screenshot diambil otomatis menggunakan Playwright dengan full-page capture.
+- Navigasi utama diprioritaskan melalui sidebar; jika sebuah halaman hanya bisa dicapai dari quick action atau tombol sekunder, report akan menandainya sebagai `missing-sidebar`.
+- Form pada report ini dibuka untuk verifikasi visual dan field wajib, tidak disubmit secara destruktif agar hasil scan tidak memalsukan status sukses.
+- Data yang tampil mengikuti seeder HRM yang aktif saat scan dijalankan.

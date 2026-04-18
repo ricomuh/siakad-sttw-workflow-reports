@@ -1,47 +1,44 @@
-# Workflow Report: Input Kinerja Penghargaan Dosen
+# Workflow Report: Penghargaan Dosen
 
-**Tanggal**: 2026-04-02
-**Role**: Dosen (Dr. Budi Santoso, M.Kom / budi.santoso@sttw.ac.id)
-**Modul**: HRM — Penghargaan
-**Status**: ✅ Berhasil
+**Tanggal**: 2026-04-18  
+**Role**: Dosen  
+**Modul**: HRM > Portal Saya  
+**Fitur**: Penghargaan Dosen  
+**Status**: ⚠️ Partial
+
+## Deskripsi Workflow
+
+Daftar penghargaan dan form penambahannya.
 
 ## Ringkasan
 
-Workflow input data penghargaan oleh dosen, termasuk:
-
-- Melihat daftar penghargaan yang sudah diinput
-- Mengisi form tambah penghargaan baru
-- Skenario periode ditutup
+1 langkah berhasil, 1 langkah gagal, dan 2 temuan warning tercatat.
 
 ## Langkah-langkah
 
-### 1. Halaman Index Penghargaan
+### 1. Daftar Penghargaan
 
-Dosen membuka halaman Penghargaan. Terlihat daftar penghargaan dalam tabel dengan kolom nama penghargaan, tingkat, pemberi, dan tahun.
+**Deskripsi**: Halaman ini merekam tampilan utama daftar penghargaan sebagai bagian dari alur penghargaan dosen.
 
-![Halaman Index Penghargaan](screenshots/01_penghargaan-index.png)
+**Akun**: Portal Dosen
 
-### 2. Form Tambah Penghargaan (Periode Buka)
+**URL**: `http://127.0.0.1:8000/hrm/portal/kinerja/penghargaan`
 
-Dosen mengklik tombol tambah. Form berisi field: Nama Penghargaan, Tingkat (Institusi/Regional/Nasional/Internasional), Pemberi, Tahun, dan Keterangan.
+**Catatan langkah**: no-data: Halaman tampil tetapi data yang ditampilkan masih kosong atau belum tersedia. missing-sidebar: Halaman ini dicapai lewat quick action atau tombol sekunder karena tidak ada item sidebar langsung.
 
-![Form Tambah Penghargaan (Periode Buka)](screenshots/02_penghargaan-create.png)
+![Daftar Penghargaan](screenshots/01_index.png)
 
-### 3. Form Tambah Penghargaan (Periode Tutup)
+## Temuan & Masalah
 
-Ketika periode pengisian ditutup, form menampilkan halaman 403 "Periode pengisian sudah tutup."
-
-![Form Tambah Penghargaan (Periode Tutup)](screenshots/02_penghargaan-create-closed.png)
-
-## Fitur yang Diuji
-
-| Fitur | Status | Keterangan |
-| --- | --- | --- |
-| Daftar penghargaan | ✅ | Tabel data penghargaan dosen |
-| Tambah penghargaan | ✅ | Form input nama, tingkat, pemberi, tahun |
-| Periode tutup | ✅ | Form tidak bisa diakses saat periode ditutup |
+| # | Halaman | URL | Kategori | Deskripsi | Screenshot | Prioritas |
+|---|---------|-----|----------|-----------|------------|-----------|
+| 1 | Daftar Penghargaan | `http://127.0.0.1:8000/hrm/portal/kinerja/penghargaan` | `no-data` | Halaman tampil tetapi data yang ditampilkan masih kosong atau belum tersedia. | [Lihat](screenshots/01_index.png) | Low |
+| 2 | Daftar Penghargaan | `http://127.0.0.1:8000/hrm/portal/kinerja/penghargaan` | `missing-sidebar` | Halaman ini dicapai lewat quick action atau tombol sekunder karena tidak ada item sidebar langsung. | [Lihat](screenshots/01_index.png) | Medium |
+| 3 | Form Tambah Penghargaan | `http://127.0.0.1:8000/hrm/portal/kinerja/penghargaan` | `missing-feature` | Elemen aksi "/Tambah/i" tidak ditemukan pada area utama halaman. | [Lihat](screenshots/err_02_create.png) | High |
 
 ## Catatan
 
-- Penghargaan mencakup sertifikasi, piagam, award, dll
-- Tingkat: Institusi, Regional, Nasional, Internasional
+- Screenshot diambil otomatis menggunakan Playwright dengan full-page capture.
+- Navigasi utama diprioritaskan melalui sidebar; jika sebuah halaman hanya bisa dicapai dari quick action atau tombol sekunder, report akan menandainya sebagai `missing-sidebar`.
+- Form pada report ini dibuka untuk verifikasi visual dan field wajib, tidak disubmit secara destruktif agar hasil scan tidak memalsukan status sukses.
+- Data yang tampil mengikuti seeder HRM yang aktif saat scan dijalankan.

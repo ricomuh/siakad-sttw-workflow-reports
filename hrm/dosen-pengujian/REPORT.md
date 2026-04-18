@@ -1,47 +1,44 @@
-# Workflow Report: Input Kinerja Pengujian Dosen
+# Workflow Report: Pengujian Mahasiswa Dosen
 
-**Tanggal**: 2026-04-02
-**Role**: Dosen (Dr. Budi Santoso, M.Kom / budi.santoso@sttw.ac.id)
-**Modul**: HRM — Pengujian Mahasiswa
-**Status**: ✅ Berhasil
+**Tanggal**: 2026-04-18  
+**Role**: Dosen  
+**Modul**: HRM > Portal Saya  
+**Fitur**: Pengujian Mahasiswa Dosen  
+**Status**: ⚠️ Partial
+
+## Deskripsi Workflow
+
+Daftar pengujian dan form penambahan pengujian.
 
 ## Ringkasan
 
-Workflow input kinerja pengujian mahasiswa oleh dosen, termasuk:
-
-- Melihat daftar pengujian (sebagai penguji TA/Skripsi)
-- Mengisi form tambah pengujian baru
-- Skenario periode ditutup
+1 langkah berhasil, 1 langkah gagal, dan 2 temuan warning tercatat.
 
 ## Langkah-langkah
 
-### 1. Halaman Index Pengujian
+### 1. Daftar Pengujian
 
-Dosen membuka halaman Pengujian. Terlihat daftar pengujian dalam tabel dengan kolom jenis (TA/Skripsi), peran (Penguji 1/2), nama mahasiswa, NIM, dan judul.
+**Deskripsi**: Halaman ini merekam tampilan utama daftar pengujian sebagai bagian dari alur pengujian mahasiswa dosen.
 
-![Halaman Index Pengujian](screenshots/01_pengujian-index.png)
+**Akun**: Portal Dosen
 
-### 2. Form Tambah Pengujian (Periode Buka)
+**URL**: `http://127.0.0.1:8000/hrm/portal/kinerja/pengujian`
 
-Dosen mengklik tombol tambah. Form berisi field: Jenis (TA/Skripsi), Peran (Penguji 1/2/Ketua), Nama Mahasiswa, NIM, dan Judul.
+**Catatan langkah**: no-data: Halaman tampil tetapi data yang ditampilkan masih kosong atau belum tersedia. missing-sidebar: Halaman ini dicapai lewat quick action atau tombol sekunder karena tidak ada item sidebar langsung.
 
-![Form Tambah Pengujian (Periode Buka)](screenshots/02_pengujian-create.png)
+![Daftar Pengujian](screenshots/01_index.png)
 
-### 3. Form Tambah Pengujian (Periode Tutup)
+## Temuan & Masalah
 
-Ketika periode pengisian ditutup, form menampilkan halaman 403 "Periode pengisian sudah tutup."
-
-![Form Tambah Pengujian (Periode Tutup)](screenshots/02_pengujian-create-closed.png)
-
-## Fitur yang Diuji
-
-| Fitur | Status | Keterangan |
-| --- | --- | --- |
-| Daftar pengujian | ✅ | Tabel data pengujian mahasiswa |
-| Tambah pengujian | ✅ | Form input jenis, peran, mahasiswa, judul |
-| Periode tutup | ✅ | Form tidak bisa diakses saat periode ditutup |
+| # | Halaman | URL | Kategori | Deskripsi | Screenshot | Prioritas |
+|---|---------|-----|----------|-----------|------------|-----------|
+| 1 | Daftar Pengujian | `http://127.0.0.1:8000/hrm/portal/kinerja/pengujian` | `no-data` | Halaman tampil tetapi data yang ditampilkan masih kosong atau belum tersedia. | [Lihat](screenshots/01_index.png) | Low |
+| 2 | Daftar Pengujian | `http://127.0.0.1:8000/hrm/portal/kinerja/pengujian` | `missing-sidebar` | Halaman ini dicapai lewat quick action atau tombol sekunder karena tidak ada item sidebar langsung. | [Lihat](screenshots/01_index.png) | Medium |
+| 3 | Form Tambah Pengujian | `http://127.0.0.1:8000/hrm/portal/kinerja/pengujian` | `missing-feature` | Elemen aksi "/Tambah/i" tidak ditemukan pada area utama halaman. | [Lihat](screenshots/err_02_create.png) | High |
 
 ## Catatan
 
-- Pengujian adalah catatan mandiri dosen sebagai penguji TA/Skripsi
-- Data pengujian masuk ke penilaian kinerja dosen
+- Screenshot diambil otomatis menggunakan Playwright dengan full-page capture.
+- Navigasi utama diprioritaskan melalui sidebar; jika sebuah halaman hanya bisa dicapai dari quick action atau tombol sekunder, report akan menandainya sebagai `missing-sidebar`.
+- Form pada report ini dibuka untuk verifikasi visual dan field wajib, tidak disubmit secara destruktif agar hasil scan tidak memalsukan status sukses.
+- Data yang tampil mengikuti seeder HRM yang aktif saat scan dijalankan.

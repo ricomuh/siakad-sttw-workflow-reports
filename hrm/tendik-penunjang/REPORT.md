@@ -1,47 +1,53 @@
-# Workflow Report: Input Kinerja Penunjang Tendik
+# Workflow Report: Penunjang Tendik
 
-**Tanggal**: 2026-04-02
-**Role**: Tendik (Ahmad Syaiful, S.Sos / ahmad.syaiful@sttw.ac.id)
-**Modul**: HRM — Kegiatan Penunjang
-**Status**: ✅ Berhasil
+**Tanggal**: 2026-04-18  
+**Role**: Tendik  
+**Modul**: HRM  
+**Fitur**: Penunjang Tendik  
+**Status**: ⚠️ Partial
+
+## Deskripsi Workflow
+
+Daftar kegiatan penunjang dan form penambahannya.
 
 ## Ringkasan
 
-Workflow input kinerja kegiatan penunjang oleh tendik, termasuk:
-
-- Melihat daftar kegiatan penunjang
-- Mengisi form tambah kegiatan penunjang baru
-- Skenario periode ditutup
+2 langkah berhasil, 0 langkah gagal, dan 2 temuan warning tercatat.
 
 ## Langkah-langkah
 
-### 1. Halaman Index Penunjang
+### 1. Daftar Penunjang
 
-Tendik membuka halaman Penunjang. Terlihat daftar kegiatan penunjang dalam tabel.
+**Deskripsi**: Halaman ini merekam tampilan utama daftar penunjang sebagai bagian dari alur penunjang tendik.
 
-![Halaman Index Penunjang](screenshots/01_penunjang-index.png)
+**Akun**: Portal Tendik
 
-### 2. Form Tambah Penunjang (Periode Buka)
+**URL**: `http://127.0.0.1:8000/hrm/tendik/kinerja/penunjang`
 
-Tendik mengklik tombol tambah. Form berisi field: Nama Kegiatan, Jenis, Tanggal, Peran, dan Keterangan.
+**Catatan langkah**: no-data: Halaman tampil tetapi data yang ditampilkan masih kosong atau belum tersedia. missing-sidebar: Halaman ini dicapai lewat quick action atau tombol sekunder karena tidak ada item sidebar langsung.
 
-![Form Tambah Penunjang (Periode Buka)](screenshots/02_penunjang-create.png)
+![Daftar Penunjang](screenshots/01_index.png)
 
-### 3. Form Tambah Penunjang (Periode Tutup)
+### 2. Form Tambah Penunjang
 
-Ketika periode pengisian ditutup, form menampilkan halaman 403 "Periode pengisian sudah tutup."
+**Deskripsi**: Form dibuka tanpa submit untuk memverifikasi field wajib, struktur input, dan tombol aksi pada penunjang tendik.
 
-![Form Tambah Penunjang (Periode Tutup)](screenshots/02_penunjang-create-closed.png)
+**Akun**: Portal Tendik
 
-## Fitur yang Diuji
+**URL**: `http://127.0.0.1:8000/hrm/tendik/kinerja/penunjang/create`
 
-| Fitur | Status | Keterangan |
-| --- | --- | --- |
-| Daftar penunjang | ✅ | Tabel data kegiatan penunjang |
-| Tambah penunjang | ✅ | Form input nama, jenis, tanggal |
-| Periode tutup | ✅ | Form tidak bisa diakses saat periode ditutup |
+![Form Tambah Penunjang](screenshots/02_create.png)
+
+## Temuan & Masalah
+
+| # | Halaman | URL | Kategori | Deskripsi | Screenshot | Prioritas |
+|---|---------|-----|----------|-----------|------------|-----------|
+| 1 | Daftar Penunjang | `http://127.0.0.1:8000/hrm/tendik/kinerja/penunjang` | `no-data` | Halaman tampil tetapi data yang ditampilkan masih kosong atau belum tersedia. | [Lihat](screenshots/01_index.png) | Low |
+| 2 | Daftar Penunjang | `http://127.0.0.1:8000/hrm/tendik/kinerja/penunjang` | `missing-sidebar` | Halaman ini dicapai lewat quick action atau tombol sekunder karena tidak ada item sidebar langsung. | [Lihat](screenshots/01_index.png) | Medium |
 
 ## Catatan
 
-- Kegiatan penunjang tendik sama polanya dengan dosen
-- Mencakup seminar, workshop, pelatihan, dll
+- Screenshot diambil otomatis menggunakan Playwright dengan full-page capture.
+- Navigasi utama diprioritaskan melalui sidebar; jika sebuah halaman hanya bisa dicapai dari quick action atau tombol sekunder, report akan menandainya sebagai `missing-sidebar`.
+- Form pada report ini dibuka untuk verifikasi visual dan field wajib, tidak disubmit secara destruktif agar hasil scan tidak memalsukan status sukses.
+- Data yang tampil mengikuti seeder HRM yang aktif saat scan dijalankan.

@@ -1,49 +1,44 @@
-# Workflow Report: Input Kinerja Bimbingan Dosen
+# Workflow Report: Bimbingan Mahasiswa Dosen
 
-**Tanggal**: 2026-04-02
-**Role**: Dosen (Dr. Budi Santoso, M.Kom / budi.santoso@sttw.ac.id)
-**Modul**: HRM — Bimbingan Mahasiswa
-**Status**: ✅ Berhasil
+**Tanggal**: 2026-04-18  
+**Role**: Dosen  
+**Modul**: HRM > Portal Saya  
+**Fitur**: Bimbingan Mahasiswa Dosen  
+**Status**: ⚠️ Partial
+
+## Deskripsi Workflow
+
+Daftar bimbingan dan form penambahan bimbingan dosen.
 
 ## Ringkasan
 
-Workflow input kinerja bimbingan mahasiswa oleh dosen, termasuk:
-
-- Melihat daftar bimbingan yang sudah diinput
-- Mengisi form tambah bimbingan baru (jenis, mahasiswa, topik, tanggal)
-- Skenario periode ditutup: form tidak dapat diakses
+1 langkah berhasil, 1 langkah gagal, dan 2 temuan warning tercatat.
 
 ## Langkah-langkah
 
-### 1. Halaman Index Bimbingan
+### 1. Daftar Bimbingan
 
-Dosen membuka halaman Bimbingan. Terlihat daftar bimbingan yang sudah diinput dalam tabel dengan kolom jenis, mahasiswa, topik, tanggal, dan aksi. Tombol "+ Tambah Bimbingan" tersedia di kanan atas.
+**Deskripsi**: Halaman ini merekam tampilan utama daftar bimbingan sebagai bagian dari alur bimbingan mahasiswa dosen.
 
-![Halaman Index Bimbingan](screenshots/01_bimbingan-index.png)
+**Akun**: Portal Dosen
 
-### 2. Form Tambah Bimbingan (Periode Buka)
+**URL**: `http://127.0.0.1:8000/hrm/portal/kinerja/bimbingan`
 
-Dosen mengklik tombol tambah. Form berisi field: Jenis Bimbingan (PKL/TA/Skripsi/KKN/Lainnya), Nama Mahasiswa, Topik/Judul, Tanggal Bimbingan, dan Keterangan.
+**Catatan langkah**: no-data: Halaman tampil tetapi data yang ditampilkan masih kosong atau belum tersedia. missing-sidebar: Halaman ini dicapai lewat quick action atau tombol sekunder karena tidak ada item sidebar langsung.
 
-![Form Tambah Bimbingan (Periode Buka)](screenshots/02_bimbingan-create.png)
+![Daftar Bimbingan](screenshots/01_index.png)
 
-### 3. Form Tambah Bimbingan (Periode Tutup)
+## Temuan & Masalah
 
-Ketika periode pengisian sudah ditutup, dosen tidak dapat mengakses form tambah. Sistem menampilkan halaman 403 "Periode pengisian sudah tutup."
-
-![Form Tambah Bimbingan (Periode Tutup)](screenshots/02_bimbingan-create-closed.png)
-
-## Fitur yang Diuji
-
-| Fitur | Status | Keterangan |
-| --- | --- | --- |
-| Daftar bimbingan | ✅ | Tabel dengan data bimbingan yang sudah diinput |
-| Tambah bimbingan | ✅ | Form input dengan jenis, mahasiswa, topik, tanggal |
-| Jenis bimbingan | ✅ | Dropdown: PKL, TA, Skripsi, KKN, Lainnya |
-| Periode tutup | ✅ | Form tidak bisa diakses saat periode ditutup |
+| # | Halaman | URL | Kategori | Deskripsi | Screenshot | Prioritas |
+|---|---------|-----|----------|-----------|------------|-----------|
+| 1 | Daftar Bimbingan | `http://127.0.0.1:8000/hrm/portal/kinerja/bimbingan` | `no-data` | Halaman tampil tetapi data yang ditampilkan masih kosong atau belum tersedia. | [Lihat](screenshots/01_index.png) | Low |
+| 2 | Daftar Bimbingan | `http://127.0.0.1:8000/hrm/portal/kinerja/bimbingan` | `missing-sidebar` | Halaman ini dicapai lewat quick action atau tombol sekunder karena tidak ada item sidebar langsung. | [Lihat](screenshots/01_index.png) | Medium |
+| 3 | Form Tambah Bimbingan | `http://127.0.0.1:8000/hrm/portal/kinerja/bimbingan` | `missing-feature` | Elemen aksi "/Tambah/i" tidak ditemukan pada area utama halaman. | [Lihat](screenshots/err_02_create.png) | High |
 
 ## Catatan
 
-- Bimbingan adalah catatan mandiri dosen, bukan data dari SISKA
-- Jenis bimbingan: PKL, TA, Skripsi, KKN, Lainnya (sesuai enum DB)
-- Data bimbingan masuk ke penilaian kinerja dosen
+- Screenshot diambil otomatis menggunakan Playwright dengan full-page capture.
+- Navigasi utama diprioritaskan melalui sidebar; jika sebuah halaman hanya bisa dicapai dari quick action atau tombol sekunder, report akan menandainya sebagai `missing-sidebar`.
+- Form pada report ini dibuka untuk verifikasi visual dan field wajib, tidak disubmit secara destruktif agar hasil scan tidak memalsukan status sukses.
+- Data yang tampil mengikuti seeder HRM yang aktif saat scan dijalankan.

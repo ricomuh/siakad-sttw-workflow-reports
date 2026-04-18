@@ -1,36 +1,52 @@
-# Workflow Report: Portal Asesor Kinerja
+# Workflow Report: Manajemen Asesor HRM
 
-**Tanggal**: 2026-04-02
-**Role**: Waket2 / Asesor (Pak Deni / waket2@sttw.ac.id)
-**Modul**: HRM — Penilaian Asesor
-**Status**: ✅ Berhasil
+**Tanggal**: 2026-04-18  
+**Role**: Waket2 / Admin HRM  
+**Modul**: HRM > Admin HRM  
+**Fitur**: Manajemen Asesor HRM  
+**Status**: ⚠️ Partial
+
+## Deskripsi Workflow
+
+Daftar asesor dan halaman assignment asesor ke pegawai.
 
 ## Ringkasan
 
-Portal asesor menampilkan daftar pegawai yang harus dinilai oleh asesor.
-
-- Melihat antrian penilaian (pegawai yang sudah mengajukan kinerja)
-- Status penilaian: menunggu, sedang dinilai, selesai
-- Akses ke detail laporan kinerja individu
+2 langkah berhasil, 0 langkah gagal, dan 1 temuan warning tercatat.
 
 ## Langkah-langkah
 
-### 1. Dashboard Asesor
+### 1. Daftar Asesor
 
-Asesor membuka menu Penilaian Kinerja > Portal Asesor. Terlihat daftar pegawai yang perlu dinilai dengan status masing-masing (menunggu/sedang proses/selesai).
+**Deskripsi**: Halaman ini merekam tampilan utama daftar asesor sebagai bagian dari alur manajemen asesor hrm.
 
-![Dashboard Asesor](screenshots/01_asesor-dashboard.png)
+**Akun**: Waket2 / Admin HRM
 
-## Fitur yang Diuji
+**URL**: `http://127.0.0.1:8000/hrm/admin/asesor`
 
-| Fitur | Status | Keterangan |
-| --- | --- | --- |
-| Antrian penilaian | ✅ | Daftar pegawai yang perlu dinilai |
-| Status penilaian | ✅ | Menunggu, sedang proses, selesai |
-| Akses laporan | ✅ | Link ke detail kinerja individu |
+![Daftar Asesor](screenshots/01_index.png)
+
+### 2. Assign Asesor
+
+**Deskripsi**: Daftar asesor dan halaman assignment asesor ke pegawai. Langkah ini difokuskan pada tampilan assign asesor.
+
+**Akun**: Waket2 / Admin HRM
+
+**URL**: `http://127.0.0.1:8000/hrm/admin/asesor-assign`
+
+**Catatan langkah**: missing-sidebar: Halaman ini dicapai lewat quick action atau tombol sekunder karena tidak ada item sidebar langsung.
+
+![Assign Asesor](screenshots/02_assign.png)
+
+## Temuan & Masalah
+
+| # | Halaman | URL | Kategori | Deskripsi | Screenshot | Prioritas |
+|---|---------|-----|----------|-----------|------------|-----------|
+| 1 | Assign Asesor | `http://127.0.0.1:8000/hrm/admin/asesor-assign` | `missing-sidebar` | Halaman ini dicapai lewat quick action atau tombol sekunder karena tidak ada item sidebar langsung. | [Lihat](screenshots/02_assign.png) | Medium |
 
 ## Catatan
 
-- Asesor ditunjuk oleh admin melalui menu Admin HRM > Asesor
-- Waket2 secara default memiliki akses asesor
-- Penilaian dilakukan per periode jadwal kinerja
+- Screenshot diambil otomatis menggunakan Playwright dengan full-page capture.
+- Navigasi utama diprioritaskan melalui sidebar; jika sebuah halaman hanya bisa dicapai dari quick action atau tombol sekunder, report akan menandainya sebagai `missing-sidebar`.
+- Form pada report ini dibuka untuk verifikasi visual dan field wajib, tidak disubmit secara destruktif agar hasil scan tidak memalsukan status sukses.
+- Data yang tampil mengikuti seeder HRM yang aktif saat scan dijalankan.

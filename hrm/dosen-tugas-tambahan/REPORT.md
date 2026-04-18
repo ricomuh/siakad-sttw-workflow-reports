@@ -1,47 +1,44 @@
-# Workflow Report: Input Kinerja Tugas Tambahan Dosen
+# Workflow Report: Tugas Tambahan Dosen
 
-**Tanggal**: 2026-04-02
-**Role**: Dosen (Dr. Budi Santoso, M.Kom / budi.santoso@sttw.ac.id)
-**Modul**: HRM — Tugas Tambahan
-**Status**: ✅ Berhasil
+**Tanggal**: 2026-04-18  
+**Role**: Dosen  
+**Modul**: HRM > Portal Saya  
+**Fitur**: Tugas Tambahan Dosen  
+**Status**: ⚠️ Partial
+
+## Deskripsi Workflow
+
+Daftar tugas tambahan dan form penambahannya.
 
 ## Ringkasan
 
-Workflow input tugas tambahan oleh dosen, termasuk:
-
-- Melihat daftar tugas tambahan (panitia, koordinator, dll)
-- Mengisi form tambah tugas tambahan baru
-- Skenario periode ditutup
+1 langkah berhasil, 1 langkah gagal, dan 2 temuan warning tercatat.
 
 ## Langkah-langkah
 
-### 1. Halaman Index Tugas Tambahan
+### 1. Daftar Tugas Tambahan
 
-Dosen membuka halaman Tugas Tambahan. Terlihat daftar tugas dalam tabel dengan kolom nama tugas, nomor SK, tanggal mulai, dan tanggal selesai.
+**Deskripsi**: Halaman ini merekam tampilan utama daftar tugas tambahan sebagai bagian dari alur tugas tambahan dosen.
 
-![Halaman Index Tugas Tambahan](screenshots/01_tugas-tambahan-index.png)
+**Akun**: Portal Dosen
 
-### 2. Form Tambah Tugas Tambahan (Periode Buka)
+**URL**: `http://127.0.0.1:8000/hrm/portal/kinerja/tugas-tambahan`
 
-Dosen mengklik tombol tambah. Form berisi field: Nama Tugas, Nomor SK, Tanggal Mulai, Tanggal Selesai, dan Keterangan.
+**Catatan langkah**: no-data: Halaman tampil tetapi data yang ditampilkan masih kosong atau belum tersedia. missing-sidebar: Halaman ini dicapai lewat quick action atau tombol sekunder karena tidak ada item sidebar langsung.
 
-![Form Tambah Tugas Tambahan (Periode Buka)](screenshots/02_tugas-tambahan-create.png)
+![Daftar Tugas Tambahan](screenshots/01_index.png)
 
-### 3. Form Tambah Tugas Tambahan (Periode Tutup)
+## Temuan & Masalah
 
-Ketika periode pengisian ditutup, form menampilkan halaman 403 "Periode pengisian sudah tutup."
-
-![Form Tambah Tugas Tambahan (Periode Tutup)](screenshots/02_tugas-tambahan-create-closed.png)
-
-## Fitur yang Diuji
-
-| Fitur | Status | Keterangan |
-| --- | --- | --- |
-| Daftar tugas tambahan | ✅ | Tabel data tugas tambahan dosen |
-| Tambah tugas | ✅ | Form input nama, SK, tanggal mulai/selesai |
-| Periode tutup | ✅ | Form tidak bisa diakses saat periode ditutup |
+| # | Halaman | URL | Kategori | Deskripsi | Screenshot | Prioritas |
+|---|---------|-----|----------|-----------|------------|-----------|
+| 1 | Daftar Tugas Tambahan | `http://127.0.0.1:8000/hrm/portal/kinerja/tugas-tambahan` | `no-data` | Halaman tampil tetapi data yang ditampilkan masih kosong atau belum tersedia. | [Lihat](screenshots/01_index.png) | Low |
+| 2 | Daftar Tugas Tambahan | `http://127.0.0.1:8000/hrm/portal/kinerja/tugas-tambahan` | `missing-sidebar` | Halaman ini dicapai lewat quick action atau tombol sekunder karena tidak ada item sidebar langsung. | [Lihat](screenshots/01_index.png) | Medium |
+| 3 | Form Tambah Tugas Tambahan | `http://127.0.0.1:8000/hrm/portal/kinerja/tugas-tambahan` | `missing-feature` | Elemen aksi "/Tambah/i" tidak ditemukan pada area utama halaman. | [Lihat](screenshots/err_02_create.png) | High |
 
 ## Catatan
 
-- Tugas tambahan mencakup kepanitiaan, koordinator lab, dll
-- Wajib menyertakan nomor SK sebagai bukti penugasan
+- Screenshot diambil otomatis menggunakan Playwright dengan full-page capture.
+- Navigasi utama diprioritaskan melalui sidebar; jika sebuah halaman hanya bisa dicapai dari quick action atau tombol sekunder, report akan menandainya sebagai `missing-sidebar`.
+- Form pada report ini dibuka untuk verifikasi visual dan field wajib, tidak disubmit secara destruktif agar hasil scan tidak memalsukan status sukses.
+- Data yang tampil mengikuti seeder HRM yang aktif saat scan dijalankan.

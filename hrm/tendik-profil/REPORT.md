@@ -1,35 +1,43 @@
 # Workflow Report: Data Kepegawaian Tendik
 
-**Tanggal**: 2026-04-02
-**Role**: Tendik (Ahmad Syaiful, S.Sos / ahmad.syaiful@sttw.ac.id)
-**Modul**: HRM — Portal Tendik
-**Status**: ✅ Berhasil
+**Tanggal**: 2026-04-18  
+**Role**: Tendik  
+**Modul**: HRM  
+**Fitur**: Data Kepegawaian Tendik  
+**Status**: ⚠️ Partial
+
+## Deskripsi Workflow
+
+Profil dan data kepegawaian tendik.
 
 ## Ringkasan
 
-Halaman data kepegawaian menampilkan profil lengkap tenaga kependidikan termasuk:
-
-- Data pribadi dan identitas
-- Jabatan dan unit kerja
-- Status kepegawaian
+1 langkah berhasil, 0 langkah gagal, dan 2 temuan warning tercatat.
 
 ## Langkah-langkah
 
-### 1. Halaman Data Kepegawaian
+### 1. Data Kepegawaian
 
-Tendik membuka menu Portal Saya > Data Kepegawaian. Ditampilkan data profil lengkap termasuk nama, jabatan, unit kerja, dan informasi kepegawaian lainnya.
+**Deskripsi**: Halaman ini merekam tampilan utama data kepegawaian sebagai bagian dari alur data kepegawaian tendik.
 
-![Halaman Data Kepegawaian](screenshots/01_profil-tendik.png)
+**Akun**: Portal Tendik
 
-## Fitur yang Diuji
+**URL**: `http://127.0.0.1:8000/hrm/tendik/profil`
 
-| Fitur | Status | Keterangan |
-| --- | --- | --- |
-| Data pribadi | ✅ | Nama, NIP, email, dll |
-| Jabatan | ✅ | Jabatan dan unit kerja |
-| Status kepegawaian | ✅ | Status aktif dan jenis ikatan kerja |
+**Catatan langkah**: no-data: Halaman tampil tetapi data yang ditampilkan masih kosong atau belum tersedia. missing-sidebar: Halaman ini dicapai lewat quick action atau tombol sekunder karena tidak ada item sidebar langsung.
+
+![Data Kepegawaian](screenshots/01_index.png)
+
+## Temuan & Masalah
+
+| # | Halaman | URL | Kategori | Deskripsi | Screenshot | Prioritas |
+|---|---------|-----|----------|-----------|------------|-----------|
+| 1 | Data Kepegawaian | `http://127.0.0.1:8000/hrm/tendik/profil` | `no-data` | Halaman tampil tetapi data yang ditampilkan masih kosong atau belum tersedia. | [Lihat](screenshots/01_index.png) | Low |
+| 2 | Data Kepegawaian | `http://127.0.0.1:8000/hrm/tendik/profil` | `missing-sidebar` | Halaman ini dicapai lewat quick action atau tombol sekunder karena tidak ada item sidebar langsung. | [Lihat](screenshots/01_index.png) | Medium |
 
 ## Catatan
 
-- Data bersumber dari tabel staf SIAKAD
-- Tendik tidak bisa mengedit data kepegawaian sendiri
+- Screenshot diambil otomatis menggunakan Playwright dengan full-page capture.
+- Navigasi utama diprioritaskan melalui sidebar; jika sebuah halaman hanya bisa dicapai dari quick action atau tombol sekunder, report akan menandainya sebagai `missing-sidebar`.
+- Form pada report ini dibuka untuk verifikasi visual dan field wajib, tidak disubmit secara destruktif agar hasil scan tidak memalsukan status sukses.
+- Data yang tampil mengikuti seeder HRM yang aktif saat scan dijalankan.

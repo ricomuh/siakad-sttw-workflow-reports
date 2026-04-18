@@ -1,35 +1,42 @@
-# Workflow Report: Dashboard Kinerja Dosen
+# Workflow Report: Dashboard Portal Dosen HRM
 
-**Tanggal**: 2026-04-02
-**Role**: Dosen (Dr. Budi Santoso, M.Kom / budi.santoso@sttw.ac.id)
-**Modul**: HRM — Portal Dosen
-**Status**: ✅ Berhasil
+**Tanggal**: 2026-04-18  
+**Role**: Dosen  
+**Modul**: HRM > Portal Saya  
+**Fitur**: Dashboard Portal Dosen HRM  
+**Status**: ⚠️ Partial
+
+## Deskripsi Workflow
+
+Ringkasan jadwal aktif, status laporan, dan menu cepat dosen.
 
 ## Ringkasan
 
-Dashboard kinerja dosen menampilkan ringkasan status pengisian kinerja pada periode aktif.
-
-- Melihat status pengisian dan progres kinerja
-- Akses cepat ke menu input kinerja (bimbingan, pengujian, dll)
-- Informasi jadwal kinerja yang sedang aktif
+1 langkah berhasil, 0 langkah gagal, dan 1 temuan warning tercatat.
 
 ## Langkah-langkah
 
-### 1. Halaman Dashboard Kinerja Dosen
+### 1. Dashboard Kinerja
 
-Dosen membuka menu Portal Saya > Dashboard Kinerja. Terlihat ringkasan status pengisian kinerja, progres input, dan tautan cepat ke fitur-fitur input kinerja.
+**Deskripsi**: Halaman dashboard untuk ringkasan jadwal aktif, status laporan, dan menu cepat dosen. Screenshot diambil setelah halaman selesai dimuat penuh.
 
-![Halaman Dashboard Kinerja Dosen](screenshots/01_dashboard-dosen.png)
+**Akun**: Portal Dosen
 
-## Fitur yang Diuji
+**URL**: `http://127.0.0.1:8000/hrm/portal`
 
-| Fitur | Status | Keterangan |
-| --- | --- | --- |
-| Ringkasan kinerja | ✅ | Status progres input kinerja dosen |
-| Navigasi cepat | ✅ | Tautan ke modul bimbingan, pengujian, dll |
-| Info jadwal aktif | ✅ | Menampilkan periode kinerja yang sedang berjalan |
+**Catatan langkah**: server-error: Landing default setelah login menuju http://127.0.0.1:8000/dashboard mengalami error, sehingga scan dilanjutkan dari /hrm/portal.
+
+![Dashboard Kinerja](screenshots/01_dashboard.png)
+
+## Temuan & Masalah
+
+| # | Halaman | URL | Kategori | Deskripsi | Screenshot | Prioritas |
+|---|---------|-----|----------|-----------|------------|-----------|
+| 1 | Dashboard Kinerja | `http://127.0.0.1:8000/hrm/portal` | `server-error` | Landing default setelah login menuju http://127.0.0.1:8000/dashboard mengalami error, sehingga scan dilanjutkan dari /hrm/portal. | [Lihat](screenshots/01_dashboard.png) | Critical |
 
 ## Catatan
 
-- Dashboard menampilkan data dari periode kinerja aktif
-- Hanya terlihat jika dosen sudah terdaftar di sistem HRM
+- Screenshot diambil otomatis menggunakan Playwright dengan full-page capture.
+- Navigasi utama diprioritaskan melalui sidebar; jika sebuah halaman hanya bisa dicapai dari quick action atau tombol sekunder, report akan menandainya sebagai `missing-sidebar`.
+- Form pada report ini dibuka untuk verifikasi visual dan field wajib, tidak disubmit secara destruktif agar hasil scan tidak memalsukan status sukses.
+- Data yang tampil mengikuti seeder HRM yang aktif saat scan dijalankan.
