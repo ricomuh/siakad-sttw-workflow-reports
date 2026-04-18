@@ -1,11 +1,11 @@
 const fs = require('fs');
 const path = require('path');
-const WR = '.workflow-reports';
+
+const WR = path.resolve(__dirname, 'lpm');
+const RESULTS_PATH = path.join(WR, '.scan-results.json');
 const today = new Date().toISOString().split('T')[0];
 
-// Feature definitions with metadata for report generation
 const features = [
-  // ─── ADMIN CRUD (14) ─────────────────────────────────────────────────
   {
     name: 'lpm-admin-kebijakan', title: 'Kebijakan SPMI', role: 'Admin LPM', modul: 'LPM > Penetapan',
     desc: 'Mengelola kebijakan SPMI (Sistem Penjaminan Mutu Internal) institusi. Mendukung operasi CRUD lengkap dengan verifikasi dokumen.',
@@ -198,8 +198,6 @@ const features = [
       { file: '08_edit-success', title: 'Dokumen Berhasil Diperbarui', desc: 'Redirect dengan notifikasi sukses.' },
     ],
   },
-
-  // ─── ADMIN SPECIAL (6) ───────────────────────────────────────────────
   {
     name: 'lpm-admin-dashboard', title: 'Dashboard Admin LPM', role: 'Admin LPM', modul: 'LPM',
     desc: 'Dashboard utama admin LPM menampilkan ringkasan statistik PPEPP, data SIAKAD, jadwal AMI, dan quick links.',
@@ -250,8 +248,6 @@ const features = [
       { file: '02_settings-saved', title: 'Pengaturan Tersimpan', desc: 'Pengaturan berhasil disimpan dengan notifikasi sukses.' },
     ],
   },
-
-  // ─── AUDITOR (4) ─────────────────────────────────────────────────────
   {
     name: 'lpm-auditor-dashboard', title: 'Dashboard Auditor', role: 'Auditor Internal', modul: 'LPM > Auditor',
     desc: 'Dashboard auditor menampilkan penugasan aktif, ringkasan temuan, dan aksi cepat.',
@@ -280,8 +276,6 @@ const features = [
       { file: '08_edit-success', title: 'Temuan Berhasil Diperbarui', desc: 'Redirect dengan notifikasi sukses.' },
     ],
   },
-
-  // ─── KAPRODI (3) ─────────────────────────────────────────────────────
   {
     name: 'lpm-kaprodi-dashboard', title: 'Dashboard Kaprodi', role: 'Kaprodi', modul: 'LPM > Kaprodi',
     desc: 'Dashboard kaprodi menampilkan temuan AMI untuk program studi yang dipimpin.',
@@ -304,8 +298,6 @@ const features = [
       { file: '02_show', title: 'Detail Temuan & Tindak Lanjut', desc: 'Detail temuan dengan form tindak lanjut yang bisa diisi kaprodi.' },
     ],
   },
-
-  // ─── PORTAL (10) ─────────────────────────────────────────────────────
   {
     name: 'lpm-portal-home', title: 'Portal LPM - Beranda', role: 'Publik', modul: 'LPM Portal',
     desc: 'Halaman beranda portal publik LPM.',
@@ -358,54 +350,169 @@ const features = [
   },
 ];
 
-// ─── GENERATE REPORTS ────────────────────────────────────────────────────────
+function featureDir(name) {
+  return path.join(WR, name.replace(/^lpm-/, ''));
+}
+
+function escapeText(value) {
+  return String(value ?? '-')
+    .replace(/\|/g, '\\|')
+    .replace(/\r?\n/g, ' ')
+    .trim();
+}
+
+function archiveExistingReport(reportPath) {
+  if (!fs.existsSync(reportPath)) {
+    return;
+  }
+
+  const oldContent = fs.readFileSync(reportPath, 'utf8');
+  const dateMatch = oldContent.match(/\*\*Tanggal\*\*:\s*(\d{4}-\d{2}-\d{2})/);
+  const archivedDate = dateMatch?.[1] || new Date(fs.statSync(reportPath).mtime).toISOString().split('T')[0];
+
+  if (archivedDate === today) {
+    fs.unlinkSync(reportPath);
+    return;
+  }
+
+  const archivePath = path.join(path.dirname(reportPath), `${archivedDate}_REPORT.md`);
+
+  if (!fs.existsSync(archivePath)) {
+    fs.renameSync(reportPath, archivePath);
+    return;
+  }
+
+  fs.unlinkSync(reportPath);
+}
+
+function getStatus(results) {
+  const okCount = results.filter((result) => result.ok).length;
+  const failCount = results.filter((result) => !result.ok).length;
+
+  if (results.length === 0) {
+    return { label: '⚠️ Partial', summary: 'Belum ada hasil scan terstruktur untuk fitur ini.' };
+  }
+
+  if (failCount === 0) {
+    return { label: '✅ Berhasil', summary: `Semua ${okCount} langkah pada scan ini lolos tanpa error.` };
+  }
+
+  if (okCount === 0) {
+    return { label: '❌ Gagal', summary: `Seluruh ${failCount} langkah pada scan ini gagal dijalankan.` };
+  }
+
+  return { label: '⚠️ Partial', summary: `${okCount} langkah berhasil, ${failCount} langkah masih bermasalah.` };
+}
+
+function getPriority(category) {
+  switch (category) {
+    case 'server-error':
+      return 'Critical';
+    case 'permission':
+    case 'client-error':
+      return 'High';
+    case 'validation':
+      return 'Medium';
+    default:
+      return 'Medium';
+  }
+}
+
+const scanResults = fs.existsSync(RESULTS_PATH)
+  ? JSON.parse(fs.readFileSync(RESULTS_PATH, 'utf8'))
+  : { features: {} };
 
 let totalReports = 0;
-for (const f of features) {
-  const dir = path.join(WR, f.name);
-  const ssDir = path.join(dir, 'screenshots');
 
-  // Check screenshots exist
-  if (!fs.existsSync(ssDir)) {
-    console.log(`SKIP: ${f.name} — no screenshots directory`);
+for (const feature of features) {
+  const dir = featureDir(feature.name);
+  const screenshotsDir = path.join(dir, 'screenshots');
+
+  if (!fs.existsSync(screenshotsDir)) {
+    console.log(`SKIP: ${feature.name} — no screenshots directory`);
     continue;
   }
 
-  const existingFiles = fs.readdirSync(ssDir).filter(f => f.endsWith('.png'));
+  const existingFiles = fs.readdirSync(screenshotsDir).filter((file) => file.endsWith('.png'));
   if (existingFiles.length === 0) {
-    console.log(`SKIP: ${f.name} — no screenshots`);
+    console.log(`SKIP: ${feature.name} — no screenshots`);
     continue;
   }
 
-  let md = `# Workflow Report: ${f.title}\n\n`;
+  const results = scanResults.features?.[feature.name] || [];
+  const failures = results.filter((result) => !result.ok);
+  const status = getStatus(results);
+
+  let md = `# Workflow Report: ${feature.title}\n\n`;
   md += `**Tanggal**: ${today}  \n`;
-  md += `**Role**: ${f.role}  \n`;
-  md += `**Modul**: ${f.modul}  \n`;
-  md += `**Status**: ✅ Berhasil\n\n`;
-  md += `## Ringkasan\n\n${f.desc}\n\n`;
+  md += `**Role**: ${feature.role}  \n`;
+  md += `**Modul**: ${feature.modul}  \n`;
+  md += `**Fitur**: ${feature.title}  \n`;
+  md += `**Status**: ${status.label}\n\n`;
+  md += `## Ringkasan\n\n${feature.desc}\n\n`;
+  md += `${status.summary}\n\n`;
   md += `## Langkah-langkah\n\n`;
 
-  for (let i = 0; i < f.steps.length; i++) {
-    const s = f.steps[i];
-    const pngFile = s.file + '.png';
-    if (!existingFiles.includes(pngFile)) continue;
+  let renderedSteps = 0;
+  for (let i = 0; i < feature.steps.length; i++) {
+    const step = feature.steps[i];
+    const pngFile = `${step.file}.png`;
+    const stepResult = results.find((result) => result.step === step.file);
 
-    md += `### ${i + 1}. ${s.title}\n\n`;
-    md += `${s.desc}\n\n`;
-    md += `![${s.title}](screenshots/${pngFile})\n\n`;
+    if (results.length > 0 && !stepResult?.ok) {
+      continue;
+    }
+
+    if (!existingFiles.includes(pngFile)) {
+      continue;
+    }
+
+    renderedSteps += 1;
+    md += `### ${renderedSteps}. ${step.title}\n\n`;
+    md += `${step.desc}\n\n`;
+    md += `![${step.title}](screenshots/${pngFile})\n\n`;
+  }
+
+  if (renderedSteps === 0) {
+    md += `Belum ada langkah sukses yang berhasil direkam untuk fitur ini.\n\n`;
+  }
+
+  md += `## Temuan & Masalah\n\n`;
+  if (failures.length === 0) {
+    md += `Tidak ada temuan kritis pada scan ini.\n\n`;
+  } else {
+    md += `| # | Halaman | URL | Kategori | Deskripsi | Screenshot | Prioritas |\n`;
+    md += `|---|---------|-----|----------|-----------|------------|-----------|\n`;
+
+    failures.forEach((failure, index) => {
+      const stepMeta = feature.steps.find((step) => step.file === failure.step);
+      const screenshotCell = failure.screenshot ? `[Lihat](${failure.screenshot})` : '-';
+
+      md += `| ${index + 1} | ${escapeText(stepMeta?.title || failure.step)} | \`${escapeText(failure.url)}\` | \`${escapeText(failure.category)}\` | ${escapeText(failure.err)} | ${screenshotCell} | ${getPriority(failure.category)} |\n`;
+    });
+
+    md += `\n`;
   }
 
   md += `## Catatan\n\n`;
-  md += `- Screenshot diambil secara otomatis menggunakan Playwright\n`;
-  md += `- Data yang ditampilkan adalah dummy data dari LpmDummySeeder\n`;
-  if (f.role === 'Publik') {
-    md += `- Halaman ini dapat diakses tanpa login (portal publik)\n`;
-    md += `- Hanya menampilkan dokumen dengan akses "Publik"\n`;
+  md += `- Screenshot diambil secara otomatis menggunakan Playwright.\n`;
+  md += `- Data yang ditampilkan berasal dari data dummy/seeder yang tersedia pada saat scan.\n`;
+  md += `- Status report mengikuti hasil scan aktual; langkah yang gagal tidak lagi ditandai sebagai sukses.\n`;
+  if (feature.role === 'Publik') {
+    md += `- Halaman ini dapat diakses tanpa login (portal publik).\n`;
+    md += `- Hanya menampilkan dokumen dengan akses "Publik".\n`;
   }
 
-  fs.writeFileSync(path.join(dir, 'REPORT.md'), md);
-  totalReports++;
-  console.log(`OK: ${f.name}/REPORT.md (${f.steps.length} steps)`);
+  const reportPath = path.join(dir, 'REPORT.md');
+  archiveExistingReport(reportPath);
+  fs.writeFileSync(reportPath, md);
+
+  totalReports += 1;
+  console.log(`OK: ${feature.name}/REPORT.md`);
+}
+
+if (fs.existsSync(RESULTS_PATH)) {
+  fs.unlinkSync(RESULTS_PATH);
 }
 
 console.log(`\nGenerated ${totalReports} reports`);

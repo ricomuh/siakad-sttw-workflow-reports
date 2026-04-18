@@ -3,9 +3,8 @@ const fs = require('fs');
 const path = require('path');
 
 const BASE = 'http://127.0.0.1:8000';
-const WR = '.workflow-reports';
-
-// ─── FEATURE CONFIGURATIONS ─────────────────────────────────────────────────
+const WR = path.resolve(__dirname, 'lpm');
+const RESULTS_PATH = path.join(WR, '.scan-results.json');
 
 const ADMIN_CRUD = [
   {
@@ -108,10 +107,7 @@ const ADMIN_CRUD = [
 
 const ADMIN_SPECIAL = [
   { name: 'lpm-admin-dashboard', title: 'Dashboard Admin', basePath: '/lpm/admin', type: 'view' },
-  {
-    name: 'lpm-admin-standar-pt', title: 'Standar PT',
-    basePath: '/lpm/admin/standar-pt', type: 'inline-edit',
-  },
+  { name: 'lpm-admin-standar-pt', title: 'Standar PT', basePath: '/lpm/admin/standar-pt', type: 'inline-edit' },
   {
     name: 'lpm-admin-profil-pt', title: 'Profil PT',
     basePath: '/lpm/admin/profil-pt', type: 'edit-only',
@@ -119,10 +115,7 @@ const ADMIN_SPECIAL = [
   },
   { name: 'lpm-admin-prodi', title: 'Data Program Studi', basePath: '/lpm/admin/prodi', type: 'read-show' },
   { name: 'lpm-admin-ami-temuan', title: 'Temuan AMI (Admin)', basePath: '/lpm/admin/ami-temuan', type: 'read-show' },
-  {
-    name: 'lpm-admin-setting', title: 'Pengaturan LPM',
-    basePath: '/lpm/admin/setting', type: 'settings',
-  },
+  { name: 'lpm-admin-setting', title: 'Pengaturan LPM', basePath: '/lpm/admin/setting', type: 'settings' },
 ];
 
 const AUDITOR_FEATURES = [
@@ -156,62 +149,183 @@ const PORTAL_PAGES = [
   { name: 'lpm-portal-dokumen', title: 'Portal LPM - Dokumen', path: '/lpm/portal/dokumen' },
 ];
 
-// ─── HELPERS ─────────────────────────────────────────────────────────────────
+function ensureDir(dir) {
+  fs.mkdirSync(dir, { recursive: true });
+}
 
-function ensureDir(dir) { fs.mkdirSync(dir, { recursive: true }); }
+function resetScreenshotsDir(dir) {
+  ensureDir(dir);
+
+  for (const entry of fs.readdirSync(dir)) {
+    fs.rmSync(path.join(dir, entry), { recursive: true, force: true });
+  }
+}
+
+function featureDir(name) {
+  return path.join(WR, name.replace(/^lpm-/, ''));
+}
 
 async function ss(page, dir, name) {
   await page.waitForTimeout(500);
-  await page.screenshot({ path: path.join(dir, name + '.png'), fullPage: true });
+  await page.screenshot({ path: path.join(dir, `${name}.png`), fullPage: true });
 }
 
-// Click visible submit button inside main content (not the logout button in dropdown)
+async function captureError(page, dir, step) {
+  const filename = `err_${step}.png`;
+
+  try {
+    await page.waitForTimeout(300);
+    await page.screenshot({ path: path.join(dir, filename), fullPage: true });
+
+    return `screenshots/${filename}`;
+  } catch {
+    return null;
+  }
+}
+
+function categorizeError(message) {
+  if (/returned HTTP 500|application error page|Internal Server Error|RelationNotFoundException|ErrorException|Undefined variable|SQLSTATE/i.test(message)) {
+    return 'server-error';
+  }
+
+  if (/returned HTTP 401|returned HTTP 403|Unauthorized|Forbidden/i.test(message)) {
+    return 'permission';
+  }
+
+  if (/returned HTTP 404|Not Found/i.test(message)) {
+    return 'client-error';
+  }
+
+  if (/validation failed|required field|same page without a success message/i.test(message)) {
+    return 'validation';
+  }
+
+  return 'workflow-error';
+}
+
+async function assertHealthy(page, response, context) {
+  if (response && response.status() >= 400) {
+    throw new Error(`${context} returned HTTP ${response.status()}`);
+  }
+
+  const bodyText = await page.locator('body').innerText().catch(() => '');
+
+  if (/Internal Server Error|ErrorException|RelationNotFoundException|Undefined variable|Exception trace|SQLSTATE/i.test(bodyText)) {
+    throw new Error(`${context} rendered an application error page`);
+  }
+}
+
+async function openPage(page, url, context) {
+  const response = await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 15000 });
+
+  try {
+    await page.waitForLoadState('networkidle', { timeout: 5000 });
+  } catch {
+  }
+
+  await assertHealthy(page, response, context);
+
+  return response;
+}
+
+async function hasSuccessMessage(page) {
+  const bodyText = await page.locator('body').innerText().catch(() => '');
+  return /berhasil|sukses|success/i.test(bodyText);
+}
+
 async function clickSubmit(page) {
-  // Target the primary submit button inside a form or main area, visible only
-  const btn = page.locator('main button[type="submit"], form button[type="submit"]').filter({ hasText: /simpan|submit|update|kirim/i }).first();
+  const btn = page
+    .locator('main button[type="submit"], form button[type="submit"]')
+    .filter({ hasText: /simpan|submit|update|kirim/i })
+    .first();
+
   if (await btn.count() > 0 && await btn.isVisible()) {
     await btn.click();
-  } else {
-    // Fallback: any visible submit button
-    const all = page.locator('button[type="submit"]:visible');
-    const count = await all.count();
-    for (let i = 0; i < count; i++) {
-      const text = await all.nth(i).textContent();
-      if (text && !text.match(/keluar|logout/i)) {
-        await all.nth(i).click();
-        return;
-      }
-    }
-    throw new Error('No suitable submit button found');
+    return;
   }
+
+  const all = page.locator('button[type="submit"]:visible');
+  const count = await all.count();
+
+  for (let i = 0; i < count; i++) {
+    const text = await all.nth(i).textContent();
+    if (text && !text.match(/keluar|logout/i)) {
+      await all.nth(i).click();
+      return;
+    }
+  }
+
+  throw new Error('No suitable submit button found');
 }
 
 async function fillField(page, name, value) {
   const loc = page.locator(`[name="${name}"]`);
-  if (await loc.count() === 0) return;
-  const tag = await loc.evaluate(el => el.tagName.toLowerCase());
+  if (await loc.count() === 0) {
+    return;
+  }
+
+  const tag = await loc.evaluate((el) => el.tagName.toLowerCase());
   if (tag === 'select') {
     const options = await loc.locator('option').count();
-    if (options > 1) await loc.selectOption({ index: 1 });
-  } else if (tag === 'textarea') {
+    if (options > 1) {
+      await loc.selectOption({ index: 1 });
+    }
+    return;
+  }
+
+  if (tag === 'textarea') {
     await loc.fill(value);
-  } else {
-    const type = await loc.getAttribute('type');
-    if (type === 'checkbox') {
-      if (!(await loc.isChecked())) await loc.check();
-    } else {
-      await loc.fill(value);
+    return;
+  }
+
+  const type = await loc.getAttribute('type');
+  if (type === 'checkbox') {
+    if (!(await loc.isChecked())) {
+      await loc.check();
+    }
+    return;
+  }
+
+  await loc.fill(value);
+}
+
+async function selectAllSelects(page, names) {
+  for (const name of names || []) {
+    const loc = page.locator(`select[name="${name}"]`);
+    if (await loc.count() === 0) {
+      continue;
+    }
+
+    const options = await loc.locator('option').count();
+    if (options > 1) {
+      await loc.selectOption({ index: 1 });
     }
   }
 }
 
-async function selectAllSelects(page, names) {
-  for (const name of (names || [])) {
-    const loc = page.locator(`select[name="${name}"]`);
-    if (await loc.count() > 0) {
-      const options = await loc.locator('option').count();
-      if (options > 1) await loc.selectOption({ index: 1 });
-    }
+async function fillFeatureSpecificCreateFields(page, feature) {
+  if (feature.basePath === '/lpm/admin/ami-formulir-template') {
+    await fillField(page, 'items[0][urutan]', '1');
+    await fillField(page, 'items[0][standar_yang_diperiksa]', 'Standar audit proses pembelajaran');
+    await fillField(page, 'items[0][deskripsi]', 'Periksa kesesuaian proses pembelajaran dengan standar mutu.');
+  }
+}
+
+async function submitAndConfirmSuccess(page) {
+  const beforeUrl = page.url();
+
+  await clickSubmit(page);
+  await page.waitForTimeout(500);
+
+  try {
+    await page.waitForLoadState('networkidle', { timeout: 5000 });
+  } catch {
+  }
+
+  await assertHealthy(page, null, `Submitting ${beforeUrl}`);
+
+  if (page.url() === beforeUrl && !(await hasSuccessMessage(page))) {
+    throw new Error('Submission stayed on the same page without a success message; likely validation failed');
   }
 }
 
@@ -219,7 +333,9 @@ async function findFirstItemUrl(page, basePath) {
   return page.evaluate((bp) => {
     const re = new RegExp(bp.replace(/\//g, '\\/') + '\\/\\d+$');
     for (const a of document.querySelectorAll('a')) {
-      if (a.href && re.test(a.href)) return a.href;
+      if (a.href && re.test(a.href)) {
+        return a.href;
+      }
     }
     return null;
   }, basePath);
@@ -229,364 +345,446 @@ async function findFirstEditUrl(page, basePath) {
   return page.evaluate((bp) => {
     const re = new RegExp(bp.replace(/\//g, '\\/') + '\\/\\d+\\/edit');
     for (const a of document.querySelectorAll('a')) {
-      if (a.href && re.test(a.href)) return a.href;
+      if (a.href && re.test(a.href)) {
+        return a.href;
+      }
     }
     return null;
   }, basePath);
 }
 
-// ─── CRUD HANDLER ────────────────────────────────────────────────────────────
+function createLogger(results, featureName, dir, page) {
+  return async (step, ok, error = null, url = null, extra = {}) => {
+    const message = error ? (error.message || String(error)) : null;
+    let screenshot = extra.screenshot || null;
 
-async function handleCrud(page, f) {
-  const dir = path.join(WR, f.name, 'screenshots');
-  ensureDir(dir);
-  const results = [];
-  const log = (step, ok, err) => {
-    results.push({ step, ok, err });
-    console.log(`  ${ok ? 'OK' : 'ERR'}: ${f.name}/${step}${err ? ' — ' + err : ''}`);
+    if (!ok && !screenshot) {
+      screenshot = await captureError(page, dir, step);
+    }
+
+    results.push({
+      step,
+      ok,
+      err: message,
+      url: url || page.url(),
+      screenshot,
+      note: extra.note || null,
+      category: ok ? null : categorizeError(message || ''),
+    });
+
+    console.log(`  ${ok ? 'OK' : 'ERR'}: ${featureName}/${step}${message ? ` — ${message}` : ''}`);
   };
+}
 
-  // 1. Index
+async function handleCrud(page, feature) {
+  const dir = path.join(featureDir(feature.name), 'screenshots');
+  resetScreenshotsDir(dir);
+
+  const results = [];
+  const log = createLogger(results, feature.name, dir, page);
+
   try {
-    await page.goto(BASE + f.basePath, { waitUntil: 'networkidle', timeout: 15000 });
+    await openPage(page, BASE + feature.basePath, `${feature.name} index`);
     await ss(page, dir, '01_index');
-    log('01_index', true);
-  } catch (e) { log('01_index', false, e.message); }
+    await log('01_index', true, null, page.url());
+  } catch (error) {
+    await log('01_index', false, error, BASE + feature.basePath);
+  }
 
-  // 2. Create form (empty)
   try {
-    await page.goto(BASE + f.basePath + '/create', { waitUntil: 'networkidle', timeout: 15000 });
+    await openPage(page, BASE + feature.basePath + '/create', `${feature.name} create form`);
     await ss(page, dir, '02_create-form');
-    log('02_create-form', true);
-  } catch (e) { log('02_create-form', false, e.message); }
+    await log('02_create-form', true, null, page.url());
+  } catch (error) {
+    await log('02_create-form', false, error, BASE + feature.basePath + '/create');
+  }
 
-  // 3. Fill create form
   try {
-    for (const [k, v] of Object.entries(f.create || {})) await fillField(page, k, v);
-    await selectAllSelects(page, f.selects);
+    for (const [key, value] of Object.entries(feature.create || {})) {
+      await fillField(page, key, value);
+    }
+    await selectAllSelects(page, feature.selects);
+    await fillFeatureSpecificCreateFields(page, feature);
     await ss(page, dir, '03_create-filled');
-    log('03_create-filled', true);
-  } catch (e) { log('03_create-filled', false, e.message); }
+    await log('03_create-filled', true, null, page.url());
+  } catch (error) {
+    await log('03_create-filled', false, error, page.url());
+  }
 
-  // 4. Submit create
   try {
-    await clickSubmit(page);
-    await page.waitForLoadState('networkidle');
+    await submitAndConfirmSuccess(page);
     await ss(page, dir, '04_create-success');
-    log('04_create-success', true);
-  } catch (e) { log('04_create-success', false, e.message); }
+    await log('04_create-success', true, null, page.url());
+  } catch (error) {
+    await log('04_create-success', false, error, page.url());
+  }
 
-  // 5. Show first item (or skip if no show route)
   let showUrl = null;
   let editUrl = null;
+
   try {
-    await page.goto(BASE + f.basePath, { waitUntil: 'networkidle', timeout: 15000 });
-    showUrl = await findFirstItemUrl(page, f.basePath);
+    await openPage(page, BASE + feature.basePath, `${feature.name} index for show`);
+    showUrl = await findFirstItemUrl(page, feature.basePath);
+
     if (showUrl) {
-      await page.goto(showUrl, { waitUntil: 'networkidle', timeout: 15000 });
+      await openPage(page, showUrl, `${feature.name} show`);
       await ss(page, dir, '05_show');
-      log('05_show', true);
-      editUrl = showUrl + '/edit';
+      await log('05_show', true, null, page.url());
+      editUrl = `${showUrl}/edit`;
     } else {
-      // No show route - find edit link directly
-      editUrl = await findFirstEditUrl(page, f.basePath);
-      if (editUrl) {
-        log('05_show', true, 'No show route (edit-only feature)');
-      } else {
-        log('05_show', false, 'No item link found');
+      editUrl = await findFirstEditUrl(page, feature.basePath);
+      if (!editUrl) {
+        throw new Error('No item link found');
       }
-    }
-  } catch (e) { log('05_show', false, e.message); }
 
-  // 6. Edit form
-  try {
-    if (editUrl) {
-      await page.goto(editUrl, { waitUntil: 'networkidle', timeout: 15000 });
-      await ss(page, dir, '06_edit-form');
-      log('06_edit-form', true);
-    } else {
-      log('06_edit-form', false, 'No edit URL found');
+      await log('05_show', true, null, editUrl, { note: 'No show route (edit-only feature)' });
     }
-  } catch (e) { log('06_edit-form', false, e.message); }
+  } catch (error) {
+    await log('05_show', false, error, showUrl || BASE + feature.basePath);
+  }
 
-  // 7. Modify edit field
   try {
-    if (f.edit) {
-      for (const [k, v] of Object.entries(f.edit)) {
-        const loc = page.locator(`[name="${k}"]`);
-        if (await loc.count() > 0) {
-          await loc.clear();
-          await loc.fill(v);
-        }
+    if (!editUrl) {
+      throw new Error('No edit URL found');
+    }
+
+    await openPage(page, editUrl, `${feature.name} edit form`);
+    await ss(page, dir, '06_edit-form');
+    await log('06_edit-form', true, null, page.url());
+  } catch (error) {
+    await log('06_edit-form', false, error, editUrl || page.url());
+  }
+
+  try {
+    for (const [key, value] of Object.entries(feature.edit || {})) {
+      const loc = page.locator(`[name="${key}"]`);
+      if (await loc.count() === 0) {
+        continue;
       }
+
+      await loc.clear();
+      await loc.fill(value);
     }
+
     await ss(page, dir, '07_edit-modified');
-    log('07_edit-modified', true);
-  } catch (e) { log('07_edit-modified', false, e.message); }
+    await log('07_edit-modified', true, null, page.url());
+  } catch (error) {
+    await log('07_edit-modified', false, error, page.url());
+  }
 
-  // 8. Submit edit
   try {
-    await clickSubmit(page);
-    await page.waitForLoadState('networkidle');
+    await submitAndConfirmSuccess(page);
     await ss(page, dir, '08_edit-success');
-    log('08_edit-success', true);
-  } catch (e) { log('08_edit-success', false, e.message); }
+    await log('08_edit-success', true, null, page.url());
+  } catch (error) {
+    await log('08_edit-success', false, error, page.url());
+  }
 
   return results;
 }
 
-// ─── SPECIAL HANDLERS ────────────────────────────────────────────────────────
+async function handleView(page, feature) {
+  const dir = path.join(featureDir(feature.name), 'screenshots');
+  resetScreenshotsDir(dir);
 
-async function handleView(page, f) {
-  const dir = path.join(WR, f.name, 'screenshots');
-  ensureDir(dir);
+  const results = [];
+  const log = createLogger(results, feature.name, dir, page);
+
   try {
-    await page.goto(BASE + f.basePath, { waitUntil: 'networkidle', timeout: 15000 });
+    await openPage(page, BASE + feature.basePath, `${feature.name} index`);
     await ss(page, dir, '01_index');
-    console.log(`  OK: ${f.name}/01_index`);
-    return [{ step: '01_index', ok: true }];
-  } catch (e) {
-    console.log(`  ERR: ${f.name}/01_index — ${e.message}`);
-    return [{ step: '01_index', ok: false, err: e.message }];
+    await log('01_index', true, null, page.url());
+  } catch (error) {
+    await log('01_index', false, error, BASE + feature.basePath);
   }
+
+  return results;
 }
 
-async function handleReadShow(page, f) {
-  const dir = path.join(WR, f.name, 'screenshots');
-  ensureDir(dir);
+async function handleReadShow(page, feature) {
+  const dir = path.join(featureDir(feature.name), 'screenshots');
+  resetScreenshotsDir(dir);
+
   const results = [];
-  const log = (step, ok, err) => {
-    results.push({ step, ok, err });
-    console.log(`  ${ok ? 'OK' : 'ERR'}: ${f.name}/${step}${err ? ' — ' + err : ''}`);
-  };
+  const log = createLogger(results, feature.name, dir, page);
 
   try {
-    await page.goto(BASE + f.basePath, { waitUntil: 'networkidle', timeout: 15000 });
+    await openPage(page, BASE + feature.basePath, `${feature.name} index`);
     await ss(page, dir, '01_index');
-    log('01_index', true);
-  } catch (e) { log('01_index', false, e.message); }
+    await log('01_index', true, null, page.url());
+  } catch (error) {
+    await log('01_index', false, error, BASE + feature.basePath);
+  }
 
   try {
-    const showUrl = await findFirstItemUrl(page, f.basePath);
-    if (showUrl) {
-      await page.goto(showUrl, { waitUntil: 'networkidle', timeout: 15000 });
-      await ss(page, dir, '02_show');
-      log('02_show', true);
-    } else {
-      log('02_show', false, 'No item link found');
+    const showUrl = await findFirstItemUrl(page, feature.basePath);
+    if (!showUrl) {
+      throw new Error('No item link found');
     }
-  } catch (e) { log('02_show', false, e.message); }
 
-  return results;
-}
-
-async function handleEditOnly(page, f) {
-  const dir = path.join(WR, f.name, 'screenshots');
-  ensureDir(dir);
-  const results = [];
-  const log = (step, ok, err) => {
-    results.push({ step, ok, err });
-    console.log(`  ${ok ? 'OK' : 'ERR'}: ${f.name}/${step}${err ? ' — ' + err : ''}`);
-  };
-
-  try {
-    await page.goto(BASE + f.basePath, { waitUntil: 'networkidle', timeout: 15000 });
-    await ss(page, dir, '01_index');
-    log('01_index', true);
-  } catch (e) { log('01_index', false, e.message); }
-
-  try {
-    await page.goto(BASE + f.basePath + '/edit', { waitUntil: 'networkidle', timeout: 15000 });
-    await ss(page, dir, '02_edit-form');
-    log('02_edit-form', true);
-  } catch (e) { log('02_edit-form', false, e.message); }
-
-  if (f.editFields) {
-    try {
-      for (const [k, v] of Object.entries(f.editFields)) await fillField(page, k, v);
-      await ss(page, dir, '03_edit-modified');
-      log('03_edit-modified', true);
-    } catch (e) { log('03_edit-modified', false, e.message); }
-
-    try {
-      await clickSubmit(page);
-      await page.waitForLoadState('networkidle');
-      await ss(page, dir, '04_edit-success');
-      log('04_edit-success', true);
-    } catch (e) { log('04_edit-success', false, e.message); }
+    await openPage(page, showUrl, `${feature.name} show`);
+    await ss(page, dir, '02_show');
+    await log('02_show', true, null, page.url());
+  } catch (error) {
+    await log('02_show', false, error, page.url());
   }
 
   return results;
 }
 
-async function handleInlineEdit(page, f) {
-  const dir = path.join(WR, f.name, 'screenshots');
-  ensureDir(dir);
+async function handleEditOnly(page, feature) {
+  const dir = path.join(featureDir(feature.name), 'screenshots');
+  resetScreenshotsDir(dir);
+
   const results = [];
-  const log = (step, ok, err) => {
-    results.push({ step, ok, err });
-    console.log(`  ${ok ? 'OK' : 'ERR'}: ${f.name}/${step}${err ? ' — ' + err : ''}`);
-  };
+  const log = createLogger(results, feature.name, dir, page);
 
   try {
-    await page.goto(BASE + f.basePath, { waitUntil: 'networkidle', timeout: 15000 });
+    await openPage(page, BASE + feature.basePath, `${feature.name} index`);
     await ss(page, dir, '01_index');
-    log('01_index', true);
-  } catch (e) { log('01_index', false, e.message); }
+    await log('01_index', true, null, page.url());
+  } catch (error) {
+    await log('01_index', false, error, BASE + feature.basePath);
+  }
 
-  // Modify a field inline
+  try {
+    await openPage(page, BASE + feature.basePath + '/edit', `${feature.name} edit form`);
+    await ss(page, dir, '02_edit-form');
+    await log('02_edit-form', true, null, page.url());
+  } catch (error) {
+    await log('02_edit-form', false, error, BASE + feature.basePath + '/edit');
+  }
+
+  if (feature.editFields) {
+    try {
+      for (const [key, value] of Object.entries(feature.editFields)) {
+        await fillField(page, key, value);
+      }
+      await ss(page, dir, '03_edit-modified');
+      await log('03_edit-modified', true, null, page.url());
+    } catch (error) {
+      await log('03_edit-modified', false, error, page.url());
+    }
+
+    try {
+      await submitAndConfirmSuccess(page);
+      await ss(page, dir, '04_edit-success');
+      await log('04_edit-success', true, null, page.url());
+    } catch (error) {
+      await log('04_edit-success', false, error, page.url());
+    }
+  }
+
+  return results;
+}
+
+async function handleInlineEdit(page, feature) {
+  const dir = path.join(featureDir(feature.name), 'screenshots');
+  resetScreenshotsDir(dir);
+
+  const results = [];
+  const log = createLogger(results, feature.name, dir, page);
+
+  try {
+    await openPage(page, BASE + feature.basePath, `${feature.name} index`);
+    await ss(page, dir, '01_index');
+    await log('01_index', true, null, page.url());
+  } catch (error) {
+    await log('01_index', false, error, BASE + feature.basePath);
+  }
+
   try {
     const firstInput = page.locator('input[type="number"]').first();
-    if (await firstInput.count() > 0) {
-      const current = await firstInput.inputValue();
-      await firstInput.clear();
-      await firstInput.fill(current || '50');
-      await ss(page, dir, '02_inline-modified');
-      log('02_inline-modified', true);
+    if (await firstInput.count() === 0) {
+      throw new Error('No inline number input found');
     }
-  } catch (e) { log('02_inline-modified', false, e.message); }
+
+    const current = await firstInput.inputValue();
+    await firstInput.clear();
+    await firstInput.fill(current || '50');
+    await ss(page, dir, '02_inline-modified');
+    await log('02_inline-modified', true, null, page.url());
+  } catch (error) {
+    await log('02_inline-modified', false, error, page.url());
+  }
 
   try {
-    await clickSubmit(page);
-    await page.waitForLoadState('networkidle');
+    await submitAndConfirmSuccess(page);
     await ss(page, dir, '03_save-success');
-    log('03_save-success', true);
-  } catch (e) { log('03_save-success', false, e.message); }
+    await log('03_save-success', true, null, page.url());
+  } catch (error) {
+    await log('03_save-success', false, error, page.url());
+  }
 
   return results;
 }
 
-async function handleSettings(page, f) {
-  const dir = path.join(WR, f.name, 'screenshots');
-  ensureDir(dir);
+async function handleSettings(page, feature) {
+  const dir = path.join(featureDir(feature.name), 'screenshots');
+  resetScreenshotsDir(dir);
+
   const results = [];
-  const log = (step, ok, err) => {
-    results.push({ step, ok, err });
-    console.log(`  ${ok ? 'OK' : 'ERR'}: ${f.name}/${step}${err ? ' — ' + err : ''}`);
-  };
+  const log = createLogger(results, feature.name, dir, page);
 
   try {
-    await page.goto(BASE + f.basePath, { waitUntil: 'networkidle', timeout: 15000 });
+    await openPage(page, BASE + feature.basePath, `${feature.name} settings`);
     await ss(page, dir, '01_settings');
-    log('01_settings', true);
-  } catch (e) { log('01_settings', false, e.message); }
+    await log('01_settings', true, null, page.url());
+  } catch (error) {
+    await log('01_settings', false, error, BASE + feature.basePath);
+  }
 
   try {
-    await clickSubmit(page);
-    await page.waitForLoadState('networkidle');
+    await submitAndConfirmSuccess(page);
     await ss(page, dir, '02_settings-saved');
-    log('02_settings-saved', true);
-  } catch (e) { log('02_settings-saved', false, e.message); }
+    await log('02_settings-saved', true, null, page.url());
+  } catch (error) {
+    await log('02_settings-saved', false, error, page.url());
+  }
 
   return results;
 }
 
 async function handlePortal(page) {
-  const allResults = [];
-  for (const p of PORTAL_PAGES) {
-    const dir = path.join(WR, p.name, 'screenshots');
-    ensureDir(dir);
-    try {
-      await page.goto(BASE + p.path, { waitUntil: 'networkidle', timeout: 15000 });
-      await ss(page, dir, '01_page');
-      console.log(`  OK: ${p.name}/01_page`);
-      allResults.push({ feature: p.name, step: '01_page', ok: true });
-    } catch (e) {
-      console.log(`  ERR: ${p.name}/01_page — ${e.message}`);
-      allResults.push({ feature: p.name, step: '01_page', ok: false, err: e.message });
-    }
-  }
-  return allResults;
-}
+  const results = {};
 
-// ─── MAIN ────────────────────────────────────────────────────────────────────
+  for (const pageConfig of PORTAL_PAGES) {
+    const dir = path.join(featureDir(pageConfig.name), 'screenshots');
+    resetScreenshotsDir(dir);
+
+    const featureResults = [];
+    const log = createLogger(featureResults, pageConfig.name, dir, page);
+
+    try {
+      await openPage(page, BASE + pageConfig.path, `${pageConfig.name} page`);
+      await ss(page, dir, '01_page');
+      await log('01_page', true, null, page.url());
+    } catch (error) {
+      await log('01_page', false, error, BASE + pageConfig.path);
+    }
+
+    results[pageConfig.name] = featureResults;
+  }
+
+  return results;
+}
 
 (async () => {
   const browser = await chromium.launch();
   const context = await browser.newContext({ viewport: { width: 1280, height: 720 } });
   const page = await context.newPage();
 
-  // Login
+  ensureDir(WR);
+
   console.log('Logging in...');
-  await page.goto(BASE + '/login');
+  await page.goto(BASE + '/login', { waitUntil: 'domcontentloaded' });
   await page.fill('input[name="login"]', 'developer@sttw.ac.id');
   await page.fill('input[name="password"]', 'password');
   await clickSubmit(page);
   await page.waitForURL('**/dashboard**');
   console.log('Logged in\n');
 
-  let totalSteps = 0, okSteps = 0, failedSteps = [];
+  let totalSteps = 0;
+  let okSteps = 0;
+  const failedSteps = [];
+  const featureResults = {};
 
   const collectResults = (featureName, results) => {
-    for (const r of results) {
-      totalSteps++;
-      if (r.ok) okSteps++;
-      else failedSteps.push({ feature: featureName, step: r.step, err: r.err });
+    featureResults[featureName] = results;
+
+    for (const result of results) {
+      totalSteps += 1;
+      if (result.ok) {
+        okSteps += 1;
+        continue;
+      }
+
+      failedSteps.push({
+        feature: featureName,
+        step: result.step,
+        err: result.err,
+        url: result.url,
+        category: result.category,
+      });
     }
   };
 
-  // ─── Admin CRUD features ─────────────────────────────────────────────
   console.log('=== ADMIN CRUD FEATURES ===');
-  for (const f of ADMIN_CRUD) {
-    console.log(`\n[${f.name}]`);
-    const results = await handleCrud(page, f);
-    collectResults(f.name, results);
+  for (const feature of ADMIN_CRUD) {
+    console.log(`\n[${feature.name}]`);
+    collectResults(feature.name, await handleCrud(page, feature));
   }
 
-  // ─── Admin Special features ───────────────────────────────────────────
   console.log('\n=== ADMIN SPECIAL FEATURES ===');
-  for (const f of ADMIN_SPECIAL) {
-    console.log(`\n[${f.name}]`);
+  for (const feature of ADMIN_SPECIAL) {
+    console.log(`\n[${feature.name}]`);
+
     let results;
-    switch (f.type) {
-      case 'view': results = await handleView(page, f); break;
-      case 'read-show': results = await handleReadShow(page, f); break;
-      case 'edit-only': results = await handleEditOnly(page, f); break;
-      case 'inline-edit': results = await handleInlineEdit(page, f); break;
-      case 'settings': results = await handleSettings(page, f); break;
-      default: results = await handleView(page, f);
+    switch (feature.type) {
+      case 'view':
+        results = await handleView(page, feature);
+        break;
+      case 'read-show':
+        results = await handleReadShow(page, feature);
+        break;
+      case 'edit-only':
+        results = await handleEditOnly(page, feature);
+        break;
+      case 'inline-edit':
+        results = await handleInlineEdit(page, feature);
+        break;
+      case 'settings':
+        results = await handleSettings(page, feature);
+        break;
+      default:
+        results = await handleView(page, feature);
+        break;
     }
-    collectResults(f.name, results);
+
+    collectResults(feature.name, results);
   }
 
-  // ─── Auditor features ─────────────────────────────────────────────────
   console.log('\n=== AUDITOR FEATURES ===');
-  for (const f of AUDITOR_FEATURES) {
-    console.log(`\n[${f.name}]`);
-    let results;
-    if (f.type === 'crud') results = await handleCrud(page, f);
-    else results = await handleView(page, f);
-    collectResults(f.name, results);
+  for (const feature of AUDITOR_FEATURES) {
+    console.log(`\n[${feature.name}]`);
+    collectResults(
+      feature.name,
+      feature.type === 'crud' ? await handleCrud(page, feature) : await handleView(page, feature),
+    );
   }
 
-  // ─── Kaprodi features ─────────────────────────────────────────────────
   console.log('\n=== KAPRODI FEATURES ===');
-  for (const f of KAPRODI_FEATURES) {
-    console.log(`\n[${f.name}]`);
-    let results;
-    if (f.type === 'read-show') results = await handleReadShow(page, f);
-    else results = await handleView(page, f);
-    collectResults(f.name, results);
+  for (const feature of KAPRODI_FEATURES) {
+    console.log(`\n[${feature.name}]`);
+    collectResults(
+      feature.name,
+      feature.type === 'read-show' ? await handleReadShow(page, feature) : await handleView(page, feature),
+    );
   }
 
-  // ─── Portal pages ─────────────────────────────────────────────────────
   console.log('\n=== PORTAL PAGES ===');
   const portalResults = await handlePortal(page);
-  for (const r of portalResults) {
-    totalSteps++;
-    if (r.ok) okSteps++;
-    else failedSteps.push({ feature: r.feature, step: r.step, err: r.err });
+  for (const [featureName, results] of Object.entries(portalResults)) {
+    collectResults(featureName, results);
   }
 
-  // ─── Summary ──────────────────────────────────────────────────────────
+  fs.writeFileSync(RESULTS_PATH, JSON.stringify({
+    generatedAt: new Date().toISOString(),
+    summary: { totalSteps, okSteps, failedSteps: failedSteps.length },
+    failures: failedSteps,
+    features: featureResults,
+  }, null, 2));
+
   console.log(`\n${'='.repeat(60)}`);
   console.log(`RESULTS: ${okSteps}/${totalSteps} OK, ${failedSteps.length} errors`);
   if (failedSteps.length > 0) {
     console.log('\nFailed steps:');
-    for (const f of failedSteps) {
-      console.log(`  ${f.feature}/${f.step}: ${f.err}`);
+    for (const failure of failedSteps) {
+      console.log(`  ${failure.feature}/${failure.step}: ${failure.err}`);
     }
   }
+
+  console.log(`\nScan results saved to ${RESULTS_PATH}`);
 
   await browser.close();
 })();

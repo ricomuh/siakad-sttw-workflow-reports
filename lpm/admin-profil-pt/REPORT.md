@@ -3,11 +3,14 @@
 **Tanggal**: 2026-04-18  
 **Role**: Admin LPM  
 **Modul**: LPM  
+**Fitur**: Profil Perguruan Tinggi  
 **Status**: ✅ Berhasil
 
 ## Ringkasan
 
 Mengelola profil institusi Perguruan Tinggi (nama, alamat, akreditasi, dll). Hanya satu record.
+
+Semua 4 langkah pada scan ini lolos tanpa error.
 
 ## Langkah-langkah
 
@@ -35,8 +38,12 @@ Redirect ke profil dengan notifikasi sukses.
 
 ![Profil Berhasil Diperbarui](screenshots/04_edit-success.png)
 
+## Temuan & Masalah
+
+Tidak ada temuan kritis pada scan ini.
+
 ## Catatan
 
-- Screenshot diambil secara otomatis menggunakan Playwright
-- Data yang ditampilkan adalah dummy data dari LpmDummySeeder
-
+- Screenshot diambil secara otomatis menggunakan Playwright.
+- Data yang ditampilkan berasal dari data dummy/seeder yang tersedia pada saat scan.
+- Status report mengikuti hasil scan aktual; langkah yang gagal tidak lagi ditandai sebagai sukses.
