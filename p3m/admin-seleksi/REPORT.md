@@ -1,37 +1,68 @@
-# P3M Admin - Seleksi Proposal
+# Workflow Report: Seleksi Proposal P3M
 
-**Role:** Admin
+**Tanggal**: 2026-04-19  
+**Role**: Administrator P3M  
+**Modul**: P3M > Admin P3M  
+**Fitur**: Seleksi Proposal P3M  
+**Status**: ✅ Berhasil
 
-## Deskripsi
+## Deskripsi Workflow
 
-Proses seleksi proposal penelitian dan pengabdian. Admin dapat melihat, menilai, dan memutuskan status proposal.
+Daftar proposal penelitian dan pengabdian yang masuk proses seleksi beserta halaman review detailnya.
 
-## Fitur
+## Ringkasan
 
-- Index Penelitian: Daftar proposal penelitian yang masuk untuk seleksi
-- Index Pengabdian: Daftar proposal pengabdian yang masuk untuk seleksi
-- Detail/Show: Detail proposal lengkap dengan dokumen, anggota, RAB
-- Penilaian: Form penilaian per kriteria (skor 1-5 × bobot)
-- Keputusan: Terima/Tolak proposal
-- Cetak: Cetak berita acara seleksi (PDF)
+Semua 4 langkah pada scan ini lolos tanpa error maupun warning.
 
-## Screenshots
+## Langkah-langkah
 
-### Seleksi penelitian index
+### 1. Seleksi Penelitian
 
-![seleksi penelitian index](screenshots/01_seleksi-penelitian-index.png)
+**Deskripsi**: Halaman ini merekam tampilan utama seleksi penelitian sebagai bagian dari alur seleksi proposal p3m.
 
-### Seleksi pengabdian index
+**Akun**: Administrator P3M
 
-![seleksi pengabdian index](screenshots/02_seleksi-pengabdian-index.png)
+**URL**: `http://127.0.0.1:8000/p3m/admin/seleksi/penelitian`
 
-### Seleksi penelitian show (scrolled)
+![Seleksi Penelitian](screenshots/01_penelitian_index.png)
 
-![seleksi penelitian show (scrolled)](screenshots/03_seleksi-penelitian-show-scrolled.png)
+### 2. Detail Seleksi Penelitian
 
-### Seleksi penelitian show
+**Deskripsi**: Halaman ini merekam tampilan utama detail seleksi penelitian sebagai bagian dari alur seleksi proposal p3m.
 
-![seleksi penelitian show](screenshots/03_seleksi-penelitian-show.png)
+**Akun**: Administrator P3M
 
----
-*Generated: 2026-04-13*
+**URL**: `http://127.0.0.1:8000/p3m/admin/seleksi/penelitian/2`
+
+![Detail Seleksi Penelitian](screenshots/02_penelitian_detail.png)
+
+### 3. Seleksi Pengabdian
+
+**Deskripsi**: Halaman ini merekam tampilan utama seleksi pengabdian sebagai bagian dari alur seleksi proposal p3m.
+
+**Akun**: Administrator P3M
+
+**URL**: `http://127.0.0.1:8000/p3m/admin/seleksi/pengabdian`
+
+![Seleksi Pengabdian](screenshots/03_pengabdian_index.png)
+
+### 4. Detail Seleksi Pengabdian
+
+**Deskripsi**: Halaman ini merekam tampilan utama detail seleksi pengabdian sebagai bagian dari alur seleksi proposal p3m.
+
+**Akun**: Administrator P3M
+
+**URL**: `http://127.0.0.1:8000/p3m/admin/seleksi/pengabdian/6`
+
+![Detail Seleksi Pengabdian](screenshots/04_pengabdian_detail.png)
+
+## Temuan & Masalah
+
+Tidak ada temuan kritis maupun warning pada scan ini.
+
+## Catatan
+
+- Screenshot diambil otomatis menggunakan Playwright dengan full-page capture.
+- Navigasi utama diprioritaskan melalui sidebar; jika sebuah halaman hanya bisa dicapai dari quick action atau tombol sekunder, report akan menandainya sebagai `missing-sidebar`.
+- Form pada report ini dibuka untuk verifikasi visual dan field wajib, tidak disubmit secara destruktif agar hasil scan tidak memalsukan status sukses.
+- Data yang tampil mengikuti seeder P3M yang aktif saat scan dijalankan.

@@ -1,31 +1,48 @@
-# P3M Admin - Tracking Luaran
+# Workflow Report: Tracking Luaran P3M
 
-**Role:** Admin
+**Tanggal**: 2026-04-19  
+**Role**: Administrator P3M  
+**Modul**: P3M  
+**Fitur**: Tracking Luaran P3M  
+**Status**: ✅ Berhasil
 
-## Deskripsi
+## Deskripsi Workflow
 
-Monitoring luaran wajib dan tambahan dari proposal yang sedang berjalan. Admin dapat set deadline dan track progres.
+Monitoring proposal yang belum memenuhi luaran dan halaman detail target luaran per proposal.
 
-## Fitur
+## Ringkasan
 
-- Index: Daftar proposal dengan status luaran
-- Detail/Show: Detail luaran per proposal (wajib & tambahan)
-- Update Status: Update status luaran (tercapai/belum)
-- Set Deadline: Tentukan deadline pengumpulan luaran
+Semua 2 langkah pada scan ini lolos tanpa error maupun warning.
 
-## Screenshots
+## Langkah-langkah
 
-### Luaran index
+### 1. Tracking Luaran
 
-![luaran index](screenshots/01_luaran-index.png)
+**Deskripsi**: Monitoring proposal yang belum memenuhi luaran dan halaman detail target luaran per proposal. Langkah ini difokuskan pada tampilan tracking luaran.
 
-### Luaran show (scrolled)
+**Akun**: Administrator P3M
 
-![luaran show (scrolled)](screenshots/02_luaran-show-scrolled.png)
+**URL**: `http://127.0.0.1:8000/p3m/admin/luaran`
 
-### Luaran show
+![Tracking Luaran](screenshots/01_index.png)
 
-![luaran show](screenshots/02_luaran-show.png)
+### 2. Detail Tracking Luaran
 
----
-*Generated: 2026-04-13*
+**Deskripsi**: Monitoring proposal yang belum memenuhi luaran dan halaman detail target luaran per proposal. Langkah ini difokuskan pada tampilan detail tracking luaran.
+
+**Akun**: Administrator P3M
+
+**URL**: `http://127.0.0.1:8000/p3m/admin/luaran/5`
+
+![Detail Tracking Luaran](screenshots/02_detail.png)
+
+## Temuan & Masalah
+
+Tidak ada temuan kritis maupun warning pada scan ini.
+
+## Catatan
+
+- Screenshot diambil otomatis menggunakan Playwright dengan full-page capture.
+- Navigasi utama diprioritaskan melalui sidebar; jika sebuah halaman hanya bisa dicapai dari quick action atau tombol sekunder, report akan menandainya sebagai `missing-sidebar`.
+- Form pada report ini dibuka untuk verifikasi visual dan field wajib, tidak disubmit secara destruktif agar hasil scan tidak memalsukan status sukses.
+- Data yang tampil mengikuti seeder P3M yang aktif saat scan dijalankan.

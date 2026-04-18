@@ -1,34 +1,38 @@
-# P3M Admin Dashboard
+# Workflow Report: Dashboard Admin P3M
 
-**Role:** Admin
+**Tanggal**: 2026-04-19  
+**Role**: Administrator P3M  
+**Modul**: P3M  
+**Fitur**: Dashboard Admin P3M  
+**Status**: ✅ Berhasil
 
-## Deskripsi
+## Deskripsi Workflow
 
-Dashboard utama modul P3M untuk admin. Menampilkan statistik proposal penelitian & pengabdian, status seleksi, SPK, monev, laporan, dan pencairan dana per tahun.
+Ringkasan statistik proposal, monev, laporan, dan akses cepat modul P3M untuk pengelola.
 
-## Fitur
+## Ringkasan
 
-- Statistik ringkasan: total penelitian, total pengabdian, aktif, selesai, dana 70%, dana 30%
-- Pipeline tracking per jenis (Penelitian & Pengabdian): total → seleksi → SPK → monev pelaksanaan → monev akhir → laporan → selesai
-- Filter berdasarkan tahun
+Semua 1 langkah pada scan ini lolos tanpa error maupun warning.
 
-## Screenshots
+## Langkah-langkah
 
-### Admin dashboard top
+### 1. Dashboard Admin P3M
 
-![admin dashboard top](screenshots/01_admin-dashboard-top.png)
+**Deskripsi**: Halaman dashboard untuk ringkasan statistik proposal, monev, laporan, dan akses cepat modul p3m untuk pengelola. Screenshot diambil setelah halaman selesai dimuat penuh.
 
-### Admin dashboard
+**Akun**: Administrator P3M
 
-![admin dashboard](screenshots/01_admin-dashboard.png)
+**URL**: `http://127.0.0.1:8000/p3m/admin/dashboard`
 
-### Login page
+![Dashboard Admin P3M](screenshots/01_dashboard.png)
 
-![login page](screenshots/01_login-page.png)
+## Temuan & Masalah
 
-### Admin dashboard bottom
+Tidak ada temuan kritis maupun warning pada scan ini.
 
-![admin dashboard bottom](screenshots/02_admin-dashboard-bottom.png)
+## Catatan
 
----
-*Generated: 2026-04-13*
+- Screenshot diambil otomatis menggunakan Playwright dengan full-page capture.
+- Navigasi utama diprioritaskan melalui sidebar; jika sebuah halaman hanya bisa dicapai dari quick action atau tombol sekunder, report akan menandainya sebagai `missing-sidebar`.
+- Form pada report ini dibuka untuk verifikasi visual dan field wajib, tidak disubmit secara destruktif agar hasil scan tidak memalsukan status sukses.
+- Data yang tampil mengikuti seeder P3M yang aktif saat scan dijalankan.

@@ -1,54 +1,113 @@
-# P3M Dosen - Proposal
+# Workflow Report: Proposal Dosen P3M
 
-**Role:** Dosen
+**Tanggal**: 2026-04-19  
+**Role**: Dosen  
+**Modul**: P3M > Portal Dosen  
+**Fitur**: Proposal Dosen P3M  
+**Status**: ⚠️ Partial
 
-## Deskripsi
+## Deskripsi Workflow
 
-Manajemen proposal penelitian dan pengabdian oleh dosen. Dosen dapat membuat, mengedit, dan mensubmit proposal.
+Riwayat proposal penelitian dan pengabdian, bug route pada menu sidebar proposal, serta halaman aktual proposal draft, revisi, dan diterima.
 
-## Fitur
+## Ringkasan
 
-- Index Penelitian: Daftar proposal penelitian milik dosen
-- Index Pengabdian: Daftar proposal pengabdian milik dosen
-- Create: Form buat proposal baru (judul, abstrak, bidang fokus, rumpun ilmu, anggota, RAB, dll)
-- Show: Detail proposal lengkap dengan status, penilaian, dokumen
-- Edit: Edit proposal (hanya saat status Draft/Ditolak)
-- Submit: Kirim proposal untuk seleksi
-- Upload Dokumen: Upload file pendukung proposal
+8 langkah berhasil, 4 langkah gagal, dan 0 temuan warning tercatat.
 
-## Screenshots
+## Langkah-langkah
 
-### Proposal penelitian index
+### 1. Halaman Proposal Saya Penelitian
 
-![proposal penelitian index](screenshots/01_proposal-penelitian-index.png)
+**Deskripsi**: Halaman ini merekam tampilan utama halaman proposal saya penelitian sebagai bagian dari alur proposal dosen p3m.
 
-### Proposal pengabdian index
+**Akun**: Portal Dosen - Budi Santoso
 
-![proposal pengabdian index](screenshots/02_proposal-pengabdian-index.png)
+**URL**: `http://127.0.0.1:8000/p3m/dosen/penelitian`
 
-### Proposal penelitian create (scrolled)
+![Halaman Proposal Saya Penelitian](screenshots/02_penelitian_index.png)
 
-![proposal penelitian create (scrolled)](screenshots/03_proposal-penelitian-create-scrolled.png)
+### 2. Form Ajukan Proposal Penelitian
 
-### Proposal penelitian create
+**Deskripsi**: Halaman ini merekam tampilan utama form ajukan proposal penelitian sebagai bagian dari alur proposal dosen p3m.
 
-![proposal penelitian create](screenshots/03_proposal-penelitian-create.png)
+**Akun**: Portal Dosen - Budi Santoso
 
-### Proposal penelitian show (scrolled)
+**URL**: `http://127.0.0.1:8000/p3m/dosen/penelitian/create`
 
-![proposal penelitian show (scrolled)](screenshots/04_proposal-penelitian-show-scrolled.png)
+![Form Ajukan Proposal Penelitian](screenshots/04_penelitian_create.png)
 
-### Proposal penelitian show
+### 3. Detail Proposal Penelitian Draft
 
-![proposal penelitian show](screenshots/04_proposal-penelitian-show.png)
+**Deskripsi**: Halaman ini merekam tampilan utama detail proposal penelitian draft sebagai bagian dari alur proposal dosen p3m.
 
-### Proposal penelitian edit (scrolled)
+**Akun**: Portal Dosen - Budi Santoso
 
-![proposal penelitian edit (scrolled)](screenshots/05_proposal-penelitian-edit-scrolled.png)
+**URL**: `http://127.0.0.1:8000/p3m/dosen/penelitian/1`
 
-### Proposal penelitian edit
+![Detail Proposal Penelitian Draft](screenshots/05_penelitian_draft_detail.png)
 
-![proposal penelitian edit](screenshots/05_proposal-penelitian-edit.png)
+### 4. Form Edit Proposal Penelitian Draft
 
----
-*Generated: 2026-04-13*
+**Deskripsi**: Halaman ini merekam tampilan utama form edit proposal penelitian draft sebagai bagian dari alur proposal dosen p3m.
+
+**Akun**: Portal Dosen - Budi Santoso
+
+**URL**: `http://127.0.0.1:8000/p3m/dosen/penelitian/1/edit`
+
+![Form Edit Proposal Penelitian Draft](screenshots/06_penelitian_draft_edit.png)
+
+### 5. Detail Proposal Penelitian Diterima
+
+**Deskripsi**: Halaman ini merekam tampilan utama detail proposal penelitian diterima sebagai bagian dari alur proposal dosen p3m.
+
+**Akun**: Portal Dosen - Budi Santoso
+
+**URL**: `http://127.0.0.1:8000/p3m/dosen/penelitian/3`
+
+![Detail Proposal Penelitian Diterima](screenshots/07_penelitian_diterima_detail.png)
+
+### 6. Halaman Proposal Saya Pengabdian
+
+**Deskripsi**: Halaman ini merekam tampilan utama halaman proposal saya pengabdian sebagai bagian dari alur proposal dosen p3m.
+
+**Akun**: Portal Dosen - Siti Nurhaliza
+
+**URL**: `http://127.0.0.1:8000/p3m/dosen/pengabdian`
+
+![Halaman Proposal Saya Pengabdian](screenshots/09_pengabdian_index.png)
+
+### 7. Form Ajukan Proposal Pengabdian
+
+**Deskripsi**: Halaman ini merekam tampilan utama form ajukan proposal pengabdian sebagai bagian dari alur proposal dosen p3m.
+
+**Akun**: Portal Dosen - Siti Nurhaliza
+
+**URL**: `http://127.0.0.1:8000/p3m/dosen/pengabdian/create`
+
+![Form Ajukan Proposal Pengabdian](screenshots/11_pengabdian_create.png)
+
+### 8. Detail Proposal Pengabdian Direvisi
+
+**Deskripsi**: Halaman ini merekam tampilan utama detail proposal pengabdian direvisi sebagai bagian dari alur proposal dosen p3m.
+
+**Akun**: Portal Dosen - Siti Nurhaliza
+
+**URL**: `http://127.0.0.1:8000/p3m/dosen/pengabdian/6`
+
+![Detail Proposal Pengabdian Direvisi](screenshots/12_pengabdian_revisi_detail.png)
+
+## Temuan & Masalah
+
+| # | Halaman | URL | Kategori | Deskripsi | Screenshot | Prioritas |
+|---|---------|-----|----------|-----------|------------|-----------|
+| 1 | Menu Proposal Saya Penelitian | `http://127.0.0.1:8000/p3m/dosen/dashboard` | `missing-feature` | Menu sidebar "Proposal Saya" tidak memiliki route tujuan yang valid. | [Lihat](screenshots/err_01_penelitian_sidebar_menu.png) | High |
+| 2 | Menu Ajukan Proposal Penelitian | `http://127.0.0.1:8000/p3m/dosen/dashboard` | `missing-feature` | Menu sidebar "Ajukan Proposal" tidak memiliki route tujuan yang valid. | [Lihat](screenshots/err_03_penelitian_sidebar_create.png) | High |
+| 3 | Menu Proposal Saya Pengabdian | `http://127.0.0.1:8000/p3m/dosen/dashboard` | `missing-feature` | Menu sidebar "Proposal Saya" tidak memiliki route tujuan yang valid. | [Lihat](screenshots/err_08_pengabdian_sidebar_menu.png) | High |
+| 4 | Menu Ajukan Proposal Pengabdian | `http://127.0.0.1:8000/p3m/dosen/dashboard` | `missing-feature` | Menu sidebar "Ajukan Proposal" tidak memiliki route tujuan yang valid. | [Lihat](screenshots/err_10_pengabdian_sidebar_create.png) | High |
+
+## Catatan
+
+- Screenshot diambil otomatis menggunakan Playwright dengan full-page capture.
+- Navigasi utama diprioritaskan melalui sidebar; jika sebuah halaman hanya bisa dicapai dari quick action atau tombol sekunder, report akan menandainya sebagai `missing-sidebar`.
+- Form pada report ini dibuka untuk verifikasi visual dan field wajib, tidak disubmit secara destruktif agar hasil scan tidak memalsukan status sukses.
+- Data yang tampil mengikuti seeder P3M yang aktif saat scan dijalankan.

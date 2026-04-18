@@ -1,98 +1,162 @@
-# P3M Admin - Master Data & Settings
+# Workflow Report: Master Data & Setting P3M
 
-**Role:** Admin
+**Tanggal**: 2026-04-19  
+**Role**: Administrator P3M  
+**Modul**: P3M > Admin P3M  
+**Fitur**: Master Data & Setting P3M  
+**Status**: ⚠️ Partial
 
-## Deskripsi
+## Deskripsi Workflow
 
-Manajemen data master P3M: bidang fokus, rumpun ilmu, kriteria penilaian, bidang mitra, panduan, dan informasi.
+Hub setting P3M dan halaman master bidang fokus, rumpun ilmu, kriteria penilaian, bidang mitra, panduan, serta informasi.
 
-## Fitur
+## Ringkasan
 
-- Setting: Halaman setting utama P3M
-- Bidang Fokus: CRUD bidang fokus penelitian/pengabdian
-- Rumpun Ilmu: CRUD rumpun ilmu
-- Kriteria Penilaian: CRUD kriteria penilaian proposal (nama, bobot, jenis, aspek)
-- Bidang Mitra: CRUD bidang mitra kerja sama
-- Panduan: CRUD dokumen panduan untuk dosen
-- Informasi: CRUD pengumuman/informasi P3M
+13 langkah berhasil, 0 langkah gagal, dan 1 temuan warning tercatat.
 
-## Screenshots
+## Langkah-langkah
 
-### Setting index
+### 1. Setting & Master
 
-![setting index](screenshots/01_setting-index.png)
+**Deskripsi**: Hub setting P3M dan halaman master bidang fokus, rumpun ilmu, kriteria penilaian, bidang mitra, panduan, serta informasi. Langkah ini difokuskan pada tampilan setting & master.
 
-### Bidang fokus index
+**Akun**: Administrator P3M
 
-![bidang fokus index](screenshots/02_bidang-fokus-index.png)
+**URL**: `http://127.0.0.1:8000/p3m/admin/setting`
 
-### Bidang fokus create
+![Setting & Master](screenshots/01_setting.png)
 
-![bidang fokus create](screenshots/03_bidang-fokus-create.png)
+### 2. Daftar Bidang Fokus
 
-### Bidang fokus edit
+**Deskripsi**: Halaman ini merekam tampilan utama daftar bidang fokus sebagai bagian dari alur master data & setting p3m.
 
-![bidang fokus edit](screenshots/04_bidang-fokus-edit.png)
+**Akun**: Administrator P3M
 
-### Rumpun ilmu index
+**URL**: `http://127.0.0.1:8000/p3m/admin/bidang-fokus`
 
-![rumpun ilmu index](screenshots/05_rumpun-ilmu-index.png)
+![Daftar Bidang Fokus](screenshots/02_bidang_fokus.png)
 
-### Rumpun ilmu create
+### 3. Form Tambah Bidang Fokus
 
-![rumpun ilmu create](screenshots/06_rumpun-ilmu-create.png)
+**Deskripsi**: Form dibuka tanpa submit untuk memverifikasi field wajib, struktur input, dan tombol aksi pada master data & setting p3m.
 
-### Rumpun ilmu edit
+**Akun**: Administrator P3M
 
-![rumpun ilmu edit](screenshots/07_rumpun-ilmu-edit.png)
+**URL**: `http://127.0.0.1:8000/p3m/admin/bidang-fokus/create`
 
-### Kriteria penilaian index (scrolled)
+![Form Tambah Bidang Fokus](screenshots/03_bidang_fokus_create.png)
 
-![kriteria penilaian index (scrolled)](screenshots/08_kriteria-penilaian-index-scrolled.png)
+### 4. Daftar Rumpun Ilmu
 
-### Kriteria penilaian index
+**Deskripsi**: Halaman ini merekam tampilan utama daftar rumpun ilmu sebagai bagian dari alur master data & setting p3m.
 
-![kriteria penilaian index](screenshots/08_kriteria-penilaian-index.png)
+**Akun**: Administrator P3M
 
-### Kriteria penilaian create
+**URL**: `http://127.0.0.1:8000/p3m/admin/rumpun-ilmu`
 
-![kriteria penilaian create](screenshots/09_kriteria-penilaian-create.png)
+![Daftar Rumpun Ilmu](screenshots/04_rumpun_ilmu.png)
 
-### Kriteria penilaian edit
+### 5. Form Tambah Rumpun Ilmu
 
-![kriteria penilaian edit](screenshots/10_kriteria-penilaian-edit.png)
+**Deskripsi**: Form dibuka tanpa submit untuk memverifikasi field wajib, struktur input, dan tombol aksi pada master data & setting p3m.
 
-### Bidang mitra index
+**Akun**: Administrator P3M
 
-![bidang mitra index](screenshots/11_bidang-mitra-index.png)
+**URL**: `http://127.0.0.1:8000/p3m/admin/rumpun-ilmu/create`
 
-### Bidang mitra create
+![Form Tambah Rumpun Ilmu](screenshots/05_rumpun_ilmu_create.png)
 
-![bidang mitra create](screenshots/12_bidang-mitra-create.png)
+### 6. Daftar Kriteria Penilaian
 
-### Bidang mitra edit
+**Deskripsi**: Halaman ini merekam tampilan utama daftar kriteria penilaian sebagai bagian dari alur master data & setting p3m.
 
-![bidang mitra edit](screenshots/13_bidang-mitra-edit.png)
+**Akun**: Administrator P3M
 
-### Panduan index
+**URL**: `http://127.0.0.1:8000/p3m/admin/kriteria-penilaian`
 
-![panduan index](screenshots/14_panduan-index.png)
+![Daftar Kriteria Penilaian](screenshots/06_kriteria_penilaian.png)
 
-### Panduan create
+### 7. Form Tambah Kriteria Penilaian
 
-![panduan create](screenshots/15_panduan-create.png)
+**Deskripsi**: Form dibuka tanpa submit untuk memverifikasi field wajib, struktur input, dan tombol aksi pada master data & setting p3m.
 
-### Informasi index
+**Akun**: Administrator P3M
 
-![informasi index](screenshots/16_informasi-index.png)
+**URL**: `http://127.0.0.1:8000/p3m/admin/kriteria-penilaian/create`
 
-### Informasi create
+![Form Tambah Kriteria Penilaian](screenshots/07_kriteria_penilaian_create.png)
 
-![informasi create](screenshots/17_informasi-create.png)
+### 8. Daftar Bidang Mitra
 
-### Informasi edit
+**Deskripsi**: Halaman ini merekam tampilan utama daftar bidang mitra sebagai bagian dari alur master data & setting p3m.
 
-![informasi edit](screenshots/18_informasi-edit.png)
+**Akun**: Administrator P3M
 
----
-*Generated: 2026-04-13*
+**URL**: `http://127.0.0.1:8000/p3m/admin/bidang-mitra`
+
+![Daftar Bidang Mitra](screenshots/08_bidang_mitra.png)
+
+### 9. Form Tambah Bidang Mitra
+
+**Deskripsi**: Form dibuka tanpa submit untuk memverifikasi field wajib, struktur input, dan tombol aksi pada master data & setting p3m.
+
+**Akun**: Administrator P3M
+
+**URL**: `http://127.0.0.1:8000/p3m/admin/bidang-mitra/create`
+
+![Form Tambah Bidang Mitra](screenshots/09_bidang_mitra_create.png)
+
+### 10. Daftar Panduan
+
+**Deskripsi**: Halaman ini merekam tampilan utama daftar panduan sebagai bagian dari alur master data & setting p3m.
+
+**Akun**: Administrator P3M
+
+**URL**: `http://127.0.0.1:8000/p3m/admin/panduan`
+
+**Catatan langkah**: no-data: Halaman tampil tetapi data yang ditampilkan masih kosong atau belum tersedia.
+
+![Daftar Panduan](screenshots/10_panduan.png)
+
+### 11. Form Tambah Panduan
+
+**Deskripsi**: Form dibuka tanpa submit untuk memverifikasi field wajib, struktur input, dan tombol aksi pada master data & setting p3m.
+
+**Akun**: Administrator P3M
+
+**URL**: `http://127.0.0.1:8000/p3m/admin/panduan/create`
+
+![Form Tambah Panduan](screenshots/11_panduan_create.png)
+
+### 12. Daftar Informasi
+
+**Deskripsi**: Halaman ini merekam tampilan utama daftar informasi sebagai bagian dari alur master data & setting p3m.
+
+**Akun**: Administrator P3M
+
+**URL**: `http://127.0.0.1:8000/p3m/admin/informasi`
+
+![Daftar Informasi](screenshots/12_informasi.png)
+
+### 13. Form Tambah Informasi
+
+**Deskripsi**: Form dibuka tanpa submit untuk memverifikasi field wajib, struktur input, dan tombol aksi pada master data & setting p3m.
+
+**Akun**: Administrator P3M
+
+**URL**: `http://127.0.0.1:8000/p3m/admin/informasi/create`
+
+![Form Tambah Informasi](screenshots/13_informasi_create.png)
+
+## Temuan & Masalah
+
+| # | Halaman | URL | Kategori | Deskripsi | Screenshot | Prioritas |
+|---|---------|-----|----------|-----------|------------|-----------|
+| 1 | Daftar Panduan | `http://127.0.0.1:8000/p3m/admin/panduan` | `no-data` | Halaman tampil tetapi data yang ditampilkan masih kosong atau belum tersedia. | [Lihat](screenshots/10_panduan.png) | Low |
+
+## Catatan
+
+- Screenshot diambil otomatis menggunakan Playwright dengan full-page capture.
+- Navigasi utama diprioritaskan melalui sidebar; jika sebuah halaman hanya bisa dicapai dari quick action atau tombol sekunder, report akan menandainya sebagai `missing-sidebar`.
+- Form pada report ini dibuka untuk verifikasi visual dan field wajib, tidak disubmit secara destruktif agar hasil scan tidak memalsukan status sukses.
+- Data yang tampil mengikuti seeder P3M yang aktif saat scan dijalankan.

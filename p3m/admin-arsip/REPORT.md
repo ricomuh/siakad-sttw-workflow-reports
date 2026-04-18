@@ -1,82 +1,112 @@
-# P3M Admin - Arsip
+# Workflow Report: Arsip Pengelola P3M
 
-**Role:** Admin
+**Tanggal**: 2026-04-19  
+**Role**: Administrator P3M  
+**Modul**: P3M > Arsip Pengelola  
+**Fitur**: Arsip Pengelola P3M  
+**Status**: ⚠️ Partial
 
-## Deskripsi
+## Deskripsi Workflow
 
-Manajemen arsip lengkap P3M: arsip penelitian, arsip pengabdian, arsip dosen, katalog, publikasi, dan HKI.
+Arsip penelitian, pengabdian, dosen, katalog, publikasi, dan HKI yang dikelola dari sisi admin.
 
-## Fitur
+## Ringkasan
 
-- Arsip Penelitian: CRUD arsip historis penelitian (judul, tahun, sumber dana, dll)
-- Arsip Pengabdian: CRUD arsip historis pengabdian
-- Arsip Dosen: Daftar rekap arsip per dosen
-- Arsip Katalog: Daftar katalog produk penelitian/pengabdian
-- Arsip Publikasi: Daftar publikasi ilmiah dosen
-- Arsip HKI: Daftar Hak Kekayaan Intelektual
-- Export: Export data arsip ke Excel
+8 langkah berhasil, 0 langkah gagal, dan 1 temuan warning tercatat.
 
-## Screenshots
+## Langkah-langkah
 
-### Arsip penelitian index
+### 1. Arsip Penelitian
 
-![arsip penelitian index](screenshots/01_arsip-penelitian-index.png)
+**Deskripsi**: Halaman ini merekam tampilan utama arsip penelitian sebagai bagian dari alur arsip pengelola p3m.
 
-### Arsip penelitian create (scrolled)
+**Akun**: Administrator P3M
 
-![arsip penelitian create (scrolled)](screenshots/02_arsip-penelitian-create-scrolled.png)
+**URL**: `http://127.0.0.1:8000/p3m/admin/arsip-penelitian`
 
-### Arsip penelitian create
+![Arsip Penelitian](screenshots/01_arsip_penelitian.png)
 
-![arsip penelitian create](screenshots/02_arsip-penelitian-create.png)
+### 2. Form Tambah Arsip Penelitian
 
-### Arsip penelitian edit (scrolled)
+**Deskripsi**: Form dibuka tanpa submit untuk memverifikasi field wajib, struktur input, dan tombol aksi pada arsip pengelola p3m.
 
-![arsip penelitian edit (scrolled)](screenshots/03_arsip-penelitian-edit-scrolled.png)
+**Akun**: Administrator P3M
 
-### Arsip penelitian edit
+**URL**: `http://127.0.0.1:8000/p3m/admin/arsip-penelitian/create`
 
-![arsip penelitian edit](screenshots/03_arsip-penelitian-edit.png)
+![Form Tambah Arsip Penelitian](screenshots/02_arsip_penelitian_create.png)
 
-### Arsip pengabdian index
+### 3. Arsip Pengabdian
 
-![arsip pengabdian index](screenshots/04_arsip-pengabdian-index.png)
+**Deskripsi**: Halaman ini merekam tampilan utama arsip pengabdian sebagai bagian dari alur arsip pengelola p3m.
 
-### Arsip pengabdian create (scrolled)
+**Akun**: Administrator P3M
 
-![arsip pengabdian create (scrolled)](screenshots/05_arsip-pengabdian-create-scrolled.png)
+**URL**: `http://127.0.0.1:8000/p3m/admin/arsip-pengabdian`
 
-### Arsip pengabdian create
+![Arsip Pengabdian](screenshots/03_arsip_pengabdian.png)
 
-![arsip pengabdian create](screenshots/05_arsip-pengabdian-create.png)
+### 4. Form Tambah Arsip Pengabdian
 
-### Arsip pengabdian edit (scrolled)
+**Deskripsi**: Form dibuka tanpa submit untuk memverifikasi field wajib, struktur input, dan tombol aksi pada arsip pengelola p3m.
 
-![arsip pengabdian edit (scrolled)](screenshots/06_arsip-pengabdian-edit-scrolled.png)
+**Akun**: Administrator P3M
 
-### Arsip pengabdian edit
+**URL**: `http://127.0.0.1:8000/p3m/admin/arsip-pengabdian/create`
 
-![arsip pengabdian edit](screenshots/06_arsip-pengabdian-edit.png)
+![Form Tambah Arsip Pengabdian](screenshots/04_arsip_pengabdian_create.png)
 
-### Arsip dosen index (scrolled)
+### 5. Arsip Dosen
 
-![arsip dosen index (scrolled)](screenshots/07_arsip-dosen-index-scrolled.png)
+**Deskripsi**: Arsip penelitian, pengabdian, dosen, katalog, publikasi, dan HKI yang dikelola dari sisi admin. Langkah ini difokuskan pada tampilan arsip dosen.
 
-### Arsip dosen index
+**Akun**: Administrator P3M
 
-![arsip dosen index](screenshots/07_arsip-dosen-index.png)
+**URL**: `http://127.0.0.1:8000/p3m/admin/arsip-dosen`
 
-### Arsip katalog index
+![Arsip Dosen](screenshots/05_arsip_dosen.png)
 
-![arsip katalog index](screenshots/08_arsip-katalog-index.png)
+### 6. Arsip Katalog
 
-### Arsip publikasi index
+**Deskripsi**: Arsip penelitian, pengabdian, dosen, katalog, publikasi, dan HKI yang dikelola dari sisi admin. Langkah ini difokuskan pada tampilan arsip katalog.
 
-![arsip publikasi index](screenshots/09_arsip-publikasi-index.png)
+**Akun**: Administrator P3M
 
-### Arsip hki index
+**URL**: `http://127.0.0.1:8000/p3m/admin/arsip-katalog`
 
-![arsip hki index](screenshots/10_arsip-hki-index.png)
+![Arsip Katalog](screenshots/06_arsip_katalog.png)
 
----
-*Generated: 2026-04-13*
+### 7. Arsip Publikasi
+
+**Deskripsi**: Arsip penelitian, pengabdian, dosen, katalog, publikasi, dan HKI yang dikelola dari sisi admin. Langkah ini difokuskan pada tampilan arsip publikasi.
+
+**Akun**: Administrator P3M
+
+**URL**: `http://127.0.0.1:8000/p3m/admin/arsip-publikasi`
+
+![Arsip Publikasi](screenshots/07_arsip_publikasi.png)
+
+### 8. Arsip HKI
+
+**Deskripsi**: Arsip penelitian, pengabdian, dosen, katalog, publikasi, dan HKI yang dikelola dari sisi admin. Langkah ini difokuskan pada tampilan arsip hki.
+
+**Akun**: Administrator P3M
+
+**URL**: `http://127.0.0.1:8000/p3m/admin/arsip-hki`
+
+**Catatan langkah**: incomplete-data: Halaman menunjukkan data atau integrasi belum lengkap.
+
+![Arsip HKI](screenshots/08_arsip_hki.png)
+
+## Temuan & Masalah
+
+| # | Halaman | URL | Kategori | Deskripsi | Screenshot | Prioritas |
+|---|---------|-----|----------|-----------|------------|-----------|
+| 1 | Arsip HKI | `http://127.0.0.1:8000/p3m/admin/arsip-hki` | `incomplete-data` | Halaman menunjukkan data atau integrasi belum lengkap. | [Lihat](screenshots/08_arsip_hki.png) | Medium |
+
+## Catatan
+
+- Screenshot diambil otomatis menggunakan Playwright dengan full-page capture.
+- Navigasi utama diprioritaskan melalui sidebar; jika sebuah halaman hanya bisa dicapai dari quick action atau tombol sekunder, report akan menandainya sebagai `missing-sidebar`.
+- Form pada report ini dibuka untuk verifikasi visual dan field wajib, tidak disubmit secara destruktif agar hasil scan tidak memalsukan status sukses.
+- Data yang tampil mengikuti seeder P3M yang aktif saat scan dijalankan.

@@ -1,54 +1,88 @@
-# P3M Dosen - Arsip (Katalog, Publikasi, HKI)
+# Workflow Report: Arsip Dosen P3M
 
-**Role:** Dosen
+**Tanggal**: 2026-04-19  
+**Role**: Dosen  
+**Modul**: P3M > Arsip Saya  
+**Fitur**: Arsip Dosen P3M  
+**Status**: ✅ Berhasil
 
-## Deskripsi
+## Deskripsi Workflow
 
-Dosen mengelola arsip luaran: katalog produk, publikasi ilmiah, dan HKI.
+Pengelolaan katalog, publikasi, dan HKI milik dosen dari portal P3M.
 
-## Fitur
+## Ringkasan
 
-- Katalog: CRUD katalog produk penelitian/pengabdian
-- Publikasi: CRUD data publikasi ilmiah
-- HKI: CRUD data Hak Kekayaan Intelektual
+Semua 6 langkah pada scan ini lolos tanpa error maupun warning.
 
-## Screenshots
+## Langkah-langkah
 
-### Katalog index
+### 1. Arsip Katalog
 
-![katalog index](screenshots/01_katalog-index.png)
+**Deskripsi**: Pengelolaan katalog, publikasi, dan HKI milik dosen dari portal P3M. Langkah ini difokuskan pada tampilan arsip katalog.
 
-### Katalog create (scrolled)
+**Akun**: Portal Dosen - Budi Santoso
 
-![katalog create (scrolled)](screenshots/02_katalog-create-scrolled.png)
+**URL**: `http://127.0.0.1:8000/p3m/dosen/katalog`
 
-### Katalog create
+![Arsip Katalog](screenshots/01_katalog.png)
 
-![katalog create](screenshots/02_katalog-create.png)
+### 2. Form Tambah Katalog
 
-### Publikasi index
+**Deskripsi**: Form dibuka tanpa submit untuk memverifikasi field wajib, struktur input, dan tombol aksi pada arsip dosen p3m.
 
-![publikasi index](screenshots/03_publikasi-index.png)
+**Akun**: Portal Dosen - Budi Santoso
 
-### Publikasi create (scrolled)
+**URL**: `http://127.0.0.1:8000/p3m/dosen/katalog/create`
 
-![publikasi create (scrolled)](screenshots/04_publikasi-create-scrolled.png)
+![Form Tambah Katalog](screenshots/02_katalog_create.png)
 
-### Publikasi create
+### 3. Arsip Publikasi
 
-![publikasi create](screenshots/04_publikasi-create.png)
+**Deskripsi**: Pengelolaan katalog, publikasi, dan HKI milik dosen dari portal P3M. Langkah ini difokuskan pada tampilan arsip publikasi.
 
-### Hki index
+**Akun**: Portal Dosen - Budi Santoso
 
-![hki index](screenshots/05_hki-index.png)
+**URL**: `http://127.0.0.1:8000/p3m/dosen/publikasi`
 
-### Hki create (scrolled)
+![Arsip Publikasi](screenshots/03_publikasi.png)
 
-![hki create (scrolled)](screenshots/06_hki-create-scrolled.png)
+### 4. Form Tambah Publikasi
 
-### Hki create
+**Deskripsi**: Form dibuka tanpa submit untuk memverifikasi field wajib, struktur input, dan tombol aksi pada arsip dosen p3m.
 
-![hki create](screenshots/06_hki-create.png)
+**Akun**: Portal Dosen - Budi Santoso
 
----
-*Generated: 2026-04-13*
+**URL**: `http://127.0.0.1:8000/p3m/dosen/publikasi/create`
+
+![Form Tambah Publikasi](screenshots/04_publikasi_create.png)
+
+### 5. Arsip HKI
+
+**Deskripsi**: Pengelolaan katalog, publikasi, dan HKI milik dosen dari portal P3M. Langkah ini difokuskan pada tampilan arsip hki.
+
+**Akun**: Portal Dosen - Budi Santoso
+
+**URL**: `http://127.0.0.1:8000/p3m/dosen/hki`
+
+![Arsip HKI](screenshots/05_hki.png)
+
+### 6. Form Tambah HKI
+
+**Deskripsi**: Form dibuka tanpa submit untuk memverifikasi field wajib, struktur input, dan tombol aksi pada arsip dosen p3m.
+
+**Akun**: Portal Dosen - Budi Santoso
+
+**URL**: `http://127.0.0.1:8000/p3m/dosen/hki/create`
+
+![Form Tambah HKI](screenshots/06_hki_create.png)
+
+## Temuan & Masalah
+
+Tidak ada temuan kritis maupun warning pada scan ini.
+
+## Catatan
+
+- Screenshot diambil otomatis menggunakan Playwright dengan full-page capture.
+- Navigasi utama diprioritaskan melalui sidebar; jika sebuah halaman hanya bisa dicapai dari quick action atau tombol sekunder, report akan menandainya sebagai `missing-sidebar`.
+- Form pada report ini dibuka untuk verifikasi visual dan field wajib, tidak disubmit secara destruktif agar hasil scan tidak memalsukan status sukses.
+- Data yang tampil mengikuti seeder P3M yang aktif saat scan dijalankan.

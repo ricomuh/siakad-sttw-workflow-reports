@@ -1,31 +1,48 @@
-# P3M Admin - Aktivasi
+# Workflow Report: Aktivasi Batch P3M
 
-**Role:** Admin
+**Tanggal**: 2026-04-19  
+**Role**: Administrator P3M  
+**Modul**: P3M > Admin P3M  
+**Fitur**: Aktivasi Batch P3M  
+**Status**: ✅ Berhasil
 
-## Deskripsi
+## Deskripsi Workflow
 
-Manajemen periode aktivasi P3M. Admin dapat membuka dan menutup periode pengajuan proposal penelitian/pengabdian.
+Pengelolaan batch aktivasi proposal penelitian dan pengabdian beserta form pembuatannya.
 
-## Fitur
+## Ringkasan
 
-- Index: Daftar semua periode aktivasi dengan status (Dibuka/Ditutup)
-- Create: Form tambah aktivasi baru (jenis, tahun, tanggal buka/tutup, deskripsi)
-- Edit: Form edit aktivasi yang sudah ada
-- Delete: Hapus aktivasi (konfirmasi)
+Semua 2 langkah pada scan ini lolos tanpa error maupun warning.
 
-## Screenshots
+## Langkah-langkah
 
-### Aktivasi index
+### 1. Daftar Aktivasi
 
-![aktivasi index](screenshots/01_aktivasi-index.png)
+**Deskripsi**: Halaman ini merekam tampilan utama daftar aktivasi sebagai bagian dari alur aktivasi batch p3m.
 
-### Aktivasi create form
+**Akun**: Administrator P3M
 
-![aktivasi create form](screenshots/02_aktivasi-create-form.png)
+**URL**: `http://127.0.0.1:8000/p3m/admin/aktivasi`
 
-### Aktivasi edit form
+![Daftar Aktivasi](screenshots/01_index.png)
 
-![aktivasi edit form](screenshots/03_aktivasi-edit-form.png)
+### 2. Form Tambah Aktivasi
 
----
-*Generated: 2026-04-13*
+**Deskripsi**: Form dibuka tanpa submit untuk memverifikasi field wajib, struktur input, dan tombol aksi pada aktivasi batch p3m.
+
+**Akun**: Administrator P3M
+
+**URL**: `http://127.0.0.1:8000/p3m/admin/aktivasi/create`
+
+![Form Tambah Aktivasi](screenshots/02_create.png)
+
+## Temuan & Masalah
+
+Tidak ada temuan kritis maupun warning pada scan ini.
+
+## Catatan
+
+- Screenshot diambil otomatis menggunakan Playwright dengan full-page capture.
+- Navigasi utama diprioritaskan melalui sidebar; jika sebuah halaman hanya bisa dicapai dari quick action atau tombol sekunder, report akan menandainya sebagai `missing-sidebar`.
+- Form pada report ini dibuka untuk verifikasi visual dan field wajib, tidak disubmit secara destruktif agar hasil scan tidak memalsukan status sukses.
+- Data yang tampil mengikuti seeder P3M yang aktif saat scan dijalankan.

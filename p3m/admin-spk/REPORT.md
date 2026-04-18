@@ -1,38 +1,58 @@
-# P3M Admin - SPK (Surat Perjanjian Kerja)
+# Workflow Report: Kelola SPK P3M
 
-**Role:** Admin
+**Tanggal**: 2026-04-19  
+**Role**: Administrator P3M  
+**Modul**: P3M > Admin P3M  
+**Fitur**: Kelola SPK P3M  
+**Status**: ✅ Berhasil
 
-## Deskripsi
+## Deskripsi Workflow
 
-Manajemen SPK untuk proposal yang diterima. Admin dapat generate nomor SPK, upload dokumen, dan release dana 70%.
+Daftar proposal yang sudah lolos untuk proses SPK dan halaman pengelolaan dokumen per proposal.
 
-## Fitur
+## Ringkasan
 
-- Index Penelitian: Daftar SPK penelitian
-- Index Pengabdian: Daftar SPK pengabdian
-- Detail/Show: Detail SPK dengan dokumen-dokumen (SPK, berita acara, proposal TTD)
-- Generate Nomor: Auto-generate nomor SPK dengan format standar
-- Upload Dokumen: Upload file SPK, berita acara, proposal TTD
-- Release Dana 70%: Tandai pencairan dana tahap 1
-- Cetak: Cetak SPK (PDF)
+Semua 3 langkah pada scan ini lolos tanpa error maupun warning.
 
-## Screenshots
+## Langkah-langkah
 
-### Spk penelitian index
+### 1. SPK Penelitian
 
-![spk penelitian index](screenshots/01_spk-penelitian-index.png)
+**Deskripsi**: Halaman ini merekam tampilan utama spk penelitian sebagai bagian dari alur kelola spk p3m.
 
-### Spk pengabdian index
+**Akun**: Administrator P3M
 
-![spk pengabdian index](screenshots/02_spk-pengabdian-index.png)
+**URL**: `http://127.0.0.1:8000/p3m/admin/spk/penelitian`
 
-### Spk penelitian show (scrolled)
+![SPK Penelitian](screenshots/01_penelitian_index.png)
 
-![spk penelitian show (scrolled)](screenshots/03_spk-penelitian-show-scrolled.png)
+### 2. Detail SPK Penelitian
 
-### Spk penelitian show
+**Deskripsi**: Halaman ini merekam tampilan utama detail spk penelitian sebagai bagian dari alur kelola spk p3m.
 
-![spk penelitian show](screenshots/03_spk-penelitian-show.png)
+**Akun**: Administrator P3M
 
----
-*Generated: 2026-04-13*
+**URL**: `http://127.0.0.1:8000/p3m/admin/spk/penelitian/3`
+
+![Detail SPK Penelitian](screenshots/02_penelitian_detail.png)
+
+### 3. SPK Pengabdian
+
+**Deskripsi**: Halaman ini merekam tampilan utama spk pengabdian sebagai bagian dari alur kelola spk p3m.
+
+**Akun**: Administrator P3M
+
+**URL**: `http://127.0.0.1:8000/p3m/admin/spk/pengabdian`
+
+![SPK Pengabdian](screenshots/03_pengabdian_index.png)
+
+## Temuan & Masalah
+
+Tidak ada temuan kritis maupun warning pada scan ini.
+
+## Catatan
+
+- Screenshot diambil otomatis menggunakan Playwright dengan full-page capture.
+- Navigasi utama diprioritaskan melalui sidebar; jika sebuah halaman hanya bisa dicapai dari quick action atau tombol sekunder, report akan menandainya sebagai `missing-sidebar`.
+- Form pada report ini dibuka untuk verifikasi visual dan field wajib, tidak disubmit secara destruktif agar hasil scan tidak memalsukan status sukses.
+- Data yang tampil mengikuti seeder P3M yang aktif saat scan dijalankan.
