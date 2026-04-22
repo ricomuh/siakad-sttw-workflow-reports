@@ -1,0 +1,94 @@
+{
+  "scannedAt": "2026-04-22T08:47:52.642Z",
+  "baseUrl": "http://127.0.0.1:8000",
+  "role": "admin",
+  "scenarios": [
+    {
+      "idx": 1,
+      "name": "Login Page",
+      "url": "http://127.0.0.1:8000/login",
+      "screenshot": "01_login-page.png",
+      "title": "SIAKAD STTW"
+    },
+    {
+      "idx": 2,
+      "name": "Dashboard (after login)",
+      "url": "http://127.0.0.1:8000/dashboard",
+      "screenshot": "02_dashboard-after-login.png",
+      "title": "Dashboard - SIAKAD STTW"
+    },
+    {
+      "idx": 3,
+      "name": "Jadwal Perkuliahan - Index",
+      "url": "http://127.0.0.1:8000/siakad/jadwal-perkuliahan",
+      "targetUrl": "http://127.0.0.1:8000/siakad/jadwal-perkuliahan",
+      "status": 200,
+      "screenshot": "03_jadwal-perkuliahan-index.png",
+      "title": "Jadwal Perkuliahan - SIAKAD STTW"
+    },
+    {
+      "idx": 4,
+      "name": "Jadwal Perkuliahan - Create",
+      "url": "http://127.0.0.1:8000/siakad/jadwal-perkuliahan/create",
+      "targetUrl": "http://127.0.0.1:8000/siakad/jadwal-perkuliahan/create",
+      "status": 200,
+      "screenshot": "04_jadwal-perkuliahan-create.png",
+      "title": "SIAKAD STTW - SIAKAD STTW"
+    },
+    {
+      "idx": 5,
+      "name": "Jadwal Ujian - Index",
+      "url": "http://127.0.0.1:8000/siakad/jadwal-ujian",
+      "targetUrl": "http://127.0.0.1:8000/siakad/jadwal-ujian",
+      "status": 200,
+      "screenshot": "05_jadwal-ujian-index.png",
+      "title": "Jadwal Ujian - SIAKAD STTW"
+    },
+    {
+      "idx": 6,
+      "name": "Jadwal Ujian - Create",
+      "url": "http://127.0.0.1:8000/siakad/jadwal-ujian",
+      "targetUrl": "http://127.0.0.1:8000/siakad/jadwal-ujian/create",
+      "status": 200,
+      "screenshot": "06_jadwal-ujian-create.png",
+      "title": "Jadwal Ujian - SIAKAD STTW"
+    },
+    {
+      "idx": 7,
+      "name": "Formasi Dosen - Index",
+      "url": "http://127.0.0.1:8000/siakad/formasi-dosen",
+      "targetUrl": "http://127.0.0.1:8000/siakad/formasi-dosen",
+      "status": 200,
+      "screenshot": "07_formasi-dosen-index.png",
+      "title": "Formasi Dosen - SIAKAD STTW"
+    },
+    {
+      "idx": 8,
+      "name": "Formasi Dosen - Create",
+      "url": "http://127.0.0.1:8000/siakad/formasi-dosen/create",
+      "targetUrl": "http://127.0.0.1:8000/siakad/formasi-dosen/create",
+      "status": 404,
+      "screenshot": "08_formasi-dosen-create.png",
+      "title": "Not Found"
+    },
+    {
+      "idx": 9,
+      "name": "Kalender Pendidikan - Index",
+      "url": "http://127.0.0.1:8000/siakad/kalender-pendidikan",
+      "targetUrl": "http://127.0.0.1:8000/siakad/kalender-pendidikan",
+      "status": 200,
+      "screenshot": "09_kalender-pendidikan-index.png",
+      "title": "Pengelolaan Kalender Pendidikan - SIAKAD STTW"
+    },
+    {
+      "idx": 10,
+      "name": "Rombongan Belajar - Index",
+      "url": "http://127.0.0.1:8000/siakad/rombongan-belajar",
+      "targetUrl": "http://127.0.0.1:8000/siakad/rombongan-belajar",
+      "status": 200,
+      "screenshot": "10_rombongan-belajar-index.png",
+      "title": "Rombongan Belajar - SIAKAD STTW"
+    }
+  ],
+  "errors": []
+}

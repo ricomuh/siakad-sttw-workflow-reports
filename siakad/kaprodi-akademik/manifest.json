@@ -1,0 +1,85 @@
+{
+  "scannedAt": "2026-04-22T08:50:39.278Z",
+  "baseUrl": "http://127.0.0.1:8000",
+  "role": "kaprodi",
+  "scenarios": [
+    {
+      "idx": 1,
+      "name": "Login Page",
+      "url": "http://127.0.0.1:8000/login",
+      "screenshot": "01_login-page.png",
+      "title": "SIAKAD STTW"
+    },
+    {
+      "idx": 2,
+      "name": "Dashboard (after login)",
+      "url": "http://127.0.0.1:8000/dashboard",
+      "screenshot": "02_dashboard-after-login.png",
+      "title": "Dashboard - SIAKAD STTW"
+    },
+    {
+      "idx": 3,
+      "name": "Dashboard SIAKAD",
+      "url": "http://127.0.0.1:8000/siakad/dashboard",
+      "targetUrl": "http://127.0.0.1:8000/siakad/dashboard",
+      "status": 200,
+      "screenshot": "03_dashboard-siakad.png",
+      "title": "Dashboard Wakil Ketua Bidang Akademik - SIAKAD STTW"
+    },
+    {
+      "idx": 4,
+      "name": "KRS - Index (kaprodi view)",
+      "url": "http://127.0.0.1:8000/siakad/krs",
+      "targetUrl": "http://127.0.0.1:8000/siakad/krs",
+      "status": 404,
+      "screenshot": "04_krs-index-kaprodi-view.png",
+      "title": "Not Found"
+    },
+    {
+      "idx": 5,
+      "name": "Mahasiswa - Index",
+      "url": "http://127.0.0.1:8000/siakad/mahasiswa?angkatan=2026&status_mahasiswa=Aktif",
+      "targetUrl": "http://127.0.0.1:8000/siakad/mahasiswa",
+      "status": 200,
+      "screenshot": "05_mahasiswa-index.png",
+      "title": "SIAKAD STTW - SIAKAD STTW"
+    },
+    {
+      "idx": 6,
+      "name": "Dosen - Index",
+      "url": "http://127.0.0.1:8000/siakad/dosen",
+      "targetUrl": "http://127.0.0.1:8000/siakad/dosen",
+      "status": 403,
+      "screenshot": "06_dosen-index.png",
+      "title": "Forbidden"
+    },
+    {
+      "idx": 7,
+      "name": "Mata Kuliah - Index",
+      "url": "http://127.0.0.1:8000/siakad/mata-kuliah",
+      "targetUrl": "http://127.0.0.1:8000/siakad/mata-kuliah",
+      "status": 403,
+      "screenshot": "07_mata-kuliah-index.png",
+      "title": "Forbidden"
+    },
+    {
+      "idx": 8,
+      "name": "Kurikulum - Index",
+      "url": "http://127.0.0.1:8000/siakad/kurikulum",
+      "targetUrl": "http://127.0.0.1:8000/siakad/kurikulum",
+      "status": 200,
+      "screenshot": "08_kurikulum-index.png",
+      "title": "Struktur Kurikulum - SIAKAD STTW"
+    },
+    {
+      "idx": 9,
+      "name": "Jadwal Perkuliahan - Index",
+      "url": "http://127.0.0.1:8000/siakad/jadwal-perkuliahan",
+      "targetUrl": "http://127.0.0.1:8000/siakad/jadwal-perkuliahan",
+      "status": 200,
+      "screenshot": "09_jadwal-perkuliahan-index.png",
+      "title": "Jadwal Perkuliahan - SIAKAD STTW"
+    }
+  ],
+  "errors": []
+}

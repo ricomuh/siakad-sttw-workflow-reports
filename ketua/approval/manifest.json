@@ -1,0 +1,45 @@
+{
+  "scannedAt": "2026-04-22T08:48:29.951Z",
+  "baseUrl": "http://127.0.0.1:8000",
+  "role": "ketua",
+  "scenarios": [
+    {
+      "idx": 1,
+      "name": "Login Page",
+      "url": "http://127.0.0.1:8000/login",
+      "screenshot": "01_login-page.png",
+      "title": "SIAKAD STTW"
+    },
+    {
+      "idx": 2,
+      "name": "Dashboard (after login)",
+      "url": "http://127.0.0.1:8000/dashboard",
+      "screenshot": "02_dashboard-after-login.png",
+      "title": "Dashboard - SIAKAD STTW"
+    },
+    {
+      "idx": 3,
+      "name": "Dashboard Ketua",
+      "url": "http://127.0.0.1:8000/siakad/ketua/dashboard",
+      "targetUrl": "http://127.0.0.1:8000/siakad/ketua/dashboard",
+      "status": 200,
+      "screenshot": "03_dashboard-ketua.png",
+      "title": "Dashboard Ketua - SIAKAD STTW"
+    },
+    {
+      "idx": 4,
+      "name": "Approval - Index",
+      "url": "http://127.0.0.1:8000/siakad/ketua/approval",
+      "targetUrl": "http://127.0.0.1:8000/siakad/ketua/approval",
+      "status": 500,
+      "screenshot": "04_approval-index.png",
+      "title": "SIAKAD STTW"
+    }
+  ],
+  "errors": [
+    {
+      "where": "http://127.0.0.1:8000/siakad/ketua/approval",
+      "status": 500
+    }
+  ]
+}

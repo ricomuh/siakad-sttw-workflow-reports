@@ -1,0 +1,90 @@
+{
+  "scannedAt": "2026-04-22T08:48:13.715Z",
+  "baseUrl": "http://127.0.0.1:8000",
+  "role": "waket1",
+  "scenarios": [
+    {
+      "idx": 1,
+      "name": "Login Page",
+      "url": "http://127.0.0.1:8000/login",
+      "screenshot": "01_login-page.png",
+      "title": "SIAKAD STTW"
+    },
+    {
+      "idx": 2,
+      "name": "Dashboard (after login)",
+      "url": "http://127.0.0.1:8000/dashboard",
+      "screenshot": "02_dashboard-after-login.png",
+      "title": "Dashboard - SIAKAD STTW"
+    },
+    {
+      "idx": 3,
+      "name": "Monitoring Akademik",
+      "url": "http://127.0.0.1:8000/siakad/monitoring",
+      "targetUrl": "http://127.0.0.1:8000/siakad/monitoring",
+      "status": 500,
+      "screenshot": "03_monitoring-akademik.png",
+      "title": "SIAKAD STTW"
+    },
+    {
+      "idx": 4,
+      "name": "Rekap Kinerja Dosen",
+      "url": "http://127.0.0.1:8000/siakad/rekap-kinerja-dosen",
+      "targetUrl": "http://127.0.0.1:8000/siakad/rekap-kinerja-dosen",
+      "status": 200,
+      "screenshot": "04_rekap-kinerja-dosen.png",
+      "title": "Rekap Kinerja Dosen - SIAKAD STTW"
+    },
+    {
+      "idx": 5,
+      "name": "Revisi Nilai - Index",
+      "url": "http://127.0.0.1:8000/siakad/revisi-nilai",
+      "targetUrl": "http://127.0.0.1:8000/siakad/revisi-nilai",
+      "status": 200,
+      "screenshot": "05_revisi-nilai-index.png",
+      "title": "Persetujuan Revisi Nilai - SIAKAD STTW"
+    },
+    {
+      "idx": 6,
+      "name": "Bobot Nilai - Index",
+      "url": "http://127.0.0.1:8000/siakad/bobot-nilai",
+      "targetUrl": "http://127.0.0.1:8000/siakad/bobot-nilai",
+      "status": 200,
+      "screenshot": "06_bobot-nilai-index.png",
+      "title": "Bobot Nilai - SIAKAD STTW"
+    },
+    {
+      "idx": 7,
+      "name": "Skala Huruf - Index",
+      "url": "http://127.0.0.1:8000/siakad/skala-huruf",
+      "targetUrl": "http://127.0.0.1:8000/siakad/skala-huruf",
+      "status": 200,
+      "screenshot": "07_skala-huruf-index.png",
+      "title": "Skala Nilai Huruf - SIAKAD STTW"
+    },
+    {
+      "idx": 8,
+      "name": "Kuesioner - Index",
+      "url": "http://127.0.0.1:8000/siakad/kuesioner",
+      "targetUrl": "http://127.0.0.1:8000/siakad/kuesioner",
+      "status": 200,
+      "screenshot": "08_kuesioner-index.png",
+      "title": "Manajemen Kuesioner - SIAKAD STTW"
+    },
+    {
+      "idx": 9,
+      "name": "Pengumuman Akademik",
+      "url": "http://127.0.0.1:8000/siakad/pengumuman",
+      "targetUrl": "http://127.0.0.1:8000/siakad/pengumuman",
+      "status": 200,
+      "screenshot": "09_pengumuman-akademik.png",
+      "title": "Pengumuman Akademik - SIAKAD STTW"
+    }
+  ],
+  "errors": [
+    {
+      "where": "http://127.0.0.1:8000/siakad/monitoring",
+      "status": 500
+    }
+  ]
+}

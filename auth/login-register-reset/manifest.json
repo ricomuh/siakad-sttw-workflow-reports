@@ -1,0 +1,44 @@
+{
+  "scannedAt": "2026-04-22T08:50:50.778Z",
+  "baseUrl": "http://127.0.0.1:8000",
+  "role": "guest",
+  "scenarios": [
+    {
+      "idx": 1,
+      "name": "Login",
+      "url": "http://127.0.0.1:8000/login",
+      "targetUrl": "http://127.0.0.1:8000/login",
+      "status": 200,
+      "screenshot": "01_login.png",
+      "title": "SIAKAD STTW"
+    },
+    {
+      "idx": 2,
+      "name": "Forgot Password",
+      "url": "http://127.0.0.1:8000/forgot-password",
+      "targetUrl": "http://127.0.0.1:8000/forgot-password",
+      "status": 200,
+      "screenshot": "02_forgot-password.png",
+      "title": "SIAKAD STTW"
+    },
+    {
+      "idx": 3,
+      "name": "PMB Login",
+      "url": "http://127.0.0.1:8000/pmb/login",
+      "targetUrl": "http://127.0.0.1:8000/pmb/login",
+      "status": 200,
+      "screenshot": "03_pmb-login.png",
+      "title": "Masuk PMB - STT Warga Surakarta"
+    },
+    {
+      "idx": 4,
+      "name": "PMB Register",
+      "url": "http://127.0.0.1:8000/pmb/register",
+      "targetUrl": "http://127.0.0.1:8000/pmb/register",
+      "status": 200,
+      "screenshot": "04_pmb-register.png",
+      "title": "Daftar PMB - STT Warga Surakarta"
+    }
+  ],
+  "errors": []
+}
