@@ -47,7 +47,7 @@
     {
       "idx": 6,
       "name": "Jadwal Ujian - Create",
-      "url": "http://127.0.0.1:8000/siakad/jadwal-ujian",
+      "url": "http://127.0.0.1:8000/siakad/jadwal-ujian/create",
       "targetUrl": "http://127.0.0.1:8000/siakad/jadwal-ujian/create",
       "status": 200,
       "screenshot": "06_jadwal-ujian-create.png",

@@ -1,7 +1,7 @@
 # SIAKAD — Kaprodi Akademik (Kaprodi)
 
 - **Tanggal:** 2026-04-22
-- **Role:** kaprodi (akun ad-hoc `kaprodi@sttw.ac.id`, password `password`)
+- **Role:** kaprodi (akun ad-hoc dibuat manual untuk QA — kredensial tidak dicantumkan; gunakan `php artisan tinker` / seeder lokal untuk membuat user dengan role `kaprodi`)
 - **Modul:** SIAKAD (akses kaprodi)
 - **Status:** ⚠️ Partial — beberapa permission denied + 1 modul tidak terjangkau (KRS index)
 

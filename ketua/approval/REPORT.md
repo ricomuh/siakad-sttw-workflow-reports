@@ -1,7 +1,7 @@
 # Ketua — Approval (Ketua)
 
 - **Tanggal:** 2026-04-22
-- **Role:** ketua (akun ad-hoc `ketua@sttw.ac.id`, password `password`)
+- **Role:** ketua (akun ad-hoc dibuat manual untuk QA — kredensial tidak dicantumkan; gunakan `php artisan tinker` / seeder lokal untuk membuat user dengan role `ketua`)
 - **Modul:** SIAKAD → Ketua (Approval Yudisium)
 - **Status:** ❌ Gap — 1 bug P1 (HTTP 500), view halaman approval **tidak ada**
 
