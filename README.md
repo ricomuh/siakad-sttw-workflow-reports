@@ -10,7 +10,7 @@ Each entry below links to the latest `REPORT.md` for that role-feature. Older sc
 ## Modules
 
 - [HRM — Human Resource Management](#hrm) — 38 reports
-- [Keuangan](#keuangan) — 1 reports
+- [Keuangan](#keuangan) — 1 report
 - [LPM — Lembaga Penjaminan Mutu](#lpm) — 36 reports
 - [Miscellaneous](#misc) — 2 reports
 - [P3M — Penelitian & Pengabdian Masyarakat](#p3m) — 16 reports
