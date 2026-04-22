@@ -70,7 +70,7 @@ Each entry below links to the latest `REPORT.md` for that role-feature. Older sc
 
 | Role / Feature | Last scan | Report |
 | --- | --- | --- |
-| `admin-surat-edaran-tagihan` | 14 April 2026 | [REPORT.md](keuangan/admin-surat-edaran-tagihan/REPORT.md) |
+| `admin-surat-edaran-tagihan` | 2026-04-14 | [REPORT.md](keuangan/admin-surat-edaran-tagihan/REPORT.md) |
 
 ## lpm
 
