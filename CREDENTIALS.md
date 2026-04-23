@@ -78,7 +78,7 @@ php artisan migrate:fresh --seed
 
 ### Login di browser
 
-1. Buka `https://siakad.sttw.ac.id/login`
+1. Buka `https://sttw-dev.leolitgames.com/login`
 2. Masukkan **email** dari tabel di atas
 3. Password: `password`
 4. Klik **Masuk**
