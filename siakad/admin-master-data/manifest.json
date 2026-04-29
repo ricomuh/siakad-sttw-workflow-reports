@@ -1,0 +1,108 @@
+{
+  "scannedAt": "2026-04-22T08:43:45.528Z",
+  "baseUrl": "http://127.0.0.1:8000",
+  "role": "admin",
+  "scenarios": [
+    {
+      "idx": 1,
+      "name": "Login Page",
+      "url": "http://127.0.0.1:8000/login",
+      "screenshot": "01_login-page.png",
+      "title": "SIAKAD STTW"
+    },
+    {
+      "idx": 2,
+      "name": "Dashboard (after login)",
+      "url": "http://127.0.0.1:8000/dashboard",
+      "screenshot": "02_dashboard-after-login.png",
+      "title": "Dashboard - SIAKAD STTW"
+    },
+    {
+      "idx": 3,
+      "name": "Program Studi - Index",
+      "url": "http://127.0.0.1:8000/siakad/program-studi",
+      "targetUrl": "http://127.0.0.1:8000/siakad/program-studi",
+      "status": 200,
+      "screenshot": "03_program-studi-index.png",
+      "title": "SIAKAD STTW - SIAKAD STTW"
+    },
+    {
+      "idx": 4,
+      "name": "Mata Kuliah - Index",
+      "url": "http://127.0.0.1:8000/siakad/mata-kuliah",
+      "targetUrl": "http://127.0.0.1:8000/siakad/mata-kuliah",
+      "status": 200,
+      "screenshot": "04_mata-kuliah-index.png",
+      "title": "SIAKAD STTW - SIAKAD STTW"
+    },
+    {
+      "idx": 5,
+      "name": "Struktur Kurikulum - Index",
+      "url": "http://127.0.0.1:8000/siakad/kurikulum",
+      "targetUrl": "http://127.0.0.1:8000/siakad/kurikulum",
+      "status": 200,
+      "screenshot": "05_struktur-kurikulum-index.png",
+      "title": "Struktur Kurikulum - SIAKAD STTW"
+    },
+    {
+      "idx": 6,
+      "name": "Periode Akademik - Index",
+      "url": "http://127.0.0.1:8000/siakad/periode-akademik",
+      "targetUrl": "http://127.0.0.1:8000/siakad/periode-akademik",
+      "status": 200,
+      "screenshot": "06_periode-akademik-index.png",
+      "title": "Periode Akademik - SIAKAD STTW"
+    },
+    {
+      "idx": 7,
+      "name": "Alokasi Ruang & Waktu - Index",
+      "url": "http://127.0.0.1:8000/siakad/ruangan",
+      "targetUrl": "http://127.0.0.1:8000/siakad/ruangan",
+      "status": 200,
+      "screenshot": "07_alokasi-ruang-waktu-index.png",
+      "title": "SIAKAD STTW - SIAKAD STTW"
+    },
+    {
+      "idx": 8,
+      "name": "Data Dosen & Struktural - Index",
+      "url": "http://127.0.0.1:8000/siakad/dosen",
+      "targetUrl": "http://127.0.0.1:8000/siakad/dosen",
+      "status": 500,
+      "screenshot": "08_data-dosen-struktural-index.png",
+      "title": "SIAKAD STTW"
+    },
+    {
+      "idx": 9,
+      "name": "Data Staf - Index",
+      "url": "http://127.0.0.1:8000/siakad/staf",
+      "targetUrl": "http://127.0.0.1:8000/siakad/staf",
+      "status": 200,
+      "screenshot": "09_data-staf-index.png",
+      "title": "Data Staf - SIAKAD STTW"
+    },
+    {
+      "idx": 10,
+      "name": "Jabatan Staf - Index",
+      "url": "http://127.0.0.1:8000/siakad/jabatan-staf",
+      "targetUrl": "http://127.0.0.1:8000/siakad/jabatan-staf",
+      "status": 200,
+      "screenshot": "10_jabatan-staf-index.png",
+      "title": "Manajemen Jabatan Staf - SIAKAD STTW"
+    },
+    {
+      "idx": 11,
+      "name": "Data Mahasiswa - Index",
+      "url": "http://127.0.0.1:8000/siakad/mahasiswa?angkatan=2026&status_mahasiswa=Aktif",
+      "targetUrl": "http://127.0.0.1:8000/siakad/mahasiswa",
+      "status": 200,
+      "screenshot": "11_data-mahasiswa-index.png",
+      "title": "SIAKAD STTW - SIAKAD STTW"
+    }
+  ],
+  "errors": [
+    {
+      "where": "http://127.0.0.1:8000/siakad/dosen",
+      "status": 500
+    }
+  ]
+}

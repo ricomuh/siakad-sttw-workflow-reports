@@ -1,0 +1,76 @@
+{
+  "scannedAt": "2026-04-22T08:48:39.453Z",
+  "baseUrl": "http://127.0.0.1:8000",
+  "role": "developer",
+  "scenarios": [
+    {
+      "idx": 1,
+      "name": "Login Page",
+      "url": "http://127.0.0.1:8000/login",
+      "screenshot": "01_login-page.png",
+      "title": "SIAKAD STTW"
+    },
+    {
+      "idx": 2,
+      "name": "Dashboard (after login)",
+      "url": "http://127.0.0.1:8000/dashboard",
+      "screenshot": "02_dashboard-after-login.png",
+      "title": "Dashboard - SIAKAD STTW"
+    },
+    {
+      "idx": 3,
+      "name": "Roles - Index",
+      "url": "http://127.0.0.1:8000/system/roles",
+      "targetUrl": "http://127.0.0.1:8000/system/roles",
+      "status": 200,
+      "screenshot": "03_roles-index.png",
+      "title": "SIAKAD STTW - SIAKAD STTW"
+    },
+    {
+      "idx": 4,
+      "name": "Roles - Create",
+      "url": "http://127.0.0.1:8000/system/roles/create",
+      "targetUrl": "http://127.0.0.1:8000/system/roles/create",
+      "status": 200,
+      "screenshot": "04_roles-create.png",
+      "title": "SIAKAD STTW - SIAKAD STTW"
+    },
+    {
+      "idx": 5,
+      "name": "Users - Index",
+      "url": "http://127.0.0.1:8000/system/users",
+      "targetUrl": "http://127.0.0.1:8000/system/users",
+      "status": 200,
+      "screenshot": "05_users-index.png",
+      "title": "SIAKAD STTW - SIAKAD STTW"
+    },
+    {
+      "idx": 6,
+      "name": "Users - Create",
+      "url": "http://127.0.0.1:8000/system/users/create",
+      "targetUrl": "http://127.0.0.1:8000/system/users/create",
+      "status": 200,
+      "screenshot": "06_users-create.png",
+      "title": "SIAKAD STTW - SIAKAD STTW"
+    },
+    {
+      "idx": 7,
+      "name": "Activity Logs - Index",
+      "url": "http://127.0.0.1:8000/system/activity-logs",
+      "targetUrl": "http://127.0.0.1:8000/system/activity-logs",
+      "status": 200,
+      "screenshot": "07_activity-logs-index.png",
+      "title": "SIAKAD STTW - SIAKAD STTW"
+    },
+    {
+      "idx": 8,
+      "name": "Error Logs - Index",
+      "url": "http://127.0.0.1:8000/system/error-logs",
+      "targetUrl": "http://127.0.0.1:8000/system/error-logs",
+      "status": 200,
+      "screenshot": "08_error-logs-index.png",
+      "title": "SIAKAD STTW - SIAKAD STTW"
+    }
+  ],
+  "errors": []
+}
