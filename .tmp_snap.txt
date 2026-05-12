@@ -1,0 +1,166 @@
+### Page
+- Page URL: http://127.0.0.1:8000/siakad/ketua/approval
+- Page Title: Approval Yudisium & KHS - SIAKAD STTW
+### Snapshot
+```yaml
+- generic [ref=e2]:
+  - complementary [ref=e3]:
+    - generic [ref=e5]:
+      - img "SIAKAD STTW" [ref=e6]
+      - heading "SIAKAD STTW" [level=1] [ref=e8]
+    - button [ref=e9]:
+      - img [ref=e10]
+    - navigation [ref=e12]:
+      - list [ref=e13]:
+        - listitem [ref=e14]:
+          - link "Dashboard" [ref=e15] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/dashboard
+            - img [ref=e16]
+            - generic [ref=e18]: Dashboard
+        - listitem [ref=e19]:
+          - generic [ref=e20] [cursor=pointer]:
+            - generic [ref=e21]:
+              - img [ref=e22]
+              - generic [ref=e24]: SIAKAD
+            - img [ref=e25]
+        - listitem [ref=e27]:
+          - generic [ref=e28] [cursor=pointer]:
+            - generic [ref=e29]:
+              - img [ref=e30]
+              - generic [ref=e32]: SISKA
+            - img [ref=e33]
+        - listitem [ref=e35]:
+          - generic [ref=e36] [cursor=pointer]:
+            - generic [ref=e37]:
+              - img [ref=e38]
+              - generic [ref=e40]: P3M
+            - img [ref=e41]
+        - listitem [ref=e43]:
+          - generic [ref=e44] [cursor=pointer]:
+            - generic [ref=e45]:
+              - img [ref=e46]
+              - generic [ref=e48]: SIMKERMA
+            - img [ref=e49]
+        - listitem [ref=e51]:
+          - generic [ref=e52] [cursor=pointer]:
+            - generic [ref=e53]:
+              - img [ref=e54]
+              - generic [ref=e56]: LPM
+            - img [ref=e57]
+        - listitem [ref=e59]:
+          - generic [ref=e60] [cursor=pointer]:
+            - generic [ref=e61]:
+              - img [ref=e62]
+              - generic [ref=e64]: PMB
+            - img [ref=e65]
+        - listitem [ref=e67]:
+          - generic [ref=e68] [cursor=pointer]:
+            - generic [ref=e69]:
+              - img [ref=e70]
+              - generic [ref=e72]: CDC
+            - img [ref=e73]
+        - listitem [ref=e75]:
+          - generic [ref=e76] [cursor=pointer]:
+            - generic [ref=e77]:
+              - img [ref=e78]
+              - generic [ref=e80]: System
+            - img [ref=e81]
+        - listitem [ref=e83]:
+          - generic [ref=e84] [cursor=pointer]:
+            - generic [ref=e85]:
+              - img [ref=e86]
+              - generic [ref=e88]: Perpustakaan
+            - img [ref=e89]
+    - generic [ref=e92]:
+      - generic [ref=e94]: A
+      - generic [ref=e95]:
+        - paragraph [ref=e96]: Administrator
+        - paragraph [ref=e97]: admin@sttw.ac.id
+  - generic [ref=e98]:
+    - banner [ref=e99]:
+      - generic [ref=e100]:
+        - navigation "Breadcrumb" [ref=e102]:
+          - list [ref=e103]:
+            - listitem [ref=e104]:
+              - link "Dashboard" [ref=e106] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/dashboard
+                - img [ref=e107]
+                - generic [ref=e109]: Dashboard
+            - listitem [ref=e110]:
+              - generic [ref=e111]:
+                - img [ref=e112]
+                - link "Dashboard" [ref=e114] [cursor=pointer]:
+                  - /url: http://127.0.0.1:8000/siakad/ketua/dashboard
+            - listitem [ref=e115]:
+              - generic [ref=e116]:
+                - img [ref=e117]
+                - generic [ref=e119]: Approval
+        - generic [ref=e120]:
+          - generic [ref=e122]:
+            - textbox "Cari..." [ref=e123]
+            - generic:
+              - img
+          - button [ref=e124]:
+            - img [ref=e125]
+          - button [ref=e128]:
+            - img [ref=e129]
+          - button "A Administrator" [ref=e132]:
+            - generic [ref=e134]: A
+            - generic [ref=e135]: Administrator
+    - main [ref=e136]:
+      - generic [ref=e138]:
+        - generic [ref=e139]:
+          - heading "Approval Yudisium & KHS" [level=1] [ref=e140]
+          - paragraph [ref=e141]: Kelola persetujuan untuk kunci nilai dan buka akses KHS
+        - generic [ref=e142]:
+          - generic [ref=e145]:
+            - img [ref=e147]
+            - generic [ref=e149]:
+              - paragraph [ref=e150]: Pending
+              - paragraph [ref=e151]: "0"
+          - generic [ref=e154]:
+            - img [ref=e156]
+            - generic [ref=e158]:
+              - paragraph [ref=e159]: Disetujui
+              - paragraph [ref=e160]: "0"
+          - generic [ref=e163]:
+            - img [ref=e165]
+            - generic [ref=e167]:
+              - paragraph [ref=e168]: Ditolak
+              - paragraph [ref=e169]: "0"
+        - generic [ref=e170]:
+          - heading "Filter" [level=3] [ref=e173]
+          - generic [ref=e175]:
+            - generic [ref=e176]:
+              - generic [ref=e177]:
+                - generic [ref=e178]: Status
+                - combobox "Status" [ref=e179]:
+                  - option "Semua Status" [selected]
+                  - option "Pending"
+                  - option "Disetujui"
+                  - option "Ditolak"
+              - generic [ref=e180]:
+                - generic [ref=e181]: Jenis Aksi
+                - combobox "Jenis Aksi" [ref=e182]:
+                  - option "Semua Jenis" [selected]
+                  - option "Kunci Nilai"
+                  - option "Buka KHS"
+            - button "Filter" [ref=e184]
+        - generic [ref=e185]:
+          - heading "Daftar Approval" [level=3] [ref=e188]
+          - table [ref=e191]:
+            - rowgroup [ref=e192]:
+              - row "Periode Jenis Aksi Status Diminta Oleh Tanggal Request Aksi" [ref=e193]:
+                - columnheader "Periode" [ref=e194]
+                - columnheader "Jenis Aksi" [ref=e195]
+                - columnheader "Status" [ref=e196]
+                - columnheader "Diminta Oleh" [ref=e197]
+                - columnheader "Tanggal Request" [ref=e198]
+                - columnheader "Aksi" [ref=e199]
+            - rowgroup [ref=e200]:
+              - row "Belum ada request approval yang masuk." [ref=e201]:
+                - cell "Belum ada request approval yang masuk." [ref=e202]:
+                  - generic [ref=e203]:
+                    - img [ref=e204]
+                    - paragraph [ref=e206]: Belum ada request approval yang masuk.
+```
