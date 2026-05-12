@@ -1,19 +1,36 @@
-# Workflow Report: CDC Admin Perusahaan
+# Workflow Report: Manajemen Perusahaan Admin CDC (Refresh)
 
-**Scenario:** admin-perusahaan  
-**Date:** 2026-04-27  
-**Role:** Admin  
-**URL Base:** http://127.0.0.1:8000
+**Tanggal**: 2026-05-12
+**Role**: admin
+**Modul**: cdc
+**Fitur**: admin-perusahaan
+**Status**: ✅ Berhasil
 
-## Steps & Screenshots
+## Deskripsi Workflow
 
-### 1. Perusahaan List
-![Perusahaan List](screenshots/01_perusahaan-list.png)
-Admin views all perusahaan at `/cdc/admin/perusahaan`. Shows status badges (Aktif / Menunggu).
+Refresh halaman Manajemen Perusahaan CDC setelah commit pertengahan April terkait normalisasi field (NPWP, alamat, kontak PIC).
 
-### 2. Perusahaan Menunggu Detail
-![Perusahaan Menunggu](screenshots/02_perusahaan-menunggu-detail.png)
-Admin views a pending perusahaan and can approve or reject.
+## Ringkasan
 
-## Result
-✅ Admin can manage perusahaan approvals. Permission `cdc.perusahaan.manage` is enforced.
+- Halaman `/cdc/admin/perusahaan` HTTP 200, judul `Manajemen Perusahaan - SIAKAD STTW`.
+- Tabel index dirender dengan kolom standar; tombol Tambah tersedia.
+
+## Langkah-langkah
+
+### 1. Login admin & buka Manajemen Perusahaan
+
+**Deskripsi**: Sidebar CDC → Perusahaan. Tabel menampilkan daftar perusahaan mitra dengan kolom Nama, Bidang, PIC, Status, dan aksi.
+
+**URL**: `http://127.0.0.1:8000/cdc/admin/perusahaan`
+
+![Manajemen perusahaan CDC admin](screenshots/01_perusahaan-index.png)
+
+## Temuan & Masalah
+
+| # | Halaman | URL | Kategori | Deskripsi | Prioritas |
+|---|---------|-----|----------|-----------|-----------|
+| 1 | Perusahaan Index | /cdc/admin/perusahaan | `no-data` | Belum ada seeder perusahaan; tabel kosong. | Low |
+
+## Catatan
+
+- Snapshot lama diarsipkan: `2026-04-27_REPORT.md`.

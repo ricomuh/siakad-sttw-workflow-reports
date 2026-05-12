@@ -1,38 +1,42 @@
-# Workflow Report: Dashboard Admin P3M
+# Workflow Report: Dashboard Admin P3M (Refresh Filter Tahun + Monev Tracker)
 
-**Tanggal**: 2026-04-19  
-**Role**: Administrator P3M  
-**Modul**: P3M  
-**Fitur**: Dashboard Admin P3M  
+**Tanggal**: 2026-05-12
+**Role**: admin
+**Modul**: p3m
+**Fitur**: admin-dashboard
 **Status**: ✅ Berhasil
 
 ## Deskripsi Workflow
 
-Ringkasan statistik proposal, monev, laporan, dan akses cepat modul P3M untuk pengelola.
+Verifikasi ulang Dashboard P3M setelah dua perubahan delta pertengahan April:
+
+1. **TASK-080** — Penambahan filter tahun pada widget statistik (komit pertengahan April pada `app/Http/Controllers/P3m/Admin/DashboardController.php`).
+2. **TASK-081** — Komponen tracker monev (`<x-dashboard.p3m-monev-tracker>`) yang menampilkan progres monev per proposal dengan canvas chart.
+
+Tujuan refresh: memastikan tampilan dashboard tetap konsisten setelah dua patch tersebut, serta mengarsipkan dua snapshot sebelumnya (`2026-04-13` dan `2026-04-19`) sebagai histori.
 
 ## Ringkasan
 
-Semua 1 langkah pada scan ini lolos tanpa error maupun warning.
+- Dashboard dimuat HTTP 200 dengan judul `Dashboard P3M - SIAKAD STTW`.
+- Filter tahun aktif berfungsi (default tahun berjalan, opsi tahun tersedia di kontrol filter).
+- Widget monev tracker dirender tanpa error JS.
+- Tidak ada temuan baru — semua kartu statistik dirender sebagai komponen `<x-stats-card>` dan `<x-card>`.
 
 ## Langkah-langkah
 
-### 1. Dashboard Admin P3M
+### 1. Login admin & buka Dashboard P3M
 
-**Deskripsi**: Halaman dashboard untuk ringkasan statistik proposal, monev, laporan, dan akses cepat modul p3m untuk pengelola. Screenshot diambil setelah halaman selesai dimuat penuh.
-
-**Akun**: Administrator P3M
+**Deskripsi**: Login sebagai `admin@sttw.ac.id`, navigasi sidebar ke grup P3M → Dashboard. Halaman menampilkan ringkasan proposal, filter tahun, dan tracker monev.
 
 **URL**: `http://127.0.0.1:8000/p3m/admin/dashboard`
 
-![Dashboard Admin P3M](screenshots/01_dashboard.png)
+![Dashboard P3M dengan filter tahun + monev tracker](screenshots/01_p3m-dashboard-year-filter-monev.png)
 
 ## Temuan & Masalah
 
-Tidak ada temuan kritis maupun warning pada scan ini.
+Tidak ada temuan baru pada batch refresh ini.
 
 ## Catatan
 
-- Screenshot diambil otomatis menggunakan Playwright dengan full-page capture.
-- Navigasi utama diprioritaskan melalui sidebar; jika sebuah halaman hanya bisa dicapai dari quick action atau tombol sekunder, report akan menandainya sebagai `missing-sidebar`.
-- Form pada report ini dibuka untuk verifikasi visual dan field wajib, tidak disubmit secara destruktif agar hasil scan tidak memalsukan status sukses.
-- Data yang tampil mengikuti seeder P3M yang aktif saat scan dijalankan.
+- Snapshot lama diarsipkan: `2026-04-13_REPORT.md` (dashboard awal) dan `2026-04-19_REPORT.md` (sebelum filter tahun).
+- Refresh ini membungkus penyelesaian dua issue yang sudah terlihat dampaknya di UI; tidak ada regresi.

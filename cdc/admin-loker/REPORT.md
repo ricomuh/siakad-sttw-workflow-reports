@@ -1,19 +1,37 @@
-# Workflow Report: CDC Admin Loker
+# Workflow Report: Daftar Loker Admin CDC (Refresh)
 
-**Scenario:** admin-loker  
-**Date:** 2026-04-27  
-**Role:** Admin  
-**URL Base:** http://127.0.0.1:8000
+**Tanggal**: 2026-05-12
+**Role**: admin
+**Modul**: cdc
+**Fitur**: admin-loker
+**Status**: ✅ Berhasil
 
-## Steps & Screenshots
+## Deskripsi Workflow
 
-### 1. Loker List
-![Loker List](screenshots/01_loker-list.png)
-Admin views all job postings at `/cdc/admin/loker`. Status badges distinguish Aktif/Menunggu/Ditolak.
+Refresh halaman Daftar Loker CDC setelah commit pertengahan April yang meningkatkan filter & kolom tabel (tanggal posting, batas pendaftaran, status verifikasi).
 
-### 2. Loker Menunggu Detail
-![Loker Menunggu](screenshots/02_loker-menunggu-detail.png)
-Admin reviews a pending loker and can approve or reject.
+## Ringkasan
 
-## Result
-✅ Admin can moderate loker submissions. Permission `cdc.loker.manage` is enforced.
+- Halaman `/cdc/admin/loker` HTTP 200, judul `Daftar Loker - SIAKAD STTW`.
+- Filter periode + status + perusahaan tampil.
+- Tabel index menggunakan komponen, tombol aksi via `<x-button>`.
+
+## Langkah-langkah
+
+### 1. Login admin & buka Daftar Loker
+
+**Deskripsi**: Login `admin@sttw.ac.id`, sidebar CDC → Loker. Tampilan menyajikan tabel loker dengan filter di atas dan tombol "Tambah Loker" di kanan atas.
+
+**URL**: `http://127.0.0.1:8000/cdc/admin/loker`
+
+![Daftar loker admin CDC](screenshots/01_loker-index.png)
+
+## Temuan & Masalah
+
+| # | Halaman | URL | Kategori | Deskripsi | Prioritas |
+|---|---------|-----|----------|-----------|-----------|
+| 1 | Loker Index | /cdc/admin/loker | `no-data` | Belum ada seeder loker; tabel kosong. | Low |
+
+## Catatan
+
+- Snapshot lama diarsipkan: `2026-04-27_REPORT.md`.
