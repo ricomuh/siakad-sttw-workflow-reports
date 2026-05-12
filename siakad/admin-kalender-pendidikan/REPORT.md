@@ -1,14 +1,14 @@
-# Workflow Report: Presensi Dosen Admin
+# Workflow Report: Kalender Pendidikan Admin
 
 **Tanggal**: 2026-05-12
 **Role**: admin
 **Modul**: siakad
-**Fitur**: admin-presensi-dosen
+**Fitur**: admin-kalender-pendidikan
 **Status**: ✅ Berhasil
 
 ## Deskripsi Workflow
 
-Rekap presensi dosen per periode. Bagian dari delta scan mid-April: verifikasi semua page index master data untuk regresi (TASK-109 sweep <x-table> migration).
+Pengelolaan kalender pendidikan tahun akademik. Bagian dari delta scan mid-April: verifikasi semua page index master data untuk regresi (TASK-109 sweep <x-table> migration).
 
 ## Ringkasan
 
@@ -22,9 +22,9 @@ Rekap presensi dosen per periode. Bagian dari delta scan mid-April: verifikasi s
 
 **Deskripsi**: Login sebagai admin lalu buka halaman target. Layout index disajikan di screenshot.
 
-**URL**: `http://127.0.0.1:8000/siakad/presensi-dosen`
+**URL**: `http://127.0.0.1:8000/siakad/kalender-pendidikan`
 
-![Presensi Dosen Admin](screenshots/01_presensi-dosen-index.png)
+![Kalender Pendidikan Admin](screenshots/01_kalender-index.png)
 
 ## Temuan & Masalah
 

@@ -1,14 +1,14 @@
-# Workflow Report: Presensi Dosen Admin
+# Workflow Report: Formasi Dosen Admin
 
 **Tanggal**: 2026-05-12
 **Role**: admin
 **Modul**: siakad
-**Fitur**: admin-presensi-dosen
+**Fitur**: admin-formasi-dosen
 **Status**: ✅ Berhasil
 
 ## Deskripsi Workflow
 
-Rekap presensi dosen per periode. Bagian dari delta scan mid-April: verifikasi semua page index master data untuk regresi (TASK-109 sweep <x-table> migration).
+Formasi dosen per program studi. Bagian dari delta scan mid-April: verifikasi semua page index master data untuk regresi (TASK-109 sweep <x-table> migration).
 
 ## Ringkasan
 
@@ -22,9 +22,9 @@ Rekap presensi dosen per periode. Bagian dari delta scan mid-April: verifikasi s
 
 **Deskripsi**: Login sebagai admin lalu buka halaman target. Layout index disajikan di screenshot.
 
-**URL**: `http://127.0.0.1:8000/siakad/presensi-dosen`
+**URL**: `http://127.0.0.1:8000/siakad/formasi-dosen`
 
-![Presensi Dosen Admin](screenshots/01_presensi-dosen-index.png)
+![Formasi Dosen Admin](screenshots/01_formasi-dosen-index.png)
 
 ## Temuan & Masalah
 
