@@ -1,37 +1,33 @@
-# Workflow Report: Temuan AMI (Admin)
+# Workflow Report: LPM Admin AMI Temuan
 
-**Tanggal**: 2026-04-18  
-**Role**: Admin LPM  
-**Modul**: LPM > AMI  
-**Fitur**: Temuan AMI (Admin)  
+**Tanggal**: 2026-05-12
+**Role**: admin-lpm
+**Modul**: lpm
+**Fitur**: admin-ami-temuan
 **Status**: ✅ Berhasil
+
+## Deskripsi Workflow
+
+Halaman `LPM Admin AMI Temuan` di area LPM Admin.
 
 ## Ringkasan
 
-Melihat dan memverifikasi seluruh temuan AMI dari semua unit dan jadwal.
-
-Semua 2 langkah pada scan ini lolos tanpa error.
+Halaman diakses sebagai admin-lpm pada delta scan pertengahan April 2026.
 
 ## Langkah-langkah
 
-### 1. Daftar Temuan AMI
+### 1. Buka halaman LPM Admin AMI Temuan
 
-Tabel seluruh temuan AMI dengan filter status dan kategori.
+**Deskripsi**: Admin-LPM membuka `/lpm/admin/ami-temuan` melalui sidebar LPM Admin.
 
-![Daftar Temuan AMI](screenshots/01_index.png)
+**URL**: `http://127.0.0.1:8000/lpm/admin/ami-temuan`
 
-### 2. Detail Temuan
-
-Detail temuan menampilkan deskripsi, rekomendasi, bukti, dan tindak lanjut.
-
-![Detail Temuan](screenshots/02_show.png)
+![Halaman LPM Admin AMI Temuan](screenshots/01_index.png)
 
 ## Temuan & Masalah
 
-Tidak ada temuan kritis pada scan ini.
+_Tidak ada temuan signifikan._
 
 ## Catatan
 
-- Screenshot diambil secara otomatis menggunakan Playwright.
-- Data yang ditampilkan berasal dari data dummy/seeder yang tersedia pada saat scan.
-- Status report mengikuti hasil scan aktual; langkah yang gagal tidak lagi ditandai sebagai sukses.
+- Diambil otomatis pada batch scan delta pertengahan April 2026.

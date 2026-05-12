@@ -1,49 +1,33 @@
-# Workflow Report: Profil Perguruan Tinggi
+# Workflow Report: LPM Admin Profil PT
 
-**Tanggal**: 2026-04-18  
-**Role**: Admin LPM  
-**Modul**: LPM  
-**Fitur**: Profil Perguruan Tinggi  
+**Tanggal**: 2026-05-12
+**Role**: admin-lpm
+**Modul**: lpm
+**Fitur**: admin-profil-pt
 **Status**: ✅ Berhasil
+
+## Deskripsi Workflow
+
+Halaman `LPM Admin Profil PT` di area LPM Admin.
 
 ## Ringkasan
 
-Mengelola profil institusi Perguruan Tinggi (nama, alamat, akreditasi, dll). Hanya satu record.
-
-Semua 4 langkah pada scan ini lolos tanpa error.
+Halaman diakses sebagai admin-lpm pada delta scan pertengahan April 2026.
 
 ## Langkah-langkah
 
-### 1. Profil PT
+### 1. Buka halaman LPM Admin Profil PT
 
-Halaman menampilkan profil institusi lengkap.
+**Deskripsi**: Admin-LPM membuka `/lpm/admin/profil-pt` melalui sidebar LPM Admin.
 
-![Profil PT](screenshots/01_index.png)
+**URL**: `http://127.0.0.1:8000/lpm/admin/profil-pt`
 
-### 2. Form Edit Profil
-
-Form edit profil perguruan tinggi.
-
-![Form Edit Profil](screenshots/02_edit-form.png)
-
-### 3. Form Edit (Dimodifikasi)
-
-Data profil telah diubah.
-
-![Form Edit (Dimodifikasi)](screenshots/03_edit-modified.png)
-
-### 4. Profil Berhasil Diperbarui
-
-Redirect ke profil dengan notifikasi sukses.
-
-![Profil Berhasil Diperbarui](screenshots/04_edit-success.png)
+![Halaman LPM Admin Profil PT](screenshots/01_index.png)
 
 ## Temuan & Masalah
 
-Tidak ada temuan kritis pada scan ini.
+_Tidak ada temuan signifikan._
 
 ## Catatan
 
-- Screenshot diambil secara otomatis menggunakan Playwright.
-- Data yang ditampilkan berasal dari data dummy/seeder yang tersedia pada saat scan.
-- Status report mengikuti hasil scan aktual; langkah yang gagal tidak lagi ditandai sebagai sukses.
+- Diambil otomatis pada batch scan delta pertengahan April 2026.

@@ -1,73 +1,33 @@
-# Workflow Report: Peningkatan
+# Workflow Report: LPM Admin Peningkatan PPEPP
 
-**Tanggal**: 2026-04-18  
-**Role**: Admin LPM  
-**Modul**: LPM > Peningkatan  
-**Fitur**: Peningkatan  
+**Tanggal**: 2026-05-12
+**Role**: admin-lpm
+**Modul**: lpm
+**Fitur**: admin-peningkatan
 **Status**: ✅ Berhasil
+
+## Deskripsi Workflow
+
+Halaman `LPM Admin Peningkatan PPEPP` di area LPM Admin.
 
 ## Ringkasan
 
-Mengelola kegiatan peningkatan mutu, dengan relasi opsional ke kebijakan SPMI terkait.
-
-Semua 8 langkah pada scan ini lolos tanpa error.
+Halaman diakses sebagai admin-lpm pada delta scan pertengahan April 2026.
 
 ## Langkah-langkah
 
-### 1. Daftar Peningkatan
+### 1. Buka halaman LPM Admin Peningkatan PPEPP
 
-Tabel kegiatan peningkatan mutu.
+**Deskripsi**: Admin-LPM membuka `/lpm/admin/peningkatan` melalui sidebar LPM Admin.
 
-![Daftar Peningkatan](screenshots/01_index.png)
+**URL**: `http://127.0.0.1:8000/lpm/admin/peningkatan`
 
-### 2. Form Tambah (Kosong)
-
-Form pembuatan peningkatan baru dengan pilihan kebijakan terkait.
-
-![Form Tambah (Kosong)](screenshots/02_create-form.png)
-
-### 3. Form Tambah (Terisi)
-
-Form terisi data program peningkatan kompetensi dosen.
-
-![Form Tambah (Terisi)](screenshots/03_create-filled.png)
-
-### 4. Berhasil Ditambahkan
-
-Redirect ke index setelah submit.
-
-![Berhasil Ditambahkan](screenshots/04_create-success.png)
-
-### 5. Detail Peningkatan
-
-Informasi lengkap termasuk kebijakan terkait.
-
-![Detail Peningkatan](screenshots/05_show.png)
-
-### 6. Form Edit
-
-Form edit peningkatan.
-
-![Form Edit](screenshots/06_edit-form.png)
-
-### 7. Form Edit (Dimodifikasi)
-
-Nama program diperbarui.
-
-![Form Edit (Dimodifikasi)](screenshots/07_edit-modified.png)
-
-### 8. Berhasil Diperbarui
-
-Redirect dengan notifikasi sukses.
-
-![Berhasil Diperbarui](screenshots/08_edit-success.png)
+![Halaman LPM Admin Peningkatan PPEPP](screenshots/01_index.png)
 
 ## Temuan & Masalah
 
-Tidak ada temuan kritis pada scan ini.
+_Tidak ada temuan signifikan._
 
 ## Catatan
 
-- Screenshot diambil secara otomatis menggunakan Playwright.
-- Data yang ditampilkan berasal dari data dummy/seeder yang tersedia pada saat scan.
-- Status report mengikuti hasil scan aktual; langkah yang gagal tidak lagi ditandai sebagai sukses.
+- Diambil otomatis pada batch scan delta pertengahan April 2026.

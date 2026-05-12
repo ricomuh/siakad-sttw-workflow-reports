@@ -1,67 +1,33 @@
-# Workflow Report: SK Pendirian
+# Workflow Report: LPM Admin SK Pendirian
 
-**Tanggal**: 2026-04-18  
-**Role**: Admin LPM  
-**Modul**: LPM > Penetapan  
-**Fitur**: SK Pendirian  
+**Tanggal**: 2026-05-12
+**Role**: admin-lpm
+**Modul**: lpm
+**Fitur**: admin-sk-pendirian
 **Status**: ✅ Berhasil
+
+## Deskripsi Workflow
+
+Halaman `LPM Admin SK Pendirian` di area LPM Admin.
 
 ## Ringkasan
 
-Mengelola Surat Keputusan (SK) Pendirian program studi dan institusi.
-
-Semua 8 langkah pada scan ini lolos tanpa error.
+Halaman diakses sebagai admin-lpm pada delta scan pertengahan April 2026.
 
 ## Langkah-langkah
 
-### 1. Daftar SK Pendirian
+### 1. Buka halaman LPM Admin SK Pendirian
 
-Tabel SK pendirian dengan detail lengkap.
+**Deskripsi**: Admin-LPM membuka `/lpm/admin/sk-pendirian` melalui sidebar LPM Admin.
 
-![Daftar SK Pendirian](screenshots/01_index.png)
+**URL**: `http://127.0.0.1:8000/lpm/admin/sk-pendirian`
 
-### 2. Form Tambah SK (Kosong)
-
-Form pembuatan SK pendirian baru.
-
-![Form Tambah SK (Kosong)](screenshots/02_create-form.png)
-
-### 3. Form Tambah SK (Terisi)
-
-Form terisi data SK pendirian program studi baru.
-
-![Form Tambah SK (Terisi)](screenshots/03_create-filled.png)
-
-### 4. SK Berhasil Ditambahkan
-
-Redirect ke index setelah submit.
-
-![SK Berhasil Ditambahkan](screenshots/04_create-success.png)
-
-### 5. Form Edit SK
-
-Form edit SK pendirian (tanpa halaman show terpisah).
-
-![Form Edit SK](screenshots/06_edit-form.png)
-
-### 6. Form Edit (Dimodifikasi)
-
-Nama SK diperbarui.
-
-![Form Edit (Dimodifikasi)](screenshots/07_edit-modified.png)
-
-### 7. SK Berhasil Diperbarui
-
-Redirect dengan notifikasi sukses.
-
-![SK Berhasil Diperbarui](screenshots/08_edit-success.png)
+![Halaman LPM Admin SK Pendirian](screenshots/01_index.png)
 
 ## Temuan & Masalah
 
-Tidak ada temuan kritis pada scan ini.
+_Tidak ada temuan signifikan._
 
 ## Catatan
 
-- Screenshot diambil secara otomatis menggunakan Playwright.
-- Data yang ditampilkan berasal dari data dummy/seeder yang tersedia pada saat scan.
-- Status report mengikuti hasil scan aktual; langkah yang gagal tidak lagi ditandai sebagai sukses.
+- Diambil otomatis pada batch scan delta pertengahan April 2026.

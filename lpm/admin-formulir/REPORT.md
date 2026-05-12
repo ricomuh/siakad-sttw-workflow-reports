@@ -1,67 +1,33 @@
-# Workflow Report: Formulir LPM
+# Workflow Report: LPM Admin Formulir
 
-**Tanggal**: 2026-04-18  
-**Role**: Admin LPM  
-**Modul**: LPM > Penetapan  
-**Fitur**: Formulir LPM  
+**Tanggal**: 2026-05-12
+**Role**: admin-lpm
+**Modul**: lpm
+**Fitur**: admin-formulir
 **Status**: ✅ Berhasil
+
+## Deskripsi Workflow
+
+Halaman `LPM Admin Formulir` di area LPM Admin.
 
 ## Ringkasan
 
-Mengelola formulir-formulir yang digunakan dalam proses penjaminan mutu.
-
-Semua 8 langkah pada scan ini lolos tanpa error.
+Halaman diakses sebagai admin-lpm pada delta scan pertengahan April 2026.
 
 ## Langkah-langkah
 
-### 1. Daftar Formulir
+### 1. Buka halaman LPM Admin Formulir
 
-Tabel formulir LPM dengan status dan akses dokumen.
+**Deskripsi**: Admin-LPM membuka `/lpm/admin/formulir` melalui sidebar LPM Admin.
 
-![Daftar Formulir](screenshots/01_index.png)
+**URL**: `http://127.0.0.1:8000/lpm/admin/formulir`
 
-### 2. Form Tambah Formulir (Kosong)
-
-Form pembuatan formulir baru.
-
-![Form Tambah Formulir (Kosong)](screenshots/02_create-form.png)
-
-### 3. Form Tambah Formulir (Terisi)
-
-Form terisi data formulir evaluasi dosen.
-
-![Form Tambah Formulir (Terisi)](screenshots/03_create-filled.png)
-
-### 4. Formulir Berhasil Ditambahkan
-
-Redirect ke index setelah submit.
-
-![Formulir Berhasil Ditambahkan](screenshots/04_create-success.png)
-
-### 5. Form Edit Formulir
-
-Form edit formulir (tanpa halaman show terpisah).
-
-![Form Edit Formulir](screenshots/06_edit-form.png)
-
-### 6. Form Edit (Dimodifikasi)
-
-Nama formulir diperbarui.
-
-![Form Edit (Dimodifikasi)](screenshots/07_edit-modified.png)
-
-### 7. Formulir Berhasil Diperbarui
-
-Redirect dengan notifikasi sukses.
-
-![Formulir Berhasil Diperbarui](screenshots/08_edit-success.png)
+![Halaman LPM Admin Formulir](screenshots/01_index.png)
 
 ## Temuan & Masalah
 
-Tidak ada temuan kritis pada scan ini.
+_Tidak ada temuan signifikan._
 
 ## Catatan
 
-- Screenshot diambil secara otomatis menggunakan Playwright.
-- Data yang ditampilkan berasal dari data dummy/seeder yang tersedia pada saat scan.
-- Status report mengikuti hasil scan aktual; langkah yang gagal tidak lagi ditandai sebagai sukses.
+- Diambil otomatis pada batch scan delta pertengahan April 2026.

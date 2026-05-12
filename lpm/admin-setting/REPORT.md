@@ -1,37 +1,33 @@
-# Workflow Report: Pengaturan LPM
+# Workflow Report: LPM Admin Pengaturan
 
-**Tanggal**: 2026-04-18  
-**Role**: Admin LPM  
-**Modul**: LPM  
-**Fitur**: Pengaturan LPM  
+**Tanggal**: 2026-05-12
+**Role**: admin-lpm
+**Modul**: lpm
+**Fitur**: admin-setting
 **Status**: ✅ Berhasil
+
+## Deskripsi Workflow
+
+Halaman `LPM Admin Pengaturan` di area LPM Admin.
 
 ## Ringkasan
 
-Mengelola pengaturan modul LPM seperti visibilitas portal, batas versi dokumen, dll.
-
-Semua 2 langkah pada scan ini lolos tanpa error.
+Halaman diakses sebagai admin-lpm pada delta scan pertengahan April 2026.
 
 ## Langkah-langkah
 
-### 1. Halaman Pengaturan
+### 1. Buka halaman LPM Admin Pengaturan
 
-Form pengaturan modul LPM dengan toggle dan input konfigurasi.
+**Deskripsi**: Admin-LPM membuka `/lpm/admin/setting` melalui sidebar LPM Admin.
 
-![Halaman Pengaturan](screenshots/01_settings.png)
+**URL**: `http://127.0.0.1:8000/lpm/admin/setting`
 
-### 2. Pengaturan Tersimpan
-
-Pengaturan berhasil disimpan dengan notifikasi sukses.
-
-![Pengaturan Tersimpan](screenshots/02_settings-saved.png)
+![Halaman LPM Admin Pengaturan](screenshots/01_index.png)
 
 ## Temuan & Masalah
 
-Tidak ada temuan kritis pada scan ini.
+_Tidak ada temuan signifikan._
 
 ## Catatan
 
-- Screenshot diambil secara otomatis menggunakan Playwright.
-- Data yang ditampilkan berasal dari data dummy/seeder yang tersedia pada saat scan.
-- Status report mengikuti hasil scan aktual; langkah yang gagal tidak lagi ditandai sebagai sukses.
+- Diambil otomatis pada batch scan delta pertengahan April 2026.
