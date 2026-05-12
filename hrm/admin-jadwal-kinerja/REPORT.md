@@ -1,14 +1,14 @@
-# Workflow Report: HRM Admin Kuesioner
+# Workflow Report: HRM Admin Jadwal Kinerja
 
 **Tanggal**: 2026-05-12
 **Role**: akademik (akademik@sttw.ac.id)
 **Modul**: hrm
-**Fitur**: admin-kuesioner
+**Fitur**: admin-jadwal-kinerja
 **Status**: ✅ Berhasil
 
 ## Deskripsi Workflow
 
-Master kuesioner penilaian kinerja.
+Pengaturan jadwal/periode penilaian kinerja.
 
 ## Ringkasan
 
@@ -16,13 +16,13 @@ Halaman diakses sebagai akademik (yang memegang permission HRM admin) pada delta
 
 ## Langkah-langkah
 
-### 1. Buka halaman HRM Admin Kuesioner
+### 1. Buka halaman HRM Admin Jadwal Kinerja
 
-**Deskripsi**: Akademik membuka halaman `/hrm/admin/kuesioner` melalui sidebar HRM Admin.
+**Deskripsi**: Akademik membuka halaman `/hrm/admin/jadwal-kinerja` melalui sidebar HRM Admin.
 
-**URL**: `http://127.0.0.1:8000/hrm/admin/kuesioner`
+**URL**: `http://127.0.0.1:8000/hrm/admin/jadwal-kinerja`
 
-![Halaman HRM Admin Kuesioner](screenshots/01_index.png)
+![Halaman HRM Admin Jadwal Kinerja](screenshots/01_index.png)
 
 ## Temuan & Masalah
 

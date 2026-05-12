@@ -1,42 +1,34 @@
-# Workflow Report: Impor Presensi CICO
+# Workflow Report: HRM Admin Presensi
 
-**Tanggal**: 2026-04-18  
-**Role**: Waket2 / Admin HRM  
-**Modul**: HRM > Admin HRM  
-**Fitur**: Impor Presensi CICO  
-**Status**: ⚠️ Partial
+**Tanggal**: 2026-05-12
+**Role**: akademik (akademik@sttw.ac.id)
+**Modul**: hrm
+**Fitur**: admin-presensi
+**Status**: ✅ Berhasil
 
 ## Deskripsi Workflow
 
-Form impor presensi CICO dari file Talenta.
+Impor data presensi CICO dari Talenta.
 
 ## Ringkasan
 
-1 langkah berhasil, 0 langkah gagal, dan 1 temuan warning tercatat.
+Halaman diakses sebagai akademik (yang memegang permission HRM admin) pada delta scan pertengahan April 2026.
 
 ## Langkah-langkah
 
-### 1. Halaman Impor Presensi
+### 1. Buka halaman HRM Admin Presensi
 
-**Deskripsi**: Halaman ini merekam tampilan utama halaman impor presensi sebagai bagian dari alur impor presensi cico.
-
-**Akun**: Waket2 / Admin HRM
+**Deskripsi**: Akademik membuka halaman `/hrm/admin/presensi` melalui sidebar HRM Admin.
 
 **URL**: `http://127.0.0.1:8000/hrm/admin/presensi`
 
-**Catatan langkah**: no-data: Halaman tampil tetapi data yang ditampilkan masih kosong atau belum tersedia.
-
-![Halaman Impor Presensi](screenshots/01_index.png)
+![Halaman HRM Admin Presensi](screenshots/01_index.png)
 
 ## Temuan & Masalah
 
-| # | Halaman | URL | Kategori | Deskripsi | Screenshot | Prioritas |
-|---|---------|-----|----------|-----------|------------|-----------|
-| 1 | Halaman Impor Presensi | `http://127.0.0.1:8000/hrm/admin/presensi` | `no-data` | Halaman tampil tetapi data yang ditampilkan masih kosong atau belum tersedia. | [Lihat](screenshots/01_index.png) | Low |
+_Tidak ada temuan signifikan._
 
 ## Catatan
 
-- Screenshot diambil otomatis menggunakan Playwright dengan full-page capture.
-- Navigasi utama diprioritaskan melalui sidebar; jika sebuah halaman hanya bisa dicapai dari quick action atau tombol sekunder, report akan menandainya sebagai `missing-sidebar`.
-- Form pada report ini dibuka untuk verifikasi visual dan field wajib, tidak disubmit secara destruktif agar hasil scan tidak memalsukan status sukses.
-- Data yang tampil mengikuti seeder HRM yang aktif saat scan dijalankan.
+- Diambil otomatis pada batch scan delta pertengahan April 2026.
+- Role `akademik` ternyata pemegang permission HRM admin (bukan `ketua` / `admin-lpm`); periksa apakah pembagian role ini sudah sesuai desain modul HRM.

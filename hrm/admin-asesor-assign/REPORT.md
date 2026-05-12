@@ -1,14 +1,14 @@
-# Workflow Report: HRM Admin Kuesioner
+# Workflow Report: HRM Admin Penugasan Asesor
 
 **Tanggal**: 2026-05-12
 **Role**: akademik (akademik@sttw.ac.id)
 **Modul**: hrm
-**Fitur**: admin-kuesioner
+**Fitur**: admin-asesor-assign
 **Status**: ✅ Berhasil
 
 ## Deskripsi Workflow
 
-Master kuesioner penilaian kinerja.
+Penugasan binaan untuk masing-masing asesor.
 
 ## Ringkasan
 
@@ -16,13 +16,13 @@ Halaman diakses sebagai akademik (yang memegang permission HRM admin) pada delta
 
 ## Langkah-langkah
 
-### 1. Buka halaman HRM Admin Kuesioner
+### 1. Buka halaman HRM Admin Penugasan Asesor
 
-**Deskripsi**: Akademik membuka halaman `/hrm/admin/kuesioner` melalui sidebar HRM Admin.
+**Deskripsi**: Akademik membuka halaman `/hrm/admin/asesor-assign` melalui sidebar HRM Admin.
 
-**URL**: `http://127.0.0.1:8000/hrm/admin/kuesioner`
+**URL**: `http://127.0.0.1:8000/hrm/admin/asesor-assign`
 
-![Halaman HRM Admin Kuesioner](screenshots/01_index.png)
+![Halaman HRM Admin Penugasan Asesor](screenshots/01_index.png)
 
 ## Temuan & Masalah
 

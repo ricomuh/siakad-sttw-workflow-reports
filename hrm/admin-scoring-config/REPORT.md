@@ -1,38 +1,34 @@
-# Workflow Report: Konfigurasi Scoring HRM
+# Workflow Report: HRM Admin Scoring Config
 
-**Tanggal**: 2026-04-18  
-**Role**: Waket2 / Admin HRM  
-**Modul**: HRM > Admin HRM  
-**Fitur**: Konfigurasi Scoring HRM  
+**Tanggal**: 2026-05-12
+**Role**: akademik (akademik@sttw.ac.id)
+**Modul**: hrm
+**Fitur**: admin-scoring-config
 **Status**: ✅ Berhasil
 
 ## Deskripsi Workflow
 
-Pengaturan bobot penilaian untuk dosen dan tendik.
+Konfigurasi pembobotan scoring kinerja.
 
 ## Ringkasan
 
-Semua 1 langkah pada scan ini lolos tanpa error maupun warning.
+Halaman diakses sebagai akademik (yang memegang permission HRM admin) pada delta scan pertengahan April 2026.
 
 ## Langkah-langkah
 
-### 1. Konfigurasi Scoring
+### 1. Buka halaman HRM Admin Scoring Config
 
-**Deskripsi**: Pengaturan bobot penilaian untuk dosen dan tendik. Langkah ini difokuskan pada tampilan konfigurasi scoring.
-
-**Akun**: Waket2 / Admin HRM
+**Deskripsi**: Akademik membuka halaman `/hrm/admin/scoring-config` melalui sidebar HRM Admin.
 
 **URL**: `http://127.0.0.1:8000/hrm/admin/scoring-config`
 
-![Konfigurasi Scoring](screenshots/01_index.png)
+![Halaman HRM Admin Scoring Config](screenshots/01_index.png)
 
 ## Temuan & Masalah
 
-Tidak ada temuan kritis maupun warning pada scan ini.
+_Tidak ada temuan signifikan._
 
 ## Catatan
 
-- Screenshot diambil otomatis menggunakan Playwright dengan full-page capture.
-- Navigasi utama diprioritaskan melalui sidebar; jika sebuah halaman hanya bisa dicapai dari quick action atau tombol sekunder, report akan menandainya sebagai `missing-sidebar`.
-- Form pada report ini dibuka untuk verifikasi visual dan field wajib, tidak disubmit secara destruktif agar hasil scan tidak memalsukan status sukses.
-- Data yang tampil mengikuti seeder HRM yang aktif saat scan dijalankan.
+- Diambil otomatis pada batch scan delta pertengahan April 2026.
+- Role `akademik` ternyata pemegang permission HRM admin (bukan `ketua` / `admin-lpm`); periksa apakah pembagian role ini sudah sesuai desain modul HRM.
