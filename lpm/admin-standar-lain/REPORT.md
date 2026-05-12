@@ -1,73 +1,33 @@
-# Workflow Report: Standar Lain
+# Workflow Report: LPM Admin Standar Lain
 
-**Tanggal**: 2026-04-18  
-**Role**: Admin LPM  
-**Modul**: LPM > Penetapan  
-**Fitur**: Standar Lain  
+**Tanggal**: 2026-05-12
+**Role**: admin-lpm
+**Modul**: lpm
+**Fitur**: admin-standar-lain
 **Status**: ✅ Berhasil
+
+## Deskripsi Workflow
+
+Halaman `LPM Admin Standar Lain` di area LPM Admin.
 
 ## Ringkasan
 
-Mengelola standar lain di luar standar institusi (Akademik, Kemahasiswaan, Sumber Daya, Sarana Prasarana).
-
-Semua 8 langkah pada scan ini lolos tanpa error.
+Halaman diakses sebagai admin-lpm pada delta scan pertengahan April 2026.
 
 ## Langkah-langkah
 
-### 1. Daftar Standar Lain
+### 1. Buka halaman LPM Admin Standar Lain
 
-Tabel standar lain dengan filter kategori.
+**Deskripsi**: Admin-LPM membuka `/lpm/admin/standar-lain` melalui sidebar LPM Admin.
 
-![Daftar Standar Lain](screenshots/01_index.png)
+**URL**: `http://127.0.0.1:8000/lpm/admin/standar-lain`
 
-### 2. Form Tambah (Kosong)
-
-Form pembuatan standar lain baru.
-
-![Form Tambah (Kosong)](screenshots/02_create-form.png)
-
-### 3. Form Tambah (Terisi)
-
-Form terisi data standar sarana prasarana lab.
-
-![Form Tambah (Terisi)](screenshots/03_create-filled.png)
-
-### 4. Berhasil Ditambahkan
-
-Data tersimpan dan redirect ke index.
-
-![Berhasil Ditambahkan](screenshots/04_create-success.png)
-
-### 5. Detail Standar Lain
-
-Informasi lengkap standar.
-
-![Detail Standar Lain](screenshots/05_show.png)
-
-### 6. Form Edit
-
-Form edit dengan data terisi.
-
-![Form Edit](screenshots/06_edit-form.png)
-
-### 7. Form Edit (Dimodifikasi)
-
-Data telah diubah.
-
-![Form Edit (Dimodifikasi)](screenshots/07_edit-modified.png)
-
-### 8. Berhasil Diperbarui
-
-Redirect dengan flash message.
-
-![Berhasil Diperbarui](screenshots/08_edit-success.png)
+![Halaman LPM Admin Standar Lain](screenshots/01_index.png)
 
 ## Temuan & Masalah
 
-Tidak ada temuan kritis pada scan ini.
+_Tidak ada temuan signifikan._
 
 ## Catatan
 
-- Screenshot diambil secara otomatis menggunakan Playwright.
-- Data yang ditampilkan berasal dari data dummy/seeder yang tersedia pada saat scan.
-- Status report mengikuti hasil scan aktual; langkah yang gagal tidak lagi ditandai sebagai sukses.
+- Diambil otomatis pada batch scan delta pertengahan April 2026.
