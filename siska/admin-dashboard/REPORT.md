@@ -1,14 +1,14 @@
-# Workflow Report: Kerjasama Surat
+# Workflow Report: SISKA Dashboard
 
 **Tanggal**: 2026-05-12
 **Role**: admin
-**Modul**: kerjasama
-**Fitur**: admin-surat
+**Modul**: siska
+**Fitur**: admin-dashboard
 **Status**: ✅ Berhasil
 
 ## Deskripsi Workflow
 
-Daftar surat kerjasama (MoU/MoA).
+Dashboard SISKA.
 
 ## Ringkasan
 
@@ -16,13 +16,13 @@ Halaman diakses sebagai admin pada delta scan pertengahan April 2026.
 
 ## Langkah-langkah
 
-### 1. Buka halaman Kerjasama Surat
+### 1. Buka halaman SISKA Dashboard
 
-**Deskripsi**: Admin membuka `/kerjasama/surat` melalui sidebar.
+**Deskripsi**: Admin membuka `/siska/dashboard` melalui sidebar.
 
-**URL**: `http://127.0.0.1:8000/kerjasama/surat`
+**URL**: `http://127.0.0.1:8000/siska/dashboard`
 
-![Halaman Kerjasama Surat](screenshots/01_index.png)
+![Halaman SISKA Dashboard](screenshots/01_index.png)
 
 ## Temuan & Masalah
 
