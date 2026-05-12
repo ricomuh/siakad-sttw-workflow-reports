@@ -1,38 +1,35 @@
-# Workflow Report: Dashboard Portal Dosen P3M
+# Workflow Report: Dashboard Dosen P3M
 
-**Tanggal**: 2026-04-19  
-**Role**: Dosen  
-**Modul**: P3M  
-**Fitur**: Dashboard Portal Dosen P3M  
+**Tanggal**: 2026-05-12
+**Role**: dosen
+**Modul**: p3m
+**Fitur**: dosen-dashboard
 **Status**: ✅ Berhasil
 
 ## Deskripsi Workflow
 
-Ringkasan aktivasi terbuka, proposal aktif, dan informasi terbaru yang tampil di dashboard dosen.
+Dashboard utama dosen P3M (ringkasan proposal, repositori, publikasi).
 
 ## Ringkasan
 
-Semua 1 langkah pada scan ini lolos tanpa error maupun warning.
+- HTTP 200, render OK setelah login sebagai `budi.santoso@sttw.ac.id` (role: dosen).
+- Komponen Blade standar.
+- Tidak ada error yang teridentifikasi pada area visible.
 
 ## Langkah-langkah
 
-### 1. Dashboard P3M Dosen
+### 1. Login dosen & buka halaman
 
-**Deskripsi**: Halaman dashboard untuk ringkasan aktivasi terbuka, proposal aktif, dan informasi terbaru yang tampil di dashboard dosen. Screenshot diambil setelah halaman selesai dimuat penuh.
-
-**Akun**: Portal Dosen - Budi Santoso
+**Deskripsi**: Login sebagai dosen, navigasi ke halaman target.
 
 **URL**: `http://127.0.0.1:8000/p3m/dosen/dashboard`
 
-![Dashboard P3M Dosen](screenshots/01_dashboard.png)
+![Dashboard Dosen P3M](screenshots/01_dosen-dashboard.png)
 
 ## Temuan & Masalah
 
-Tidak ada temuan kritis maupun warning pada scan ini.
+Tidak ada temuan baru. Beberapa list dapat tampil kosong karena dosen demo belum punya data terkait.
 
 ## Catatan
 
-- Screenshot diambil otomatis menggunakan Playwright dengan full-page capture.
-- Navigasi utama diprioritaskan melalui sidebar; jika sebuah halaman hanya bisa dicapai dari quick action atau tombol sekunder, report akan menandainya sebagai `missing-sidebar`.
-- Form pada report ini dibuka untuk verifikasi visual dan field wajib, tidak disubmit secara destruktif agar hasil scan tidak memalsukan status sukses.
-- Data yang tampil mengikuti seeder P3M yang aktif saat scan dijalankan.
+- Bagian dari batch refresh delta pertengahan April 2026.

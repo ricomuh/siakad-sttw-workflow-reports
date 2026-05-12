@@ -1,14 +1,14 @@
-# Workflow Report: Data Pengabdian Dosen HRM
+# Workflow Report: Skor Akhir Kinerja Dosen
 
 **Tanggal**: 2026-05-12
 **Role**: dosen
 **Modul**: hrm
-**Fitur**: dosen-pengabdian
+**Fitur**: dosen-skor
 **Status**: ✅ Berhasil
 
 ## Deskripsi Workflow
 
-Data pengabdian untuk LKD/BKD.
+Skor akhir kinerja dosen agregasi LKD/IKD.
 
 ## Ringkasan
 
@@ -22,9 +22,9 @@ Data pengabdian untuk LKD/BKD.
 
 **Deskripsi**: Login sebagai dosen, navigasi ke halaman target.
 
-**URL**: `http://127.0.0.1:8000/hrm/portal/kinerja/pengabdian`
+**URL**: `http://127.0.0.1:8000/hrm/portal/laporan/skor`
 
-![Data Pengabdian Dosen HRM](screenshots/01_pengabdian.png)
+![Skor Akhir Kinerja Dosen](screenshots/01_skor-akhir.png)
 
 ## Temuan & Masalah
 

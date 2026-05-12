@@ -1,14 +1,14 @@
-# Workflow Report: Data Pengabdian Dosen HRM
+# Workflow Report: Repositori P3M Dosen
 
 **Tanggal**: 2026-05-12
 **Role**: dosen
-**Modul**: hrm
-**Fitur**: dosen-pengabdian
+**Modul**: p3m
+**Fitur**: dosen-repositori
 **Status**: ✅ Berhasil
 
 ## Deskripsi Workflow
 
-Data pengabdian untuk LKD/BKD.
+Repositori file P3M (proposal, laporan) dengan share-token (TASK-015 public web URL untuk repository share).
 
 ## Ringkasan
 
@@ -22,9 +22,9 @@ Data pengabdian untuk LKD/BKD.
 
 **Deskripsi**: Login sebagai dosen, navigasi ke halaman target.
 
-**URL**: `http://127.0.0.1:8000/hrm/portal/kinerja/pengabdian`
+**URL**: `http://127.0.0.1:8000/p3m/dosen/repositori`
 
-![Data Pengabdian Dosen HRM](screenshots/01_pengabdian.png)
+![Repositori P3M Dosen](screenshots/01_repositori-index.png)
 
 ## Temuan & Masalah
 

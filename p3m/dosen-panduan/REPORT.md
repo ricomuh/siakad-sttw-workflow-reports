@@ -1,14 +1,14 @@
-# Workflow Report: Data Pengabdian Dosen HRM
+# Workflow Report: Panduan Dosen P3M
 
 **Tanggal**: 2026-05-12
 **Role**: dosen
-**Modul**: hrm
-**Fitur**: dosen-pengabdian
+**Modul**: p3m
+**Fitur**: dosen-panduan
 **Status**: ✅ Berhasil
 
 ## Deskripsi Workflow
 
-Data pengabdian untuk LKD/BKD.
+Daftar panduan untuk dosen P3M (download).
 
 ## Ringkasan
 
@@ -22,9 +22,9 @@ Data pengabdian untuk LKD/BKD.
 
 **Deskripsi**: Login sebagai dosen, navigasi ke halaman target.
 
-**URL**: `http://127.0.0.1:8000/hrm/portal/kinerja/pengabdian`
+**URL**: `http://127.0.0.1:8000/p3m/dosen/panduan`
 
-![Data Pengabdian Dosen HRM](screenshots/01_pengabdian.png)
+![Panduan Dosen P3M](screenshots/01_panduan-index.png)
 
 ## Temuan & Masalah
 

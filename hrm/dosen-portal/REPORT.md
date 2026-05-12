@@ -1,14 +1,14 @@
-# Workflow Report: Data Pengabdian Dosen HRM
+# Workflow Report: Dashboard Portal HRM Dosen
 
 **Tanggal**: 2026-05-12
 **Role**: dosen
 **Modul**: hrm
-**Fitur**: dosen-pengabdian
+**Fitur**: dosen-portal
 **Status**: ✅ Berhasil
 
 ## Deskripsi Workflow
 
-Data pengabdian untuk LKD/BKD.
+Dashboard portal HRM dosen — ringkasan tridharma + cards P1-P4 (TASK-040). Verifikasi empty state TASK-106.
 
 ## Ringkasan
 
@@ -22,9 +22,9 @@ Data pengabdian untuk LKD/BKD.
 
 **Deskripsi**: Login sebagai dosen, navigasi ke halaman target.
 
-**URL**: `http://127.0.0.1:8000/hrm/portal/kinerja/pengabdian`
+**URL**: `http://127.0.0.1:8000/hrm/portal`
 
-![Data Pengabdian Dosen HRM](screenshots/01_pengabdian.png)
+![Dashboard Portal HRM Dosen](screenshots/01_portal-dashboard.png)
 
 ## Temuan & Masalah
 

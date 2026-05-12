@@ -1,14 +1,14 @@
-# Workflow Report: Data Pengabdian Dosen HRM
+# Workflow Report: Pengabdian — Riwayat Proposal Dosen
 
 **Tanggal**: 2026-05-12
 **Role**: dosen
-**Modul**: hrm
+**Modul**: p3m
 **Fitur**: dosen-pengabdian
 **Status**: ✅ Berhasil
 
 ## Deskripsi Workflow
 
-Data pengabdian untuk LKD/BKD.
+Daftar proposal pengabdian dosen + reorder anggota & luaran (TASK-061).
 
 ## Ringkasan
 
@@ -22,9 +22,9 @@ Data pengabdian untuk LKD/BKD.
 
 **Deskripsi**: Login sebagai dosen, navigasi ke halaman target.
 
-**URL**: `http://127.0.0.1:8000/hrm/portal/kinerja/pengabdian`
+**URL**: `http://127.0.0.1:8000/p3m/dosen/pengabdian`
 
-![Data Pengabdian Dosen HRM](screenshots/01_pengabdian.png)
+![Pengabdian — Riwayat Proposal Dosen](screenshots/01_pengabdian-index.png)
 
 ## Temuan & Masalah
 

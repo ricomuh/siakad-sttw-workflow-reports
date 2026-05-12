@@ -1,38 +1,35 @@
-# Workflow Report: LKD Tridharma Dosen
+# Workflow Report: Upload LKD Dosen
 
-**Tanggal**: 2026-04-18  
-**Role**: Dosen  
-**Modul**: HRM > Portal Saya  
-**Fitur**: LKD Tridharma Dosen  
+**Tanggal**: 2026-05-12
+**Role**: dosen
+**Modul**: hrm
+**Fitur**: dosen-lkd
 **Status**: ✅ Berhasil
 
 ## Deskripsi Workflow
 
-Form dan ringkasan laporan LKD Tridharma.
+Upload LKD & poin tridharma per semester.
 
 ## Ringkasan
 
-Semua 1 langkah pada scan ini lolos tanpa error maupun warning.
+- HTTP 200, render OK setelah login sebagai `budi.santoso@sttw.ac.id` (role: dosen).
+- Komponen Blade standar.
+- Tidak ada error yang teridentifikasi pada area visible.
 
 ## Langkah-langkah
 
-### 1. Halaman LKD Tridharma
+### 1. Login dosen & buka halaman
 
-**Deskripsi**: Form dan ringkasan laporan LKD Tridharma. Langkah ini difokuskan pada tampilan halaman lkd tridharma.
-
-**Akun**: Portal Dosen
+**Deskripsi**: Login sebagai dosen, navigasi ke halaman target.
 
 **URL**: `http://127.0.0.1:8000/hrm/portal/laporan/lkd`
 
-![Halaman LKD Tridharma](screenshots/01_index.png)
+![Upload LKD Dosen](screenshots/01_lkd.png)
 
 ## Temuan & Masalah
 
-Tidak ada temuan kritis maupun warning pada scan ini.
+Tidak ada temuan baru. Beberapa list dapat tampil kosong karena dosen demo belum punya data terkait.
 
 ## Catatan
 
-- Screenshot diambil otomatis menggunakan Playwright dengan full-page capture.
-- Navigasi utama diprioritaskan melalui sidebar; jika sebuah halaman hanya bisa dicapai dari quick action atau tombol sekunder, report akan menandainya sebagai `missing-sidebar`.
-- Form pada report ini dibuka untuk verifikasi visual dan field wajib, tidak disubmit secara destruktif agar hasil scan tidak memalsukan status sukses.
-- Data yang tampil mengikuti seeder HRM yang aktif saat scan dijalankan.
+- Bagian dari batch refresh delta pertengahan April 2026.
