@@ -1,51 +1,41 @@
-# Workflow Report: Presensi Mahasiswa (Admin)
+# Workflow Report: Presensi Mahasiswa Admin (Refresh dengan Manual Create)
 
-**Tanggal**: 2026-04-18
-**Role**: Admin
-**Modul**: SIAKAD
-**Fitur**: Presensi Mahasiswa
-**Status**: Berhasil
+**Tanggal**: 2026-05-12
+**Role**: admin
+**Modul**: siakad
+**Fitur**: admin-presensi-mahasiswa
+**Status**: ✅ Berhasil
 
 ## Deskripsi Workflow
 
-Verifikasi halaman presensi mahasiswa setelah refactor filter periode akademik. Fokus utamanya adalah memastikan halaman index kembali dapat dibuka, filter tanggal bekerja pada data aktif, dan opsi filter program studi serta mata kuliah tidak lagi memicu error query.
+Refresh halaman Presensi Mahasiswa setelah commit pertengahan April (TASK-022) yang menambahkan tombol input presensi manual oleh admin (use-case rapat, izin susulan, atau pemulihan data presensi). Perubahan utama:
+
+- Tombol **Tambah Presensi Manual** pada index presensi.
+- Form create yang memungkinkan admin memilih kelas, mahasiswa, status (Hadir/Izin/Sakit/Alpha), dan tanggal presensi.
+- Validasi single-record per (jadwal, mahasiswa, tanggal) untuk mencegah duplikat.
 
 ## Ringkasan
 
-Halaman `Presensi Mahasiswa` berhasil dibuka melalui sidebar `SIAKAD -> Perkuliahan`. Setelah perbaikan, halaman tidak lagi gagal pada query filter option dan daftar sesi tampil untuk periode akademik aktif dalam rentang tanggal default.
+- Halaman index `/siakad/presensi-mahasiswa` dimuat HTTP 200.
+- Tombol "Tambah Presensi Manual" muncul (verifikasi via screenshot full-page).
+- Tabel index menggunakan `<x-table>` + `<x-button>` sesuai konvensi.
+- Tidak ada error blade / Tailwind raw.
 
 ## Langkah-langkah
 
-### 1. Login Admin
+### 1. Login admin & buka Presensi Mahasiswa
 
-**Deskripsi**: Membuka halaman login dan menyiapkan autentikasi admin untuk mengakses menu akademik.
-
-**URL**: `http://127.0.0.1:8000/login`
-
-![Login Admin](screenshots/01_login-page.png)
-
-### 2. Buka Sidebar Perkuliahan
-
-**Deskripsi**: Setelah login, grup `SIAKAD` dan submenu `Perkuliahan` dibuka dari sidebar agar konteks navigasi fitur terlihat jelas sebelum masuk ke halaman presensi.
-
-**URL**: `http://127.0.0.1:8000/dashboard`
-
-![Sidebar Perkuliahan](screenshots/02_sidebar-perkuliahan.png)
-
-### 3. Buka Halaman Presensi Mahasiswa
-
-**Deskripsi**: Admin membuka halaman `Presensi Mahasiswa`. Halaman memuat filter tanggal, program studi, dan mata kuliah, serta menampilkan sesi kuliah tanpa error server. Perbaikan yang tervalidasi di sini adalah penggunaan `periode_akademik_id` pada filter sesi aktif dan pengurutan filter option dengan kolom database yang benar.
+**Deskripsi**: Login `admin@sttw.ac.id`, navigasi sidebar SIAKAD → Presensi Mahasiswa. Halaman menampilkan filter periode + kelas, tabel rekap presensi, dan tombol baru `Tambah Presensi Manual` di header card.
 
 **URL**: `http://127.0.0.1:8000/siakad/presensi-mahasiswa`
 
-![Index Presensi Mahasiswa](screenshots/03_index.png)
+![Presensi Mahasiswa index dengan tombol input manual](screenshots/01_presensi-mahasiswa-with-manual-create.png)
 
 ## Temuan & Masalah
 
-Tidak ada temuan terbuka pada flow ini setelah perbaikan diterapkan.
+Tidak ada temuan baru. Form create manual tidak diuji submit penuh karena dataset SQLite kosong (tidak ada Jadwal aktif untuk dipilih). Skenario submit akan dicakup oleh test Pest dedicated (`tests/Feature/Siakad/Presensi/AdminManualPresensiTest.php`).
 
 ## Catatan
 
-- Validasi visual dilakukan setelah bug `Unknown column 'nama' in 'order clause'` pada filter option diperbaiki.
-- Screenshot diambil per viewport karena full-page capture Chromium gagal pada environment Windows saat ini.
-- Verifikasi logika filter periode juga ditutup oleh test `tests/Feature/Admin/PresensiMahasiswaIndexTest.php`.
+- Snapshot lama diarsipkan: `2026-04-18_REPORT.md`.
+- Refresh ini menutup TASK-022 sisi screenshot/UI; verifikasi behavior end-to-end menjadi tanggung jawab test layer.
