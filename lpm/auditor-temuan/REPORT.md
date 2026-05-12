@@ -1,73 +1,33 @@
-# Workflow Report: Temuan Auditor
+# Workflow Report: LPM Auditor Temuan
 
-**Tanggal**: 2026-04-18  
-**Role**: Auditor Internal  
-**Modul**: LPM > Auditor  
-**Fitur**: Temuan Auditor  
+**Tanggal**: 2026-05-12
+**Role**: auditor
+**Modul**: lpm
+**Fitur**: auditor-temuan
 **Status**: ✅ Berhasil
+
+## Deskripsi Workflow
+
+Daftar temuan AMI yang dilaporkan auditor.
 
 ## Ringkasan
 
-Auditor mencatat dan mengelola temuan audit (Mayor, Minor, Observasi, Peluang Peningkatan).
-
-Semua 8 langkah pada scan ini lolos tanpa error.
+Halaman diakses pada delta scan pertengahan April 2026.
 
 ## Langkah-langkah
 
-### 1. Daftar Temuan
+### 1. Buka halaman LPM Auditor Temuan
 
-Tabel temuan yang dicatat oleh auditor.
+**Deskripsi**: Pengguna (auditor) membuka `/lpm/auditor/temuan`.
 
-![Daftar Temuan](screenshots/01_index.png)
+**URL**: `http://127.0.0.1:8000/lpm/auditor/temuan`
 
-### 2. Form Tambah Temuan (Kosong)
-
-Form pencatatan temuan baru dengan unit, kategori, kesesuaian, dan rekomendasi.
-
-![Form Tambah Temuan (Kosong)](screenshots/02_create-form.png)
-
-### 3. Form Tambah Temuan (Terisi)
-
-Form terisi data temuan terkait kurikulum.
-
-![Form Tambah Temuan (Terisi)](screenshots/03_create-filled.png)
-
-### 4. Temuan Berhasil Dicatat
-
-Redirect ke index setelah submit.
-
-![Temuan Berhasil Dicatat](screenshots/04_create-success.png)
-
-### 5. Detail Temuan
-
-Informasi lengkap temuan termasuk rekomendasi dan bukti.
-
-![Detail Temuan](screenshots/05_show.png)
-
-### 6. Form Edit Temuan
-
-Form edit temuan.
-
-![Form Edit Temuan](screenshots/06_edit-form.png)
-
-### 7. Form Edit (Dimodifikasi)
-
-Judul temuan diperbarui.
-
-![Form Edit (Dimodifikasi)](screenshots/07_edit-modified.png)
-
-### 8. Temuan Berhasil Diperbarui
-
-Redirect dengan notifikasi sukses.
-
-![Temuan Berhasil Diperbarui](screenshots/08_edit-success.png)
+![Halaman LPM Auditor Temuan](screenshots/01_index.png)
 
 ## Temuan & Masalah
 
-Tidak ada temuan kritis pada scan ini.
+_Tidak ada temuan signifikan._
 
 ## Catatan
 
-- Screenshot diambil secara otomatis menggunakan Playwright.
-- Data yang ditampilkan berasal dari data dummy/seeder yang tersedia pada saat scan.
-- Status report mengikuti hasil scan aktual; langkah yang gagal tidak lagi ditandai sebagai sukses.
+- Diambil otomatis pada batch scan delta pertengahan April 2026.

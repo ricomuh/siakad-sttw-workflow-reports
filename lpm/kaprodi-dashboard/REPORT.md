@@ -1,31 +1,33 @@
-# Workflow Report: Dashboard Kaprodi
+# Workflow Report: LPM Kaprodi Dashboard
 
-**Tanggal**: 2026-04-18  
-**Role**: Kaprodi  
-**Modul**: LPM > Kaprodi  
-**Fitur**: Dashboard Kaprodi  
+**Tanggal**: 2026-05-12
+**Role**: kaprodi
+**Modul**: lpm
+**Fitur**: kaprodi-dashboard
 **Status**: ✅ Berhasil
+
+## Deskripsi Workflow
+
+Dashboard LPM untuk kaprodi.
 
 ## Ringkasan
 
-Dashboard kaprodi menampilkan temuan AMI untuk program studi yang dipimpin.
-
-Semua 1 langkah pada scan ini lolos tanpa error.
+Halaman diakses pada delta scan pertengahan April 2026.
 
 ## Langkah-langkah
 
-### 1. Dashboard Kaprodi
+### 1. Buka halaman LPM Kaprodi Dashboard
 
-Halaman utama kaprodi dengan ringkasan temuan dan status tindak lanjut.
+**Deskripsi**: Pengguna (kaprodi) membuka `/lpm/kaprodi`.
 
-![Dashboard Kaprodi](screenshots/01_index.png)
+**URL**: `http://127.0.0.1:8000/lpm/kaprodi`
+
+![Halaman LPM Kaprodi Dashboard](screenshots/01_index.png)
 
 ## Temuan & Masalah
 
-Tidak ada temuan kritis pada scan ini.
+_Tidak ada temuan signifikan._
 
 ## Catatan
 
-- Screenshot diambil secara otomatis menggunakan Playwright.
-- Data yang ditampilkan berasal dari data dummy/seeder yang tersedia pada saat scan.
-- Status report mengikuti hasil scan aktual; langkah yang gagal tidak lagi ditandai sebagai sukses.
+- Diambil otomatis pada batch scan delta pertengahan April 2026.

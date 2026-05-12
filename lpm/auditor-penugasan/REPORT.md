@@ -1,31 +1,33 @@
-# Workflow Report: Penugasan Auditor
+# Workflow Report: LPM Auditor Penugasan
 
-**Tanggal**: 2026-04-18  
-**Role**: Auditor Internal  
-**Modul**: LPM > Auditor  
-**Fitur**: Penugasan Auditor  
+**Tanggal**: 2026-05-12
+**Role**: auditor
+**Modul**: lpm
+**Fitur**: auditor-penugasan
 **Status**: ✅ Berhasil
+
+## Deskripsi Workflow
+
+Daftar penugasan AMI auditor.
 
 ## Ringkasan
 
-Daftar penugasan audit yang diberikan kepada auditor.
-
-Semua 1 langkah pada scan ini lolos tanpa error.
+Halaman diakses pada delta scan pertengahan April 2026.
 
 ## Langkah-langkah
 
-### 1. Daftar Penugasan
+### 1. Buka halaman LPM Auditor Penugasan
 
-Tabel penugasan menampilkan jadwal AMI, unit, dan peran (ketua/anggota).
+**Deskripsi**: Pengguna (auditor) membuka `/lpm/auditor/penugasan`.
 
-![Daftar Penugasan](screenshots/01_index.png)
+**URL**: `http://127.0.0.1:8000/lpm/auditor/penugasan`
+
+![Halaman LPM Auditor Penugasan](screenshots/01_index.png)
 
 ## Temuan & Masalah
 
-Tidak ada temuan kritis pada scan ini.
+_Tidak ada temuan signifikan._
 
 ## Catatan
 
-- Screenshot diambil secara otomatis menggunakan Playwright.
-- Data yang ditampilkan berasal dari data dummy/seeder yang tersedia pada saat scan.
-- Status report mengikuti hasil scan aktual; langkah yang gagal tidak lagi ditandai sebagai sukses.
+- Diambil otomatis pada batch scan delta pertengahan April 2026.

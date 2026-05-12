@@ -1,31 +1,33 @@
-# Workflow Report: Dashboard Auditor
+# Workflow Report: LPM Auditor Dashboard
 
-**Tanggal**: 2026-04-18  
-**Role**: Auditor Internal  
-**Modul**: LPM > Auditor  
-**Fitur**: Dashboard Auditor  
+**Tanggal**: 2026-05-12
+**Role**: auditor
+**Modul**: lpm
+**Fitur**: auditor-dashboard
 **Status**: ✅ Berhasil
+
+## Deskripsi Workflow
+
+Dashboard auditor LPM untuk asesi yang ditugaskan.
 
 ## Ringkasan
 
-Dashboard auditor menampilkan penugasan aktif, ringkasan temuan, dan aksi cepat.
-
-Semua 1 langkah pada scan ini lolos tanpa error.
+Halaman diakses pada delta scan pertengahan April 2026.
 
 ## Langkah-langkah
 
-### 1. Dashboard Auditor
+### 1. Buka halaman LPM Auditor Dashboard
 
-Halaman utama auditor dengan daftar penugasan aktif dan statistik temuan.
+**Deskripsi**: Pengguna (auditor) membuka `/lpm/auditor`.
 
-![Dashboard Auditor](screenshots/01_index.png)
+**URL**: `http://127.0.0.1:8000/lpm/auditor`
+
+![Halaman LPM Auditor Dashboard](screenshots/01_index.png)
 
 ## Temuan & Masalah
 
-Tidak ada temuan kritis pada scan ini.
+_Tidak ada temuan signifikan._
 
 ## Catatan
 
-- Screenshot diambil secara otomatis menggunakan Playwright.
-- Data yang ditampilkan berasal dari data dummy/seeder yang tersedia pada saat scan.
-- Status report mengikuti hasil scan aktual; langkah yang gagal tidak lagi ditandai sebagai sukses.
+- Diambil otomatis pada batch scan delta pertengahan April 2026.

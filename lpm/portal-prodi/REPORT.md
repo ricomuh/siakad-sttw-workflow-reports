@@ -1,33 +1,33 @@
-# Workflow Report: Portal LPM - Program Studi
+# Workflow Report: LPM Portal Prodi (Public)
 
-**Tanggal**: 2026-04-18  
-**Role**: Publik  
-**Modul**: LPM Portal  
-**Fitur**: Portal LPM - Program Studi  
+**Tanggal**: 2026-05-12
+**Role**: public
+**Modul**: lpm
+**Fitur**: portal-prodi
 **Status**: ✅ Berhasil
+
+## Deskripsi Workflow
+
+Daftar program studi (publik).
 
 ## Ringkasan
 
-Daftar program studi dan status akreditasi pada portal publik.
-
-Semua 1 langkah pada scan ini lolos tanpa error.
+Halaman diakses pada delta scan pertengahan April 2026.
 
 ## Langkah-langkah
 
-### 1. Program Studi
+### 1. Buka halaman LPM Portal Prodi (Public)
 
-Informasi program studi beserta status akreditasi masing-masing.
+**Deskripsi**: Pengguna (public) membuka `/lpm/portal/prodi`.
 
-![Program Studi](screenshots/01_page.png)
+**URL**: `http://127.0.0.1:8000/lpm/portal/prodi`
+
+![Halaman LPM Portal Prodi (Public)](screenshots/01_index.png)
 
 ## Temuan & Masalah
 
-Tidak ada temuan kritis pada scan ini.
+_Tidak ada temuan signifikan._
 
 ## Catatan
 
-- Screenshot diambil secara otomatis menggunakan Playwright.
-- Data yang ditampilkan berasal dari data dummy/seeder yang tersedia pada saat scan.
-- Status report mengikuti hasil scan aktual; langkah yang gagal tidak lagi ditandai sebagai sukses.
-- Halaman ini dapat diakses tanpa login (portal publik).
-- Hanya menampilkan dokumen dengan akses "Publik".
+- Diambil otomatis pada batch scan delta pertengahan April 2026.

@@ -1,33 +1,33 @@
-# Workflow Report: Portal LPM - Beranda
+# Workflow Report: LPM Portal Home (Public)
 
-**Tanggal**: 2026-04-18  
-**Role**: Publik  
-**Modul**: LPM Portal  
-**Fitur**: Portal LPM - Beranda  
+**Tanggal**: 2026-05-12
+**Role**: public
+**Modul**: lpm
+**Fitur**: portal-home
 **Status**: ✅ Berhasil
+
+## Deskripsi Workflow
+
+Beranda portal publik LPM/STTW.
 
 ## Ringkasan
 
-Halaman beranda portal publik LPM.
-
-Semua 1 langkah pada scan ini lolos tanpa error.
+Halaman diakses pada delta scan pertengahan April 2026.
 
 ## Langkah-langkah
 
-### 1. Beranda Portal
+### 1. Buka halaman LPM Portal Home (Public)
 
-Landing page portal LPM menampilkan informasi umum dan navigasi ke bagian-bagian portal.
+**Deskripsi**: Pengguna (public) membuka `/lpm/portal`.
 
-![Beranda Portal](screenshots/01_page.png)
+**URL**: `http://127.0.0.1:8000/lpm/portal`
+
+![Halaman LPM Portal Home (Public)](screenshots/01_index.png)
 
 ## Temuan & Masalah
 
-Tidak ada temuan kritis pada scan ini.
+_Tidak ada temuan signifikan._
 
 ## Catatan
 
-- Screenshot diambil secara otomatis menggunakan Playwright.
-- Data yang ditampilkan berasal dari data dummy/seeder yang tersedia pada saat scan.
-- Status report mengikuti hasil scan aktual; langkah yang gagal tidak lagi ditandai sebagai sukses.
-- Halaman ini dapat diakses tanpa login (portal publik).
-- Hanya menampilkan dokumen dengan akses "Publik".
+- Diambil otomatis pada batch scan delta pertengahan April 2026.
