@@ -1,14 +1,14 @@
-# Workflow Report: KRS Mahasiswa
+# Workflow Report: Bimbingan Akademik
 
 **Tanggal**: 2026-05-12
 **Role**: mahasiswa (mhs1@sttw.ac.id)
 **Modul**: siakad
-**Fitur**: mahasiswa-krs
+**Fitur**: mahasiswa-bimbingan
 **Status**: ✅ Berhasil
 
 ## Deskripsi Workflow
 
-Halaman pengisian KRS untuk mahasiswa.
+Halaman bimbingan akademik dengan dosen wali.
 
 ## Ringkasan
 
@@ -16,13 +16,13 @@ Halaman diakses sebagai mahasiswa pada delta scan pertengahan April 2026.
 
 ## Langkah-langkah
 
-### 1. Buka halaman KRS Mahasiswa
+### 1. Buka halaman Bimbingan Akademik
 
-**Deskripsi**: Mahasiswa membuka halaman `/mahasiswa/krs` melalui sidebar / navigasi bawaan SIAKAD.
+**Deskripsi**: Mahasiswa membuka halaman `/mahasiswa/bimbingan` melalui sidebar / navigasi bawaan SIAKAD.
 
-**URL**: `http://127.0.0.1:8000/mahasiswa/krs`
+**URL**: `http://127.0.0.1:8000/mahasiswa/bimbingan`
 
-![Halaman KRS Mahasiswa](screenshots/01_index.png)
+![Halaman Bimbingan Akademik](screenshots/01_index.png)
 
 ## Temuan & Masalah
 
