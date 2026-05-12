@@ -1,37 +1,33 @@
-# Workflow Report: Temuan Prodi
+# Workflow Report: LPM Kaprodi Temuan
 
-**Tanggal**: 2026-04-18  
-**Role**: Kaprodi  
-**Modul**: LPM > Kaprodi  
-**Fitur**: Temuan Prodi  
+**Tanggal**: 2026-05-12
+**Role**: kaprodi
+**Modul**: lpm
+**Fitur**: kaprodi-temuan
 **Status**: ✅ Berhasil
+
+## Deskripsi Workflow
+
+Daftar temuan AMI untuk prodi yang dipimpin.
 
 ## Ringkasan
 
-Melihat temuan AMI untuk prodi dan memberikan tindak lanjut.
-
-Semua 2 langkah pada scan ini lolos tanpa error.
+Halaman diakses pada delta scan pertengahan April 2026.
 
 ## Langkah-langkah
 
-### 1. Daftar Temuan Prodi
+### 1. Buka halaman LPM Kaprodi Temuan
 
-Tabel temuan AMI untuk program studi kaprodi.
+**Deskripsi**: Pengguna (kaprodi) membuka `/lpm/kaprodi/temuan`.
 
-![Daftar Temuan Prodi](screenshots/01_index.png)
+**URL**: `http://127.0.0.1:8000/lpm/kaprodi/temuan`
 
-### 2. Detail Temuan & Tindak Lanjut
-
-Detail temuan dengan form tindak lanjut yang bisa diisi kaprodi.
-
-![Detail Temuan & Tindak Lanjut](screenshots/02_show.png)
+![Halaman LPM Kaprodi Temuan](screenshots/01_index.png)
 
 ## Temuan & Masalah
 
-Tidak ada temuan kritis pada scan ini.
+_Tidak ada temuan signifikan._
 
 ## Catatan
 
-- Screenshot diambil secara otomatis menggunakan Playwright.
-- Data yang ditampilkan berasal dari data dummy/seeder yang tersedia pada saat scan.
-- Status report mengikuti hasil scan aktual; langkah yang gagal tidak lagi ditandai sebagai sukses.
+- Diambil otomatis pada batch scan delta pertengahan April 2026.

@@ -1,33 +1,33 @@
-# Workflow Report: Portal LPM - Akreditasi
+# Workflow Report: LPM Portal Akreditasi (Public)
 
-**Tanggal**: 2026-04-18  
-**Role**: Publik  
-**Modul**: LPM Portal  
-**Fitur**: Portal LPM - Akreditasi  
+**Tanggal**: 2026-05-12
+**Role**: public
+**Modul**: lpm
+**Fitur**: portal-akreditasi
 **Status**: ✅ Berhasil
+
+## Deskripsi Workflow
+
+Halaman publik akreditasi institusi.
 
 ## Ringkasan
 
-Daftar SK akreditasi institusi dan program studi pada portal publik.
-
-Semua 1 langkah pada scan ini lolos tanpa error.
+Halaman diakses pada delta scan pertengahan April 2026.
 
 ## Langkah-langkah
 
-### 1. SK Akreditasi
+### 1. Buka halaman LPM Portal Akreditasi (Public)
 
-Daftar surat keputusan akreditasi yang bersifat publik.
+**Deskripsi**: Pengguna (public) membuka `/lpm/portal/akreditasi`.
 
-![SK Akreditasi](screenshots/01_page.png)
+**URL**: `http://127.0.0.1:8000/lpm/portal/akreditasi`
+
+![Halaman LPM Portal Akreditasi (Public)](screenshots/01_index.png)
 
 ## Temuan & Masalah
 
-Tidak ada temuan kritis pada scan ini.
+_Tidak ada temuan signifikan._
 
 ## Catatan
 
-- Screenshot diambil secara otomatis menggunakan Playwright.
-- Data yang ditampilkan berasal dari data dummy/seeder yang tersedia pada saat scan.
-- Status report mengikuti hasil scan aktual; langkah yang gagal tidak lagi ditandai sebagai sukses.
-- Halaman ini dapat diakses tanpa login (portal publik).
-- Hanya menampilkan dokumen dengan akses "Publik".
+- Diambil otomatis pada batch scan delta pertengahan April 2026.
