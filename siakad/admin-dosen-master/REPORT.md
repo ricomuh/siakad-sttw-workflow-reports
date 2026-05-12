@@ -1,14 +1,14 @@
-# Workflow Report: Kerjasama Surat
+# Workflow Report: Master Dosen
 
 **Tanggal**: 2026-05-12
 **Role**: admin
-**Modul**: kerjasama
-**Fitur**: admin-surat
+**Modul**: siakad
+**Fitur**: admin-dosen-master
 **Status**: ✅ Berhasil
 
 ## Deskripsi Workflow
 
-Daftar surat kerjasama (MoU/MoA).
+Master data dosen di SIAKAD.
 
 ## Ringkasan
 
@@ -16,13 +16,13 @@ Halaman diakses sebagai admin pada delta scan pertengahan April 2026.
 
 ## Langkah-langkah
 
-### 1. Buka halaman Kerjasama Surat
+### 1. Buka halaman Master Dosen
 
-**Deskripsi**: Admin membuka `/kerjasama/surat` melalui sidebar.
+**Deskripsi**: Admin membuka `/siakad/dosen` melalui sidebar.
 
-**URL**: `http://127.0.0.1:8000/kerjasama/surat`
+**URL**: `http://127.0.0.1:8000/siakad/dosen`
 
-![Halaman Kerjasama Surat](screenshots/01_index.png)
+![Halaman Master Dosen](screenshots/01_index.png)
 
 ## Temuan & Masalah
 

@@ -1,14 +1,14 @@
-# Workflow Report: Kerjasama Surat
+# Workflow Report: SISKA Persetujuan
 
 **Tanggal**: 2026-05-12
 **Role**: admin
-**Modul**: kerjasama
-**Fitur**: admin-surat
+**Modul**: siska
+**Fitur**: admin-persetujuan
 **Status**: ✅ Berhasil
 
 ## Deskripsi Workflow
 
-Daftar surat kerjasama (MoU/MoA).
+Persetujuan dokumen SISKA.
 
 ## Ringkasan
 
@@ -16,13 +16,13 @@ Halaman diakses sebagai admin pada delta scan pertengahan April 2026.
 
 ## Langkah-langkah
 
-### 1. Buka halaman Kerjasama Surat
+### 1. Buka halaman SISKA Persetujuan
 
-**Deskripsi**: Admin membuka `/kerjasama/surat` melalui sidebar.
+**Deskripsi**: Admin membuka `/siska/persetujuan` melalui sidebar.
 
-**URL**: `http://127.0.0.1:8000/kerjasama/surat`
+**URL**: `http://127.0.0.1:8000/siska/persetujuan`
 
-![Halaman Kerjasama Surat](screenshots/01_index.png)
+![Halaman SISKA Persetujuan](screenshots/01_index.png)
 
 ## Temuan & Masalah
 

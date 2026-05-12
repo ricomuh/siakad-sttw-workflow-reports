@@ -1,14 +1,14 @@
-# Workflow Report: Kerjasama Surat
+# Workflow Report: Periode KRS
 
 **Tanggal**: 2026-05-12
 **Role**: admin
-**Modul**: kerjasama
-**Fitur**: admin-surat
+**Modul**: siakad
+**Fitur**: admin-periode-krs
 **Status**: ✅ Berhasil
 
 ## Deskripsi Workflow
 
-Daftar surat kerjasama (MoU/MoA).
+Pengaturan periode pengisian KRS.
 
 ## Ringkasan
 
@@ -16,13 +16,13 @@ Halaman diakses sebagai admin pada delta scan pertengahan April 2026.
 
 ## Langkah-langkah
 
-### 1. Buka halaman Kerjasama Surat
+### 1. Buka halaman Periode KRS
 
-**Deskripsi**: Admin membuka `/kerjasama/surat` melalui sidebar.
+**Deskripsi**: Admin membuka `/siakad/periode-krs` melalui sidebar.
 
-**URL**: `http://127.0.0.1:8000/kerjasama/surat`
+**URL**: `http://127.0.0.1:8000/siakad/periode-krs`
 
-![Halaman Kerjasama Surat](screenshots/01_index.png)
+![Halaman Periode KRS](screenshots/01_index.png)
 
 ## Temuan & Masalah
 

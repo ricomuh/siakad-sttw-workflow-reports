@@ -1,14 +1,14 @@
-# Workflow Report: Kerjasama Surat
+# Workflow Report: System Error Logs
 
 **Tanggal**: 2026-05-12
 **Role**: admin
-**Modul**: kerjasama
-**Fitur**: admin-surat
+**Modul**: system
+**Fitur**: admin-error-logs
 **Status**: ✅ Berhasil
 
 ## Deskripsi Workflow
 
-Daftar surat kerjasama (MoU/MoA).
+Log error sistem.
 
 ## Ringkasan
 
@@ -16,13 +16,13 @@ Halaman diakses sebagai admin pada delta scan pertengahan April 2026.
 
 ## Langkah-langkah
 
-### 1. Buka halaman Kerjasama Surat
+### 1. Buka halaman System Error Logs
 
-**Deskripsi**: Admin membuka `/kerjasama/surat` melalui sidebar.
+**Deskripsi**: Admin membuka `/system/error-logs` melalui sidebar.
 
-**URL**: `http://127.0.0.1:8000/kerjasama/surat`
+**URL**: `http://127.0.0.1:8000/system/error-logs`
 
-![Halaman Kerjasama Surat](screenshots/01_index.png)
+![Halaman System Error Logs](screenshots/01_index.png)
 
 ## Temuan & Masalah
 
