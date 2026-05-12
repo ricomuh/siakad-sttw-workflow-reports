@@ -1,38 +1,34 @@
-# Workflow Report: Dashboard Admin HRM
+# Workflow Report: HRM Admin Dashboard
 
-**Tanggal**: 2026-04-18  
-**Role**: Waket2 / Admin HRM  
-**Modul**: HRM  
-**Fitur**: Dashboard Admin HRM  
+**Tanggal**: 2026-05-12
+**Role**: akademik (akademik@sttw.ac.id)
+**Modul**: hrm
+**Fitur**: admin-dashboard
 **Status**: ✅ Berhasil
 
 ## Deskripsi Workflow
 
-Ringkasan status penilaian dan akses cepat pengelolaan HRM.
+Dashboard ringkasan HRM untuk admin (akademik).
 
 ## Ringkasan
 
-Semua 1 langkah pada scan ini lolos tanpa error maupun warning.
+Halaman diakses sebagai akademik (yang memegang permission HRM admin) pada delta scan pertengahan April 2026.
 
 ## Langkah-langkah
 
-### 1. Dashboard Admin
+### 1. Buka halaman HRM Admin Dashboard
 
-**Deskripsi**: Halaman dashboard untuk ringkasan status penilaian dan akses cepat pengelolaan hrm. Screenshot diambil setelah halaman selesai dimuat penuh.
-
-**Akun**: Waket2 / Admin HRM
+**Deskripsi**: Akademik membuka halaman `/hrm/admin` melalui sidebar HRM Admin.
 
 **URL**: `http://127.0.0.1:8000/hrm/admin`
 
-![Dashboard Admin](screenshots/01_dashboard.png)
+![Halaman HRM Admin Dashboard](screenshots/01_index.png)
 
 ## Temuan & Masalah
 
-Tidak ada temuan kritis maupun warning pada scan ini.
+_Tidak ada temuan signifikan._
 
 ## Catatan
 
-- Screenshot diambil otomatis menggunakan Playwright dengan full-page capture.
-- Navigasi utama diprioritaskan melalui sidebar; jika sebuah halaman hanya bisa dicapai dari quick action atau tombol sekunder, report akan menandainya sebagai `missing-sidebar`.
-- Form pada report ini dibuka untuk verifikasi visual dan field wajib, tidak disubmit secara destruktif agar hasil scan tidak memalsukan status sukses.
-- Data yang tampil mengikuti seeder HRM yang aktif saat scan dijalankan.
+- Diambil otomatis pada batch scan delta pertengahan April 2026.
+- Role `akademik` ternyata pemegang permission HRM admin (bukan `ketua` / `admin-lpm`); periksa apakah pembagian role ini sudah sesuai desain modul HRM.

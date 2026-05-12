@@ -1,38 +1,34 @@
-# Workflow Report: Data Tendik HRM
+# Workflow Report: HRM Admin Daftar Tendik
 
-**Tanggal**: 2026-04-18  
-**Role**: Waket2 / Admin HRM  
-**Modul**: HRM > Admin HRM  
-**Fitur**: Data Tendik HRM  
+**Tanggal**: 2026-05-12
+**Role**: akademik (akademik@sttw.ac.id)
+**Modul**: hrm
+**Fitur**: admin-tendik
 **Status**: ✅ Berhasil
 
 ## Deskripsi Workflow
 
-Daftar tendik yang digunakan dalam modul HRM.
+Daftar tendik (tenaga kependidikan) di modul HRM.
 
 ## Ringkasan
 
-Semua 1 langkah pada scan ini lolos tanpa error maupun warning.
+Halaman diakses sebagai akademik (yang memegang permission HRM admin) pada delta scan pertengahan April 2026.
 
 ## Langkah-langkah
 
-### 1. Daftar Tendik
+### 1. Buka halaman HRM Admin Daftar Tendik
 
-**Deskripsi**: Halaman ini merekam tampilan utama daftar tendik sebagai bagian dari alur data tendik hrm.
-
-**Akun**: Waket2 / Admin HRM
+**Deskripsi**: Akademik membuka halaman `/hrm/admin/tendik` melalui sidebar HRM Admin.
 
 **URL**: `http://127.0.0.1:8000/hrm/admin/tendik`
 
-![Daftar Tendik](screenshots/01_index.png)
+![Halaman HRM Admin Daftar Tendik](screenshots/01_index.png)
 
 ## Temuan & Masalah
 
-Tidak ada temuan kritis maupun warning pada scan ini.
+_Tidak ada temuan signifikan._
 
 ## Catatan
 
-- Screenshot diambil otomatis menggunakan Playwright dengan full-page capture.
-- Navigasi utama diprioritaskan melalui sidebar; jika sebuah halaman hanya bisa dicapai dari quick action atau tombol sekunder, report akan menandainya sebagai `missing-sidebar`.
-- Form pada report ini dibuka untuk verifikasi visual dan field wajib, tidak disubmit secara destruktif agar hasil scan tidak memalsukan status sukses.
-- Data yang tampil mengikuti seeder HRM yang aktif saat scan dijalankan.
+- Diambil otomatis pada batch scan delta pertengahan April 2026.
+- Role `akademik` ternyata pemegang permission HRM admin (bukan `ketua` / `admin-lpm`); periksa apakah pembagian role ini sudah sesuai desain modul HRM.

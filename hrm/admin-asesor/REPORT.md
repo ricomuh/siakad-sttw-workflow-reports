@@ -1,48 +1,34 @@
-# Workflow Report: Manajemen Asesor HRM
+# Workflow Report: HRM Admin Pengaturan Asesor
 
-**Tanggal**: 2026-04-18  
-**Role**: Waket2 / Admin HRM  
-**Modul**: HRM > Admin HRM  
-**Fitur**: Manajemen Asesor HRM  
+**Tanggal**: 2026-05-12
+**Role**: akademik (akademik@sttw.ac.id)
+**Modul**: hrm
+**Fitur**: admin-asesor
 **Status**: ✅ Berhasil
 
 ## Deskripsi Workflow
 
-Daftar asesor dan halaman assignment asesor ke pegawai.
+Pengaturan daftar asesor penilai kinerja.
 
 ## Ringkasan
 
-Semua 2 langkah pada scan ini lolos tanpa error maupun warning.
+Halaman diakses sebagai akademik (yang memegang permission HRM admin) pada delta scan pertengahan April 2026.
 
 ## Langkah-langkah
 
-### 1. Daftar Asesor
+### 1. Buka halaman HRM Admin Pengaturan Asesor
 
-**Deskripsi**: Halaman ini merekam tampilan utama daftar asesor sebagai bagian dari alur manajemen asesor hrm.
-
-**Akun**: Waket2 / Admin HRM
+**Deskripsi**: Akademik membuka halaman `/hrm/admin/asesor` melalui sidebar HRM Admin.
 
 **URL**: `http://127.0.0.1:8000/hrm/admin/asesor`
 
-![Daftar Asesor](screenshots/01_index.png)
-
-### 2. Assign Asesor
-
-**Deskripsi**: Daftar asesor dan halaman assignment asesor ke pegawai. Langkah ini difokuskan pada tampilan assign asesor.
-
-**Akun**: Waket2 / Admin HRM
-
-**URL**: `http://127.0.0.1:8000/hrm/admin/asesor-assign`
-
-![Assign Asesor](screenshots/02_assign.png)
+![Halaman HRM Admin Pengaturan Asesor](screenshots/01_index.png)
 
 ## Temuan & Masalah
 
-Tidak ada temuan kritis maupun warning pada scan ini.
+_Tidak ada temuan signifikan._
 
 ## Catatan
 
-- Screenshot diambil otomatis menggunakan Playwright dengan full-page capture.
-- Navigasi utama diprioritaskan melalui sidebar; jika sebuah halaman hanya bisa dicapai dari quick action atau tombol sekunder, report akan menandainya sebagai `missing-sidebar`.
-- Form pada report ini dibuka untuk verifikasi visual dan field wajib, tidak disubmit secara destruktif agar hasil scan tidak memalsukan status sukses.
-- Data yang tampil mengikuti seeder HRM yang aktif saat scan dijalankan.
+- Diambil otomatis pada batch scan delta pertengahan April 2026.
+- Role `akademik` ternyata pemegang permission HRM admin (bukan `ketua` / `admin-lpm`); periksa apakah pembagian role ini sudah sesuai desain modul HRM.
