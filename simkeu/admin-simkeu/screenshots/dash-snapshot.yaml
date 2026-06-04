@@ -1,0 +1,433 @@
+- generic [ref=e2]:
+  - complementary [ref=e3]:
+    - generic [ref=e5]:
+      - img "SIAKAD STTW" [ref=e6]
+      - heading "SIAKAD STTW" [level=1] [ref=e8]
+    - button [ref=e9]:
+      - img [ref=e10]
+    - navigation [ref=e12]:
+      - list [ref=e13]:
+        - listitem [ref=e14]:
+          - link "Dashboard" [ref=e15] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/dashboard
+            - img [ref=e16]
+            - generic [ref=e18]: Dashboard
+        - listitem [ref=e19]:
+          - generic [ref=e20] [cursor=pointer]:
+            - generic [ref=e21]:
+              - img [ref=e22]
+              - generic [ref=e24]: SIAKAD
+            - img [ref=e25]
+        - listitem [ref=e27]:
+          - generic [ref=e28] [cursor=pointer]:
+            - generic [ref=e29]:
+              - img [ref=e30]
+              - generic [ref=e32]: SISKA
+            - img [ref=e33]
+        - listitem [ref=e35]:
+          - generic [ref=e36] [cursor=pointer]:
+            - generic [ref=e37]:
+              - img [ref=e38]
+              - generic [ref=e40]: P3M
+            - img [ref=e41]
+        - listitem [ref=e43]:
+          - generic [ref=e44] [cursor=pointer]:
+            - generic [ref=e45]:
+              - img [ref=e46]
+              - generic [ref=e48]: SIMKERMA
+            - img [ref=e49]
+        - listitem [ref=e51]:
+          - generic [ref=e52] [cursor=pointer]:
+            - generic [ref=e53]:
+              - img [ref=e54]
+              - generic [ref=e56]: LPM
+            - img [ref=e57]
+        - listitem [ref=e59]:
+          - generic [ref=e60] [cursor=pointer]:
+            - generic [ref=e61]:
+              - img [ref=e62]
+              - generic [ref=e64]: PMB
+            - img [ref=e65]
+        - listitem [ref=e67]:
+          - generic [ref=e68] [cursor=pointer]:
+            - generic [ref=e69]:
+              - img [ref=e70]
+              - generic [ref=e72]: CDC
+            - img [ref=e73]
+        - listitem [ref=e75]:
+          - generic [ref=e76] [cursor=pointer]:
+            - generic [ref=e77]:
+              - img [ref=e78]
+              - generic [ref=e80]: Sarpras
+            - img [ref=e81]
+        - listitem [ref=e83]:
+          - generic [ref=e84] [cursor=pointer]:
+            - generic [ref=e85]:
+              - img [ref=e86]
+              - generic [ref=e88]: SIMKEU
+            - img [ref=e89]
+        - listitem [ref=e91]:
+          - generic [ref=e92] [cursor=pointer]:
+            - generic [ref=e93]:
+              - img [ref=e94]
+              - generic [ref=e96]: System
+            - img [ref=e97]
+        - listitem [ref=e99]:
+          - generic [ref=e100] [cursor=pointer]:
+            - generic [ref=e101]:
+              - img [ref=e102]
+              - generic [ref=e104]: Perpustakaan
+            - img [ref=e105]
+    - generic [ref=e108]:
+      - generic [ref=e110]: A
+      - generic [ref=e111]:
+        - paragraph [ref=e112]: Administrator
+        - paragraph [ref=e113]: admin@sttw.ac.id
+  - generic [ref=e114]:
+    - banner [ref=e115]:
+      - generic [ref=e116]:
+        - navigation "Breadcrumb" [ref=e118]:
+          - list [ref=e119]:
+            - listitem [ref=e120]:
+              - link "Dashboard" [ref=e122] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/dashboard
+                - img [ref=e123]
+                - generic [ref=e125]: Dashboard
+            - listitem [ref=e126]:
+              - generic [ref=e127]:
+                - img [ref=e128]
+                - generic [ref=e130]: SIAKAD
+            - listitem [ref=e131]:
+              - generic [ref=e132]:
+                - img [ref=e133]
+                - generic [ref=e135]: Dashboard
+        - generic [ref=e136]:
+          - generic [ref=e138]:
+            - textbox "Cari..." [ref=e139]
+            - generic:
+              - img
+          - button [ref=e141]:
+            - img [ref=e142]
+          - button [ref=e144]:
+            - img [ref=e145]
+          - button "A Administrator" [ref=e148]:
+            - generic [ref=e150]: A
+            - generic [ref=e151]: Administrator
+    - main [ref=e152]:
+      - generic [ref=e153]:
+        - heading "Selamat Datang, Administrator" [level=1] [ref=e154]
+        - paragraph [ref=e155]: Sistem Informasi Akademik Terintegrasi STTW
+      - generic [ref=e156]:
+        - generic [ref=e158]:
+          - generic [ref=e159]:
+            - generic [ref=e161]:
+              - generic [ref=e162]:
+                - paragraph [ref=e163]: Mahasiswa Aktif
+                - heading "14" [level=3] [ref=e164]
+              - img [ref=e166]
+            - generic [ref=e169]:
+              - generic [ref=e170]:
+                - paragraph [ref=e171]: Dosen Aktif
+                - heading "12" [level=3] [ref=e172]
+              - img [ref=e174]
+            - generic [ref=e177]:
+              - generic [ref=e178]:
+                - paragraph [ref=e179]: Pengisian KRS
+                - heading "57%" [level=3] [ref=e180]
+                - paragraph [ref=e181]: Progress
+              - img [ref=e183]
+            - generic [ref=e186]:
+              - generic [ref=e187]:
+                - paragraph [ref=e188]: Jadwal Hari Ini
+                - heading "33" [level=3] [ref=e189]
+                - paragraph [ref=e190]: Kelas
+              - img [ref=e192]
+          - generic [ref=e194]:
+            - generic [ref=e196]:
+              - generic [ref=e197]:
+                - img [ref=e199]
+                - heading "Ringkasan PKL" [level=3] [ref=e201]
+              - generic [ref=e202]:
+                - generic [ref=e203]:
+                  - generic [ref=e204]: Pending Approval
+                  - generic [ref=e205]: "1"
+                - generic [ref=e206]:
+                  - generic [ref=e207]: PKL Berlangsung
+                  - generic [ref=e208]: "2"
+                - generic [ref=e209]:
+                  - generic [ref=e210]: Siap Sidang
+                  - generic [ref=e211]: "1"
+                - generic [ref=e212]:
+                  - generic [ref=e213]: Logbook Pending
+                  - generic [ref=e214]: "1"
+              - link "Kelola PKL →" [ref=e216] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/siska/pkl/registrations
+            - generic [ref=e218]:
+              - generic [ref=e219]:
+                - img [ref=e221]
+                - heading "Ringkasan KKN" [level=3] [ref=e223]
+              - generic [ref=e224]:
+                - generic [ref=e225]:
+                  - generic [ref=e226]: Batch Aktif
+                  - generic [ref=e227]: "1"
+                - generic [ref=e228]:
+                  - generic [ref=e229]: Total Kelompok
+                  - generic [ref=e230]: "1"
+                - generic [ref=e231]:
+                  - generic [ref=e232]: Peserta Aktif
+                  - generic [ref=e233]: "2"
+                - generic [ref=e234]:
+                  - generic [ref=e235]: Pending Registrasi
+                  - generic [ref=e236]: "0"
+              - link "Kelola KKN →" [ref=e238] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/siska/kkn/peserta
+          - generic [ref=e239]:
+            - heading "Perlu Perhatian" [level=3] [ref=e242]
+            - generic [ref=e244]:
+              - generic [ref=e245]:
+                - generic [ref=e246]: ⚠️
+                - paragraph [ref=e247]: 1 pengajuan PKL menunggu persetujuan.
+              - generic [ref=e248]:
+                - generic [ref=e249]: ⚠️
+                - paragraph [ref=e250]: 1 mahasiswa PKL siap sidang, belum dijadwalkan.
+        - generic [ref=e252]:
+          - heading "Kalender Akademik" [level=3] [ref=e255]
+          - generic [ref=e257]:
+            - generic [ref=e258]:
+              - button [ref=e259]:
+                - img [ref=e260]
+              - heading "Juni 2026" [level=4] [ref=e550]:
+                - generic [ref=e551]: Juni
+                - generic [ref=e263]: "2026"
+              - button [ref=e267]:
+                - img [ref=e268]
+            - generic [ref=e270]:
+              - generic [ref=e271]: SEN
+              - generic [ref=e272]: SEL
+              - generic [ref=e273]: RAB
+              - generic [ref=e274]: KAM
+              - generic [ref=e275]: JUM
+              - generic [ref=e276]: SAT
+              - generic [ref=e277]: MIN
+              - generic [ref=e554]: "1"
+              - generic [ref=e557]: "2"
+              - generic [ref=e560]: "3"
+              - generic [ref=e563]: "4"
+              - generic [ref=e566]: "5"
+              - generic [ref=e569]: "6"
+              - generic [ref=e572]: "7"
+              - generic [ref=e575]: "8"
+              - generic [ref=e578]: "9"
+              - generic [ref=e581]: "10"
+              - generic [ref=e584]: "11"
+              - generic [ref=e587]: "12"
+              - generic [ref=e590]: "13"
+              - generic [ref=e593]: "14"
+              - generic [ref=e596]: "15"
+              - generic [ref=e599]: "16"
+              - generic [ref=e602]: "17"
+              - generic [ref=e605]: "18"
+              - generic [ref=e608]: "19"
+              - generic [ref=e611]: "20"
+              - generic [ref=e614]: "21"
+              - generic [ref=e617]: "22"
+              - generic [ref=e620]: "23"
+              - generic [ref=e623]: "24"
+              - generic [ref=e626]: "25"
+              - generic [ref=e629]: "26"
+              - generic [ref=e632]: "27"
+              - generic [ref=e635]: "28"
+              - generic [ref=e638]: "29"
+              - generic [ref=e641]: "30"
+            - generic [ref=e278]:
+              - heading "Agenda Bulan Ini" [level=4] [ref=e279]
+              - paragraph [ref=e280]: Tidak ada agenda bulan ini.
+        - generic [ref=e283]:
+          - generic [ref=e284]:
+            - img [ref=e285]
+            - heading "Perlu Perhatian" [level=3] [ref=e287]
+          - generic [ref=e288]:
+            - generic [ref=e289]:
+              - img [ref=e290]
+              - generic [ref=e292]: 4 Pengajuan KRS menunggu persetujuan Dosen PA
+            - generic [ref=e293]:
+              - img [ref=e294]
+              - generic [ref=e296]: 6 Mahasiswa aktif belum mengisi KRS semester ini
+        - generic [ref=e299]:
+          - generic [ref=e300]:
+            - generic [ref=e301]:
+              - img [ref=e302]
+              - heading "Monitoring Pengisian KRS" [level=3] [ref=e304]
+            - generic [ref=e305]: 2025/2026 Ganjil
+          - generic [ref=e307]:
+            - generic [ref=e308]: Progres Pengisian
+            - generic [ref=e309]: 57%
+          - generic [ref=e312]:
+            - generic [ref=e313]:
+              - generic [ref=e314]: "8"
+              - generic [ref=e315]: Disetujui
+            - generic [ref=e316]:
+              - generic [ref=e317]: "4"
+              - generic [ref=e318]: Menunggu Dosen PA
+            - generic [ref=e319]:
+              - generic [ref=e320]: "0"
+              - generic [ref=e321]: Draft
+            - generic [ref=e322]:
+              - generic [ref=e323]: "6"
+              - generic [ref=e324]: Belum Mengisi
+          - link "Lihat Detail →" [ref=e326] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/siakad/monitoring-krs
+        - generic [ref=e329]:
+          - generic [ref=e330]:
+            - img [ref=e331]
+            - heading "Ringkasan SISKA" [level=3] [ref=e333]
+          - generic [ref=e334]:
+            - generic [ref=e335]:
+              - heading "Praktik Kerja Lapangan" [level=4] [ref=e336]
+              - generic [ref=e337]:
+                - generic [ref=e338]:
+                  - generic [ref=e339]: Total
+                  - generic [ref=e340]: "6"
+                - generic [ref=e341]:
+                  - generic [ref=e342]: Aktif
+                  - generic [ref=e343]: "2"
+                - generic [ref=e344]:
+                  - generic [ref=e345]: Pending
+                  - generic [ref=e346]: "1"
+                - generic [ref=e347]:
+                  - generic [ref=e348]: Selesai
+                  - generic [ref=e349]: "1"
+            - generic [ref=e350]:
+              - heading "Kuliah Kerja Nyata" [level=4] [ref=e351]
+              - generic [ref=e352]:
+                - generic [ref=e353]:
+                  - generic [ref=e354]: Batch Aktif
+                  - generic [ref=e355]: "1"
+                - generic [ref=e356]:
+                  - generic [ref=e357]: Kelompok
+                  - generic [ref=e358]: "1"
+                - generic [ref=e359]:
+                  - generic [ref=e360]: Peserta
+                  - generic [ref=e361]: "2"
+                - generic [ref=e362]:
+                  - generic [ref=e363]: Pending
+                  - generic [ref=e364]: "0"
+            - generic [ref=e365]:
+              - heading "Prestasi Mahasiswa" [level=4] [ref=e366]
+              - generic [ref=e367]: "6"
+              - generic [ref=e368]: Total tercatat
+            - generic [ref=e369]:
+              - heading "Penerima Beasiswa" [level=4] [ref=e370]
+              - generic [ref=e371]: "14"
+              - generic [ref=e372]: Total penerima
+        - generic [ref=e374]:
+          - heading "P3M — Penelitian & Pengabdian" [level=3] [ref=e375]
+          - generic [ref=e376]:
+            - generic [ref=e378]:
+              - generic [ref=e379]:
+                - paragraph [ref=e380]: Penelitian Aktif
+                - heading "2" [level=3] [ref=e381]
+              - img [ref=e383]
+            - generic [ref=e386]:
+              - generic [ref=e387]:
+                - paragraph [ref=e388]: Pengabdian Aktif
+                - heading "2" [level=3] [ref=e389]
+              - img [ref=e391]
+            - generic [ref=e394]:
+              - generic [ref=e395]:
+                - paragraph [ref=e396]: Pending Review
+                - heading "2" [level=3] [ref=e397]
+              - img [ref=e399]
+            - generic [ref=e402]:
+              - generic [ref=e403]:
+                - paragraph [ref=e404]: Luaran Overdue
+                - heading "0" [level=3] [ref=e405]
+              - img [ref=e407]
+        - generic [ref=e410]:
+          - generic [ref=e411]:
+            - heading "Perpustakaan" [level=3] [ref=e412]
+            - link "Buka OPAC →" [ref=e413] [cursor=pointer]:
+              - /url: https://pustaka.sttw.ac.id
+          - generic [ref=e414]:
+            - generic [ref=e416]:
+              - generic [ref=e417]:
+                - paragraph [ref=e418]: Total Judul Buku
+                - heading "0" [level=3] [ref=e419]
+              - img [ref=e421]
+            - generic [ref=e424]:
+              - generic [ref=e425]:
+                - paragraph [ref=e426]: Total Eksemplar
+                - heading "0" [level=3] [ref=e427]
+              - img [ref=e429]
+            - generic [ref=e432]:
+              - generic [ref=e433]:
+                - paragraph [ref=e434]: Sedang Dipinjam
+                - heading "0" [level=3] [ref=e435]
+              - img [ref=e437]
+            - generic [ref=e440]:
+              - generic [ref=e441]:
+                - paragraph [ref=e442]: Tersedia
+                - heading "0" [level=3] [ref=e443]
+              - img [ref=e445]
+        - generic [ref=e448]:
+          - heading "LPM — Penjaminan Mutu" [level=3] [ref=e449]
+          - generic [ref=e450]:
+            - generic [ref=e452]:
+              - generic [ref=e453]:
+                - paragraph [ref=e454]: Kebijakan
+                - heading "0/3" [level=3] [ref=e455]
+              - img [ref=e457]
+            - generic [ref=e460]:
+              - generic [ref=e461]:
+                - paragraph [ref=e462]: Pelaksanaan
+                - heading "4" [level=3] [ref=e463]
+              - img [ref=e465]
+            - generic [ref=e468]:
+              - generic [ref=e469]:
+                - paragraph [ref=e470]: AMI Aktif
+                - heading "0" [level=3] [ref=e471]
+              - img [ref=e473]
+            - generic [ref=e476]:
+              - generic [ref=e477]:
+                - paragraph [ref=e478]: Temuan Baru
+                - heading "0" [level=3] [ref=e479]
+              - img [ref=e481]
+        - heading "Proposal P3M per Status" [level=3] [ref=e487]
+        - generic [ref=e492]:
+          - heading "Progress Monev per Batch" [level=3] [ref=e495]
+          - paragraph [ref=e500]: "* Menampilkan batch aktif dengan proposal yang diterima/selesai"
+        - generic [ref=e503]:
+          - generic [ref=e504]:
+            - img [ref=e505]
+            - heading "Pengumuman Akademik" [level=3] [ref=e507]
+          - generic [ref=e509]:
+            - generic [ref=e510]:
+              - img [ref=e512]
+              - generic [ref=e514]:
+                - heading "Masa Perkuliahan Semester Ganjil 2024/2025" [level=4] [ref=e515]
+                - paragraph [ref=e516]: Periode pelaksanaan perkuliahan reguler untuk semester ganjil tahun akademik 2024/2025
+                - generic [ref=e517]: 02 Sep 2024 — 15 Jan 2025
+            - generic [ref=e518]:
+              - img [ref=e520]
+              - generic [ref=e522]:
+                - heading "Ujian Tengah Semester (UTS) Ganjil 2024/2025" [level=4] [ref=e523]
+                - paragraph [ref=e524]: Pelaksanaan Ujian Tengah Semester untuk seluruh mata kuliah semester ganjil
+                - generic [ref=e525]: 04 Nov 2024 — 15 Nov 2024
+            - generic [ref=e526]:
+              - img [ref=e528]
+              - generic [ref=e530]:
+                - heading "Ujian Akhir Semester (UAS) Ganjil 2024/2025" [level=4] [ref=e531]
+                - paragraph [ref=e532]: Pelaksanaan Ujian Akhir Semester untuk seluruh mata kuliah semester ganjil
+                - generic [ref=e533]: 13 Jan 2025 — 24 Jan 2025
+            - generic [ref=e534]:
+              - img [ref=e536]
+              - generic [ref=e538]:
+                - heading "Libur Semester Ganjil 2024/2025" [level=4] [ref=e539]
+                - paragraph [ref=e540]: Masa libur semester antara semester ganjil dan genap
+                - generic [ref=e541]: 27 Jan 2025 — 14 Feb 2025
+            - generic [ref=e542]:
+              - img [ref=e544]
+              - generic [ref=e546]:
+                - heading "Masa Perkuliahan Semester Genap 2024/2025" [level=4] [ref=e547]
+                - paragraph [ref=e548]: Periode pelaksanaan perkuliahan reguler untuk semester genap tahun akademik 2024/2025
+                - generic [ref=e549]: 17 Feb 2025 — 20 Jun 2025

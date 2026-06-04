@@ -1,0 +1,28 @@
+- generic [ref=e2]:
+  - generic [ref=e4]:
+    - generic [ref=e5]:
+      - img "Logo SIAKAD" [ref=e6]
+      - heading "Masuk" [level=1] [ref=e7]
+    - generic [ref=e8]:
+      - generic [ref=e9]:
+        - generic [ref=e10]: NIM/NIP/Email *
+        - textbox "NIM/NIP/Email *" [active] [ref=e11]:
+          - /placeholder: Masukkan NIM, NIP, atau Email
+      - generic [ref=e12]:
+        - generic [ref=e13]:
+          - generic [ref=e14]: Password *
+          - link "Lupa Password?" [ref=e15] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/forgot-password
+        - generic [ref=e17]:
+          - textbox "Password *" [ref=e18]:
+            - /placeholder: Masukkan Password
+          - button "Tampilkan password" [ref=e19]:
+            - img [ref=e20]
+      - generic [ref=e23]:
+        - checkbox "Ingat Saya" [ref=e24]
+        - generic [ref=e25]: Ingat Saya
+      - button "Masuk" [ref=e26]
+  - generic [ref=e30]:
+    - img "Logo SIAKAD" [ref=e31]
+    - heading "SIAKAD Terintegrasi" [level=2] [ref=e32]
+    - paragraph [ref=e33]: Sekolah Tinggi Teknologi Warga
