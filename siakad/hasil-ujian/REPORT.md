@@ -17,8 +17,22 @@ Migrasi fitur Hasil Ujian dari E-Learning CI3 (`dosen/Hasil.php`) ke SIAKAD Lara
 | `6ab1e984` | feat | Migration, model, controller, 3 views, sidebar, permission, 4 tests |
 | `809f3727` | fix | Thermos bug review: IDOR guard, N+1, permission dosen, download route |
 | `cf06e8db` | fix | Route order: download before wildcard show |
+| `09e9cd18` | fix | Post-deploy: `$table` property missing → Laravel auto-pluralized to `ujian_mahasiswas` |
 
-## Screenshots
+## Bug Ditemukan (Post-Deploy)
+
+**Error**: `SQLSTATE[42S02]: Base table or view not found: 1146 Table 'siakad_staging.ujian_mahasiswas' doesn't exist`
+
+**Root cause**: Model `UjianMahasiswa` tidak memiliki `protected $table`. Laravel auto-pluralizes `UjianMahasiswa` → `ujian_mahasiswas`, tapi tabel legacy bernama `ujian_mahasiswa` (singular — tanpa 's').
+
+**Kenapa Tests Lolos**: 4 Pest tests hanya cover auth + validation form — tidak ada yang mengeksekusi query `withCount('ujianMahasiswa')` di `HasilUjianController::data()`. Bug baru muncul saat user melakukan filter di staging.
+
+**Fix**: Tambah `protected $table = 'ujian_mahasiswa'` di model.
+
+**Deploy**: CI deploy staging broken (SSH key expired) — deploy manual via VPS tunnel.
+
+![Error 500 — ujian_mahasiswas not found](screenshots/03_error_500.png)
+*Error 500 saat filter: `ujian_mahasiswas` table not found.*
 
 ![Index — Filter Form](screenshots/01_index.png)
 *Halaman filter Hasil Ujian: Select2 Program Studi + Select Periode Akademik.*
@@ -53,8 +67,10 @@ Migrasi fitur Hasil Ujian dari E-Learning CI3 (`dosen/Hasil.php`) ke SIAKAD Lara
 
 ## Catatan
 
-- Fitur di-deploy via PR #518.
+- Fitur di-deploy via PR #518 + hotfix `09e9cd18`.
 - Permission: `siakad.hasil-ujian.view` → waket1, ketua, dosen.
 - Dosen saat ini bisa melihat semua UAS (belum discope by dosen_id) — tech debt.
 - Data submission (`ujian_mahasiswa`) masih kosong — perlu integrasi upload dari mahasiswa.
 - 4/4 Pest tests pass, pint clean.
+- **⚠️ CI deploy staging broken** — `CPANEL_SSH_KEY` expired, semua deploy gagal. Hotfix dideploy manual via VPS tunnel.
+- **⚠️ Test gap**: query `withCount('ujianMahasiswa')` tidak tertutup oleh test — tambahkan integration test untuk endpoint POST `/siakad/hasil-ujian/data`.
