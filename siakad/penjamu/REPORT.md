@@ -66,7 +66,28 @@ Menggunakan `Role::firstOrCreate()` untuk menghindari `RoleAlreadyExists` di tes
 ->whereHas('formasiDosen.mataKuliah', ...)
 ```
 
-### 5. Commit & Push
+### 5. Fix #2 — Wrong Relationship in Views
+
+**Commit**: `a3235f01`
+**Deskripsi**: Bug lanjutan — views masih pakai relasi via `JadwalPerkuliahan` (gak ada) untuk ambil `mataKuliah`, `jumlahPeserta`, dan `rombonganBelajar`.
+
+**Files**:
+- `data.blade.php` — `totalSks` via `$f->mataKuliah?->sks`, `jumlahMhs` via `$f->jumlahPeserta()`
+- `show.blade.php` — `$mk` via `$formasi->mataKuliah` (direct), peserta via `$formasi->jumlahPeserta()`
+- `PenjamuController.php` — hapus eager loading `jadwalPerkuliahan.rombonganBelajar` (tidak digunakan)
+
+### 6. Screenshots
+
+![Index — Filter Form](screenshots/01_index.png)
+*Halaman utama Penjamu dengan filter Program Studi dan Periode Akademik.*
+
+![Data — Daftar Dosen](screenshots/02_data.png)
+*Tabel hasil: 32 dosen, Nama Dosen (clickable), NIDN, Jumlah MK, Total SKS, Jumlah Mhs, Aksi Detail.*
+
+![Detail — Mata Kuliah per Dosen](screenshots/03_detail.png)
+*Detail dosen menampilkan daftar mata kuliah yang diajar.*
+
+### 7. Commit & Push
 
 Semua commit di-push ke `main` langsung (fitur baru, tidak ada kode existing yang diubah).
 
@@ -78,6 +99,7 @@ Semua commit di-push ke `main` langsung (fitur baru, tidak ada kode existing yan
 | `d68caf70` | feat | Detail dosen: mata kuliah list per dosen, clickable name links |
 | `bf967630` | test | 4 Pest tests — auth gates, permission block, filter render, validation |
 | `cfc234f1` | fix | **Critical**: Relationship chain — FormasiDosen::mataKuliah, not JadwalPerkuliahan |
+| `a3235f01` | fix | **Critical**: Views pakai relasi JadwalPerkuliahan yg gak ada — switch ke FormasiDosen langsung |
 
 ## Fitur yang Diimplementasikan
 
@@ -92,11 +114,12 @@ Semua commit di-push ke `main` langsung (fitur baru, tidak ada kode existing yan
 
 ## Temuan & Masalah
 
-- **Critical (fixed)**: `PenjamuController` menggunakan `jadwalPerkuliahan.mataKuliah()` — relationship tidak ada di model `JadwalPerkuliahan`. Yang benar: `formasiDosen.mataKuliah()` dari model `FormasiDosen`. Di-fix di commit `cfc234f1`.
+- **Critical #1 (fixed)**: `PenjamuController` menggunakan `jadwalPerkuliahan.mataKuliah()` — relationship tidak ada di model `JadwalPerkuliahan`. Yang benar: `formasiDosen.mataKuliah()` dari model `FormasiDosen`. Di-fix di commit `cfc234f1`.
+- **Critical #2 (fixed)**: Views (`data.blade.php`, `show.blade.php`) masih menggunakan `$j->mataKuliah`, `$j->rombonganBelajar`, `$jadwal->jumlahPesertaAktif()` — semuanya tidak ada di model `JadwalPerkuliahan`. Di-fix di commit `a3235f01` dengan switch ke `FormasiDosen` langsung (`$f->mataKuliah`, `$f->jumlahPeserta()`).
 
 ## Catatan
 
 - Fitur di-deploy langsung ke production (`si.sttw.ac.id`).
 - Halaman diakses melalui sidebar `SIAKAD → Penjamu` dengan role `Wakil Ketua I`.
-- Playwright screenshot capture gagal karena timeout server dev; UI diverifikasi manual.
+- Screenshot diambil via Playwright (headless Chromium) terhadap dev server lokal pada port 8003.
 - Test coverage: 4 Pest tests, semua pass setelah fix relationship chain.
